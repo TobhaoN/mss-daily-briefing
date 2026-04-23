@@ -3,9 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PC Demo Coach — Cox Automotive MSS</title>
+<title>Automotive AI Daily Briefing — April 23, 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
+  header { background: linear-gradient(135deg, #1a1f35 0%, #0d1b2a 40%, #1a2744 100%); padding: 40px 48px 32px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .logo-badge { background: linear-gradient(90deg, #3b82f6, #8b5cf6); padding: 6px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; }
+  header h1 { font-size: 28px; font-weight: 700; color: #f8fafc; letter-spacing: -0.5px; margin-bottom: 6px; }
+  header p { font-size: 14px; color: #94a3b8; }
+  .top-story { background: linear-gradient(135deg, #1e3a5f 0%, #1e2d4a 100%); border: 1px solid #3b82f6; border-left: 4px solid #3b82f6; border-radius: 12px; padding: 24px 28px; margin: 32px 48px; position: relative; overflow: hidden; }
+  .top-story::before { content: ''; position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%); }
+  .top-story-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #3b82f6; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .top-story-label::before { content: 'STAR'; font-size: 10px; }
+  .top-story h2 { font-size: 20px; font-weight: 700; color: #f1f5f9; margin-bottom: 10px; line-height: 1.35; }
+  .top-story h2 a { color: inherit; text-decoration: none; }
+  .top-story h2 a:hover { color: #93c5fd; text-decoration: underline; }
+  .top-story p { font-size: 14px; color: #cbd5e1; line-height: 1.65; margin-bottom: 10px; }
+  .why-matters { background: rgba(59,130,246,0.12); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: #93c5fd; line-height: 1.55; }
+  .why-matters strong { color: #60a5fa; }
+  .meta { font-size: 12px; color: #64748b; margin-top: 10px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; padding: 0 48px 48px; }
+  .category-section { background: #161b2e; border-radius: 14px; border: 1px solid rgba(255,255,255,0.06); overflow: hidden; }
+  .category-header { padding: 16px 20px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 10px; }
+  .cat-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .category-header h3 { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .cat-1 .cat-icon { background: rgba(239,68,68,0.2); } .cat-1 .category-header h3 { color: #f87171; }
+  .cat-2 .cat-icon { background: rgba(245,158,11,0.2); } .cat-2 .category-header h3 { color: #fbbf24; }
+  .cat-3 .cat-icon { background: rgba(16,185,129,0.2); } .cat-3 .category-header h3 { color: #34d399; }
+  .cat-4 .cat-icon { background: rgba(59,130,246,0.2); } .cat-4 .category-header h3 { color: #60a5fa; }
+  .cat-5 .cat-icon { background: rgba(168,85,247,0.2); } .cat-5 .category-header h3 { color: #c084fc; }
+  .cat-6 .cat-icon { background: rgba(20,184,166,0.2); } .cat-6 .category-header h3 { color: #2dd4bf; }
+  .story-card { padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .story-card:last-child { border-bottom: none; }
+  .story-card h4 { font-size: 14px; font-weight: 600; color: #e2e8f0; line-height: 1.4; margin-bottom: 8px; }
+  .story-card h4 a { color: inherit; text-decoration: none; }
+  .story-card h4 a:hover { color: #93c5fd; text-decoration: underline; }
+  .story-card .summary { font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 8px; }
+  .story-card .wim { font-size: 12px; color: #7dd3fc; line-height: 1.5; background: rgba(14,165,233,0.08); border-radius: 6px; padding: 8px 10px; margin-bottom: 8px; }
+  .story-card .wim strong { color: #38bdf8; }
+  .story-card .meta { font-size: 11px; color: #475569; }
+  footer { text-align: center; padding: 32px; border-top: 1px solid rgba(255,255,255,0.06); color: #475569; font-size: 13px; background: #0f1117; }
+  footer strong { color: #64748b; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; padding: 0 20px 40px; } header { padding: 28px 20px 24px; } .top-story { margin: 24px 20px; } }
+</style>
 </head>
 <body>
-<!-- placeholder - will be replaced by file_upload -->
+<header>
+  <div class="header-top">
+    <div class="logo-badge">MSS Intelligence</div>
+    <span style="font-size:12px;color:#475569;">April 23, 2026 | Vol. Daily</span>
+  </div>
+  <h1>Automotive AI Daily Briefing</h1>
+  <p>Curated intelligence across market, retail tech, competitors, Cox ecosystem, marketing &amp; AI &mdash; April 23, 2026</p>
+</header>
+
+<div class="top-story">
+  <div class="top-story-label">TOP STORY OF THE DAY</div>
+  <h2><a href="https://blog.google/products/google-cloud/google-cloud-next-2026/" target="_blank">Google Cloud Next &apos;26: $750M Agentic AI Fund &amp; Valeo Automotive Partnership Signal Enterprise Shift</a></h2>
+  <p>Google Cloud announced a $750 million fund to accelerate partners&apos; agentic AI development at Cloud Next &apos;26, while simultaneously revealing an expanded strategic partnership with Valeo &mdash; a global automotive technology leader &mdash; to deploy Gemini-powered agentic AI across vehicle development and workspace workflows. Retailer AutoZone also joined the agentic AI partnership cohort, signaling automotive and retail convergence around Google&apos;s AI stack. Google Chrome Enterprise is also gaining Gemini-powered auto-browse capabilities enabling AI agents to autonomously complete multi-step browser workflows.</p>
+  <div class="why-matters"><strong>Why It Matters:</strong> As Google bets $750M on autonomous AI agents, automotive technology vendors &mdash; including Cox Automotive&apos;s ecosystem &mdash; must evaluate how Gemini-native agentic workflows will compete with or complement existing dealer CRM/DMS platforms. The Valeo deal shows OEM-level agentic adoption is accelerating; Cox AI product strategy should assess integration readiness and differentiation against Google&apos;s growing automotive footprint.</div>
+  <div class="meta">Google Cloud Blog / PR Newswire | April 22, 2026</div>
+</div>
+
+<div class="grid">
+
+  <div class="category-section cat-1">
+    <div class="category-header">
+      <div class="cat-icon">&#x1F3ED;</div>
+      <h3>Automotive Market</h3>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.autonews.com/sales/q1-2026-us-auto-sales-decline" target="_blank">U.S. New-Car Market Downshifts in Q1 2026: Sales Drop 6.2%, Import Deliveries Down 16%</a></h4>
+      <p class="summary">First-quarter 2026 U.S. auto sales fell 6.2% year-over-year, with vehicles produced outside North America seeing a steeper 16% drop as tariff uncertainty dampened consumer demand. The SAAR came in below expectations as rising gasoline prices compounded headwinds. Automakers including VW and Audi reported particularly rough quarters, with VW maintaining stable global share in a declining market.</p>
+      <div class="wim"><strong>Why It Matters:</strong> A weakening sales environment increases dealer urgency for ROI-positive technology. Cox tools like vAuto pricing intelligence and VinSolutions CRM become more critical as dealers fight for a shrinking pool of committed buyers &mdash; strengthening the ROI conversation in competitive deals.</div>
+      <div class="meta">Automotive News / WardsAuto | April 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.coxautoinc.com/market-insights/manheim-used-vehicle-value-index/" target="_blank">Manheim MUVVI Mid-April 2026: Wholesale Used-Vehicle Prices Hit 3-Year High, Up 6.2% YoY</a></h4>
+      <p class="summary">The Manheim Used Vehicle Value Index climbed to 213.4 in mid-April 2026, reflecting a 6.2% year-over-year gain &mdash; the highest level since summer 2023. Retail used prices rebounded to approximately $25,500 after a 12-month low, with off-lease EVs leading price appreciation driven by strong spring demand and tariff-driven consumers avoiding new cars. Cox had forecast 2% full-year growth; that target was met in Q1 alone.</p>
+      <div class="wim"><strong>Why It Matters:</strong> Surging wholesale prices directly impact vAuto&apos;s ProfitTime and Live Market View valuations, creating a high-stakes environment where real-time pricing accuracy is a critical differentiator. Dealers relying on stale appraisal data will leave significant gross profit on the table.</div>
+      <div class="meta">Cox Automotive / Autobody News | April 17&ndash;21, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.autovista24.com/topics/ev-forecasts-tariffs-2026/" target="_blank">Chinese EVs Accelerate in Europe Despite Tariffs; U.S. EV Growth Forecasts Revised Downward</a></h4>
+      <p class="summary">A year and a half after the EU imposed new duties on China-made EVs, imports into Europe continue accelerating &mdash; raising questions about tariff efficacy as the proposed Industrial Accelerator Act gains traction. In the U.S., analysts revised EV growth forecasts downward citing 25% auto tariffs, higher interest rates, and softening consumer demand. IEA data confirms global EV sales topped 17 million in 2024, up 25% YoY.</p>
+      <div class="wim"><strong>Why It Matters:</strong> EV inventory complexity is intensifying with price volatility, residual uncertainty, and demand softness converging simultaneously. Dealer tools that model EV-specific turn rates and depreciation curves &mdash; including vAuto&apos;s EV pricing intelligence and KBB&apos;s EV valuations &mdash; will see elevated demand from dealers navigating this uncertainty.</div>
+      <div class="meta">Rhodium Group / Autovista24 | April 2026</div>
+    </div>
+  </div>
+
+  <div class="category-section cat-2">
+    <div class="category-header">
+      <div class="cat-icon">&#x1F5A5;&#xFE0F;</div>
+      <h3>Dealership &amp; Retail Tech</h3>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.coxautoinc.com/news/cox-automotive-accelerate-my-deal-elite/" target="_blank">Cox Automotive Launches &ldquo;Accelerate My Deal Elite&rdquo; &mdash; The First Complete End-to-End Online Vehicle Buying Solution</a></h4>
+      <p class="summary">Cox Automotive unveiled Accelerate My Deal Elite in February 2026, positioning it as the only complete online vehicle buying solution serving both dealers and car buyers across the full transaction lifecycle. The platform integrates F&amp;I, financing, trade-in, and deal structuring into a single digital workflow, eliminating vendor handoffs that historically created friction and deal abandonment. It builds directly on the Retail360 framework announced in late 2024.</p>
+      <div class="wim"><strong>Why It Matters:</strong> This is Cox&apos;s clearest strategic play to consolidate the digital retail stack under one umbrella, making it harder for point solutions to justify separate integrations. AMDe should be a cornerstone narrative in VinSolutions and Dealertrack competitive conversations &mdash; particularly against Solera/DealerSocket and standalone F&amp;I tools.</div>
+      <div class="meta">Cox Automotive | February 2, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.globenewswire.com/news-release/2026/02/04/solera-dealersocket-ai-nada" target="_blank">Solera Announces Landmark AI Investment &amp; Major DealerSocket CRM Upgrade Ahead of NADA 2026</a></h4>
+      <p class="summary">Solera, parent of DealerSocket and Dealerware, announced a landmark AI investment and a significant DealerSocket CRM upgrade at NADA 2026, targeting deeper workflow automation and AI-powered lead scoring. The announcement signals Solera&apos;s intent to narrow the capability gap with Cox Automotive&apos;s VinSolutions. The company explicitly framed the investment around an &ldquo;AI-first&rdquo; CRM vision for the dealership market.</p>
+      <div class="wim"><strong>Why It Matters:</strong> Solera/DealerSocket is a primary VinSolutions competitor. Their declared AI investment raises urgency for Cox to demonstrate differentiated AI capabilities &mdash; particularly in agentic CRM workflows, predictive follow-up, and cross-platform intelligence &mdash; areas where VinSolutions currently holds a lead but must defend.</div>
+      <div class="meta">GlobeNewswire | February 4, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.autonews.com/technology/auto-retail-fragmentation-problem" target="_blank">Commentary: Auto Retail&apos;s Real Bottleneck Isn&apos;t Technology &mdash; It&apos;s Fragmentation</a></h4>
+      <p class="summary">An Automotive News guest commentary argues that friction in auto retail stems from systems never designed to interoperate &mdash; creating workflow gaps between DMS, CRM, F&amp;I, and digital retailing tools. Integration-first platforms with open APIs and unified data layers are positioned as the only durable solution. The piece directly validates concerns that dealers with stitched-together point solutions are leaving revenue on the table.</p>
+      <div class="wim"><strong>Why It Matters:</strong> The fragmentation narrative directly validates Cox Automotive&apos;s integrated platform thesis. As dealers grow frustrated with disconnected vendor ecosystems, the case for a unified Cox suite (DMS + CRM + F&amp;I + digital retail) becomes more compelling &mdash; particularly in competitive evaluations against multi-vendor stacks.</div>
+      <div class="meta">Automotive News | February 25, 2026</div>
+    </div>
+  </div>
+
+  <div class="category-section cat-3">
+    <div class="category-header">
+      <div class="cat-icon">&#x1F3AF;</div>
+      <h3>Competitor Watch</h3>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.securityweek.com/cargurus-data-breach-12-million-users/" target="_blank">CarGurus Suffers Major Data Breach: ShinyHunters Claim 1.7M Corporate Records &amp; 12M+ User Records Stolen</a></h4>
+      <p class="summary">The ShinyHunters hacking group claimed responsibility for stealing 1.7 million corporate records and over 12 million user records from CarGurus in February 2026 via a voice-phishing attack on February 13. The breach reportedly exposed dealer accounts, finance application data, and PII. CarGurus confirmed it was investigating the incident &mdash; drawing immediate industry concern and regulatory scrutiny about marketplace platform security practices.</p>
+      <div class="wim"><strong>Why It Matters:</strong> CarGurus is a primary listings competitor to Autotrader and KBB. A major trust-eroding breach creates a clear opening for Cox marketplace products to differentiate on data security, privacy stewardship, and dealer data protection &mdash; increasingly critical factors in platform selection decisions at the enterprise dealer group level.</div>
+      <div class="meta">SecurityWeek / TechRadar | February 18&ndash;25, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://finance.yahoo.com/news/carvana-q1-2026-earnings-preview" target="_blank">Carvana Q1 2026 Earnings Preview: 5-for-1 Stock Split Vote, BofA Downgrade, and Insurance Milestone Define the Narrative</a></h4>
+      <p class="summary">Carvana (CVNA) is preparing to report Q1 2026 results on April 29, with a shareholder vote on a 5-for-1 stock split also pending. Bank of America downgraded Carvana from Buy to Neutral in early April, citing higher oil prices, rising interest rates, and tariff pressure. Despite the downgrade, CVNA trades near $400 with bulls citing Carvana Insurance passing 200,000 embedded policies sold via Root &mdash; a significant embedded finance milestone.</p>
+      <div class="wim"><strong>Why It Matters:</strong> Carvana&apos;s trajectory &mdash; and any signs of volume softening amid macro headwinds &mdash; directly informs competitive intensity in digital used-vehicle retail. A weaker Q1 could signal opportunity for traditional dealer networks and Cox-powered digital retail tools to recapture cost-conscious used-car buyers who are reconsidering online-only options.</div>
+      <div class="meta">Yahoo Finance / 24/7 Wall St. | April 22&ndash;23, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.prnewswire.com/advance-automotive-catalyst-iq-launch" target="_blank">Advance Automotive Launches &ldquo;Catalyst IQ&rdquo; &mdash; Consolidated Dealer Marketing Agency with Native AI, SEO/AEO &amp; GEO</a></h4>
+      <p class="summary">Advance Automotive consolidated its Adpearance, Fox Dealer, Search Optics, and ZeroSum brands under a new umbrella called Catalyst IQ, launching with AI-native SEO, Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO) capabilities purpose-built for automotive dealers. The consolidation creates a full-stack competitor to Cox&apos;s Dealer.com, PureCars, and DAS Technology in dealer marketing services.</p>
+      <div class="wim"><strong>Why It Matters:</strong> Catalyst IQ&apos;s multi-brand consolidation creates a formidable new competitor in dealer marketing &mdash; directly challenging Cox&apos;s Dealer.com website and advertising products. Its explicit GEO/AEO focus signals where the next battleground in dealer marketing ROI will be fought, demanding Cox product teams accelerate AI search visibility features.</div>
+      <div class="meta">PR Newswire | December 2025 / February 2026</div>
+    </div>
+  </div>
+
+  <div class="category-section cat-4">
+    <div class="category-header">
+      <div class="cat-icon">&#x1F535;</div>
+      <h3>Cox Automotive Ecosystem</h3>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.coxautoinc.com/news/jeff-jones-connected-retail/" target="_blank">Cox Automotive Appoints Jeff Jones to Lead &ldquo;Connected Retail&rdquo; Strategy Amid Accelerating Consumer Expectations</a></h4>
+      <p class="summary">Cox Automotive announced Jeff Jones is joining to lead the next chapter of connected retail, with an explicit mandate to respond to rapidly shifting consumer expectations and break down internal silos between Cox products. The role spans Dealer.com, VinSolutions, Dealertrack, and Xtime &mdash; with a clear focus on unifying the customer journey from search to sale to service. The announcement signals Cox is treating platform unification as a boardroom-level priority.</p>
+      <div class="wim"><strong>Why It Matters:</strong> A dedicated Connected Retail executive signals Cox is accelerating cross-product integration timelines and building a clearer multi-product narrative for enterprise dealer groups. This creates a stronger value proposition story for MSS teams selling multi-platform Cox commitments and expanding footprint within existing accounts.</div>
+      <div class="meta">Cox Automotive | April 15, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.coxautoinc.com/news/cox-automotive-sustainability-earth-day-2026/" target="_blank">Cox Automotive Earth Day 2026: Five Sustainability Initiatives Across Wholesale, Dealer Workflows &amp; EV Batteries</a></h4>
+      <p class="summary">Cox Automotive published a major Earth Day release on April 21, 2026, highlighting five sustainability initiatives spanning Manheim wholesale operations, dealer workflow digitization reducing paper waste, and EV battery lifecycle management programs. The release positions Cox as an environmental steward across the full vehicle lifecycle and reinforces ESG credentials as OEM and large dealer group sustainability mandates intensify globally.</p>
+      <div class="wim"><strong>Why It Matters:</strong> ESG positioning is an emerging procurement consideration for large dealer groups and OEM partnerships. Cox&apos;s EV battery lifecycle narrative and workflow digitization story creates differentiated enterprise sales content &mdash; positioning Cox as a long-term infrastructure partner rather than just a tech vendor in RFP and contract renewal conversations.</div>
+      <div class="meta">Cox Automotive | April 21, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.coxautoinc.com/market-insights/q1-2026-manheim-uvvi-replay/" target="_blank">Cox Automotive Q1 2026 MUVVI Quarterly Call: Wholesale Prices Already Exceed Full-Year 2026 Forecast</a></h4>
+      <p class="summary">Cox Automotive&apos;s Q1 2026 Manheim Used Vehicle Value Index quarterly call revealed that wholesale prices already exceeded the company&apos;s full-year 2% growth forecast in just one quarter &mdash; with March prices up 6.2% year-over-year. Analysts cited healthy spring demand, tariff-driven new-car avoidance inflating used demand, and tightening inventory. A replay is available for dealer partners seeking strategic market context for Q2 planning.</p>
+      <div class="wim"><strong>Why It Matters:</strong> The forecast outperformance strengthens Manheim&apos;s market data authority and vAuto&apos;s live market intelligence positioning. It also creates urgency for dealer sales conversations around real-time pricing tools as the gap between static book values and live wholesale prices widens significantly entering spring retail season.</div>
+      <div class="meta">Cox Automotive | April 7&ndash;17, 2026</div>
+    </div>
+  </div>
+
+  <div class="category-section cat-5">
+    <div class="category-header">
+      <div class="cat-icon">&#x1F4E3;</div>
+      <h3>Dealership Marketing &amp; Advertising</h3>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.cbtnews.com/ai-seo-geo-dealers-digital-marketing/" target="_blank">CBT News: AI, SEO, and GEO &mdash; What Dealers Need to Know to Stay Competitive in an AI-Driven Search World</a></h4>
+      <p class="summary">A widely-circulated CBT News analysis breaks down Generative Engine Optimization (GEO) and why dealerships that don&apos;t actively manage their AI-generated brand presence risk losing visibility in ChatGPT, Gemini, and Perplexity results. The piece highlights that most dealers have zero visibility into how AI search tools describe them to car buyers &mdash; a systemic blind spot that Reunion Marketing CEO Dave Spannhake called the &ldquo;invisible dealer problem&rdquo; on Daily Dealer Live.</p>
+      <div class="wim"><strong>Why It Matters:</strong> GEO/AEO is becoming the next major frontier for dealer marketing ROI &mdash; directly intersecting with Dealer.com&apos;s SEO capabilities and creating a new service line opportunity. Cox&apos;s marketing product teams should evaluate native GEO features as a differentiation point against agencies like Catalyst IQ who are building purpose-built automotive AEO tools.</div>
+      <div class="meta">CBT News | April 8, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.cbtnews.com/modern-dealer-marketing-agency-grade-tools/" target="_blank">A Shift in Control: Modern Dealers Gaining Access to Agency-Grade Programmatic &amp; CTV Media Buying</a></h4>
+      <p class="summary">A CBT News report documents how advanced programmatic and connected TV media buying capabilities &mdash; once exclusive to large agencies &mdash; are now accessible directly to dealers, improving targeting precision and measurement at the VDP-click level. The shift is enabling performance-focused dealers to reduce agency dependency and directly control their advertising mix. First-party data targeting and CTV adoption are leading the democratization wave.</p>
+      <div class="wim"><strong>Why It Matters:</strong> As dealers gain direct access to agency-grade tools, Cox advertising product value must evolve from &ldquo;access&rdquo; to &ldquo;intelligence&rdquo; &mdash; using first-party buyer intent data from Autotrader, KBB, and VinSolutions to deliver audience optimization that independent dealer ad platforms simply cannot replicate.</div>
+      <div class="meta">CBT News | March 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.prnewswire.com/catalyst-iq-seo-aeo-automotive-ai-search" target="_blank">Catalyst IQ Unveils Proprietary SEO/AEO Technology Purpose-Built to Increase Automotive AI Search Visibility</a></h4>
+      <p class="summary">Catalyst IQ launched a proprietary SEO, Answer Engine Optimization (AEO), and GEO platform at NADA 2026 specifically designed to improve dealer visibility in AI-powered search results from ChatGPT, Gemini, and Perplexity. The technology monitors how AI search engines reference dealer inventory, pricing, and reputation &mdash; then dynamically adjusts content signals to improve AI-generated responses. This represents the first automotive-specific AEO platform deployed at scale.</p>
+      <div class="wim"><strong>Why It Matters:</strong> Catalyst IQ&apos;s AEO launch raises competitive stakes for Dealer.com&apos;s website and SEO product teams significantly. Cox needs a credible GEO/AEO roadmap to retain dealer marketing relationships as AI search fundamentally reshapes how buyers discover dealerships &mdash; with organic and paid search both becoming secondary to AI-generated recommendations.</div>
+      <div class="meta">PR Newswire | February 3, 2026</div>
+    </div>
+  </div>
+
+  <div class="category-section cat-6">
+    <div class="category-header">
+      <div class="cat-icon">&#x1F916;</div>
+      <h3>AI &amp; Technology</h3>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://blog.google/products/google-cloud/google-cloud-next-2026-agentic-ai/" target="_blank">Google Cloud Next &apos;26: Gemini &ldquo;Auto-Browse&rdquo; Comes to Chrome Enterprise &mdash; AI Agents Automate Multi-Step Browser Workflows</a></h4>
+      <p class="summary">At Google Cloud Next &apos;26 on April 22, 2026, Google announced Gemini-powered &ldquo;auto-browse&rdquo; agentic capabilities coming to Chrome Enterprise, enabling AI agents to autonomously complete multi-step browser tasks. Google also launched the Gemini Enterprise Agent Platform for governing AI agents at scale &mdash; alongside a $750M partner fund to accelerate agentic AI development across Google&apos;s global ecosystem of technology partners.</p>
+      <div class="wim"><strong>Why It Matters:</strong> Browser-native AI agents capable of autonomously completing automotive workflows (searching inventory, filling finance forms, scheduling service) represent a fundamental disruption to dealer-facing platforms. Cox AI product teams should urgently evaluate Gemini API partnerships, agent governance frameworks, and how agentic capabilities could be embedded natively into VinSolutions, Xtime, and Dealer.com experiences.</div>
+      <div class="meta">Google Cloud Blog / TechCrunch | April 22, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.prnewswire.com/valeo-google-cloud-gemini-automotive-agentic-ai" target="_blank">Valeo &amp; Google Cloud Expand Partnership: Gemini Agentic AI Enters Automotive Innovation Workflows at Scale</a></h4>
+      <p class="summary">Valeo, a global Tier-1 automotive technology supplier, announced an expanded partnership with Google Cloud at Cloud Next &apos;26 to deploy Gemini for Workspace and agentic AI across global automotive innovation workflows, including parts engineering and connected workspace automation. AutoZone, Home Depot, Macy&apos;s, and Ulta also joined Google&apos;s agentic AI retail cohort, marking the broadest enterprise agentic AI deployment to date across retail and automotive.</p>
+      <div class="wim"><strong>Why It Matters:</strong> As Google&apos;s agentic AI stack penetrates automotive OEM supply chains, downstream effects on dealership technology are inevitable. Cox Automotive&apos;s AI product roadmap should include explicit Gemini API compatibility and agentic workflow design &mdash; particularly for service scheduling (Xtime), inventory management (vAuto), and CRM follow-up (VinSolutions) &mdash; to avoid being displaced by Google-native solutions.</div>
+      <div class="meta">PR Newswire | April 22, 2026</div>
+    </div>
+    <div class="story-card">
+      <h4><a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank">Anthropic Releases Claude Opus 4.7 &mdash; Advanced Reasoning &amp; Agentic Capabilities Target Enterprise AI Workflows</a></h4>
+      <p class="summary">Anthropic released Claude Opus 4.7 as generally available in mid-April 2026, delivering notable improvements over Opus 4.6 in advanced software engineering, multi-step reasoning, and agentic task completion. The release positions Anthropic as a serious enterprise AI competitor alongside OpenAI&apos;s GPT-5 and Google&apos;s Gemini Ultra, with enterprise adoption accelerating across industries including automotive technology, financial services, and retail.</p>
+      <div class="wim"><strong>Why It Matters:</strong> Best-in-class LLM reasoning capabilities are now commercially accessible for building sophisticated automotive AI applications &mdash; from intelligent vehicle descriptions and personalized buyer journeys to autonomous CRM follow-up and predictive service upsell recommendations. Cox product teams building AI features should evaluate Opus 4.7 for complex reasoning workflows where current model performance is limiting product quality.</div>
+      <div class="meta">Anthropic | April 15, 2026</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>April 23, 2026 | Curated by <strong>AI Research Desk</strong> | Cox Automotive MSS Intelligence</p>
+  <p style="margin-top:8px;font-size:11px;color:#374151;">Stories sourced from public news sources. For internal use only.</p>
+</footer>
 </body>
 </html>
