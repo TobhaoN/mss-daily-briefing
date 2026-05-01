@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Automotive AI Daily Briefing — April 30, 2026</title>
+<title>Automotive AI Daily Briefing — May 1, 2026</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#0f1117;color:#e2e8f0;min-height:100vh}
@@ -53,6 +53,14 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#0f111
 .cat-cox .card-accent{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}.cat-cox .card-why .label{color:#a78bfa}.cat-cox .section-icon{background:rgba(139,92,246,.15)}
 .cat-marketing .card-accent{background:linear-gradient(90deg,#22c55e,#4ade80)}.cat-marketing .card-why .label{color:#4ade80}.cat-marketing .section-icon{background:rgba(34,197,94,.15)}
 .cat-ai .card-accent{background:linear-gradient(90deg,#06b6d4,#22d3ee)}.cat-ai .card-why .label{color:#22d3ee}.cat-ai .section-icon{background:rgba(6,182,212,.15)}
+.dark-toggle{position:fixed;top:20px;right:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50%;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;z-index:100;transition:background .2s}
+.dark-toggle:hover{background:rgba(255,255,255,.2)}
+body.light-mode{background:#f8fafc;color:#1e293b}
+body.light-mode .header{background:linear-gradient(135deg,#1e1b4b 0%,#3730a3 50%,#1e1b4b 100%)}
+body.light-mode .card{background:#fff;border-color:#e2e8f0}
+body.light-mode .card h3{color:#1e293b}
+body.light-mode .card-body{color:#64748b}
+body.light-mode .top-story{background:linear-gradient(135deg,rgba(239,68,68,.08) 0%,rgba(220,38,38,.04) 100%)}
 .footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 32px}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .footer p{font-size:13px;color:#475569}
@@ -61,176 +69,221 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#0f111
 </style>
 </head>
 <body>
+<button class="dark-toggle" onclick="document.body.classList.toggle('light-mode')" title="Toggle dark/light mode">🌙</button>
 <div class="header">
   <div class="header-inner">
-    <div class="header-badge"><span style="width:8px;height:8px;background:#22c55e;border-radius:50%;display:inline-block"></span> LIVE INTELLIGENCE FEED</div>
+    <div class="header-badge"><span class="pulse"></span> LIVE INTELLIGENCE FEED</div>
     <h1>Automotive AI Daily Briefing</h1>
     <p class="header-sub">Curated insights across automotive market, dealership tech, competitive landscape, and AI innovation</p>
     <div class="header-meta">
-      <span>📅 April 30, 2026</span>
+      <span>📅 May 1, 2026</span>
       <span>📊 6 Categories</span>
       <span>📰 18 Stories</span>
-      <span>🤖 AI Research Desk</span>
+      <span>💡 AI Research Desk</span>
     </div>
   </div>
 </div>
-<div class="main">
+<div class="top-story-section">
   <div class="top-story">
     <div class="top-story-badge">🔥 TOP STORY</div>
-    <h2 class="top-story-title"><a href="https://investors.carvana.com/04-29-2026-210512659" target="_blank">Carvana Posts All-Time Record Q1 2026: 187K Units, $6.43B Revenue, 40% YoY Growth</a></h2>
-    <p>Carvana reported record-breaking Q1 2026 results on April 29, selling 187,393 retail units (+40% YoY) and generating $6.432 billion in total revenue (+52% YoY) — both all-time quarterly records. Net income reached $405 million (6.3% margin), with adjusted EBITDA of $672 million for the ninth consecutive quarter of profitability improvement. The company is now targeting 3 million annual retail units and 13.5% EBITDA margin as long-term goals.</p>
-    <p>Meanwhile, Cox Automotive simultaneously announced the acquisition of Fullpath — the AI-native Customer Data Platform — on April 23, positioning the Cox ecosystem to counter Carvana's digital-native advantage with AI-powered dealer retailing tools at scale.</p>
+    <h2><a href="https://www.coxautoinc.com/insights/cox-automotive-to-acquire-fullpath/" target="_blank">Cox Automotive Acquires Fullpath: AI-Native CDP Enters the Largest Dealer Network in America</a></h2>
+    <p>Cox Automotive announced April 23 a definitive agreement to acquire 100% of Fullpath, an AI-powered Customer Data Platform serving 3,000+ automotive dealers. The deal brings Fullpath's first-party data unification and AI-driven marketing automation natively into the VinSolutions CRM ecosystem — alongside Dealer.com, Autotrader, KBB, and Manheim — creating an end-to-end AI retail platform touching 40,000+ dealer relationships and 2.3 billion annual consumer interactions. Cox President Steve Rowley called it "the most significant capability investment we've made in years," while Fullpath CEO Ahaaron Horwitz confirmed his platform will have access to Cox's proprietary data infrastructure as AI model fuel.</p>
+    <p>The acquisition arrives as Carvana posted all-time record Q1 2026 results — 187,393 retail units (+40% YoY), $6.43B revenue (+52%), and $405M net income — intensifying competitive pressure on franchised dealers to close the digital experience gap. Cox's move is a direct strategic response, positioning the combined Cox/Fullpath stack as the industry's answer to Carvana's AI-native advantages at franchised dealer scale.</p>
     <div class="why-matters">
-      <div class="why-matters-label">WHY IT MATTERS FOR AUTOMOTIVE AI &amp; PRODUCT STRATEGY</div>
-      Carvana's 40% volume growth at 6%+ net margin sets a new benchmark for digital automotive retail. Franchised dealers using AI-powered digital retail tools (Fullpath CDP, VinSolutions, Dealer.com) must close the UX gap or risk accelerating share loss to purely digital competitors. The Cox/Fullpath acquisition is a direct competitive response designed to bring Carvana-level AI data activation to franchised dealers at scale.
+      <strong>Why It Matters for Automotive AI & Product Strategy</strong>
+      <p>Cox now owns the most complete AI retail stack from shopper discovery through purchase and service lifecycle. Fullpath's CDP directly addresses data fragmentation at the dealer level and raises the competitive bar for every standalone CDP vendor and CRM incumbent simultaneously. For automotive AI product teams, this reshapes partner strategy, competitive positioning, and build-vs-buy decisions across the entire tech stack.</p>
     </div>
-    <div class="story-meta"><span>📰 Carvana IR / CNBC / Cox Automotive</span><span>📅 April 29, 2026</span></div>
+    <div class="story-meta"><span>📰 Cox Automotive / Fullpath / PR Newswire</span><span>📅 April 23, 2026</span></div>
   </div>
-  <div class="categories-grid">
-    <div class="category-section">
-      <div class="category-header cat-market"><span class="cat-icon">🚗</span><span class="cat-title">Automotive Market</span><span class="cat-count">3 Stories</span></div>
-      <div class="stories">
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://autovista24.autovistagroup.com/news/us-new-car-market-growth-impacted-by-multiple-factors-in-april/" target="_blank">April 2026 SAAR Projected at 16.0M — Tariff-Rush Comparison Distorts YoY View</a></h3>
-          <p class="story-summary">JD Power and GlobalData project April 2026 new-vehicle retail sales at 1,129,100 units — a 7.3% decrease from April 2025 — due entirely to a distorted prior-year baseline when 53,000 extra buyers rushed purchases ahead of tariff increases. Average monthly payments reach $812, while negative equity hits 31.3% of buyers — highest April level since 2020. Average transaction prices hold near $45,990 while incentive spending per vehicle reaches $3,141, up 11.1% year-over-year as OEMs boost support.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>Negative equity at 31.3% and elevated monthly payments signal affordability stress compressing front-end margins. AI-powered trade appraisal, F&amp;I product personalization, and used vehicle sourcing intelligence become critical dealer revenue levers heading into the summer selling season.</div>
-          <div class="story-meta"><span>📰 JD Power / Autovista24</span><span>📅 Apr 24, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://autovista24.autovistagroup.com/news/us-new-car-market-growth-impacted-by-multiple-factors-in-april/" target="_blank">US ICE Sales Down 4.4% YTD; EV &amp; PHEV Off 22.6% — Omdia Flags Inventory Mix Crisis</a></h3>
-          <p class="story-summary">Omdia data through Q1 2026 shows US ICE vehicle sales declining 4.4% year-to-date while EV and PHEV sales have plunged 22.6% — a dramatic reversal driven by elimination of federal EV tax credits and tariff-inflated sticker prices. Traditional OEMs have pulled some EV models from market and retooled plants back to gasoline production. Global light-vehicle sales in March 2026 fell 3.5% to 8.2 million units per GlobalData.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>EV deceleration forces rapid recalibration of dealer inventory mix strategies. AI inventory tools like vAuto need real-time demand signal reweighting for EVs vs. ICE vs. hybrid; OEM partners face incentive structure redesign as electrification loses near-term U.S. momentum.</div>
-          <div class="story-meta"><span>📰 Autovista24 / Omdia / GlobalData</span><span>📅 Apr 27, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.jdsupra.com/legalnews/foley-automotive-update-april-2026/" target="_blank">European OEMs Report $6B Tariff Losses; Foreign Automakers Warn of Model Pullbacks</a></h3>
-          <p class="story-summary">VW, BMW, and Mercedes collectively reported $6 billion in losses from U.S. import tariffs in 2025. Multiple foreign automakers — including Nissan, Hyundai, and Toyota — warned they cannot profitably sell entry-level vehicles under current tariff structures. Cox Automotive's April forecast projects SAAR at 16.1 million despite rising economic uncertainty and declining consumer sentiment. Moody's estimates global automakers face $30B+ operating profit reduction in 2026.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>Entry-level vehicle scarcity reshapes conquest opportunity for dealers. As affordable new cars disappear, used vehicle demand spikes and AI-powered pricing intelligence becomes the differentiator for dealers competing for price-sensitive shoppers migrating from new to used.</div>
-          <div class="story-meta"><span>📰 JD Supra / Cox Automotive</span><span>📅 Apr 6–24, 2026</span></div>
-        </div>
-      </div>
+</div>
+<div class="main-content">
+  <!-- CATEGORY 1: AUTOMOTIVE MARKET -->
+  <div class="section-header cat-market">
+    <div class="section-icon">🚗</div>
+    <span class="section-title">Automotive Market</span>
+    <span class="section-count">3 Stories</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="cards-grid cat-market">
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.reuters.com/business/autos-transportation/ford-raises-profit-outlook-2026/" target="_blank">Ford & GM Raise 2026 Profit Guidance After Supreme Court Tariff Refunds</a></h3>
+      <div class="card-body">Ford expects a $1.3 billion tariff refund following a February Supreme Court ruling that overturned several Trump-era tariff categories. GM forecasts a $500M refund and raised its adjusted EBIT guidance to $13.5B for 2026 — up from prior forecasts — despite projecting $3.5B in remaining tariff costs driven by parts sourcing. Both OEMs beat Q1 earnings estimates. The refund uncertainty remains as Congress could still act to reverse the court ruling.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Tariff volatility continues reshaping OEM production and sourcing decisions, creating downstream inventory mix uncertainty that AI-powered tools like vAuto must navigate in real-time. Refund-driven profit boosts may fund accelerated OEM tech investment in H2 2026.</p></div>
+      <div class="card-footer"><span>📰 Reuters / USA Today / Electrek</span><span>📅 Apr 29–30, 2026</span></div>
     </div>
-    <div class="category-section">
-      <div class="category-header cat-retail"><span class="cat-icon">🏪</span><span class="cat-title">Dealership &amp; Retail Tech</span><span class="cat-count">3 Stories</span></div>
-      <div class="stories">
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.coxautoinc.com/insights/cox-automotive-to-acquire-fullpath/" target="_blank">Cox Acquires Fullpath: AI-Native CDP Enters VinSolutions Ecosystem</a></h3>
-          <p class="story-summary">Cox Automotive announced April 23 a definitive agreement to acquire 100% of Fullpath, an AI-powered Customer Data Platform serving 3,000+ automotive dealers. Fullpath unifies dealer first-party data across CRM, DMS, and marketing history into actionable customer profiles and activates AI-driven campaigns. The acquisition integrates Fullpath alongside VinSolutions, Dealer.com, Autotrader, and KBB — giving dealers unified AI data and marketing infrastructure within the Cox connected retail platform.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>This is Cox's most significant capability investment in years. Fullpath's CDP directly addresses the data fragmentation problem every dealer faces and integrates AI-driven marketing automation natively into the VinSolutions CRM ecosystem — raising the competitive bar for standalone CDP vendors and all CRM incumbents simultaneously.</div>
-          <div class="story-meta"><span>📰 Cox Automotive / PR Newswire</span><span>📅 Apr 23, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://us.dealertrack.com/resources" target="_blank">Dealertrack 2026 Trends: Intelligent Automation Redefining DMS &amp; F&amp;I Workflows</a></h3>
-          <p class="story-summary">Dealertrack published its 2026 automotive retail trends report highlighting intelligent workflow automation as the defining shift in DMS and F&amp;I processes. AI integration into deal structuring, compliance workflows, and lender routing is reducing processing time measurably. Asbury Automotive's DMS consolidation to Dealertrack across 124 franchised stores underscores enterprise-level commitment to unified DMS infrastructure as dealers seek cost reduction and operational efficiency.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>Dealertrack's 2026 roadmap signals that AI-driven automation in DMS and F&amp;I is moving from premium add-on to table-stakes expectation. Vendors serving F&amp;I and back-office technology must integrate AI workflow capabilities or risk losing positioning as dealers consolidate toward unified platforms.</div>
-          <div class="story-meta"><span>📰 Dealertrack / F&amp;I Magazine</span><span>📅 Apr 6–27, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.fortunebusinessinsights.com" target="_blank">Dealership Digital Transformation Market to Reach $33.5B by 2034 as AI Investment Accelerates</a></h3>
-          <p class="story-summary">Fortune Business Insights projects the Dealership Digital Transformation Services market will grow from $16.91 billion in 2026 to $33.47 billion by 2034. Growth is driven by dealer investment in AI-powered inventory management, customer experience, and fixed operations tools. Public dealer groups AutoNation, Lithia, Group 1, and Penske confirmed continued AI and next-gen DMS capex acceleration in their most recent earnings calls, citing technology investment as a key strategic priority.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>A near-doubling of the market in 8 years represents significant tailwind for every automotive technology vendor. Public dealer group capex commitments on earnings calls validate category growth and often trigger mid-market adoption waves — creating significant pipeline opportunity for AI product vendors through Q3 2026.</div>
-          <div class="story-meta"><span>📰 Fortune Business Insights / Mercer Capital</span><span>📅 Apr 6–23, 2026</span></div>
-        </div>
-      </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.coxautoinc.com/insights/" target="_blank">Cox Automotive: April SAAR Forecast at 16.1M Despite Consumer Sentiment Decline</a></h3>
+      <div class="card-body">Cox Automotive projects April 2026 new-vehicle SAAR at 16.1 million units — down from 17.1M in April 2025 — as the year-over-year comparison is distorted by last year's tariff-rush buying surge. Consumer sentiment continues declining under economic uncertainty and Fed rate hold decisions. The Manheim Used Vehicle Value Index held at 213.4 (+0.5%), while Q1 net income for Cox clients showed resilience with fixed ops and F&I records at several public dealer groups including Sonic Automotive (F&I +10% YoY) and Lithia (EPS $7.34 vs. $6.88 forecast).</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Softening new-car SAAR with strong used values creates a bifurcated market dynamic. AI pricing and inventory tools gain urgency as dealers optimize used sourcing margins while navigating new-vehicle volume headwinds. Cox's data infrastructure advantage becomes a direct sales proof point.</p></div>
+      <div class="card-footer"><span>📰 Cox Automotive Insights</span><span>📅 Apr 28–30, 2026</span></div>
     </div>
-    <div class="category-section">
-      <div class="category-header cat-competitor"><span class="cat-icon">🔍</span><span class="cat-title">Competitor Watch</span><span class="cat-count">3 Stories</span></div>
-      <div class="stories">
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://investors.carvana.com/04-29-2026-210512659" target="_blank">Carvana Q1 2026: Record Units &amp; Profit — Targets 3M Annual Units, 13.5% EBITDA</a></h3>
-          <p class="story-summary">Carvana's record Q1 2026 results confirm the digital-native model's efficiency advantage. Adjusted EBITDA of $672 million beats Q1 2025's $488 million by 38%. Long-term targets of 3 million annual retail units and 13.5% EBITDA margin signal Carvana's intent to continue aggressive share capture. New AI-powered reconditioning efficiency tools were announced on the earnings call, and the stock jumped 9-10% on results.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>Carvana's 40% unit growth against a challenging market proves digital-first model durability. Each point of Carvana growth represents share taken from franchised dealers. Pressure on dealers to match online experience, pricing transparency, and trade appraisal UX intensifies with each record quarter.</div>
-          <div class="story-meta"><span>📰 Carvana IR / CNBC / Yahoo Finance</span><span>📅 Apr 29, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.goto.com/blog/drivecentric-integration" target="_blank">DriveCentric + GoTo: AI Communication Platform Integrates into CRM for Unified Dealer CX</a></h3>
-          <p class="story-summary">DriveCentric announced April 23 a direct integration with GoTo, enabling GoTo Connect's AI communication capabilities — calls, texts, and intelligent routing — to operate natively within DriveCentric's Customer Engagement Platform. Simultaneously, DriveCentric expanded its AI leadership with new capabilities announced April 16. The integration allows dealers using GoTo to connect their entire communication stack into DriveCentric's unified engagement layer without switching between systems.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>DriveCentric continues to aggressively build its AI-native communication and CRM ecosystem through partnerships rather than building all capabilities in-house — positioning it as an open platform alternative to closed CRM ecosystems as dealers evaluate their 2026 technology stacks.</div>
-          <div class="story-meta"><span>📰 GoTo / DriveCentric / Auto Remarketing</span><span>📅 Apr 23–27, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.cbtnews.com/nada-show-2026-brian-macdonald-cdk/" target="_blank">CDK Global Launches Built-In Customer Data Platform at NADA 2026</a></h3>
-          <p class="story-summary">CDK Global launched its Customer Data Platform at NADA Show 2026, unifying fragmented customer data from DMS and CRM sources and delivering real-time actionable insights. CDK CEO Brian MacDonald outlined the AI and predictive analytics strategy, directly competing with standalone CDP vendors — including Fullpath (now acquired by Cox) — by baking data unification into CDK's core DMS infrastructure. The platform targets the $40B+ market of dealer data fragmentation.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>CDK's CDP launch and Cox/Fullpath acquisition signal a platform war in dealer data. Both major DMS providers are building AI-native data layers, compressing the window for standalone CDPs. Vendors must differentiate on depth of AI activation rather than just data unification, which is becoming table stakes.</div>
-          <div class="story-meta"><span>📰 CBT News / Business Wire</span><span>📅 Jan 22 / Apr 2026</span></div>
-        </div>
-      </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.autonews.com/manufacturing/gm" target="_blank">EV Deceleration: Non-Tesla EV Share Below 3% Since Nov 2025; OEMs Retool Plants</a></h3>
+      <div class="card-body">S&P Global data from Accelerate West 2026 confirms the non-Tesla EV market share has remained below 3% since November 2025. GM reported $6.6B in EV-related charges in Q1 2026 with EV sales down 19% YoY. Multiple OEMs — including Ford, GM, and Stellantis — have retooled plants back to gasoline production. The elimination of federal EV tax credits combined with tariff-inflated sticker prices has triggered a dramatic demand reversal, with EV and PHEV sales down 22.6% YTD through Q1 per Omdia data.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>EV deceleration forces rapid recalibration of dealer inventory mix strategies. AI inventory tools need real-time demand signal reweighting for EVs vs. ICE vs. hybrid. The non-Tesla EV space below 3% share signals a meaningful strategic pivot period for electrification-focused product roadmaps.</p></div>
+      <div class="card-footer"><span>📰 S&P Global / Automotive News / Omdia</span><span>📅 Apr 27–30, 2026</span></div>
     </div>
-    <div class="category-section">
-      <div class="category-header cat-cox"><span class="cat-icon">🌐</span><span class="cat-title">Cox Automotive Ecosystem</span><span class="cat-count">3 Stories</span></div>
-      <div class="stories">
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.coxautoinc.com/insights/cox-automotive-to-acquire-fullpath/" target="_blank">Cox + Fullpath: Full Context — AI CDP Integrates Across the Entire Cox Stack</a></h3>
-          <p class="story-summary">The Fullpath acquisition gives Cox a complete AI data stack: Fullpath CDP (identity resolution, AI campaigns) + VinSolutions CRM (customer nurture) + Dealer.com (personalized web) + Autotrader/KBB (shopper acquisition). Cox President Steve Rowley called it "the most significant capability investment we've made in years." Fullpath CEO confirmed his platform will have access to Cox's 2.3 billion annual online interactions as AI model fuel, enabling unmatched personalization at dealer scale.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>Cox now has a fully integrated AI retail platform from shopper discovery through purchase and service. The 40,000+ dealer relationship base and 2.3B annual interaction dataset represent an AI training and activation advantage that no standalone platform can replicate — creating durable competitive moat for the combined Cox/Fullpath offering.</div>
-          <div class="story-meta"><span>📰 Cox Automotive</span><span>📅 Apr 23, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.coxautoinc.com/insights/" target="_blank">Cox April Market Package: SAAR 16.1M, MUVVI +0.5%, Manheim Wholesale Prices Elevated</a></h3>
-          <p class="story-summary">Cox Automotive's April market intelligence shows new-car SAAR at 16.1 million (down from 17.1M last April), the Manheim Used Vehicle Value Index increasing to 213.4 (+0.5%), and Q1 2026 industry insights confirming YTD volume softening against last year's tariff-rush baseline. Cox Chief Economist Jeremy Robb presented Q1 MUVVI data live on April 7, noting continued resilience in used vehicle wholesale pricing amid new-car demand cooling.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>Cox's proprietary data infrastructure (Manheim Index, KBB, MUVVI) provides market intelligence no independent dealer tech company can replicate. This data advantage flows directly into vAuto ProfitTime GPS, Manheim Market Report integrations, and KBB Instant Cash Offer — creating measurable ROI proof points in dealer conversations.</div>
-          <div class="story-meta"><span>📰 Cox Automotive Insights</span><span>📅 Apr 17–24, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.coxautoinc.com/insights/" target="_blank">Cox Advances Unified Workflows: Intelligent Vehicle Acquisition + Xtime Mobile Service Expansion</a></h3>
-          <p class="story-summary">Cox announced a breakthrough in inventory sourcing with intelligent vehicle acquisition workflows (January 28) across Manheim and NextGear Capital. Xtime expanded mobile service scheduling with new management reporting and deeper DMS integration. Dealer.com's AI-personalized search results pages are driving measurable VDP engagement improvements for early adopters. Together these create a complete lifecycle platform from wholesale vehicle acquisition through service retention.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>Fixed ops digital scheduling is the highest-margin growth area as dealers offset compressed front-end profits from new-car tariff pressure. The Xtime + intelligent acquisition + Fullpath CDP combination creates a complete lifecycle revenue platform with AI-powered touchpoints at every stage.</div>
-          <div class="story-meta"><span>📰 Cox Automotive</span><span>📅 Jan 28 / Apr 27, 2026</span></div>
-        </div>
-      </div>
+  </div>
+  <!-- CATEGORY 2: DEALERSHIP & RETAIL TECH -->
+  <div class="section-header cat-retail">
+    <div class="section-icon">🏪</div>
+    <span class="section-title">Dealership &amp; Retail Tech</span>
+    <span class="section-count">3 Stories</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="cards-grid cat-retail">
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.aol.com/finance/lithia-lad-q1-2026-ear..." target="_blank">Lithia Motors Q1 2026: EPS $7.34, Beats Forecast — Pinewood AI DMS Cited as Key Growth Driver</a></h3>
+      <div class="card-body">Lithia Motors reported Q1 2026 EPS of $7.34, surpassing the $6.88 forecast, with strong performance in fixed operations and F&I. On the earnings call, Lithia specifically cited Pinewood AI — their DMS and CRM digital platform integrating operational workflows and analytics — as a key enabler. Sonic Automotive also reported franchise gross profit up 5% with fixed operations and F&I setting quarterly records, rising 10% YoY. Smaller dealership groups outperformed national chains at individual store level per The SHOP's KPI reports.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Public dealer group earnings calls are increasingly citing specific AI and DMS platform capabilities as revenue drivers — a shift from general "tech investment" language to measurable outcome attribution. This validation accelerates mid-market adoption and creates clear competitive differentiation narratives for AI vendors.</p></div>
+      <div class="card-footer"><span>📰 Investing.com / AOL Finance / The SHOP</span><span>📅 Apr 28–30, 2026</span></div>
     </div>
-    <div class="category-section">
-      <div class="category-header cat-marketing"><span class="cat-icon">📢</span><span class="cat-title">Dealership Marketing &amp; Advertising</span><span class="cat-count">3 Stories</span></div>
-      <div class="stories">
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.fullpath.com/blog/the-dealership-marketing-playbook-2026/" target="_blank">Fullpath CEO: "First-Party Data is the Moat" — AI Agents Will Run Dealer Marketing in 2026</a></h3>
-          <p class="story-summary">In commentary around the Cox acquisition, Fullpath CEO Aharon Horwitz articulated the 2026 marketing thesis: first-party data unified across CRM, DMS, and web is the foundational competitive moat. Dealers who clean and activate their customer data via AI will outperform those relying on third-party targeting. Horwitz predicted AI agents — not just AI tools — will autonomously handle dealer marketing and sales workflows within 2026, positioning first-party CDP ownership as existential for dealer competitiveness.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>The "AI agent + first-party data" narrative is becoming the dominant frame in automotive martech. GEO (Generative Engine Optimization), CDP activation, and AI-driven campaigns are converging — dealers need platforms that work across traditional SEO, paid media, AND AI search engine answer optimization simultaneously.</div>
-          <div class="story-meta"><span>📰 Fullpath.com / Cox Automotive</span><span>📅 Apr 23, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.prnewswire.com/news-releases/dealerfire-helps-dealerships-turn-online-leads-into-customers/" target="_blank">DealerFire Launches Lead Conversion Suite — Targeting Website-to-CRM Handoff Gap</a></h3>
-          <p class="story-summary">DealerFire, a leading automotive digital marketing solutions provider, announced a new lead conversion suite targeting the gap between website visits and CRM engagement. The platform specializes in custom dealership websites, SEO, and lead generation — and positions the new suite against competitors at the critical handoff between digital marketing and CRM nurture, the highest-friction step in the dealer funnel where most leads are lost.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>The website-to-CRM conversion gap remains one of the highest-value unsolved problems in automotive retail. DealerFire's positioning signals continued investment in AI-powered engagement tools at the top of the funnel. Competitors including Dealer.com and automotive SEO agencies must respond with measurable conversion rate benchmarks.</div>
-          <div class="story-meta"><span>📰 PR Newswire</span><span>📅 Apr 30, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.purecars.com" target="_blank">PureCars 2026 Trends: AI, GEO, First-Party Data &amp; Unified Platforms Define Dealer Marketing</a></h3>
-          <p class="story-summary">PureCars released its 2026 Dealership Marketing Trends report identifying five macro themes: unified marketing platforms, clean first-party data infrastructure, AI-driven customer engagement, Generative Engine Optimization (GEO) for AI-powered search, and Stellantis-certified OEM digital programs. GEO is emerging as a parallel discipline to SEO as car shoppers increasingly discover inventory through ChatGPT, Google AI Mode, and Perplexity instead of traditional search results.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>GEO optimization for automotive is moving from early adopter to competitive necessity as AI reshapes search behavior. Dealers and vendors need content strategies and structured data implementations designed for AI-powered answer engines — creating a new category that existing SEO/SEM platforms are only beginning to address.</div>
-          <div class="story-meta"><span>📰 PureCars / AutoSuccess</span><span>📅 Feb 18 / Apr 2026</span></div>
-        </div>
-      </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://us.dealertrack.com/resources" target="_blank">Dealertrack 2026 Report: AI-Driven F&amp;I Automation Becomes Table Stakes; Asbury Consolidates 124 Stores to Single DMS</a></h3>
+      <div class="card-body">Dealertrack published its 2026 automotive retail trends report highlighting intelligent workflow automation as the defining shift in DMS and F&I processes. AI integration into deal structuring, compliance workflows, and lender routing is measurably reducing processing time. The report coincides with Asbury Automotive's DMS consolidation to Dealertrack across 124 franchised stores — one of the largest single-platform commitments in 2026 — underscoring the enterprise-level move toward unified DMS infrastructure for cost reduction and operational efficiency.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Dealertrack's 2026 roadmap signals that AI-driven F&I automation is moving from premium add-on to table-stakes expectation. Enterprise DMS consolidation deals signal a competitive window for platforms that lead on AI workflow depth, not just data unification.</p></div>
+      <div class="card-footer"><span>📰 Dealertrack / F&amp;I Magazine / Automotive News</span><span>📅 Apr 26–28, 2026</span></div>
     </div>
-    <div class="category-section">
-      <div class="category-header cat-ai"><span class="cat-icon">🤖</span><span class="cat-title">AI &amp; Technology</span><span class="cat-count">3 Stories</span></div>
-      <div class="stories">
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.valeo.com/valeo-and-google-cloud-expand/" target="_blank">Valeo + Google Cloud: Gemini Agentic AI Deployed in Automotive Tier-1 Supply Chain</a></h3>
-          <p class="story-summary">Valeo, a global Tier-1 automotive supplier, announced April 22 an expanded partnership with Google Cloud to boost innovation using Gemini for Workspace and Agentic AI. Valeo has deployed Google's Gemini Enterprise Agent Platform across supply chain and operational workflows — one of the first major automotive suppliers to move agentic AI from pilot to production at enterprise scale. The partnership includes development of AI-powered design and engineering tools across Valeo's global operations.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>The Valeo/Google Cloud announcement signals agentic AI entering production deployment in the automotive supply chain — not just retail tech. Google's Enterprise Agent Platform provides the infrastructure layer on which automotive AI vendors are building next-generation dealer-facing agent workflows, accelerating category maturation.</div>
-          <div class="story-meta"><span>📰 Valeo / Google Cloud</span><span>📅 Apr 22, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://aiagentstore.ai/ai-agent-news/2026-april" target="_blank">Anthropic Captures 40% of Enterprise LLM API Spend in April 2026 — OpenAI Falls to 27%</a></h3>
-          <p class="story-summary">According to AI Agent Store's Daily AI Agent News for April 2026, Anthropic now holds 40% of enterprise LLM API spend while OpenAI has dropped to 27% from its historic 50% share. The shift reflects enterprise preference for Claude models in agentic workflow deployments where reliability, context window depth, and safety controls are critical. The final week of April catalyzed a "historic transition" in enterprise agentic AI deployment per FifthRow's Enterprise Tipping Point report.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>Anthropic market leadership shift has direct implications for automotive AI vendors choosing LLM infrastructure. Claude-powered automotive agents benefit from Anthropic's enterprise capabilities. Vendors still anchored to a single LLM provider face platform risk as enterprise AI consolidation accelerates through Q2 2026.</div>
-          <div class="story-meta"><span>📰 AI Agent Store / FifthRow</span><span>📅 Apr 28–29, 2026</span></div>
-        </div>
-        <div class="story-card">
-          <h3 class="story-title"><a href="https://www.amd.com/en/blogs" target="_blank">IDC: Enterprise AI PC Adoption Accelerates; Gartner Warns 40% of Agentic AI Projects at Risk</a></h3>
-          <p class="story-summary">AMD/IDC research released April 27 shows enterprise AI PC adoption accelerating as organizations prepare for agentic AI workloads requiring local inference. Simultaneously, Gartner issued a warning that 40% of corporate agentic AI projects are at risk of cancellation before end of 2027 — citing unclear ROI, governance challenges, and over-hyped capabilities that fail to deliver measurable business outcomes. VW Group also unveiled an agentic AI roadmap for China at Auto China 2026.</p>
-          <div class="why-matters"><div class="why-matters-label">WHY IT MATTERS</div>Gartner's 40% failure warning is critical for automotive AI vendors: enterprise buyers are growing skeptical of AI promises without measurable dealer-level outcomes. Products must lead with clear ROI metrics — gross per unit improvement, lead-to-close rate lift, service absorption gains — rather than capability positioning alone to survive 2026-2027 budget scrutiny.</div>
-          <div class="story-meta"><span>📰 AMD / IDC / Gartner / VW Group</span><span>📅 Apr 27–29, 2026</span></div>
-        </div>
-      </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://dealershipnews.com/vehic..." target="_blank">Fixed Ops Hits Record Gross Contribution; Warranty Growth + AI Mystery Shopper Tools Emerge</a></h3>
+      <div class="card-body">Fixed operations reached a new high in dealership gross contribution per Car Dealership Guy reporting, with Warrcloud CEO Jim Roche confirming warranty growth and front-end margin compression are driving the surge. The SHOP KPI data shows service absorption rising as dealers offset new-car tariff pressure. Separately, Jason Girdner announced an AI Mystery Shopper platform — an automated system to shop dealerships, track contact methods, and deliver report cards on lead response processes — signaling a new category of AI-powered dealership performance management.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Fixed ops digital scheduling and service retention are the highest-margin growth levers for dealers under front-end margin pressure. AI tools measuring and improving service lane performance (Xtime, Warrcloud, AI mystery shoppers) have strong ROI narratives for 2026 dealer budgets.</p></div>
+      <div class="card-footer"><span>📰 Car Dealership Guy / Warrcloud / Dealership News</span><span>📅 Apr 29–30, 2026</span></div>
+    </div>
+  </div>
+  <!-- CATEGORY 3: COMPETITOR WATCH -->
+  <div class="section-header cat-competitor">
+    <div class="section-icon">🎯</div>
+    <span class="section-title">Competitor Watch</span>
+    <span class="section-count">3 Stories</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="cards-grid cat-competitor">
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://investors.carvana.com/04-29-2026-210512659" target="_blank">Carvana Q1 2026 All-Time Records: 187K Units, $6.43B Revenue, 40% YoY Growth — Targets 3M Annual Units</a></h3>
+      <div class="card-body">Carvana reported record-breaking Q1 2026 results: 187,393 retail units (+40% YoY), $6.432B total revenue (+52%), and $405M net income (6.3% margin) — all quarterly all-time records. Adjusted EBITDA reached $672M for the ninth consecutive quarter of profitability improvement. The company announced new AI-powered reconditioning efficiency tools on the earnings call, and stock jumped 9-10% on results. Long-term targets: 3 million annual retail units and 13.5% EBITDA margin — signaling aggressive share-capture intent continues.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Carvana's 40% unit growth against a challenging market proves digital-first model durability. Each point of Carvana growth represents share taken from franchised dealers. Pressure on dealers to match online experience, pricing transparency, and trade appraisal UX intensifies with every record quarter. The Cox/Fullpath acquisition is the direct competitive response.</p></div>
+      <div class="card-footer"><span>📰 Carvana IR / CNBC / Yahoo Finance</span><span>📅 Apr 29, 2026</span></div>
+    </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.cbtNEWS.com/nada-show-2026-brian-macdonald-cdk/" target="_blank">CDK Global Launches Built-In CDP at NADA 2026; CEO Outlines AI &amp; Predictive Analytics Strategy</a></h3>
+      <div class="card-body">CDK Global launched its Customer Data Platform at NADA Show 2026, unifying fragmented customer data from DMS and CRM sources and delivering real-time actionable insights. CDK CEO Brian MacDonald outlined the AI and predictive analytics strategy, directly competing with standalone CDP vendors — including Fullpath (now acquired by Cox) — by baking data unification into CDK's core DMS infrastructure. CDK's approach targets the $40B+ market of dealer data fragmentation by positioning the CDP as native to the DMS rather than a bolt-on layer.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>CDK's CDP launch and Cox/Fullpath acquisition signal a platform war in dealer data. Both major DMS providers are building AI-native data layers simultaneously — compressing the window for standalone CDPs. Vendors must differentiate on depth of AI activation rather than data unification alone, which is becoming table stakes.</p></div>
+      <div class="card-footer"><span>📰 CBT News / Business Wire</span><span>📅 Jan 22 / Apr 2026</span></div>
+    </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.globenewswire.com/2026/04/07/Car-Bu..." target="_blank">CarGurus Q1 2026: Used Car Demand +24%; Fuel-Efficient Surge Reshapes Shopper Behavior</a></h3>
+      <div class="card-body">CarGurus released its Q1 2026 Quarterly Review showing "nearly new" used car sales jumping 24%, with rising demand for fuel-efficient vehicles reshaping the automotive market. The report coincides with CarGurus marking its 20-year anniversary and announcing next-chapter AI-powered innovation. CarGurus is also responding to the aftermath of the ShinyHunters data breach (February 2026, 1.7M records claimed), rebuilding dealer and consumer trust. The platform maintains the largest audience, inventory, and dealer network in the space.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>CarGurus' 24% surge in used sales and fuel-efficiency demand signals shifts that should directly inform AI inventory recommendation and digital retailing strategies. The data breach response also serves as a reminder of cybersecurity risk exposure across all automotive data platforms.</p></div>
+      <div class="card-footer"><span>📰 CarGurus / GlobeNewswire / Stock Titan</span><span>📅 Apr 7, 2026</span></div>
+    </div>
+  </div>
+  <!-- CATEGORY 4: COX AUTOMOTIVE ECOSYSTEM -->
+  <div class="section-header cat-cox">
+    <div class="section-icon">🌐</div>
+    <span class="section-title">Cox Automotive Ecosystem</span>
+    <span class="section-count">3 Stories</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="cards-grid cat-cox">
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.coxautoinc.com/insights/cox-automotive-to-acquire-fullpath/" target="_blank">Cox + Fullpath Deep Dive: AI CDP Integrates Across Full VinSolutions, Dealer.com, Autotrader, KBB Stack</a></h3>
+      <div class="card-body">The Fullpath acquisition gives Cox a complete AI data stack: Fullpath CDP (identity resolution, AI campaigns) + VinSolutions CRM (customer nurture) + Dealer.com (personalized web) + Autotrader/KBB (shopper acquisition). Cox President Steve Rowley confirmed Fullpath CEO will have access to 2.3 billion annual online interactions as AI model fuel — enabling unmatched personalization at dealer scale. The deal closes pending standard regulatory review. Fullpath currently serves 3,000+ dealers with AI-driven marketing automation and first-party data activation.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Cox now has a fully integrated AI retail platform from shopper discovery through purchase and service. The 40,000+ dealer relationship base and 2.3B annual interaction dataset represents an AI training and activation advantage that no standalone platform can replicate — creating durable competitive moat for the combined Cox/Fullpath offering.</p></div>
+      <div class="card-footer"><span>📰 Cox Automotive</span><span>📅 Apr 23, 2026</span></div>
+    </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.coxautoinc.com/insights/" target="_blank">Cox April Market Intelligence: SAAR 16.1M, Manheim MUVVI +0.5%, Central Dispatch App Expands</a></h3>
+      <div class="card-body">Cox Automotive's April market intelligence package shows SAAR at 16.1M, the Manheim Used Vehicle Value Index at 213.4 (+0.5%), and Q1 2026 industry insights confirming YTD volume softening. Chief Economist Jonathan Smoke presented Q1 MUVVI data noting continued resilience in used vehicle wholesale pricing. Separately, Central Dispatch expanded its carrier mobile app with end-to-end logistics enhancements — building on its evolution from a listing marketplace to an intelligent transport management system. Cox also released insights on the Fed's May meeting implications for auto financing.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Cox's proprietary data infrastructure (Manheim Index, KBB, MUVVI) provides market intelligence no independent dealer tech company can replicate. This data advantage flows directly into vAuto ProfitTime GPS, Manheim Market Report integrations, and KBB Instant Cash Offer — creating measurable ROI proof points in dealer conversations.</p></div>
+      <div class="card-footer"><span>📰 Cox Automotive Insights</span><span>📅 Apr 28–30, 2026</span></div>
+    </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.coxautoinc.com/insights/" target="_blank">VinSolutions + vAuto Inventory Integration Highlighted; Xtime Mobile Service Expansion Continues</a></h3>
+      <div class="card-body">Cox showcased real-time integrations between vAuto Provision and VinSolutions Connect CRM, enabling dealers to move vehicles from wholesale acquisition to buyer targeting seamlessly. Xtime expanded mobile service scheduling with new management reporting and deeper DMS integration. Dealer.com's AI-personalized search results pages are driving measurable VDP engagement improvements for early adopters. Together these create a complete lifecycle platform from wholesale vehicle acquisition through service retention — with Fullpath CDP now poised to unify the data layer across all touchpoints.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Fixed ops digital scheduling and AI-personalized inventory tools are the highest-margin growth levers for dealers under front-end pressure. The Xtime + intelligent acquisition + Fullpath CDP combination creates a complete lifecycle revenue platform with AI-powered touchpoints at every stage — a compelling unified narrative for dealer conversations in Q2/Q3 2026.</p></div>
+      <div class="card-footer"><span>📰 Cox Automotive / VinSolutions</span><span>📅 Apr 22–27, 2026</span></div>
+    </div>
+  </div>
+  <!-- CATEGORY 5: DEALERSHIP MARKETING -->
+  <div class="section-header cat-marketing">
+    <div class="section-icon">📣</div>
+    <span class="section-title">Dealership Marketing &amp; Advertising</span>
+    <span class="section-count">3 Stories</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="cards-grid cat-marketing">
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.fullpath.com/blog/" target="_blank">Fullpath CEO: "First-Party Data Is the Moat" — AI Agents Will Autonomously Run Dealer Marketing in 2026</a></h3>
+      <div class="card-body">In commentary around the Cox acquisition, Fullpath CEO Ahaaron Horwitz articulated the 2026 marketing thesis: first-party data unified across CRM, DMS, and web is the foundational competitive moat. Dealers who clean and activate their customer data via AI will outperform those relying on third-party targeting. Horwitz predicted AI agents — not just AI tools — will autonomously handle dealer marketing and sales workflows within 2026, positioning first-party CDP ownership as existential for dealer competitiveness as third-party cookies continue dying.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>The "AI agent + first-party data" narrative is becoming the dominant frame in automotive martech. GEO (Generative Engine Optimization), CDP activation, and AI-driven campaigns are converging — dealers need platforms that work across traditional SEO, paid media, AND AI search engine answer optimization simultaneously.</p></div>
+      <div class="card-footer"><span>📰 Fullpath.com / Cox Automotive</span><span>📅 Apr 23, 2026</span></div>
+    </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.prnewswire.com/news-releases/dealerfire-helps-dealerships-turn-online-leads-into-customers/" target="_blank">DealerFire Launches Lead Conversion Suite Targeting Website-to-CRM Handoff Gap</a></h3>
+      <div class="card-body">DealerFire announced a new lead conversion suite targeting the highest-friction step in the dealer funnel — the handoff between website visits and CRM engagement where most leads are lost. The platform specializes in custom dealership websites, SEO, and lead generation, and positions the new suite against competitors at the critical conversion point. Separately, Wikimotive's April 2026 newsletter and Digital Downforce both emphasized that AI visibility (GEO) and content quality have become more important than ever in 2026 digital marketing for dealerships, with AI-powered search reshaping discovery patterns.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>The website-to-CRM conversion gap remains one of the highest-value unsolved problems in automotive retail. DealerFire's positioning signals continued investment in AI-powered engagement tools at the top of funnel. Competitors including Dealer.com and automotive SEO agencies must respond with measurable conversion rate benchmarks.</p></div>
+      <div class="card-footer"><span>📰 PR Newswire / Wikimotive / Digital Downforce</span><span>📅 Apr 28–30, 2026</span></div>
+    </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.purecars.com" target="_blank">PureCars 2026 Trends: GEO, First-Party Data &amp; Unified Platforms Define Dealer Marketing; Catalyst IQ Hires to Lead Tier 3</a></h3>
+      <div class="card-body">PureCars released its 2026 Dealership Marketing Trends report identifying five macro themes: unified marketing platforms, clean first-party data infrastructure, AI-driven customer engagement, Generative Engine Optimization (GEO) for AI-powered search, and Stellantis-certified OEM digital programs. GEO is emerging as a parallel discipline to SEO as car shoppers increasingly discover inventory through ChatGPT, Google AI Mode, and Perplexity. Simultaneously, Catalyst IQ hired Michael Lein to lead Tier 3 sales — with MarTech Edge noting automotive retail marketing is rapidly evolving toward AI-powered local advertising.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>GEO optimization for automotive is moving from early adopter to competitive necessity as AI reshapes search behavior. Dealers and vendors need content strategies and structured data implementations designed for AI-powered answer engines — creating a new category that existing SEO/SEM platforms are only beginning to address.</p></div>
+      <div class="card-footer"><span>📰 PureCars / AutoSuccess / MarTech Edge</span><span>📅 Apr 28–30, 2026</span></div>
+    </div>
+  </div>
+  <!-- CATEGORY 6: AI & TECHNOLOGY -->
+  <div class="section-header cat-ai">
+    <div class="section-icon">🤖</div>
+    <span class="section-title">AI &amp; Technology</span>
+    <span class="section-count">3 Stories</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="cards-grid cat-ai">
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://cloud.google.com/blog/topics/google-cloud-next" target="_blank">Google Cloud Next 2026: Agentic Data Cloud, 8th-Gen TPUs, and Gemini Enterprise Agent Platform Announced</a></h3>
+      <div class="card-body">Google Cloud Next 2026 (April 22–24) revealed the Agentic Data Cloud — a new AI-native architecture allowing data to be utilized at the speed and scale required by agentic AI workflows. Google unveiled 8th-generation TPUs built for longer context windows, multi-step reasoning, and responsiveness at scale. The Gemini Enterprise Agent Platform was spotlighted with new agentic control capabilities for enterprise workflows, with Valeo (Tier-1 automotive supplier) announced as an early adopter deploying Gemini agents across supply chain and engineering operations. AWS also announced managed agent services in partnership with OpenAI at the same time.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Google's Agentic Data Cloud and Valeo deployment signal that production-scale agentic AI has arrived in automotive supply chain — not just retail tech. The Gemini Enterprise Agent Platform is the infrastructure layer on which automotive AI vendors will build next-generation dealer-facing agent workflows. Vendor infrastructure decisions made now will define competitive positioning through 2027.</p></div>
+      <div class="card-footer"><span>📰 Google Cloud / Valeo / TechRadar</span><span>📅 Apr 22–27, 2026</span></div>
+    </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://www.amd.com/en/blogs" target="_blank">IDC: Enterprise AI PC Adoption Accelerates; Gartner Warns 40% of Agentic AI Projects at Cancellation Risk</a></h3>
+      <div class="card-body">AMD/IDC research released April 27 shows enterprise AI PC adoption accelerating as organizations prepare for agentic AI workloads requiring local inference. Simultaneously, Gartner issued a warning that 40% of corporate agentic AI projects are at risk of cancellation before end of 2027 — citing unclear ROI, governance challenges, and over-hyped capabilities that fail to deliver measurable business outcomes. VW Group also unveiled an agentic AI roadmap for China at Auto China 2026, while IBM reported $4.5B in gains from AI deployment across nearly 400 enterprise workflows.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Gartner's 40% failure warning is critical for automotive AI vendors: enterprise buyers are growing skeptical of AI promises without measurable dealer-level outcomes. Products must lead with clear ROI metrics — gross per unit improvement, lead-to-close rate lift, service absorption gains — rather than capability positioning alone to survive 2026-2027 budget scrutiny.</p></div>
+      <div class="card-footer"><span>📰 AMD / IDC / Gartner / IBM</span><span>📅 Apr 27–30, 2026</span></div>
+    </div>
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3><a href="https://newsroom.ibm.com/2026-05-01-Private-Equit..." target="_blank">IBM Reports $4.5B AI ROI; Standard Intelligence Raises $75M; Enterprise Agentic AI Reaches "Tipping Point"</a></h3>
+      <div class="card-body">IBM published research showing $4.5B in gains from analyzing nearly 400 workflows and deploying AI in 100+, citing Private Equity as a major driver of enterprise AI ROI validation. Standard Intelligence, a six-person AI startup, raised $75M April 30 to develop efficient AI for enterprise deployment. FifthRow's Enterprise Tipping Point report (April 28-29) declared the final week of April 2026 catalyzed "a historic transition" in enterprise agentic AI deployment — with Anthropic capturing 40% of enterprise LLM API spend (up from historic levels) while OpenAI fell to 27%. JuliaHub raised $65M Series B and launched Dyad 3.0 for AI-driven engineering platforms.</div>
+      <div class="card-why"><div class="label">Why It Matters</div><p>Anthropic's market leadership shift in enterprise LLM spend has direct implications for automotive AI vendors choosing infrastructure. Enterprise AI consolidation is accelerating in Q2 2026 — creating both opportunity for vendors with strong ROI proof and risk for those without measurable dealer-level outcome data. The IBM $4.5B figure provides the ROI benchmark language automotive AI vendors should adopt in sales conversations.</p></div>
+      <div class="card-footer"><span>📰 IBM Newsroom / AI Insider / FifthRow</span><span>📅 Apr 30 — May 1, 2026</span></div>
     </div>
   </div>
 </div>
 <div class="footer">
-  <div class="footer-date">📅 April 30, 2026 — Automotive AI Intelligence Briefing</div>
-  <div class="footer-credit">Curated by AI Research Desk | Auto-deployed via GitHub Pages</div>
-  <div class="footer-sources">Sources: Cox Automotive, Carvana IR, CNBC, JD Power, Autovista24, GoTo/DriveCentric, CDK Global, PureCars, DealerFire, Valeo/Google Cloud, AMD/IDC, Gartner, AI Agent Store, FifthRow, JD Supra, Fortune Business Insights</div>
+  <div class="footer-inner">
+    <p>📅 May 1, 2026 — Automotive AI Intelligence Briefing</p>
+    <p>Curated by <span class="brand">AI Research Desk</span> | Auto-deployed via GitHub Pages</p>
+    <p>Sources: Cox Automotive, Carvana IR, Reuters, Ford/GM Earnings, CarGurus, CDK Global, PureCars, DealerFire, Google Cloud, Gartner, IBM, Fullpath, Lithia/Sonic Earnings, Manheim, S&amp;P Global</p>
+  </div>
 </div>
 </body>
 </html>
