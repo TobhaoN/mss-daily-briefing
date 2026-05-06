@@ -1,329 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automotive AI Daily Briefing — May 4, 2026</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Segoe UI',-apple-system,sans-serif;background:#0f1117;color:#e2e8f0;min-height:100vh}
-    .header{background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);padding:40px 32px 32px;border-bottom:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden}
-    .header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 70% 50%,rgba(99,102,241,.15) 0%,transparent 70%)}
-    .header-inner{max-width:1200px;margin:0 auto;position:relative}
-    .header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.4);border-radius:20px;padding:6px 16px;margin-bottom:16px;font-size:12px;color:#a5b4fc;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
-    .pulse{display:inline-block;width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.2)}}
-    .header h1{font-size:32px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:8px}
-    .header-sub{font-size:15px;color:#94a3b8}
-    .header-meta{display:flex;gap:24px;margin-top:20px}
-    .header-meta span{font-size:13px;color:#64748b;display:flex;align-items:center;gap:6px}
-    .top-story-section{max-width:1200px;margin:32px auto;padding:0 32px}
-    .top-story{background:linear-gradient(135deg,rgba(239,68,68,.12) 0%,rgba(220,38,38,.06) 100%);border:1px solid rgba(239,68,68,.3);border-radius:16px;padding:28px 32px;position:relative;overflow:hidden}
-    .top-story::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(90deg,#ef4444,#f97316,#ef4444)}
-    .top-story-label{font-size:11px;font-weight:700;color:#f87171;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-    .top-story h2{font-size:22px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:12px}
-    .top-story h2 a{color:#fff;text-decoration:none}
-    .top-story h2 a:hover{color:#f87171}
-    .top-story p{font-size:14px;color:#94a3b8;line-height:1.7;margin-bottom:12px}
-    .why-matters{background:rgba(239,68,68,.08);border-left:3px solid #ef4444;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:12px}
-    .why-matters strong{color:#fca5a5;font-size:12px;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px}
-    .why-matters p{font-size:13px;color:#cbd5e1;margin:0}
-    .main{max-width:1200px;margin:0 auto;padding:0 32px 48px}
-    .section{margin-bottom:40px}
-    .section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06)}
-    .section-dot{width:12px;height:12px;border-radius:3px}
-    .section-header h2{font-size:18px;font-weight:700;color:#e2e8f0}
-    .section-header span{font-size:12px;color:#475569;margin-left:auto}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
-    .card{background:#161b27;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
-    .card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-2px)}
-    .card-cat{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;padding:3px 8px;border-radius:4px;display:inline-block}
-    .card h3{font-size:15px;font-weight:600;color:#e2e8f0;line-height:1.4;margin-bottom:10px}
-    .card h3 a{color:#e2e8f0;text-decoration:none}
-    .card h3 a:hover{color:#818cf8}
-    .card p{font-size:13px;color:#64748b;line-height:1.65;margin-bottom:12px}
-    .card-why{background:rgba(99,102,241,.06);border-left:2px solid #6366f1;padding:8px 12px;border-radius:0 6px 6px 0;margin-top:8px}
-    .card-why strong{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#818cf8;display:block;margin-bottom:3px}
-    .card-why p{font-size:12px;color:#94a3b8;margin:0;line-height:1.5}
-    .card-meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.04)}
-    .card-source{font-size:11px;color:#475569;font-weight:500}
-    .card-date{font-size:11px;color:#334155}
-    .cat-market{background:rgba(59,130,246,.15);color:#60a5fa}
-    .cat-retail{background:rgba(16,185,129,.15);color:#34d399}
-    .cat-competitor{background:rgba(239,68,68,.15);color:#f87171}
-    .cat-cox{background:rgba(168,85,247,.15);color:#c084fc}
-    .cat-marketing{background:rgba(245,158,11,.15);color:#fbbf24}
-    .cat-ai{background:rgba(236,72,153,.15);color:#f472b6}
-    .dark-toggle{position:fixed;top:20px;right:20px;background:#1e2535;border:1px solid rgba(255,255,255,.1);border-radius:50%;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;z-index:100;transition:background .2s}
-    .dark-toggle:hover{background:#2d3748}
-    .footer{text-align:center;padding:32px;color:#334155;font-size:13px;border-top:1px solid rgba(255,255,255,.04)}
-    .footer a{color:#475569;text-decoration:none}
-    </style>
-  </head>
-  <body>
-    <button class="dark-toggle" onclick="document.body.classList.toggle('light')" title="Toggle theme">🌙</button>button>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Automotive AI Daily Briefing — May 6, 2026</title>
+<style>
+  :root {
+    --bg: #f6f7fb;
+    --fg: #14171f;
+    --muted: #5b6271;
+    --card: #ffffff;
+    --card-border: #e3e6ee;
+    --header-from: #0b1f3a;
+    --header-to: #1a3a6c;
+    --header-fg: #ffffff;
+    --accent: #d97706;
+    --link: #1a3a6c;
+    --link-hover: #d97706;
+    --shadow: 0 1px 2px rgba(20,23,31,0.06), 0 4px 14px rgba(20,23,31,0.06);
+    --cat-market: #2563eb;
+    --cat-retail: #0891b2;
+    --cat-comp: #b91c1c;
+    --cat-cox: #7c3aed;
+    --cat-mkt: #16a34a;
+    --cat-ai: #db2777;
+  }
+  html[data-theme="dark"] {
+    --bg: #0d1018;
+    --fg: #e7e9ef;
+    --muted: #9aa1b1;
+    --card: #161a25;
+    --card-border: #262b3a;
+    --header-from: #050a14;
+    --header-to: #122244;
+    --header-fg: #ffffff;
+    --accent: #fbbf24;
+    --link: #93c5fd;
+    --link-hover: #fbbf24;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 6px 20px rgba(0,0,0,0.45);
+    --cat-market: #60a5fa;
+    --cat-retail: #22d3ee;
+    --cat-comp: #f87171;
+    --cat-cox: #c084fc;
+    --cat-mkt: #4ade80;
+    --cat-ai: #f472b6;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  header.site {
+    background: linear-gradient(135deg, var(--header-from), var(--header-to));
+    color: var(--header-fg);
+    padding: 28px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .brand h1 { margin: 0; font-size: 1.6rem; letter-spacing: 0.2px; }
+  .brand .date { margin-top: 4px; font-size: 0.95rem; opacity: 0.85; }
+  .theme-toggle {
+    background: rgba(255,255,255,0.12);
+    color: var(--header-fg);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.15s ease;
+  }
+  .theme-toggle:hover { background: rgba(255,255,255,0.2); }
 
-    <header class="header">
-      <div class="header-inner">
-        <div class="header-badge"><span class="pulse"></span>span>Live Intelligence Feed</div>div>
-        <h1>🚗 Automotive AI Daily Briefing</h1>
-      <div class="header-sub">May 4, 2026 — Curated for Automotive Product &amp; AI Strategy Teams</div>div>
-      <div class="header-meta">
-      <span>📰 6 Categories</span>
-      <span>📊 18 Stories</span>
-      <span>🔄 Updated Today</span>
-      </div>div>
-      </div>div>
-    </header>header>
-  
-  <div class="top-story-section">
-  <div class="top-story">
-  <div class="top-story-label">🔥 Top Story of the Day</div>div>
-  <h2><a href="https://www.autonews.com/newsletters/daily" target="_blank">Trump Threatens 25% EU Auto Tariff — European Stocks Fall, Trade Talks Stall</a>a></h2>
-  <p>President Trump threatened to raise tariffs on EU-imported cars and trucks to 25% — up from the current 15% — accusing European nations of violating a September 2025 trade framework. European auto stocks fell sharply on the news, with BMW, Volkswagen, and Stellantis absorbing significant losses. The EU Commission said it will "keep its options open" and is preparing a counter-response. If enacted next week as threatened, this would bring EU vehicle tariffs back to the March 2025 universal rate, adding $5,000–$10,000 to average EU import prices.</p>
-  <div class="why-matters">
-  <strong>⚡ Why It Matters for Automotive AI/Product Strategy</strong>
-  <p>A return to 25% EU tariffs will accelerate U.S. dealer inventory volatility, compress margins on imported European models, and spike consumer demand for domestic alternatives. AI-powered pricing tools like vAuto and VinSolutions must dynamically adapt to rapid MSRP and inventory shifts. This also increases urgency for predictive inventory sourcing tools and tariff-impact scenario modeling.</p>
-  </div>div>
-  </div>div>
-  </div>div>
-  
-  <main class="main">
-  
-  <section class="section">
-  <div class="section-header">
-  <div class="section-dot" style="background:#3b82f6"></div>div>
-  <h2>🏭 Automotive Market</h2>
-  <span>4 stories</span>
-  </div>div>
+  main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
+
+  .top-story {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-left: 6px solid var(--accent);
+    border-radius: 14px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 32px;
+  }
+  .top-story .label {
+    display: inline-block;
+    background: var(--accent);
+    color: #1a1300;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+  .top-story h2 { margin: 0 0 8px; font-size: 1.4rem; line-height: 1.3; }
+  .top-story h2 a { color: var(--link); text-decoration: none; }
+  .top-story h2 a:hover { color: var(--link-hover); text-decoration: underline; }
+  .top-story p.summary { margin: 6px 0 10px; }
+  .top-story p.why { margin: 6px 0 10px; color: var(--muted); }
+  .top-story .meta { font-size: 0.85rem; color: var(--muted); }
+
+  .section-title {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+    margin: 28px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--card-border);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-top: 4px solid var(--cat-market);
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column;
+  }
+  .card.cat-market { border-top-color: var(--cat-market); }
+  .card.cat-retail { border-top-color: var(--cat-retail); }
+  .card.cat-comp   { border-top-color: var(--cat-comp); }
+  .card.cat-cox    { border-top-color: var(--cat-cox); }
+  .card.cat-mkt    { border-top-color: var(--cat-mkt); }
+  .card.cat-ai     { border-top-color: var(--cat-ai); }
+
+  .card .cat-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .card.cat-market .cat-tag { background: var(--cat-market); }
+  .card.cat-retail .cat-tag { background: var(--cat-retail); }
+  .card.cat-comp   .cat-tag { background: var(--cat-comp); }
+  .card.cat-cox    .cat-tag { background: var(--cat-cox); }
+  .card.cat-mkt    .cat-tag { background: var(--cat-mkt); }
+  .card.cat-ai     .cat-tag { background: var(--cat-ai); }
+  html[data-theme="dark"] .card .cat-tag { color: #0d1018; }
+
+  .card h3 { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.35; }
+  .card h3 a { color: var(--link); text-decoration: none; }
+  .card h3 a:hover { color: var(--link-hover); text-decoration: underline; }
+  .card .summary { margin: 4px 0 8px; font-size: 0.95rem; }
+  .card .why { margin: 4px 0 10px; font-size: 0.92rem; color: var(--muted); }
+  .card .why strong { color: var(--fg); }
+  .card .meta { margin-top: auto; font-size: 0.8rem; color: var(--muted); }
+
+  footer.site {
+    border-top: 1px solid var(--card-border);
+    padding: 18px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  @media (max-width: 600px) {
+    .top-story h2 { font-size: 1.2rem; }
+    main { padding: 20px 16px 36px; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="header-inner">
+    <div class="brand">
+      <h1>Automotive AI Daily Briefing</h1>
+      <div class="date">Tuesday, May 6, 2026</div>
+    </div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">Switch to dark</button>
+  </div>
+</header>
+
+<main>
+  <section class="top-story" aria-label="Top story">
+    <span class="label">Top Story</span>
+    <h2><a href="https://www.automotive-fleet.com/news/cox-automotive-acquires-alliance-inspection-management" target="_blank" rel="noopener noreferrer">Cox Automotive Acquires Alliance Inspection Management</a></h2>
+    <p class="summary">Cox Automotive has taken full ownership of Alliance Inspection Management (AiM), a long-standing wholesale inspection partner of Manheim. The deal consolidates inspection capacity inside the Cox stack and is positioned to support a broader range of auction transaction types.</p>
+    <p class="why"><strong>Why it matters:</strong> Vertical control over inspection data tightens the loop between Manheim, vAuto, and Dealer.com pricing/merchandising signals — a foundation that makes vehicle-condition AI features more defensible against vendors that have to license third-party inspection feeds.</p>
+    <div class="meta">Source: Automotive Fleet · May 5, 2026</div>
+  </section>
+
+  <h2 class="section-title">Automotive Market</h2>
   <div class="grid">
-  
-  <div class="card">
-  <span class="card-cat cat-market">Automotive Market</span>
-  <h3><a href="https://www.autonews.com/newsletters/daily" target="_blank">EU Automakers Could Lose Billions from 25% U.S. Tariff Threat</a>a></h3>
-  <p>President Trump threatened to raise EU car tariffs to 25% from 15%, citing violations of the September 2025 trade agreement. European automakers face billions in potential losses as the deal — which had already lowered tariffs from 27.5% — now hangs in the balance pending EU ratification.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Direct pricing pressure on EU-origin vehicles at U.S. dealerships; inventory planning tools need real-time tariff scenario modeling to help dealers proactively adjust sourcing and pricing.</p></div>div>
-  <div class="card-meta"><span class="card-source">Automotive News</span><span class="card-date">May 4, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-market">Automotive Market</span>
-  <h3><a href="https://www.cbtnews.com/gas-prices-fueling-new-interest" target="_blank">Used EV Searches Soar as Tariffs Drive Shoppers to Pre-Owned Market</a>a></h3>
-  <p>Cars.com reports that used EV searches have spiked sharply as consumers respond to tariff-driven new vehicle price increases. Gas price volatility and the elimination of the $7,500 EV tax credit are reshaping buyer behavior, with shoppers increasingly weighing used EVs as value alternatives.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Used EV demand surge creates opportunity for AI-powered used car merchandising, valuation tools (Manheim/KBB), and digital retailing platforms that can surface pre-owned EV inventory to in-market shoppers.</p></div>div>
-  <div class="card-meta"><span class="card-source">CBT News</span><span class="card-date">May 4, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-market">Automotive Market</span>
-  <h3><a href="https://www.heygotrade.com/blog" target="_blank">GM Reports $6.6B EV Charges, Ford Earnings Signal Tariff Pressure on Margins</a>a></h3>
-  <p>GM disclosed $6.6 billion in EV-related charges for Q1 2026 with EV sales down 19% year-over-year. Meanwhile Ford's earnings reflected mounting tariff costs squeezing pickup truck margins — historically the company's profit engine. Both OEMs are signaling price adjustments and production re-routing.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>OEM earnings instability creates downstream inventory uncertainty for dealers. AI-powered appraisal and pricing tools will be critical to navigate rapid trade-in value swings and new vehicle MSRP adjustments across popular truck/SUV segments.</p></div>div>
-  <div class="card-meta"><span class="card-source">GoTrade / Automotive News</span><span class="card-date">Apr 29–May 2, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-market">Automotive Market</span>
-  <h3><a href="https://www.coxautoinc.com/insights" target="_blank">Cox Automotive: April New-Vehicle Sales Pace Hits 16.1M SAAR Despite Headwinds</a>a></h3>
-  <p>Cox Automotive forecasts April new-vehicle sales pace at 16.1 million SAAR, even as consumer sentiment declines and economic uncertainty grows. The market remains resilient but is showing signs of softening, particularly in EV and import segments impacted by tariff anxiety and policy uncertainty.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>A 16M+ SAAR market remains healthy for dealer technology investment — but the mix shift toward domestic trucks/SUVs and away from EVs/imports demands agile AI-powered inventory sourcing and pricing capabilities.</p></div>div>
-  <div class="card-meta"><span class="card-source">Cox Automotive</span><span class="card-date">Apr 24, 2026</span></div>div>
-  </div>div>
-  
-  </div>div>
-  </section>section>
-  
-  <section class="section">
-  <div class="section-header">
-  <div class="section-dot" style="background:#10b981"></div>div>
-  <h2>🏪 Dealership &amp; Retail Tech</h2>
-  <span>3 stories</span>
-  </div>div>
+    <article class="card cat-market">
+      <span class="cat-tag">Automotive Market</span>
+      <h3><a href="https://www.automotiveworld.com/news/eu-races-to-finalise-trade-deal-as-trump-lifts-auto-tariff-to-25/" target="_blank" rel="noopener noreferrer">EU races to finalise trade deal as Trump lifts auto tariff to 25%</a></h3>
+      <p class="summary">President Trump moved to raise the U.S. tariff on European-built vehicles to 25%, taking effect the following week, while exempting US-made vehicles from European OEMs. Brussels is accelerating negotiations to limit damage to exporters.</p>
+      <p class="why"><strong>Why it matters:</strong> A persistent 25% wall on EU-built models reshapes inventory mix and pricing models that vAuto, KBB, and Manheim AI tools train on; expect short-term valuation noise in European nameplates.</p>
+      <div class="meta">Source: Automotive World · May 5, 2026</div>
+    </article>
+
+    <article class="card cat-market">
+      <span class="cat-tag">Automotive Market</span>
+      <h3><a href="https://www.cbtnews.com/dealers-adapt-to-april-auto-sales/" target="_blank" rel="noopener noreferrer">Dealers adapt as market pressures reshape April auto sales</a></h3>
+      <p class="summary">NADA's April Market Beat shows new-vehicle sales fell 7.1% year-over-year as tariffs and elevated rates weigh on demand. Hybrid demand is the standout bright spot, while inventory and affordability remain headwinds.</p>
+      <p class="why"><strong>Why it matters:</strong> A softer SAAR plus a hybrid-led mix shift raises the value of inventory-velocity and pricing-AI tools that can re-rank stock and adjust market-day-supply assumptions in near-real-time.</p>
+      <div class="meta">Source: CBT News · May 6, 2026</div>
+    </article>
+
+    <article class="card cat-market">
+      <span class="cat-tag">Automotive Market</span>
+      <h3><a href="https://www.forbes.com/sites/neilwinton/2026/05/05/speedier-european-auto-deliberations-might-avoid-tariff-hike/" target="_blank" rel="noopener noreferrer">Speedier European auto deliberations might avoid tariff hike</a></h3>
+      <p class="summary">European EV adoption is continuing to climb but is still trailing prior industry forecasts, as the bloc balances trade pressure with its own EV transition timeline. Analysts argue the speed of EU response will determine whether the new U.S. tariff regime sticks.</p>
+      <p class="why"><strong>Why it matters:</strong> EV trajectory shapes the used-EV remarketing curve that Manheim and KBB price; slower-than-expected adoption keeps residual-value AI conservative on EVs through the back half of the year.</p>
+      <div class="meta">Source: Forbes · May 5, 2026</div>
+    </article>
+  </div>
+
+  <h2 class="section-title">Dealership &amp; Retail Tech</h2>
   <div class="grid">
-  
-  <div class="card">
-  <span class="card-cat cat-retail">Retail Tech</span>
-  <h3><a href="https://www.cdkglobal.com/media-center/cdk-launches-customer-data-platform" target="_blank">CDK Global Launches Built-In Customer Data Platform at NADA 2026</a>a></h3>
-  <p>CDK Global unveiled a native Customer Data Platform (CDP) at NADA 2026, giving dealers seamless access to unified shopper data across their DMS, CRM, and digital touchpoints. The CDP enables personalized follow-up, AI-driven segmentation, and first-party data activation without third-party dependency — a direct response to the death of the third-party cookie.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>CDK's CDP is a direct competitive response to Cox's unified data stack. Dealers choosing CDK now get built-in 1P data activation — raising the bar for competing CRM/DMS players to demonstrate integrated data intelligence.</p></div>div>
-  <div class="card-meta"><span class="card-source">CDK Global</span><span class="card-date">Jan 22, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-retail">Retail Tech</span>
-  <h3><a href="https://xtime.com/resources" target="_blank">Xtime Highlights Top Fixed Ops Trends: AI, Seamless Payments, Digital MPI</a>a></h3>
-  <p>Xtime's post-NADA 2026 recap highlights three dealership fixed ops imperatives: AI-powered service lane workflow automation, contactless/digital payment options, and mobile multi-point inspection (MPI) tools that increase transparency and RO value. The report notes that dealers using digital service tools are seeing 18–22% higher CSI scores.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Fixed ops is the dealership's most reliable revenue stream. AI-driven service tools from Cox (Xtime) are winning on outcomes — higher RO values, CSI, and retention — making this a strong retention and upsell narrative for the platform.</p></div>div>
-  <div class="card-meta"><span class="card-source">Xtime / Cox Automotive</span><span class="card-date">2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-retail">Retail Tech</span>
-  <h3><a href="https://digitaldealer.com/news/2026-could-be-the-first-ai-operations-year" target="_blank">2026: The First "AI Operations Year" for U.S. Car Dealerships</a>a></h3>
-  <p>A report from automotive AI company Spyne predicts that 2026 will be the first year U.S. dealerships operationalize AI at scale — moving from pilots to production. Key adoption areas include AI photo/video merchandising, automated lead response, predictive inventory pricing, and AI-assisted F&amp;I compliance workflows.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>The market is maturing past experimentation. Dealers adopting AI at operational scale expect measurable ROI — creating both opportunity and pressure for automotive AI vendors to demonstrate clear performance metrics and integration depth.</p></div>div>
-  <div class="card-meta"><span class="card-source">Digital Dealer / Spyne</span><span class="card-date">Dec 2025</span></div>div>
-  </div>div>
-  
-  </div>div>
-  </section>section>
-  
-  <section class="section">
-  <div class="section-header">
-  <div class="section-dot" style="background:#ef4444"></div>div>
-  <h2>🎯 Competitor Watch</h2>
-  <span>3 stories</span>
-  </div>div>
+    <article class="card cat-retail">
+      <span class="cat-tag">Dealership &amp; Retail Tech</span>
+      <h3><a href="https://www.cdkglobal.com/insights/visiting-1-store-key-factor-buyer-satisfaction" target="_blank" rel="noopener noreferrer">Visiting one store a key factor in buyer satisfaction</a></h3>
+      <p class="summary">CDK research finds that the share of buyers who completed the purchase after visiting just one store rose to 41% in 2025, up from 34% in 2024. Single-store buyers also score higher on Ease of Purchase than those who shop multiple stores.</p>
+      <p class="why"><strong>Why it matters:</strong> If single-store conversion is the dominant satisfaction driver, the ROI of digital-retailing and AI-assisted shopper-handoff tooling shifts toward closing the first visit, not just generating more leads.</p>
+      <div class="meta">Source: CDK Global · May 6, 2026</div>
+    </article>
+
+    <article class="card cat-retail">
+      <span class="cat-tag">Dealership &amp; Retail Tech</span>
+      <h3><a href="https://www.cdkglobal.com/insights/dealership-loyalty-programs-what-service-customers-really-want-0" target="_blank" rel="noopener noreferrer">Dealership loyalty programs: what service customers really want</a></h3>
+      <p class="summary">CDK data shows oil changes (76%) and tire service (39%) are the top reasons customers visit the service lane, and discounts on those core services are the most universally valued loyalty incentive. Retention programs tied to those visits over-index on engagement.</p>
+      <p class="why"><strong>Why it matters:</strong> Fixed-ops loyalty is a high-frequency, first-party data engine; AI service-marketing and Xtime-style scheduling tools that target oil/tire cadence will outperform broad-brush retention plays.</p>
+      <div class="meta">Source: CDK Global · May 4, 2026</div>
+    </article>
+  </div>
+
+  <h2 class="section-title">Competitor Watch</h2>
   <div class="grid">
-  
-  <div class="card">
-  <span class="card-cat cat-competitor">Competitor</span>
-  <h3><a href="https://investors.carvana.com/04-29-2026-210512659" target="_blank">Carvana Posts Record Q1 2026: 187K Units, $405M Net Income, 40% YoY Growth</a>a></h3>
-  <p>Carvana reported record Q1 2026 results: 187,393 retail units (up 40% YoY), revenue of $6.43B, net income of $405M (6.3% margin), and adjusted EBITDA of $672M — the ninth consecutive quarter of record EBITDA. The company says it remains on track for "significant growth" in both units and EBITDA for full-year 2026, with no signs of tariff-driven slowdown in used vehicle demand.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Carvana's continued dominance in used vehicle e-commerce puts pressure on franchise dealers to accelerate digital retailing capabilities. Their unit economics ($405M net income on 187K units) signal that online-first used car retail is a sustainable, highly profitable model — validating the digital-first playbook.</p></div>div>
-  <div class="card-meta"><span class="card-source">Carvana Investor Relations / CNBC</span><span class="card-date">Apr 29, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-competitor">Competitor</span>
-  <h3><a href="https://www.prnewswire.com/news-releases/truecar-announces-organizational-realignment" target="_blank">TrueCar Announces Organizational Realignment to Accelerate AI Strategy</a>a></h3>
-  <p>TrueCar announced a significant organizational realignment to focus on AI-powered automotive shopping experiences. The restructuring is designed to accelerate product development around personalized car shopping, dealer lead quality, and AI-driven market analytics — as the company faces pressure from both CarGurus and OEM-direct digital channels.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>TrueCar's restructuring signals a defensive AI pivot as it loses ground to CarGurus and Carvana. Watch for new AI-driven lead quality and shopper intent scoring products that could directly compete with automotive AI solutions in the CRM/lead management space.</p></div>div>
-  <div class="card-meta"><span class="card-source">PR Newswire</span><span class="card-date">Feb 24, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-competitor">Competitor</span>
-  <h3><a href="https://news.dealershipguy.com/hackers-claim-theft-records-cargurus" target="_blank">Hackers Claim Theft of 1.7M Records from CarGurus in Data Breach</a>a></h3>
-  <p>Threat actors (ShinyHunters) claimed responsibility for stealing 1.7 million user records from CarGurus, including contact information and browsing data. CarGurus confirmed it is investigating the incident. The breach follows CarGurus' 20th anniversary announcement and its aggressive AI-powered product expansion roadmap, creating significant brand and trust risk at a critical growth moment.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Data breaches at major automotive marketplaces underscore the critical importance of dealer-side data security and first-party data hygiene. Dealers relying on third-party lead sources face rising data security risks — reinforcing the value proposition of owned, first-party customer data platforms.</p></div>div>
-  <div class="card-meta"><span class="card-source">Car Dealership Guy News</span><span class="card-date">Feb 2026</span></div>div>
-  </div>div>
-  
-  </div>div>
-  </section>section>
-  
-  <section class="section">
-  <div class="section-header">
-  <div class="section-dot" style="background:#a855f7"></div>div>
-  <h2>🔵 Cox Automotive Ecosystem</h2>
-  <span>3 stories</span>
-  </div>div>
+    <article class="card cat-comp">
+      <span class="cat-tag">Competitor Watch</span>
+      <h3><a href="https://news.dealershipguy.com/p/ransomware-attacks-surge-in-auto-industry-raising-stakes-for-dealers-says-halcyon" target="_blank" rel="noopener noreferrer">Ransomware attacks surge in auto industry, raising stakes for dealers</a></h3>
+      <p class="summary">A new Halcyon report cited by Car Dealership Guy News documents a sharp uptick in ransomware activity targeting auto suppliers and dealer technology providers. The piece revisits the 2024 CDK Global attack, which idled roughly 15,000 dealerships for two weeks at an estimated $1B impact. <em>(Opinion-leaning trade source.)</em></p>
+      <p class="why"><strong>Why it matters:</strong> Concentration risk in DMS/CRM stacks is now a board-level concern; AI vendors that touch dealer data will increasingly need SOC 2 / ISO posture and offline-failover stories to win procurement.</p>
+      <div class="meta">Source: Car Dealership Guy News · May 6, 2026</div>
+    </article>
+  </div>
+
+  <h2 class="section-title">Cox Automotive Ecosystem</h2>
   <div class="grid">
-  
-  <div class="card">
-  <span class="card-cat cat-cox">Cox Automotive</span>
-  <h3><a href="https://www.coxautoinc.com/insights/unified-intelligent-workflow" target="_blank">Cox Automotive Launches Unified Intelligent Workflow Across Xtime, VinSolutions &amp; vAuto</a>a></h3>
-  <p>Cox Automotive announced a breakthrough in connected dealer workflows — a unified AI-powered acquisition engine that links Xtime service history, VinSolutions CRM customer data, and vAuto inventory intelligence into a single intelligent workflow. This enables seamless appraisal-to-acquisition loops using real service visit data, dramatically improving used vehicle sourcing accuracy.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>The Unified Intelligent Workflow is Cox's most significant platform integration in years — creating a defensible competitive moat by connecting first-party service, CRM, and inventory data. This is the core differentiator story: no competitor has this depth of connected automotive data across the full dealer workflow.</p></div>div>
-  <div class="card-meta"><span class="card-source">Cox Automotive</span><span class="card-date">Jan 28, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-cox">Cox Automotive</span>
-  <h3><a href="https://www.coxautoinc.com/insights/workflow-transformation-agentic-ai" target="_blank">Cox Automotive: Agentic AI Transforming Dealer Workflows in Ways "Not Possible 18 Months Ago"</a>a></h3>
-  <p>Cox Automotive's AI team published a deep-dive on how agentic AI is transforming dealership operations — specifically around automated lead nurturing, service scheduling optimization, and intelligent trade-in capture. The piece highlights VinSolutions' AI Virtual Assistant and Autotrader's AI shopper concierge as production examples of agentic AI delivering measurable ROI.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Cox is positioning agentic AI as the defining capability of 2026 dealership operations. Specific ROI metrics (faster follow-up, higher appointment show rates) are critical for sales enablement and competitive positioning against CDK and independent AI players.</p></div>div>
-  <div class="card-meta"><span class="card-source">Cox Automotive</span><span class="card-date">Jan 14, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-cox">Cox Automotive</span>
-  <h3><a href="https://www.coxautoinc.com/insights/q1-2026-manheim-used-vehicle-value-index" target="_blank">Manheim Q1 2026 Used Vehicle Value Index: Market Tightening Amid Tariff Pressure</a>a></h3>
-  <p>The Manheim Q1 2026 Used Vehicle Value Index call (April 7) revealed tightening used vehicle supply as consumers hold onto existing vehicles longer amid economic uncertainty. Cox Automotive Chief Economist Jeremy Robb noted that while values remain elevated, the market may see supply pressure ease in H2 2026 as lease returns accelerate.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Manheim's UVVI directly impacts vAuto pricing recommendations and dealer acquisition strategy. Understanding Q1 market dynamics helps position AI-powered sourcing and pricing tools as essential for navigating a supply-constrained, tariff-pressured used vehicle environment.</p></div>div>
-  <div class="card-meta"><span class="card-source">Cox Automotive / Manheim</span><span class="card-date">Apr 7, 2026</span></div>div>
-  </div>div>
-  
-  </div>div>
-  </section>section>
-  
-  <section class="section">
-  <div class="section-header">
-  <div class="section-dot" style="background:#f59e0b"></div>div>
-  <h2>📣 Dealership Marketing &amp; Advertising</h2>
-  <span>3 stories</span>
-  </div>div>
+    <article class="card cat-cox">
+      <span class="cat-tag">Cox Automotive</span>
+      <h3><a href="https://www.coxautoinc.com/insights/the-auto-market-brief-service-revenue-is-up-why-are-dealers-losing-share/" target="_blank" rel="noopener noreferrer">Service revenue is up. Why are dealers losing share?</a></h3>
+      <p class="summary">Cox Automotive's market and customer research team flags that franchise dealer service revenue continues to rise, yet the share of total service work captured by dealers is slipping versus independents and quick-lubes. Convenience and pricing transparency are cited as the gap.</p>
+      <p class="why"><strong>Why it matters:</strong> The opportunity for AI-driven service-lane scheduling, dynamic pricing, and proactive owner outreach (Xtime, Dealer.com) is sized by exactly this gap — closing convenience friction is the lever.</p>
+      <div class="meta">Source: Cox Automotive · May 6, 2026</div>
+    </article>
+
+    <article class="card cat-cox">
+      <span class="cat-tag">Cox Automotive</span>
+      <h3><a href="https://www.autonews.com/retail/an-cox-ai-shapes-car-buying-journey-0506/" target="_blank" rel="noopener noreferrer">How AI is changing car-shopping satisfaction</a></h3>
+      <p class="summary">Drawing on the Cox Automotive Car Buyer Journey Study, Automotive News reports rising adoption of AI tools among car shoppers, with younger buyers furthest along. Shoppers who use AI report higher satisfaction at multiple journey stages.</p>
+      <p class="why"><strong>Why it matters:</strong> First-party evidence that buyer-side AI is now a satisfaction driver strengthens the case for dealer-side conversational AI, VIN-level recommendations, and AI-assisted F&amp;I; the gap between AI-equipped and non-AI dealers will start to show in CSI.</p>
+      <div class="meta">Source: Automotive News · May 6, 2026</div>
+    </article>
+
+    <article class="card cat-cox">
+      <span class="cat-tag">Cox Automotive</span>
+      <h3><a href="https://news.dealershipguy.com/p/new-vehicle-sales-dive-in-april" target="_blank" rel="noopener noreferrer">New-vehicle sales dive in April; Cox cuts SAAR estimate</a></h3>
+      <p class="summary">In an updated estimate on May 5, Cox Automotive lowered its seasonally adjusted annual rate to roughly 15.9 million units, reflecting a sharper-than-expected April pullback. Tariff uncertainty and affordability are cited as the primary drags.</p>
+      <p class="why"><strong>Why it matters:</strong> A sub-16M SAAR re-prices wholesale supply assumptions inside Manheim and vAuto; expect tighter recommendations on stocking depth and longer dwell-time triggers in inventory AI.</p>
+      <div class="meta">Source: Car Dealership Guy News (citing Cox Automotive) · May 6, 2026</div>
+    </article>
+  </div>
+
+  <h2 class="section-title">Dealership Marketing &amp; Advertising</h2>
   <div class="grid">
-  
-  <div class="card">
-  <span class="card-cat cat-marketing">Marketing</span>
-  <h3><a href="https://www.dealer.com/resources/automotive-digital-marketing-trends-2026" target="_blank">Dealer.com: GEO and AI Personalization Are the Defining Automotive Marketing Shifts of 2026</a>a></h3>
-  <p>Dealer.com's 2026 automotive digital marketing trends report identifies Generative Engine Optimization (GEO) and AI-driven personalization as the two most important shifts for dealer websites. As AI-powered search (Gemini, ChatGPT) reshapes how consumers discover dealerships, traditional SEO is giving way to Answer Engine Optimization (AEO) and structured content strategies.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>GEO/AEO represents a platform shift that will determine whether Dealer.com websites surface in AI search results. This is both a product roadmap priority and a dealer education opportunity — dealers who adapt will capture AI-referred traffic; those who don't will lose visibility.</p></div>div>
-  <div class="card-meta"><span class="card-source">Dealer.com / Cox Automotive</span><span class="card-date">Jan 28, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-marketing">Marketing</span>
-  <h3><a href="https://speedwaymedia.com/2026/01/26/how-digital-marketing-services-help-car-dealers-grow" target="_blank">First-Party Data Now the Cornerstone of Automotive Digital Marketing as Third-Party Cookies Sunset</a>a></h3>
-  <p>With third-party cookie deprecation now fully in effect, automotive digital marketing agencies are pivoting dealers to first-party data strategies. Successful dealers in 2026 are building customer data platforms, leveraging AI for personalized journey mapping, and using owned channels (email, SMS, push) to replace cookie-based retargeting at scale.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>The 1P data shift directly validates Cox Automotive's integrated data platform strategy. VinSolutions CRM as the hub of first-party customer data — connected to Dealer.com website behavior and Autotrader shopping signals — becomes the essential infrastructure for modern dealer marketing.</p></div>div>
-  <div class="card-meta"><span class="card-source">SpeedwayMedia / Industry</span><span class="card-date">Jan 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-marketing">Marketing</span>
-  <h3><a href="https://www.dealereprocess.com/blog-dealer-eprocess-2026-google-premier-partner" target="_blank">Dealer eProcess Named Google Premier Partner 2026; AI Ad Optimization Takes Center Stage</a>a></h3>
-  <p>Dealer eProcess earned Google Premier Partner status for 2026, recognizing its AI-driven automotive advertising performance. The agency is leading dealers into Performance Max campaigns, AI-optimized budget allocation, and conversion-focused landing page strategies — with automotive AI ad spend expected to grow 35% in 2026 as dealers shift away from traditional display advertising.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Google's Performance Max and AI bidding tools are reshaping the automotive paid media landscape. Dealer.com and PureCars need to demonstrate measurable AI ad performance advantages that justify premium pricing against agencies leveraging Google's own AI optimization tools.</p></div>div>
-  <div class="card-meta"><span class="card-source">Dealer eProcess</span><span class="card-date">Feb 25, 2026</span></div>div>
-  </div>div>
-  
-  </div>div>
-  </section>section>
-  
-  <section class="section">
-  <div class="section-header">
-  <div class="section-dot" style="background:#ec4899"></div>div>
-  <h2>🤖 AI &amp; Technology</h2>
-  <span>4 stories</span>
-  </div>div>
+    <article class="card cat-mkt">
+      <span class="cat-tag">Marketing &amp; Advertising</span>
+      <h3><a href="https://www.theverge.com/tech/924993/google-ai-search-mode-overviews-update-reddit-links" target="_blank" rel="noopener noreferrer">Google's AI search summaries will now quote Reddit</a></h3>
+      <p class="summary">Google is updating AI Search to make it easier for users to surface and trust answers drawn from sources they already recognize, including Reddit. The change tilts AI Overview citations toward forum and community content.</p>
+      <p class="why"><strong>Why it matters:</strong> Dealer SEO/GEO strategies that lean only on owned content will lose surface area inside AI Overviews; investing in earned mentions on community sources (and structured FAQ content) becomes a practical AI-search hedge.</p>
+      <div class="meta">Source: The Verge · May 6, 2026</div>
+    </article>
+
+    <article class="card cat-mkt">
+      <span class="cat-tag">Marketing &amp; Advertising</span>
+      <h3><a href="https://digiday.com/media-buying/cpc-pain-is-real-one-year-on-googles-ai-max-has-pushed-up-search-budgets-and-costs/" target="_blank" rel="noopener noreferrer">One year in, Google's AI Max has pushed up search budgets and costs</a></h3>
+      <p class="summary">Digiday reports that a year after rollout, Google's AI Max ad product is correlating with higher search budgets and CPC pressure for advertisers. A new "AI Brief" feature lets buyers steer campaigns by describing audience and messaging instead of managing keyword lists. <em>(Source not on internal trusted list.)</em></p>
+      <p class="why"><strong>Why it matters:</strong> Tier-3 dealer paid search is exposed to the same CPC inflation; agency partners and dealer marketing tools will need first-party-data activation to defend efficiency as keyword control erodes.</p>
+      <div class="meta">Source: Digiday · May 5, 2026</div>
+    </article>
+  </div>
+
+  <h2 class="section-title">AI &amp; Technology</h2>
   <div class="grid">
-  
-  <div class="card">
-  <span class="card-cat cat-ai">AI &amp; Tech</span>
-  <h3><a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank">Anthropic Releases Claude Opus 4.7 — Notable Gains in Advanced Reasoning and Software Engineering</a>a></h3>
-  <p>Anthropic released Claude Opus 4.7, a notable improvement over Opus 4.6 in advanced software engineering, multi-step reasoning, and agentic task completion. The model is now generally available via API, with improved context utilization and reduced hallucination rates in complex workflow automation — directly relevant to automotive dealership AI applications.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>More capable frontier models directly elevate what's possible in automotive AI products — from more accurate vehicle descriptions and lead scoring to more sophisticated agentic workflows for service scheduling and trade-in capture. Claude Opus 4.7 represents the new baseline for enterprise-grade automotive AI applications.</p></div>div>
-  <div class="card-meta"><span class="card-source">Anthropic</span><span class="card-date">Apr 16, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-ai">AI &amp; Tech</span>
-  <h3><a href="https://www.digitalapplied.com/blog/state-of-agentic-ai-q2-2026" target="_blank">State of Agentic AI Q2 2026: Frontier Model Releases Compress Quality Gaps to Weeks</a>a></h3>
-  <p>Digital Applied's quarterly agentic AI report finds that Q2 2026 is the quarter where agentic AI moved "from headline to line-item" in enterprise budgets. Three frontier model releases compressed capability gaps between top LLMs to weeks rather than months, while MCP (Model Context Protocol) server adoption accelerated across enterprise platforms, enabling deeper tool integration.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>The commoditization of LLM capabilities means automotive AI differentiation increasingly lies in domain-specific data, integration depth, and workflow automation — not raw model capability. This validates the strategy of building deeply integrated, data-rich automotive AI products rather than competing on model performance alone.</p></div>div>
-  <div class="card-meta"><span class="card-source">Digital Applied</span><span class="card-date">May 2, 2026</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-ai">AI &amp; Tech</span>
-  <h3><a href="https://investors.cerence.com/press-releases/cerence-agentic-ai-llm" target="_blank">Cerence AI Showcases Agentic AI and LLM-Powered Agents for Vehicle Owners and Dealerships</a>a></h3>
-  <p>Cerence AI announced a new suite of AI agents designed for both in-vehicle experiences and dealership operations — including an AI service scheduling agent that interacts with dealer DMS systems and a vehicle owner companion AI for proactive maintenance reminders. The company is expanding from in-car AI to the broader "extended automotive ecosystem."</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Cerence's expansion into dealership AI agents represents a new competitive vector — OEM-side AI players moving into the dealer-facing technology space traditionally owned by DMS/CRM vendors. This signals convergence between in-vehicle AI and dealership operations platforms.</p></div>div>
-  <div class="card-meta"><span class="card-source">Cerence AI</span><span class="card-date">Dec 2025</span></div>div>
-  </div>div>
-  
-  <div class="card">
-  <span class="card-cat cat-ai">AI &amp; Tech</span>
-  <h3><a href="https://press.airstreet.com/state-of-ai-may-2026" target="_blank">State of AI May 2026: Gemini 3 Launch Imminent, DeepSeek V4 Cuts Enterprise AI Costs 85%</a>a></h3>
-  <p>Air Street Press's May 2026 State of AI newsletter reports that Google's Gemini 3 launch is imminent, promising multimodal capabilities that could reshape AI search and automotive digital discovery. Meanwhile, DeepSeek V4 — available at 85% lower cost than GPT-5.5 — is creating pricing pressure across enterprise AI deployments and forcing incumbent providers to accelerate cost reduction.</p>
-  <div class="card-why"><strong>Why It Matters</strong><p>Gemini 3's multimodal search capabilities may reshape how consumers discover and research vehicles online — disrupting traditional automotive SEO/SEM entirely. DeepSeek V4's cost structure creates both opportunity (cheaper AI inference) and competitive pressure (lower barriers for new entrants into automotive AI).</p></div>div>
-  <div class="card-meta"><span class="card-sourc">Air Street Press</span><span class="card-date">May 4, 2026</span></div>div>
-  </div>div>
-  
-  </div>div>
-  </section>section>
-  
-  </main>main>
-  
-  <footer class="footer">
-  <p>📅 May 4, 2026 &nbsp;|&nbsp; Curated by AI Research Desk &nbsp;|&nbsp; <a href="https://tobhaon.github.io/mss-daily-briefing/">tobhaon.github.io/mss-daily-briefing</a>a></p>
-  </footer>footer>
-  
-  </body>
-</html>tml></p></p></strong></strong></p></span></span></h1>
-  </body>
-  </style></title>
-  </head>
+    <article class="card cat-ai">
+      <span class="cat-tag">AI &amp; Technology</span>
+      <h3><a href="https://www.businessinsider.com/google-ai-agent-openclaw-remy-gemini-assistant-2026-5" target="_blank" rel="noopener noreferrer">Google is building a Gemini AI agent that takes actions on your behalf</a></h3>
+      <p class="summary">Business Insider reports Google is developing a new Gemini "personal agent" capable of executing multi-step tasks for users, in what the outlet frames as Google's response to OpenAI's agent push. The product is still pre-release and details remain limited.</p>
+      <p class="why"><strong>Why it matters:</strong> Consumer-grade shopping agents will start arriving at dealer websites; readiness for agent traffic (clean structured inventory, predictable forms, machine-readable pricing) becomes a near-term retail-tech requirement.</p>
+      <div class="meta">Source: Business Insider · May 5, 2026</div>
+    </article>
+
+    <article class="card cat-ai">
+      <span class="cat-tag">AI &amp; Technology</span>
+      <h3><a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/" target="_blank" rel="noopener noreferrer">Google's April 2026 AI updates: Gemini Enterprise Agent Platform</a></h3>
+      <p class="summary">Google's April recap introduces the Gemini Enterprise Agent Platform, which lets organizations build, deploy, and govern autonomous agents that can run multi-step business processes. The post also rolls up other April Gemini and Workspace AI updates.</p>
+      <p class="why"><strong>Why it matters:</strong> Enterprise agent platforms from the hyperscalers will commoditize the build layer; differentiation for automotive AI moves toward proprietary data (VIN, transaction, service history) and dealer-specific guardrails.</p>
+      <div class="meta">Source: Google · May 4, 2026</div>
+    </article>
+  </div>
+</main>
+
+<footer class="site">
+  <div>May 6, 2026 · Curated by AI Research Desk</div>
+</footer>
+
+<script>
+  (function () {
+    var KEY = "mssBriefingTheme";
+    var root = document.documentElement;
+    var btn = document.getElementById("themeToggle");
+
+    function apply(theme) {
+      if (theme === "dark") {
+        root.setAttribute("data-theme", "dark");
+        btn.textContent = "Switch to light";
+      } else {
+        root.setAttribute("data-theme", "light");
+        btn.textContent = "Switch to dark";
+      }
+    }
+
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    var initial;
+    if (stored === "dark" || stored === "light") {
+      initial = stored;
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      initial = "dark";
+    } else {
+      initial = "light";
+    }
+    apply(initial);
+
+    btn.addEventListener("click", function () {
+      var current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      var next = current === "dark" ? "light" : "dark";
+      apply(next);
+      try { localStorage.setItem(KEY, next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
