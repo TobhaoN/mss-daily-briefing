@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Automotive AI Daily Briefing — May 6, 2026</title>
+<title>Automotive AI Daily Briefing — May 7, 2026</title>
 <style>
   :root {
     --bg: #f6f7fb;
@@ -23,340 +23,258 @@
     --cat-comp: #b91c1c;
     --cat-cox: #7c3aed;
     --cat-mkt: #16a34a;
-    --cat-ai: #db2777;
+    --cat-ai: #d97706;
   }
   html[data-theme="dark"] {
-    --bg: #0d1018;
-    --fg: #e7e9ef;
-    --muted: #9aa1b1;
-    --card: #161a25;
-    --card-border: #262b3a;
-    --header-from: #050a14;
-    --header-to: #122244;
-    --header-fg: #ffffff;
-    --accent: #fbbf24;
+    --bg: #0b0d12;
+    --fg: #e6e8ee;
+    --muted: #9aa3b2;
+    --card: #151922;
+    --card-border: #242a36;
+    --header-from: #050912;
+    --header-to: #0f1d36;
+    --header-fg: #f5f7fb;
+    --accent: #f59e0b;
     --link: #93c5fd;
-    --link-hover: #fbbf24;
-    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 6px 20px rgba(0,0,0,0.45);
-    --cat-market: #60a5fa;
-    --cat-retail: #22d3ee;
-    --cat-comp: #f87171;
-    --cat-cox: #c084fc;
-    --cat-mkt: #4ade80;
-    --cat-ai: #f472b6;
+    --link-hover: #f59e0b;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 4px 14px rgba(0,0,0,0.4);
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
   body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background: var(--bg);
     color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
   }
-  header.site {
+  header {
     background: linear-gradient(135deg, var(--header-from), var(--header-to));
     color: var(--header-fg);
-    padding: 28px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 36px 24px 28px;
+    position: relative;
   }
-  .header-inner {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 16px; flex-wrap: wrap;
-  }
-  .brand h1 { margin: 0; font-size: 1.6rem; letter-spacing: 0.2px; }
-  .brand .date { margin-top: 4px; font-size: 0.95rem; opacity: 0.85; }
+  header .wrap { max-width: 1200px; margin: 0 auto; }
+  header h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -0.01em; }
+  header .date { margin: 0; opacity: 0.85; font-size: 15px; }
   .theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 24px;
     background: rgba(255,255,255,0.12);
     color: var(--header-fg);
     border: 1px solid rgba(255,255,255,0.25);
     border-radius: 999px;
-    padding: 8px 14px;
+    padding: 6px 14px;
+    font-size: 13px;
     cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.15s ease;
   }
-  .theme-toggle:hover { background: rgba(255,255,255,0.2); }
-
-  main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
-
+  .theme-toggle:hover { background: rgba(255,255,255,0.22); }
+  main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 60px; }
   .top-story {
     background: var(--card);
     border: 1px solid var(--card-border);
-    border-left: 6px solid var(--accent);
-    border-radius: 14px;
-    padding: 22px 24px;
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 28px;
     box-shadow: var(--shadow);
-    margin-bottom: 32px;
   }
   .top-story .label {
-    display: inline-block;
-    background: var(--accent);
-    color: #1a1300;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
     font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 999px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
-  .top-story h2 { margin: 0 0 8px; font-size: 1.4rem; line-height: 1.3; }
-  .top-story h2 a { color: var(--link); text-decoration: none; }
-  .top-story h2 a:hover { color: var(--link-hover); text-decoration: underline; }
-  .top-story p.summary { margin: 6px 0 10px; }
-  .top-story p.why { margin: 6px 0 10px; color: var(--muted); }
-  .top-story .meta { font-size: 0.85rem; color: var(--muted); }
-
-  .section-title {
-    font-size: 0.95rem;
+  .top-story h2 { margin: 0 0 8px; font-size: 20px; }
+  .top-story h2 a { color: var(--fg); text-decoration: none; }
+  .top-story h2 a:hover { color: var(--link-hover); }
+  .top-story p { margin: 6px 0; color: var(--fg); }
+  .top-story .meta { color: var(--muted); font-size: 13px; }
+  .category {
+    margin-top: 32px;
+  }
+  .category h3 {
+    font-size: 13px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--muted);
-    margin: 28px 0 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px dashed var(--card-border);
+    margin: 0 0 14px;
+    padding-left: 10px;
+    border-left: 4px solid var(--cat-color, var(--accent));
+    color: var(--fg);
   }
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 16px;
   }
   .card {
     background: var(--card);
     border: 1px solid var(--card-border);
-    border-top: 4px solid var(--cat-market);
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 16px 18px;
     box-shadow: var(--shadow);
-    display: flex; flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
-  .card.cat-market { border-top-color: var(--cat-market); }
-  .card.cat-retail { border-top-color: var(--cat-retail); }
-  .card.cat-comp   { border-top-color: var(--cat-comp); }
-  .card.cat-cox    { border-top-color: var(--cat-cox); }
-  .card.cat-mkt    { border-top-color: var(--cat-mkt); }
-  .card.cat-ai     { border-top-color: var(--cat-ai); }
-
-  .card .cat-tag {
-    display: inline-block;
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 999px;
-    margin-bottom: 8px;
-    color: #fff;
-  }
-  .card.cat-market .cat-tag { background: var(--cat-market); }
-  .card.cat-retail .cat-tag { background: var(--cat-retail); }
-  .card.cat-comp   .cat-tag { background: var(--cat-comp); }
-  .card.cat-cox    .cat-tag { background: var(--cat-cox); }
-  .card.cat-mkt    .cat-tag { background: var(--cat-mkt); }
-  .card.cat-ai     .cat-tag { background: var(--cat-ai); }
-  html[data-theme="dark"] .card .cat-tag { color: #0d1018; }
-
-  .card h3 { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.35; }
-  .card h3 a { color: var(--link); text-decoration: none; }
-  .card h3 a:hover { color: var(--link-hover); text-decoration: underline; }
-  .card .summary { margin: 4px 0 8px; font-size: 0.95rem; }
-  .card .why { margin: 4px 0 10px; font-size: 0.92rem; color: var(--muted); }
-  .card .why strong { color: var(--fg); }
-  .card .meta { margin-top: auto; font-size: 0.8rem; color: var(--muted); }
-
-  footer.site {
+  .card h4 { margin: 0 0 8px; font-size: 16px; line-height: 1.35; }
+  .card h4 a { color: var(--fg); text-decoration: none; }
+  .card h4 a:hover { color: var(--link-hover); }
+  .card p { margin: 6px 0; font-size: 14px; }
+  .card .why { color: var(--muted); font-size: 13px; font-style: italic; }
+  .card .meta { margin-top: auto; padding-top: 10px; color: var(--muted); font-size: 12px; }
+  .cat-market   { --cat-color: var(--cat-market); }
+  .cat-retail   { --cat-color: var(--cat-retail); }
+  .cat-comp     { --cat-color: var(--cat-comp); }
+  .cat-cox      { --cat-color: var(--cat-cox); }
+  .cat-mkt      { --cat-color: var(--cat-mkt); }
+  .cat-ai       { --cat-color: var(--cat-ai); }
+  footer {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 18px 24px 24px;
     border-top: 1px solid var(--card-border);
-    padding: 18px 24px;
-    text-align: center;
     color: var(--muted);
-    font-size: 0.85rem;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
   }
   @media (max-width: 600px) {
-    .top-story h2 { font-size: 1.2rem; }
-    main { padding: 20px 16px 36px; }
+    header h1 { font-size: 22px; }
+    .top-story h2 { font-size: 18px; }
   }
 </style>
 </head>
 <body>
-<header class="site">
-  <div class="header-inner">
-    <div class="brand">
-      <h1>Automotive AI Daily Briefing</h1>
-      <div class="date">Tuesday, May 6, 2026</div>
-    </div>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">Switch to dark</button>
+<header>
+  <div class="wrap">
+    <h1>🚗 Automotive AI Daily Briefing</h1>
+    <p class="date">Thursday, May 7, 2026</p>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">🌙 Dark</button>
   </div>
 </header>
 
 <main>
-  <section class="top-story" aria-label="Top story">
-    <span class="label">Top Story</span>
-    <h2><a href="https://www.automotive-fleet.com/news/cox-automotive-acquires-alliance-inspection-management" target="_blank" rel="noopener noreferrer">Cox Automotive Acquires Alliance Inspection Management</a></h2>
-    <p class="summary">Cox Automotive has taken full ownership of Alliance Inspection Management (AiM), a long-standing wholesale inspection partner of Manheim. The deal consolidates inspection capacity inside the Cox stack and is positioned to support a broader range of auction transaction types.</p>
-    <p class="why"><strong>Why it matters:</strong> Vertical control over inspection data tightens the loop between Manheim, vAuto, and Dealer.com pricing/merchandising signals — a foundation that makes vehicle-condition AI features more defensible against vendors that have to license third-party inspection feeds.</p>
-    <div class="meta">Source: Automotive Fleet · May 5, 2026</div>
+  <section class="top-story">
+    <div class="label">Top Story</div>
+    <h2><a href="https://www.cnbc.com/2026/05/05/ai-oversight-trump-google-microsoft-xai.html" target="_blank" rel="noopener">Trump administration steps back from AI oversight as Google, Microsoft and xAI race ahead</a></h2>
+    <p>CNBC reports the White House is rolling back federal AI safety reporting requirements at the same time hyperscalers are pushing more autonomous agents into enterprise workflows. The shift hands more responsibility for guardrails to model providers and their customers.</p>
+    <p class="why"><strong>Why it matters:</strong> Lighter federal oversight pushes governance onto buyers. Dealer groups and automotive vendors deploying agentic AI will need to own model risk, data handling, and customer-facing disclosures themselves.</p>
+    <p class="meta">CNBC · May 5, 2026</p>
   </section>
 
-  <h2 class="section-title">Automotive Market</h2>
-  <div class="grid">
-    <article class="card cat-market">
-      <span class="cat-tag">Automotive Market</span>
-      <h3><a href="https://www.automotiveworld.com/news/eu-races-to-finalise-trade-deal-as-trump-lifts-auto-tariff-to-25/" target="_blank" rel="noopener noreferrer">EU races to finalise trade deal as Trump lifts auto tariff to 25%</a></h3>
-      <p class="summary">President Trump moved to raise the U.S. tariff on European-built vehicles to 25%, taking effect the following week, while exempting US-made vehicles from European OEMs. Brussels is accelerating negotiations to limit damage to exporters.</p>
-      <p class="why"><strong>Why it matters:</strong> A persistent 25% wall on EU-built models reshapes inventory mix and pricing models that vAuto, KBB, and Manheim AI tools train on; expect short-term valuation noise in European nameplates.</p>
-      <div class="meta">Source: Automotive World · May 5, 2026</div>
-    </article>
+  <section class="category cat-market">
+    <h3>Automotive Market</h3>
+    <div class="grid">
+      <article class="card">
+        <h4><a href="https://www.reuters.com/world/china/bmw-earnings-slump-by-quarter-start-year-2026-05-06/" target="_blank" rel="noopener">BMW Q1 earnings slump on China weakness and tariff drag</a></h4>
+        <p>BMW reported a sharp drop in first-quarter operating profit, citing softer China demand and tariff exposure on US-built SUVs shipped abroad. Management trimmed full-year margin guidance.</p>
+        <p class="why"><strong>Why it matters:</strong> Premium-segment softness pressures floorplan and incentive strategy at BMW dealers; expect more co-op and digital retailing spend to defend share.</p>
+        <p class="meta">Reuters · May 6, 2026</p>
+      </article>
+      <article class="card">
+        <h4><a href="https://www.cbtnews.com/dealers-adapt-to-april-auto-sales/" target="_blank" rel="noopener">Dealers adapt to April auto sales pullback</a></h4>
+        <p>April new-vehicle sales decelerated from March's tariff-driven pull-ahead, with affordability and inventory mix forcing dealers to rework pricing and lead-handling playbooks.</p>
+        <p class="why"><strong>Why it matters:</strong> Demand normalization rewards dealers with strong CRM follow-up, equity-mining, and retention tools — a tailwind for AI-driven sales engagement vendors.</p>
+        <p class="meta">CBT News · May 5, 2026</p>
+      </article>
+      <article class="card">
+        <h4><a href="https://www.forbes.com/sites/neilwinton/2026/05/05/speedier-european-auto-deliberations-might-avoid-tariff-hike/" target="_blank" rel="noopener">EU pushes faster auto trade talks to avoid tariff escalation</a></h4>
+        <p>European negotiators are accelerating discussions with Washington to head off another round of tariff increases on autos and parts, per Forbes. Outcomes remain uncertain ahead of summer deadlines.</p>
+        <p class="why"><strong>Why it matters:</strong> Tariff trajectory drives transaction prices, OEM allocation, and used-car residuals — all inputs to dealer pricing and trade-in models.</p>
+        <p class="meta">Forbes · May 5, 2026</p>
+      </article>
+      <article class="card">
+        <h4><a href="https://www.aol.com/finance/lithia-lad-q1-2026-earnings-173118466.html" target="_blank" rel="noopener">Lithia (LAD) posts Q1 2026 earnings amid retail consolidation</a></h4>
+        <p>Lithia &amp; Driveway reported first-quarter results highlighting continued M&amp;A activity and growth in F&amp;I and digital retailing channels even as new-vehicle margins compressed.</p>
+        <p class="why"><strong>Why it matters:</strong> The largest public dealer groups are setting the bar for tech stack standardization; their vendor choices ripple through the rest of the retail market.</p>
+        <p class="meta">AOL Finance · May 5, 2026</p>
+      </article>
+    </div>
+  </section>
 
-    <article class="card cat-market">
-      <span class="cat-tag">Automotive Market</span>
-      <h3><a href="https://www.cbtnews.com/dealers-adapt-to-april-auto-sales/" target="_blank" rel="noopener noreferrer">Dealers adapt as market pressures reshape April auto sales</a></h3>
-      <p class="summary">NADA's April Market Beat shows new-vehicle sales fell 7.1% year-over-year as tariffs and elevated rates weigh on demand. Hybrid demand is the standout bright spot, while inventory and affordability remain headwinds.</p>
-      <p class="why"><strong>Why it matters:</strong> A softer SAAR plus a hybrid-led mix shift raises the value of inventory-velocity and pricing-AI tools that can re-rank stock and adjust market-day-supply assumptions in near-real-time.</p>
-      <div class="meta">Source: CBT News · May 6, 2026</div>
-    </article>
+  <section class="category cat-retail">
+    <h3>Dealership &amp; Retail Tech</h3>
+    <div class="grid">
+      <article class="card">
+        <h4><a href="https://www.coxautoinc.com/insights/the-auto-market-brief-service-revenue-is-up-why-are-dealers-losing-share/" target="_blank" rel="noopener">Service revenue is up, but dealers are losing share</a></h4>
+        <p>Cox Automotive's latest market brief shows franchised dealer service revenue rising while overall share of the service-and-repair market slips to independents and aftermarket chains.</p>
+        <p class="why"><strong>Why it matters:</strong> Fixed-ops marketing and digital service scheduling are now defensive plays, not nice-to-haves. Expect renewed investment in service CRM and online appointment tooling.</p>
+        <p class="meta">Cox Automotive · May 2026</p>
+      </article>
+      <article class="card">
+        <h4><a href="https://www.autoremarketing.com/ar/technology/dealerons-dual-launch-includes-ai-search-visibility-platform-intelligent-layer-touching-full-dealership/" target="_blank" rel="noopener">DealerOn launches AI search visibility platform and dealership-wide intelligence layer</a></h4>
+        <p>DealerOn announced a dual product launch: an AI-search visibility tool aimed at LLM-driven discovery and an intelligence layer that spans website, marketing, and lead handling.</p>
+        <p class="why"><strong>Why it matters:</strong> Generative search is starting to reshape how shoppers find dealers; vendors that can prove visibility inside ChatGPT, Gemini, and Perplexity will gain pricing power.</p>
+        <p class="meta">Auto Remarketing · May 2026</p>
+      </article>
+    </div>
+  </section>
 
-    <article class="card cat-market">
-      <span class="cat-tag">Automotive Market</span>
-      <h3><a href="https://www.forbes.com/sites/neilwinton/2026/05/05/speedier-european-auto-deliberations-might-avoid-tariff-hike/" target="_blank" rel="noopener noreferrer">Speedier European auto deliberations might avoid tariff hike</a></h3>
-      <p class="summary">European EV adoption is continuing to climb but is still trailing prior industry forecasts, as the bloc balances trade pressure with its own EV transition timeline. Analysts argue the speed of EU response will determine whether the new U.S. tariff regime sticks.</p>
-      <p class="why"><strong>Why it matters:</strong> EV trajectory shapes the used-EV remarketing curve that Manheim and KBB price; slower-than-expected adoption keeps residual-value AI conservative on EVs through the back half of the year.</p>
-      <div class="meta">Source: Forbes · May 5, 2026</div>
-    </article>
-  </div>
+  <section class="category cat-comp">
+    <h3>Competitor Watch</h3>
+    <div class="grid">
+      <article class="card">
+        <h4><a href="https://octus.com/resources/articles/certain-cdk-global-creditors-in-talks-with-law-firm-on-potentially-forming-separate-group/" target="_blank" rel="noopener">CDK Global creditors reportedly explore forming separate group</a></h4>
+        <p>Octus reports that some CDK Global creditors are in early talks with a law firm about organizing into a separate group, signaling potential pressure on the DMS provider's capital structure.</p>
+        <p class="why"><strong>Why it matters:</strong> Any restructuring noise around CDK affects switching-cost calculus for thousands of rooftops and creates an opening for Reynolds, Tekion, and Dealertrack DMS.</p>
+        <p class="meta">Octus · May 2026</p>
+      </article>
+      <article class="card">
+        <h4><a href="https://news.dealershipguy.com/p/new-vehicle-sales-dive-in-april" target="_blank" rel="noopener">New-vehicle sales dive in April after tariff-driven Q1 pull-ahead</a></h4>
+        <p>Car Dealership Guy's industry newsletter details how April retail volumes dropped sharply as the March tariff scramble pulled demand forward, leaving April lots heavier and incentives creeping up.</p>
+        <p class="why"><strong>Why it matters:</strong> A demand air-pocket changes how competitors price digital retailing, leads, and ad inventory — watch for aggressive vendor promos through Q2.</p>
+        <p class="meta">Car Dealership Guy · May 2026</p>
+      </article>
+    </div>
+  </section>
 
-  <h2 class="section-title">Dealership &amp; Retail Tech</h2>
-  <div class="grid">
-    <article class="card cat-retail">
-      <span class="cat-tag">Dealership &amp; Retail Tech</span>
-      <h3><a href="https://www.cdkglobal.com/insights/visiting-1-store-key-factor-buyer-satisfaction" target="_blank" rel="noopener noreferrer">Visiting one store a key factor in buyer satisfaction</a></h3>
-      <p class="summary">CDK research finds that the share of buyers who completed the purchase after visiting just one store rose to 41% in 2025, up from 34% in 2024. Single-store buyers also score higher on Ease of Purchase than those who shop multiple stores.</p>
-      <p class="why"><strong>Why it matters:</strong> If single-store conversion is the dominant satisfaction driver, the ROI of digital-retailing and AI-assisted shopper-handoff tooling shifts toward closing the first visit, not just generating more leads.</p>
-      <div class="meta">Source: CDK Global · May 6, 2026</div>
-    </article>
-
-    <article class="card cat-retail">
-      <span class="cat-tag">Dealership &amp; Retail Tech</span>
-      <h3><a href="https://www.cdkglobal.com/insights/dealership-loyalty-programs-what-service-customers-really-want-0" target="_blank" rel="noopener noreferrer">Dealership loyalty programs: what service customers really want</a></h3>
-      <p class="summary">CDK data shows oil changes (76%) and tire service (39%) are the top reasons customers visit the service lane, and discounts on those core services are the most universally valued loyalty incentive. Retention programs tied to those visits over-index on engagement.</p>
-      <p class="why"><strong>Why it matters:</strong> Fixed-ops loyalty is a high-frequency, first-party data engine; AI service-marketing and Xtime-style scheduling tools that target oil/tire cadence will outperform broad-brush retention plays.</p>
-      <div class="meta">Source: CDK Global · May 4, 2026</div>
-    </article>
-  </div>
-
-  <h2 class="section-title">Competitor Watch</h2>
-  <div class="grid">
-    <article class="card cat-comp">
-      <span class="cat-tag">Competitor Watch</span>
-      <h3><a href="https://news.dealershipguy.com/p/ransomware-attacks-surge-in-auto-industry-raising-stakes-for-dealers-says-halcyon" target="_blank" rel="noopener noreferrer">Ransomware attacks surge in auto industry, raising stakes for dealers</a></h3>
-      <p class="summary">A new Halcyon report cited by Car Dealership Guy News documents a sharp uptick in ransomware activity targeting auto suppliers and dealer technology providers. The piece revisits the 2024 CDK Global attack, which idled roughly 15,000 dealerships for two weeks at an estimated $1B impact. <em>(Opinion-leaning trade source.)</em></p>
-      <p class="why"><strong>Why it matters:</strong> Concentration risk in DMS/CRM stacks is now a board-level concern; AI vendors that touch dealer data will increasingly need SOC 2 / ISO posture and offline-failover stories to win procurement.</p>
-      <div class="meta">Source: Car Dealership Guy News · May 6, 2026</div>
-    </article>
-  </div>
-
-  <h2 class="section-title">Cox Automotive Ecosystem</h2>
-  <div class="grid">
-    <article class="card cat-cox">
-      <span class="cat-tag">Cox Automotive</span>
-      <h3><a href="https://www.coxautoinc.com/insights/the-auto-market-brief-service-revenue-is-up-why-are-dealers-losing-share/" target="_blank" rel="noopener noreferrer">Service revenue is up. Why are dealers losing share?</a></h3>
-      <p class="summary">Cox Automotive's market and customer research team flags that franchise dealer service revenue continues to rise, yet the share of total service work captured by dealers is slipping versus independents and quick-lubes. Convenience and pricing transparency are cited as the gap.</p>
-      <p class="why"><strong>Why it matters:</strong> The opportunity for AI-driven service-lane scheduling, dynamic pricing, and proactive owner outreach (Xtime, Dealer.com) is sized by exactly this gap — closing convenience friction is the lever.</p>
-      <div class="meta">Source: Cox Automotive · May 6, 2026</div>
-    </article>
-
-    <article class="card cat-cox">
-      <span class="cat-tag">Cox Automotive</span>
-      <h3><a href="https://www.autonews.com/retail/an-cox-ai-shapes-car-buying-journey-0506/" target="_blank" rel="noopener noreferrer">How AI is changing car-shopping satisfaction</a></h3>
-      <p class="summary">Drawing on the Cox Automotive Car Buyer Journey Study, Automotive News reports rising adoption of AI tools among car shoppers, with younger buyers furthest along. Shoppers who use AI report higher satisfaction at multiple journey stages.</p>
-      <p class="why"><strong>Why it matters:</strong> First-party evidence that buyer-side AI is now a satisfaction driver strengthens the case for dealer-side conversational AI, VIN-level recommendations, and AI-assisted F&amp;I; the gap between AI-equipped and non-AI dealers will start to show in CSI.</p>
-      <div class="meta">Source: Automotive News · May 6, 2026</div>
-    </article>
-
-    <article class="card cat-cox">
-      <span class="cat-tag">Cox Automotive</span>
-      <h3><a href="https://news.dealershipguy.com/p/new-vehicle-sales-dive-in-april" target="_blank" rel="noopener noreferrer">New-vehicle sales dive in April; Cox cuts SAAR estimate</a></h3>
-      <p class="summary">In an updated estimate on May 5, Cox Automotive lowered its seasonally adjusted annual rate to roughly 15.9 million units, reflecting a sharper-than-expected April pullback. Tariff uncertainty and affordability are cited as the primary drags.</p>
-      <p class="why"><strong>Why it matters:</strong> A sub-16M SAAR re-prices wholesale supply assumptions inside Manheim and vAuto; expect tighter recommendations on stocking depth and longer dwell-time triggers in inventory AI.</p>
-      <div class="meta">Source: Car Dealership Guy News (citing Cox Automotive) · May 6, 2026</div>
-    </article>
-  </div>
-
-  <h2 class="section-title">Dealership Marketing &amp; Advertising</h2>
-  <div class="grid">
-    <article class="card cat-mkt">
-      <span class="cat-tag">Marketing &amp; Advertising</span>
-      <h3><a href="https://www.theverge.com/tech/924993/google-ai-search-mode-overviews-update-reddit-links" target="_blank" rel="noopener noreferrer">Google's AI search summaries will now quote Reddit</a></h3>
-      <p class="summary">Google is updating AI Search to make it easier for users to surface and trust answers drawn from sources they already recognize, including Reddit. The change tilts AI Overview citations toward forum and community content.</p>
-      <p class="why"><strong>Why it matters:</strong> Dealer SEO/GEO strategies that lean only on owned content will lose surface area inside AI Overviews; investing in earned mentions on community sources (and structured FAQ content) becomes a practical AI-search hedge.</p>
-      <div class="meta">Source: The Verge · May 6, 2026</div>
-    </article>
-
-    <article class="card cat-mkt">
-      <span class="cat-tag">Marketing &amp; Advertising</span>
-      <h3><a href="https://digiday.com/media-buying/cpc-pain-is-real-one-year-on-googles-ai-max-has-pushed-up-search-budgets-and-costs/" target="_blank" rel="noopener noreferrer">One year in, Google's AI Max has pushed up search budgets and costs</a></h3>
-      <p class="summary">Digiday reports that a year after rollout, Google's AI Max ad product is correlating with higher search budgets and CPC pressure for advertisers. A new "AI Brief" feature lets buyers steer campaigns by describing audience and messaging instead of managing keyword lists. <em>(Source not on internal trusted list.)</em></p>
-      <p class="why"><strong>Why it matters:</strong> Tier-3 dealer paid search is exposed to the same CPC inflation; agency partners and dealer marketing tools will need first-party-data activation to defend efficiency as keyword control erodes.</p>
-      <div class="meta">Source: Digiday · May 5, 2026</div>
-    </article>
-  </div>
-
-  <h2 class="section-title">AI &amp; Technology</h2>
-  <div class="grid">
-    <article class="card cat-ai">
-      <span class="cat-tag">AI &amp; Technology</span>
-      <h3><a href="https://www.businessinsider.com/google-ai-agent-openclaw-remy-gemini-assistant-2026-5" target="_blank" rel="noopener noreferrer">Google is building a Gemini AI agent that takes actions on your behalf</a></h3>
-      <p class="summary">Business Insider reports Google is developing a new Gemini "personal agent" capable of executing multi-step tasks for users, in what the outlet frames as Google's response to OpenAI's agent push. The product is still pre-release and details remain limited.</p>
-      <p class="why"><strong>Why it matters:</strong> Consumer-grade shopping agents will start arriving at dealer websites; readiness for agent traffic (clean structured inventory, predictable forms, machine-readable pricing) becomes a near-term retail-tech requirement.</p>
-      <div class="meta">Source: Business Insider · May 5, 2026</div>
-    </article>
-
-    <article class="card cat-ai">
-      <span class="cat-tag">AI &amp; Technology</span>
-      <h3><a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/" target="_blank" rel="noopener noreferrer">Google's April 2026 AI updates: Gemini Enterprise Agent Platform</a></h3>
-      <p class="summary">Google's April recap introduces the Gemini Enterprise Agent Platform, which lets organizations build, deploy, and govern autonomous agents that can run multi-step business processes. The post also rolls up other April Gemini and Workspace AI updates.</p>
-      <p class="why"><strong>Why it matters:</strong> Enterprise agent platforms from the hyperscalers will commoditize the build layer; differentiation for automotive AI moves toward proprietary data (VIN, transaction, service history) and dealer-specific guardrails.</p>
-      <div class="meta">Source: Google · May 4, 2026</div>
-    </article>
-  </div>
+  <section class="category cat-ai">
+    <h3>AI &amp; Technology</h3>
+    <div class="grid">
+      <article class="card">
+        <h4><a href="https://www.wsj.com/tech/ai/anthropic-releases-new-ai-agents-for-financial-services-firms-e2829b37" target="_blank" rel="noopener">Anthropic releases AI agents tailored for financial services</a></h4>
+        <p>The Wall Street Journal reports Anthropic launched a set of vertical AI agents for financial firms, packaging Claude with workflow tooling for research, compliance, and client servicing.</p>
+        <p class="why"><strong>Why it matters:</strong> The vertical-agent playbook is moving from finance to other regulated, document-heavy industries. Auto retail (F&amp;I, compliance, fixed-ops) is a logical next target.</p>
+        <p class="meta">WSJ · May 2026</p>
+      </article>
+      <article class="card">
+        <h4><a href="https://developer.nvidia.com/blog/building-for-the-rising-complexity-of-agentic-systems-with-extreme-co-design/" target="_blank" rel="noopener">NVIDIA on architecting for agentic AI complexity</a></h4>
+        <p>NVIDIA's developer blog argues that agentic systems require "extreme co-design" across model, runtime, and infrastructure layers, and outlines reference patterns for multi-agent orchestration.</p>
+        <p class="why"><strong>Why it matters:</strong> Anyone shipping multi-step automotive AI agents (lead routing, service scheduling, F&amp;I) will face the same orchestration and reliability tradeoffs flagged here.</p>
+        <p class="meta">NVIDIA Developer Blog · May 2026</p>
+      </article>
+    </div>
+  </section>
 </main>
 
-<footer class="site">
-  <div>May 6, 2026 · Curated by AI Research Desk</div>
+<footer>
+  <span>Automotive AI Daily Briefing · May 7, 2026</span>
+  <span>Curated by AI Research Desk</span>
 </footer>
 
 <script>
   (function () {
-    var KEY = "mssBriefingTheme";
+    var KEY = 'mssBriefingTheme';
     var root = document.documentElement;
-    var btn = document.getElementById("themeToggle");
-
+    var btn = document.getElementById('themeToggle');
     function apply(theme) {
-      if (theme === "dark") {
-        root.setAttribute("data-theme", "dark");
-        btn.textContent = "Switch to light";
+      if (theme === 'dark') {
+        root.setAttribute('data-theme', 'dark');
+        btn.textContent = '☀️ Light';
       } else {
-        root.setAttribute("data-theme", "light");
-        btn.textContent = "Switch to dark";
+        root.removeAttribute('data-theme');
+        btn.textContent = '🌙 Dark';
       }
     }
-
-    var stored = null;
-    try { stored = localStorage.getItem(KEY); } catch (e) {}
-    var initial;
-    if (stored === "dark" || stored === "light") {
-      initial = stored;
-    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      initial = "dark";
-    } else {
-      initial = "light";
-    }
-    apply(initial);
-
-    btn.addEventListener("click", function () {
-      var current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-      var next = current === "dark" ? "light" : "dark";
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    apply(saved === 'dark' ? 'dark' : 'light');
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       apply(next);
       try { localStorage.setItem(KEY, next); } catch (e) {}
     });
