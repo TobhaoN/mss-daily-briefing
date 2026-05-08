@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cox Automotive - NADA 2026 Strategic Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tab-active { border-bottom-color: #2563eb; color: #2563eb; }
+        .tab-inactive { border-bottom-color: transparent; color: #64748b; }
+        .tab-inactive:hover { color: #475569; border-bottom-color: #cbd5e1; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 p-6">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h1 class="text-3xl font-bold text-slate-900 mb-2">
+                Cox Automotive: NADA 2026 Strategic Analysis
+            </h1>
+            <p class="text-slate-600 mb-4">
+                Performance-based competitive analysis with investment priorities grounded in actual NADA sales results
+            </p>
+            <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded mb-4">
+                <p class="text-green-900 font-medium mb-0">
+                    ✅ <strong>Overall: 120% of Target</strong> ($2.18M vs $1.36M) - Strong foundation with opportunities to amplify success and address gaps
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div class="bg-green-100 rounded p-3">
+                    <div class="text-xs text-green-700 mb-1">Top Performer</div>
+                    <div class="font-bold text-green-900">KBB ICO: 204%</div>
+                </div>
+                <div class="bg-green-100 rounded p-3">
+                    <div class="text-xs text-green-700 mb-1">Star Product</div>
+                    <div class="font-bold text-green-900">VinSolutions: 122%</div>
+                </div>
+                <div class="bg-red-100 rounded p-3">
+                    <div class="text-xs text-red-700 mb-1">Adoption Crisis</div>
+                    <div class="font-bold text-red-900">Deal Central: 41%</div>
+                </div>
+                <div class="bg-red-100 rounded p-3">
+                    <div class="text-xs text-red-700 mb-1">Saturation</div>
+                    <div class="font-bold text-red-900">vAuto: 55%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="bg-white rounded-lg shadow-lg mb-6">
+            <div class="border-b border-slate-200">
+                <nav class="flex space-x-4 md:space-x-8 px-6 overflow-x-auto">
+                    <button onclick="switchTab('overview')" data-tab="overview" class="tab-button tab-active py-4 px-1 border-b-2 font-medium text-sm transition-colors whitespace-nowrap">
+                        📊 Overview
+                    </button>
+                    <button onclick="switchTab('wins')" data-tab="wins" class="tab-button tab-inactive py-4 px-1 border-b-2 font-medium text-sm transition-colors whitespace-nowrap">
+                        ✅ Wins
+                    </button>
+                    <button onclick="switchTab('gaps')" data-tab="gaps" class="tab-button tab-inactive py-4 px-1 border-b-2 font-medium text-sm transition-colors whitespace-nowrap">
+                        🚨 Gaps
+                    </button>
+                    <button onclick="switchTab('investments')" data-tab="investments" class="tab-button tab-inactive py-4 px-1 border-b-2 font-medium text-sm transition-colors whitespace-nowrap">
+                        💰 Roadmap
+                    </button>
+                    <button onclick="switchTab('excitement')" data-tab="excitement" class="tab-button tab-inactive py-4 px-1 border-b-2 font-medium text-sm transition-colors whitespace-nowrap">
+                        🔥 NADA Excitement
+                    </button>
+                </nav>
+            </div>
+        </div>
+
+        <div id="content"></div>
+    </div>
+
+    <script>
+        let exp = {};
+
+        const excitementProducts = [
+            {
+                title: "Navigator Browser Extension",
+                product: "Cross-Product Ecosystem Tool",
+                excitement: "vAuto and Xtime consultants reported Navigator drove booth excitement",
+                what: "FREE browser extension (Chrome + Edge) providing persistent side panel, shortcuts to common actions, contextual suggestions, deep-links across Cox products (vAuto, VinSolutions, Xtime, Manheim, Autotrader, Dealertrack F&I, Stockwave), right-click context menu from ANY website to jump directly to Cox tools, tab management and filtering. Designed for power users (UCM, GM) using multiple Cox solutions. No cost, no SKU, self-service install.",
+                whyExciting: "Makes 'better together' ecosystem TANGIBLE vs abstract claims. Dealers can right-click from their website and instantly access vAuto workbook for that VIN. Addresses consultant complaints about 'swivel' between Cox products. FREE = instant value proposition. Self-service install, no training required. Works across any combination of Cox products.",
+                competitiveAdvantage: "NO COMPETITOR HAS THIS. Team Velocity claims 'one platform' - Navigator actually delivers cross-product integration. VINCUE has Tekion-only workflows - Navigator works across ANY Cox product combination. DEP's 'farm-to-table' - Navigator proves Cox has actual unified ecosystem. Right-click from dealer website to jump to vAuto/VinSolutions/Xtime = workflow magic competitors can't replicate. Combined with SSO = genuine competitive moat.",
+                launch: "Public launch: February 3, 2026 (Chrome Web Store + Edge Add-ons)",
+                amplify: "Aggressive post-launch marketing campaign positioning as 'free productivity tool competitors can't offer.' Lead every multi-product demo with Navigator. Competitive battle cards showing Navigator + SSO vs competitor login chaos. Dealer testimonials quantifying time saved. Usage analytics to inform feature expansion priorities. Position Navigator as proof of ecosystem integration vs competitors' abstract claims."
+            },
+            {
+                title: "VinSolutions Virtual Assistant",
+                product: "VinSolutions CRM",
+                excitement: "122% of target - drove booth traffic, new CRM sales, and existing customer upsells",
+                what: "Configurable autonomous AI built into VinSolutions CRM (not bolt-on). Dealers set response intervals, adjust tone, control automation level. Handles appointment scheduling, trade-in information capture, real-time salesperson alerts via Bridge Bar. Powered by Predictive Insights for smarter responses leveraging Cox first-party data (Autotrader, KBB).",
+                whyExciting: "Dealers want automation WITH control, not black-box AI that they can't influence. Virtual Assistant lets dealers configure when it responds, how it sounds, what actions it takes autonomously. Built into CRM eliminates swivel to separate AI tools. Predictive Insights integration makes it smarter than competitors using only CRM data - can reference shopping behavior from Autotrader/KBB.",
+                competitiveAdvantage: "DriveCentric: Separate platform requiring integration, fully autonomous only (dealers can't configure tone or timing). Impel: Bolt-on layer sitting on other CRMs. Tekion: Service AI only 6 months old without CRM integration depth. Cox: Built-in + configurable + Predictive Insights = unique combination dealers validated by buying at 122% of target.",
+                launch: "Live now - announced at NADA 2026",
+                amplify: "Extend proven configurable autonomous model to other Cox products: vAuto (inventory management assistant), Xtime (service scheduling AI), Deal Central (deal construction assistant), Dealer.com (website chat AI). Create unified AI engine across ecosystem leveraging same Predictive Insights backbone."
+            },
+            {
+                title: "vAuto Virtual Assistant",
+                product: "vAuto",
+                excitement: "Consultants mentioned Virtual Assistant capabilities for vAuto driving booth interest",
+                what: "AI-powered inventory assistant providing intelligent suggestions for pricing decisions, merchandising optimization, acquisition opportunities, and aged inventory alerts. Extends VinSolutions Virtual Assistant concept to inventory management workflows with vAuto-specific automation and intelligence.",
+                whyExciting: "Used car managers want AI that suggests actions based on market conditions, aging inventory, competitive pricing, and acquisition opportunities - but with manager control over final decisions. Same configurable autonomous approach that worked for VinSolutions (122% performance) applied to vAuto workflows. Addresses dealers' need for decision support without losing control.",
+                competitiveAdvantage: "VINCUE: Announced AI features (Benjamin, Appraisal AI, Trade Cycle) in roadmap but not demonstrated at NADA, suggesting not production-ready. CDK Vehicle Inventory Suite: AI limited to predictive insights and Value Vision, no interactive virtual assistant. Cox: Extends proven Virtual Assistant model from VinSolutions (122% success) to vAuto with inventory-specific intelligence and configurability.",
+                launch: "Announced at NADA 2026 - extending Virtual Assistant platform",
+                amplify: "Position as vAuto's competitive answer to VINCUE's AI announcements. Leverage VinSolutions VA success (122%) to prove configurable autonomous AI concept resonates with dealers. Create vAuto-specific workflows: daily pricing recommendations with rationale, stale inventory proactive alerts, acquisition opportunity suggestions based on market trends, merchandising optimization for third-party listings."
+            },
+            {
+                title: "BorrowersCheck AI Fraud Protection",
+                product: "Dealertrack F&I",
+                excitement: "Dealertrack booth consultants reported BorrowersCheck integration drove excitement",
+                what: "AI-powered synthetic ID fraud detection by PointPredictive integrated into Dealertrack F&I workflow. Driver's license scanning and validation capabilities. Real-time fraud risk assessment during deal structuring. Reduces lender buybacks through enhanced application accuracy and identity verification. Strengthens fraud detection beyond traditional credit checks.",
+                whyExciting: "Synthetic ID fraud is exploding problem costing dealers thousands in chargebacks and lender buybacks. Dealers seeing real financial impact from fraud and desperate for solutions. BorrowersCheck provides AI-powered detection DURING the deal (not after) preventing bad deals from happening. Measurable ROI through reduced fraud losses resonates with F&I managers and GMs.",
+                competitiveAdvantage: "CDK: Mentioned fraud protection at NADA but didn't demonstrate capabilities or integration depth. RouteOne: Lacks equivalent AI-powered fraud detection integrated into workflow. Competitors focus on credit decisioning; Cox addresses fraud prevention proactively. Integration into Dealertrack F&I workflow means fraud detection happens in real-time during deal construction, not as separate step.",
+                launch: "Live and integrated into Dealertrack - highlighted at NADA 2026",
+                amplify: "Create fraud ROI calculator showing chargebacks prevented. Case studies with quantified savings from early adopters. Expand fraud detection messaging in all F&I competitive scenarios. Train consultants on fraud statistics to create urgency. Position as unique Dealertrack advantage vs CDK/RouteOne. Consider expanding BorrowersCheck to Deal Central for unified fraud detection across Cox desking tools."
+            },
+            {
+                title: "KBB ICO Service Drive Strategy",
+                product: "KBB ICO",
+                excitement: "204% of target - highest NADA performer, service drive focus resonated strongly",
+                what: "Three-prong ICO strategy emphasizing service drive as second-largest vehicle acquisition channel. Comprehensive training program with deep role-playing for objection handling, remote damage assessment capabilities, service lane integration workflows, wholesale exit strategy optimization. Training rollout beginning January 2026 with customizable plans for new implementations and dealer retraining.",
+                whyExciting: "Dealers finally grasping service drive as 'your own auction block' (consultant quote). Service customers = highest-quality acquisition source (existing relationship, known service history, immediate need identification). 204% performance proves dealers ready to activate this channel. Training-first approach addresses adoption barriers competitors ignore - features without training don't drive revenue.",
+                competitiveAdvantage: "AccuTrade: Product features but lacks comprehensive service integration and training support. ACV MAX: Bulk service upload (300 VINs/day) but limited to ACV wholesale exit. TradePending: 10-second forms prioritize speed over accuracy, no service focus. Cox: Training investment converts capability into revenue. Service integration depth (Xtime connectivity) competitors can't match. Three-prong strategy (external + internal + wholesale) vs competitors' single-channel approaches.",
+                launch: "Strategy announced at NADA, comprehensive training beginning January 2026",
+                amplify: "Automate the successful manual workflows: Bulk Xtime appointment upload (300+ VINs/day like ACV MAX), automated ICO offer generation triggered by service visit, text/email offer delivery to service customers, vAuto inventory matching for upgrade recommendations, VinSolutions opportunity auto-creation for BDC follow-up. Multiply 204% success through automation while maintaining training emphasis that drives adoption."
+            },
+            {
+                title: "Dealer.com AI Design Generator",
+                product: "Dealer.com",
+                excitement: "119% of target - AI-powered website design capabilities drove booth traffic",
+                what: "Industry-first AI capability creating entire website designs and layouts using natural language prompts. AI-powered Composer allowing dealers to customize website layouts with conversational AI assistance. Experience Optimization suite for personalized shopper journeys and intelligent page optimization. Self-service design tools eliminating dependency on vendor for updates.",
+                whyExciting: "Dealers frustrated with waiting weeks for vendor website updates. AI design generator lets dealers create professional pages in minutes (vs weeks with Dealer Inspire per competitor complaints). Self-service approach addresses dealer empowerment need. Combined with Jeremy Marshall's insight that dealers prioritize fundamentals (speed, SEO, DR integration) over features alone - Cox delivers both AI design AND performance basics.",
+                competitiveAdvantage: "Motive: Self-service tools but no AI generation capability. DealerOn: Schema markup leadership (33-78 items) but dealers don't care about technical SEO vs speed/performance. Dealer Inspire: Criticized as 'services plummeted... takes weeks' for updates. Cox: AI generation + self-service + fundamentals (speed, SEO) + DR integration = complete package addressing real pain points competitors ignore.",
+                launch: "Live now - announced at NADA 2026",
+                amplify: "Extend AI design generator beyond websites to dealer marketing materials: AI-generated social media posts using dealer inventory, automated email campaign designs, service lane marketing materials (oil change specials, tire promotions), AI-powered ad creative for DDC Advertising products. Create 'Cox Creative Studio' for omnichannel marketing. Low development cost (extend existing AI engine) with high revenue potential from marketing upsells."
+            }
+        ];
+
+        const wins = [
+            {
+                title: "VinSolutions Virtual Assistant",
+                perf: "122% ($324K vs $265K)",
+                insight: "Configurable autonomous AI beats black-box approaches"
+            },
+            {
+                title: "Dealer.com Fundamentals Over Features",
+                perf: "119% ($127K vs $107K)",
+                insight: "Jeremy: Speed, SEO, DR integration beat AI alone"
+            },
+            {
+                title: "KBB ICO Service Drive",
+                perf: "204% ($192K vs $94K)",
+                insight: "Highest performer - training-first strategy"
+            },
+            {
+                title: "Dealertrack BorrowersCheck",
+                perf: "118% ($64K vs $55K)",
+                insight: "AI fraud protection drove DMS booth excitement"
+            },
+            {
+                title: "Cox SSO + Navigator",
+                perf: "Existing advantages",
+                insight: "Unified login + browser extension undersold"
+            }
+        ];
+
+        const gaps = [
+            {
+                rank: 1, tier: "EMERGENCY", name: "Deal Central Adoption Crisis",
+                perf: "41% ($8K vs $20K target) - BIGGEST GAP",
+                timeline: "16 weeks", complexity: "Medium-High", resources: "High",
+                problem: "Features competitive (AI search, affordability intelligence, lender comparison) but dealers not adopting. ROOT CAUSES: (1) Process change resistance - dealers must empower broader teams vs manager-controlled, (2) PRICING - consultants reported price as limiting factor in adoption. CDK Modern Retail wins through seamless eLead integration AND competitive pricing.",
+                comp: "CDK Modern Retail: Seamless eLead integration so dealers see it as CRM extension, not separate tool. Positioned as value-add to existing CRM vs standalone expensive product. Bundled pricing when combined with other CDK products.",
+                solution: "THREE-PRONGED FIX: (1) Embedded VinSolutions integration (in-CRM widget like CDK's slide-out), (2) Phased adoption pathway starting with 'view-only' mode, (3) PRICING STRATEGY - create Deal Central Lite tier at lower price point OR mandatory bundle with VinSolutions at discounted rate. Change management toolkit, success metrics dashboard showing 3x close rates to justify investment.",
+                impact: "Prevents Deal Central becoming 'great product nobody uses.' Addresses 41% gap through integration (meets dealers where they are vs forcing transformation), pricing strategy (removes cost barrier), and change management (addresses process resistance). Embedded approach + competitive pricing matches CDK's winning formula."
+            },
+            {
+                rank: 2, tier: "EMERGENCY", name: "Xtime Mobile Workflows",
+                perf: "101% target but -29% YoY - CDK pressure building",
+                timeline: "16 weeks", complexity: "High", resources: "High",
+                problem: "Desktop-only while CDK ships production-ready iPad walkarounds. Zero mobile capabilities announced at NADA. Integration documentation still 'grossly inaccurate' per Jonathon Brown. Service advisors want bay-side tablets, not desktop terminals.",
+                comp: "CDK: iPad walkarounds, damage documentation, TruVideo integration, mobile MPVI, technician performance tracking. Positioned as 'clearest near-term strength.' Tekion: Voice-enabled inspection (90% adoption, $70 RO increase). Both mobile-first from ground up.",
+                solution: "iPad-native Xtime app for service advisors, mobile MPVI form completion with photo/video capture, bay-side damage documentation, offline mode for poor connectivity, real-time DMS synchronization from service bay, updated integration documentation addressing Jonathon Brown's complaint, mobile service advisor dashboard optimized for tablet viewing.",
+                impact: "Counters CDK's 'clearest near-term strength' with competitive mobile workflows. Reverses -29% YoY decline trend. Modernizes service lane positioning Fixed Ops for growth vs defense. Addresses consultant #1 complaint (documentation). Navigator integration could provide shortcuts to mobile Xtime features."
+            },
+            {
+                rank: 3, tier: "EMERGENCY", name: "Service-to-Sales Automation",
+                perf: "ICO 204%, Xtime 101% - manual workflow preventing scaling the success",
+                timeline: "20 weeks", complexity: "High", resources: "High",
+                problem: "Cox announced separate products (ICO training, Xtime capabilities, vAuto features, VinSolutions CRM) but NO automated workflow connecting them. Dealers manually bridge Xtime → vAuto → VinSolutions → ICO gaps. Consultants confirm dealers doing this manually today.",
+                comp: "ACV MAX: 300 VINs/day bulk service appointment upload with instant valuation. Team Velocity + VINCUE: Real-time service equity mining with automated customer outreach. automotiveMastermind: 40% service conquest rate with fully automated workflows. All shipping complete automation while Cox requires manual dealer effort.",
+                solution: "Automated workflow: Xtime service appointments (bulk export 300+ daily) → ICO automated valuation → vAuto inventory matching → VinSolutions opportunity auto-creation → BDC real-time alerts. Fully automated with dealer approval gates at key decision points. Equity scoring (0-100 scale like Team Velocity). In-market signal detection from Autotrader/KBB activity. Service customer segmentation (equity, in-market, conquest). Navigator could provide shortcuts accelerating this workflow.",
+                impact: "Scales ICO's 204% success through automation. Creates new revenue stream from existing service customers (highest-quality acquisition source). Addresses Xtime's -29% YoY decline by making service drive an active sales channel. Exploits Cox's unique first-party data advantage (Autotrader, KBB shopping behavior) that competitors cannot replicate. Reduces dealer effort while increasing lead volume."
+            },
+            {
+                rank: 4, tier: "CRITICAL", name: "Xtime Fixed Ops Innovation Lab",
+                perf: "-29% YoY despite 101% target indicates sustained competitive erosion",
+                timeline: "Ongoing", complexity: "Medium-High", resources: "High",
+                problem: "Xtime focused on admin/revenue features (credit card surcharges) while CDK revolutionized service workflows. Declining YoY signals competitive pressure building despite meeting immediate target. Desktop-bound workflows while market moves mobile-first.",
+                comp: "CDK: Comprehensive mobile service lane capabilities, damage documentation, video integration, performance tracking. Explicitly positioned Fixed Ops as competitive strength. Tekion: Service AI showing strong adoption (90%, $70 RO increase). Both innovating on workflows while Cox announces admin features.",
+                solution: "Dedicated Fixed Ops innovation team (not project-based): AI technician assistant (voice-to-inspection like Tekion), predictive service recommendations using RO history patterns, automated video walkarounds with AI damage detection, real-time parts availability integration, service performance analytics with advisor coaching insights, continuous innovation vs one-time feature releases.",
+                impact: "Reverses -29% YoY decline trend. Provides sustained innovation capability vs one-time features. Matches CDK's workflow sophistication and Tekion's AI advances. Creates switching costs through superior service lane workflows. Positions Xtime for growth vs purely defensive posture. Permanent team ensures continuous competitive parity."
+            },
+            {
+                rank: 5, tier: "CRITICAL", name: "Real-Time Data Platform",
+                perf: "Infrastructure affects all products - batch processing creates ecosystem-wide vulnerability",
+                timeline: "24 weeks", complexity: "Very High", resources: "Very High",
+                problem: "Dealer.com has 5-minute inventory updates (competitive advantage) but vAuto, Xtime, VinSolutions still use batch processing creating 4+ hour delays for data propagation. Inconsistent real-time capabilities across Cox products undermines ecosystem positioning.",
+                comp: "CDK: 'Real-time accounting vs overnight batch processing in competitors.' VINCUE: 'Real-time vs lagging data' explicit positioning against Cox. Tekion: Real-time DMS with immediate cross-platform updates. Competitors position Cox's batch processing as 'legacy architecture' weakness.",
+                solution: "Event-driven architecture replacing batch jobs across entire ecosystem. Sub-30-second propagation targets: vAuto price changes → instant Dealer.com/marketplace updates, Xtime service appointments → immediate VinSolutions opportunity creation, Deal Central submissions → real-time accounting updates. Real-time sync health monitoring dashboard. Alert system for delayed propagation. Performance metrics with SLA targets.",
+                impact: "Extends Dealer.com's 5-minute advantage across all Cox products. Eliminates 'stale data' competitive attacks. Enables real-time service-to-sales automation workflows (depends on this foundation). Proves ecosystem modernity vs 'legacy batch' perception. Foundation for all future integration improvements. Navigator could visualize real-time sync status for users."
+            },
+            {
+                rank: 6, tier: "HIGH", name: "vAuto Bundling + Entry Tier",
+                perf: "55% of target ($122K vs $221K) - market saturation not product crisis",
+                timeline: "12 weeks", complexity: "Low-Medium", resources: "Medium",
+                problem: "70-80% market share = growth ceiling hit. High price point limits new dealer acquisition. Gen AI descriptions and Stock Wave integrations drive upsells to existing customers but don't capture new markets. Standalone sales approach when market is saturated. Navigator helps but doesn't solve pricing barrier for new dealers.",
+                comp: "VINCUE: $2,339/month consolidation play with ecosystem bundles explicitly targeting vAuto install base. Dealerslink: $495/store aggressive pricing with 99.4% retention rate and 'never go back' messaging. CDK Vehicle Inventory Suite: Bundled pricing when combined with other CDK products. All positioning lower-cost alternatives with ecosystem packages.",
+                solution: "vAuto Starter tier (reduced feature set at lower price for new dealers entering market), mandatory VinSolutions + vAuto bundles (discount both when sold together), Xtime + vAuto service drive packages emphasizing acquisition workflows, deep Tekion DMS integration preventing VINCUE knockout churn pattern, ecosystem pricing tiers rewarding multi-product adoption vs standalone premium pricing.",
+                impact: "Defends against VINCUE/Tekion knockout churn when dealers switch DMS platforms. Creates lower-priced entry point for dealers priced out of current offering. Bundling with VinSolutions/Xtime increases ecosystem stickiness and total contract value. Turns market saturation reality into ecosystem expansion opportunity. Positions vAuto as part of broader solution vs standalone expensive tool."
+            }
+        ];
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.toggle('tab-active', btn.dataset.tab === tab);
+                btn.classList.toggle('tab-inactive', btn.dataset.tab !== tab);
+            });
+            render(tab);
+        }
+
+        function toggle(id) {
+            exp[id] = !exp[id];
+            render(document.querySelector('.tab-active').dataset.tab);
+        }
+
+        function render(tab) {
+            const c = document.getElementById('content');
+            
+            if (tab === 'overview') {
+                c.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h2 class="text-2xl font-bold mb-4">Executive Summary</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                                    <h3 class="font-bold text-green-900 mb-3">✅ NADA Winners (Amplify - 40%)</h3>
+                                    <ul class="space-y-2 text-sm text-green-800 list-none pl-0">
+                                        <li><strong>KBB ICO: 204%</strong> - Service drive strategy crushed</li>
+                                        <li><strong>VinSolutions: 122%</strong> - Virtual Assistant drove traffic</li>
+                                        <li><strong>Dealer.com: 119%</strong> - Fundamentals beat features</li>
+                                        <li><strong>Dealertrack: 118%</strong> - BorrowersCheck excited booth</li>
+                                        <li><strong>Navigator + SSO</strong> - Free tools, ecosystem proof</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                                    <h3 class="font-bold text-red-900 mb-3">🚨 Critical Gaps (Fix - 60%)</h3>
+                                    <ul class="space-y-2 text-sm text-red-800 list-none pl-0">
+                                        <li><strong>Deal Central: 41%</strong> - Pricing + process resistance</li>
+                                        <li><strong>vAuto: 55%</strong> - Market saturation, need bundling</li>
+                                        <li><strong>Xtime: -29% YoY</strong> - CDK mobile pressure</li>
+                                        <li><strong>Service-to-Sales</strong> - Manual, need automation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h3 class="text-xl font-bold mb-4">NADA Sales Performance</h3>
+                            <div class="space-y-3">
+                                ${[
+                                    {name: 'KBB ICO', perf: '204%', amt: '$192K vs $94K', color: 'green', desc: 'Service drive strategy resonated'},
+                                    {name: 'VinSolutions', perf: '122%', amt: '$324K vs $265K', color: 'green', desc: 'Virtual Assistant drove traffic + upsells'},
+                                    {name: 'Dealer.com', perf: '119%', amt: '$127K vs $107K', color: 'green', desc: 'AI design + fundamentals won'},
+                                    {name: 'Dealertrack', perf: '118%', amt: '$64K vs $55K', color: 'green', desc: 'BorrowersCheck excited DMS booth'},
+                                    {name: 'Xtime', perf: '101% but -29% YoY', amt: '$139K vs $196K (2024)', color: 'yellow', desc: 'CDK pressure building'},
+                                    {name: 'vAuto', perf: '55%', amt: '$122K vs $221K', color: 'red', desc: 'Market saturation + high price'},
+                                    {name: 'Deal Central', perf: '41%', amt: '$8K vs $20K', color: 'red', desc: 'Pricing + process resistance'}
+                                ].map(p => `
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-32 font-medium text-slate-700 text-sm">${p.name}</div>
+                                        <div class="flex-1 bg-${p.color}-100 rounded p-3">
+                                            <div class="font-bold text-${p.color}-900">${p.perf} (${p.amt})</div>
+                                            <div class="text-sm text-${p.color}-700">${p.desc}</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h3 class="text-xl font-bold mb-4">Investment Strategy: 60% Fix / 40% Amplify</h3>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-red-50 rounded border-l-4 border-red-600">
+                                    <div class="font-bold text-red-900 mb-2">Q1 2026: Emergency (3 projects)</div>
+                                    <div class="text-sm text-red-800">Deal Central Adoption + Pricing, Xtime Mobile, Service-to-Sales Automation</div>
+                                </div>
+                                <div class="p-4 bg-orange-50 rounded border-l-4 border-orange-600">
+                                    <div class="font-bold text-orange-900 mb-2">Q2 2026: Critical (2 projects)</div>
+                                    <div class="text-sm text-orange-800">Xtime Innovation Lab, Real-Time Platform</div>
+                                </div>
+                                <div class="p-4 bg-green-50 rounded border-l-4 border-green-600">
+                                    <div class="font-bold text-green-900 mb-2">Q2-Q3: Amplify Success (5 projects)</div>
+                                    <div class="text-sm text-green-800">Virtual Assistant Ecosystem, Navigator Marketing, ICO Automation, DDC Toolkit, SSO Campaign</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h3 class="text-xl font-bold mb-4">Navigator Browser Extension</h3>
+                            <p class="text-slate-600 mb-4">
+                                FREE tool that drove excitement at vAuto and Xtime booths per consultant feedback - makes ecosystem integration tangible
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-blue-50 rounded p-4">
+                                    <h4 class="font-semibold text-blue-900 mb-2">What It Does</h4>
+                                    <ul class="text-sm text-blue-800 space-y-1 list-none pl-0">
+                                        <li>• Persistent browser side panel</li>
+                                        <li>• Shortcuts to Cox products</li>
+                                        <li>• Right-click from any website</li>
+                                        <li>• Deep-links across products</li>
+                                        <li>• Contextual suggestions</li>
+                                        <li>• Tab management</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 rounded p-4">
+                                    <h4 class="font-semibold text-green-900 mb-2">Why It Matters</h4>
+                                    <ul class="text-sm text-green-800 space-y-1 list-none pl-0">
+                                        <li>• Makes ecosystem tangible</li>
+                                        <li>• FREE vs competitor costs</li>
+                                        <li>• No competitor equivalent</li>
+                                        <li>• Addresses "swivel" pain</li>
+                                        <li>• Works with SSO</li>
+                                        <li>• Public: Feb 3, 2026</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-purple-50 rounded p-4">
+                                    <h4 class="font-semibold text-purple-900 mb-2">Integrated Products</h4>
+                                    <ul class="text-sm text-purple-800 space-y-1 list-none pl-0">
+                                        <li>• vAuto</li>
+                                        <li>• VinSolutions</li>
+                                        <li>• Xtime</li>
+                                        <li>• Manheim</li>
+                                        <li>• Autotrader</li>
+                                        <li>• Dealertrack F&I</li>
+                                        <li>• Stockwave</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (tab === 'excitement') {
+                c.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h2 class="text-2xl font-bold mb-4">🔥 Products That Drove NADA Excitement</h2>
+                            <p class="text-slate-600 mb-4">
+                                Based on consultant feedback and booth traffic analysis, these products/features created buzz and sales opportunities.
+                            </p>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                                <p class="text-blue-900 font-medium mb-0">
+                                    Investment strategy: Amplify these proven winners (40% of effort) vs building new capabilities from scratch
+                                </p>
+                            </div>
+                        </div>
+
+                        ${excitementProducts.map((p, i) => `
+                            <div class="bg-white rounded-lg shadow-lg border-l-4 ${i === 0 ? 'border-purple-500' : 'border-green-500'}">
+                                <button onclick="toggle('exc${i}')" class="w-full p-6 text-left hover:bg-slate-50">
+                                    <div class="flex justify-between items-start">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-3 mb-2 flex-wrap">
+                                                <h3 class="text-lg font-bold text-slate-900">${p.title}</h3>
+                                                ${i === 0 ? '<span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-bold">🔥 CONSULTANT FAVORITE</span>' : ''}
+                                            </div>
+                                            <div class="text-xs text-slate-500 mb-2 font-medium">${p.product}</div>
+                                            <p class="text-sm text-green-700 font-medium mb-2">📊 ${p.excitement}</p>
+                                            <p class="text-sm text-slate-600">${p.whyExciting.substring(0, 200)}...</p>
+                                        </div>
+                                        <svg class="w-5 h-5 ml-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${exp['exc'+i] ? 'M19 9l-7 7-7-7' : 'M9 5l7 7-7 7'}"></path>
+                                        </svg>
+                                    </div>
+                                </button>
+                                ${exp['exc'+i] ? `
+                                    <div class="border-t p-6 bg-slate-50 space-y-4">
+                                        <div>
+                                            <h4 class="font-semibold text-blue-900 mb-2">What It Is</h4>
+                                            <p class="text-slate-700 text-sm">${p.what}</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-green-900 mb-2">Why Dealers Are Excited</h4>
+                                            <p class="text-slate-700 text-sm">${p.whyExciting}</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-purple-900 mb-2">Competitive Advantage</h4>
+                                            <p class="text-slate-700 text-sm">${p.competitiveAdvantage}</p>
+                                        </div>
+                                        <div class="bg-blue-50 rounded p-4">
+                                            <h4 class="font-semibold text-blue-900 mb-2">Launch Status</h4>
+                                            <p class="text-blue-900 text-sm mb-0"><strong>${p.launch}</strong></p>
+                                        </div>
+                                        <div class="bg-green-100 border-l-4 border-green-500 p-4 rounded">
+                                            <h4 class="font-semibold text-green-900 mb-2">How to Amplify This Success</h4>
+                                            <p class="text-green-900 text-sm mb-0">${p.amplify}</p>
+                                        </div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `).join('')}
+
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h3 class="text-xl font-bold mb-4">Common Themes Across NADA Excitement Drivers</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-3">What Dealers Responded To:</h4>
+                                    <ul class="space-y-2 text-sm text-slate-700 list-none pl-0">
+                                        <li>✓ <strong>Configurable automation</strong> - Virtual Assistant (VinSolutions + vAuto) lets dealers control vs black-box AI</li>
+                                        <li>✓ <strong>Fundamentals first</strong> - Dealer.com speed/SEO/integration beat features alone</li>
+                                        <li>✓ <strong>Free productivity tools</strong> - Navigator browser extension vs expensive consolidation</li>
+                                        <li>✓ <strong>Training + adoption support</strong> - ICO 204% from comprehensive dealer education</li>
+                                        <li>✓ <strong>Tangible ROI</strong> - BorrowersCheck fraud prevention with measurable savings</li>
+                                        <li>✓ <strong>Visible integration</strong> - Navigator + SSO prove ecosystem claims</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-3">Investment Implications:</h4>
+                                    <ul class="space-y-2 text-sm text-slate-700 list-none pl-0">
+                                        <li>• <strong>Scale Virtual Assistant:</strong> Extend VinSolutions/vAuto success to Xtime, Deal Central, Dealer.com</li>
+                                        <li>• <strong>Navigator marketing blitz:</strong> Feb 3 launch as competitive positioning moment</li>
+                                        <li>• <strong>ICO service automation:</strong> Multiply 204% through workflow automation</li>
+                                        <li>• <strong>DDC competitive toolkit:</strong> Standardize Jeremy's fundamentals-first approach</li>
+                                        <li>• <strong>BorrowersCheck expansion:</strong> Extend fraud protection to Deal Central</li>
+                                        <li>• <strong>SSO + Navigator demos:</strong> Lead all presentations with ecosystem proof</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h3 class="text-xl font-bold mb-4">Navigator Browser Extension</h3>
+                            <p class="text-slate-600 mb-4">
+                                FREE tool drove excitement at vAuto and Xtime booths - tangible proof of Cox's ecosystem integration advantage
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-blue-50 rounded p-4">
+                                    <h4 class="font-semibold text-blue-900 mb-2">What It Does</h4>
+                                    <ul class="text-sm text-blue-800 space-y-1 list-none pl-0">
+                                        <li>• Persistent browser side panel</li>
+                                        <li>• Shortcuts to Cox products</li>
+                                        <li>• Right-click from any website</li>
+                                        <li>• Deep-links across tools</li>
+                                        <li>• Contextual suggestions</li>
+                                        <li>• Tab management/filtering</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 rounded p-4">
+                                    <h4 class="font-semibold text-green-900 mb-2">Why It Matters</h4>
+                                    <ul class="text-sm text-green-800 space-y-1 list-none pl-0">
+                                        <li>• Makes ecosystem tangible vs abstract</li>
+                                        <li>• FREE vs competitor consolidation costs</li>
+                                        <li>• No competitor has equivalent</li>
+                                        <li>• Addresses consultant "swivel" complaints</li>
+                                        <li>• Works seamlessly with SSO</li>
+                                        <li>• Public launch: Feb 3, 2026</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-purple-50 rounded p-4">
+                                    <h4 class="font-semibold text-purple-900 mb-2">Products Integrated</h4>
+                                    <ul class="text-sm text-purple-800 space-y-1 list-none pl-0">
+                                        <li>• vAuto</li>
+                                        <li>• VinSolutions</li>
+                                        <li>• Xtime Schedule & Inspect</li>
+                                        <li>• Manheim</li>
+                                        <li>• Autotrader</li>
+                                        <li>• Dealertrack F&I</li>
+                                        <li>• Stockwave</li>
+                                        <li>• nVision</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (tab === 'wins') {
+                c.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h2 class="text-2xl font-bold mb-4">NADA Winners: Products That Overperformed</h2>
+                            <p class="text-slate-600">Performance above target validates these approaches - invest 40% in amplifying proven success.</p>
+                        </div>
+                        ${wins.map((w, i) => `
+                            <div class="bg-white rounded-lg shadow-lg border-l-4 border-green-500 p-6">
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">${w.title}</h3>
+                                <div class="text-sm font-medium text-green-700 mb-2">📊 ${w.perf}</div>
+                                <p class="text-sm text-slate-600">${w.insight}</p>
+                            </div>
+                        `).join('')}
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded mt-4">
+                            <h3 class="font-bold text-blue-900 mb-3">Amplification Strategy</h3>
+                            <p class="text-blue-900 text-sm mb-0">
+                                40% of investment should scale NADA winners: Virtual Assistant expansion across ecosystem, 
+                                Navigator marketing campaign post-Feb 3 launch, ICO service drive automation multiplying 204% success, 
+                                DDC competitive toolkit standardizing Jeremy's approach, SSO + Navigator positioning flipping 'Frankenstein' narrative, 
+                                BorrowersCheck fraud protection expansion to Deal Central.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (tab === 'gaps') {
+                c.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h2 class="text-2xl font-bold mb-4">Critical Gaps: Fix These (60% of Investment)</h2>
+                            <p class="text-slate-600 mb-4">
+                                Prioritized by NADA underperformance, YoY declines, and consultant-identified barriers.
+                            </p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full font-medium text-sm">Emergency: 3 gaps</span>
+                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full font-medium text-sm">Critical: 2 gaps</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-medium text-sm">High Priority: 1 gap</span>
+                            </div>
+                        </div>
+                        ${gaps.map((g, i) => `
+                            <div class="bg-white rounded-lg shadow-lg border-l-4 border-red-500">
+                                <button onclick="toggle('gap${i}')" class="w-full p-6 text-left hover:bg-slate-50">
+                                    <div class="flex justify-between items-start">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-3 mb-2 flex-wrap">
+                                                <span class="text-xl font-bold text-slate-400">#${g.rank}</span>
+                                                <h3 class="text-lg font-bold text-slate-900">${g.name}</h3>
+                                                <span class="px-3 py-1 rounded-full text-xs font-bold ${
+                                                    g.tier === 'EMERGENCY' ? 'bg-red-600 text-white animate-pulse' : 
+                                                    g.tier === 'CRITICAL' ? 'bg-orange-600 text-white' : 'bg-blue-600 text-white'
+                                                }">${g.tier}</span>
+                                            </div>
+                                            <div class="flex gap-2 mb-2 flex-wrap">
+                                                <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs font-medium">⏱️ ${g.timeline}</span>
+                                                <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded text-xs">📐 ${g.complexity}</span>
+                                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">👥 ${g.resources}</span>
+                                            </div>
+                                            <p class="text-sm font-medium text-red-700 mb-1">📊 ${g.perf}</p>
+                                            <p class="text-sm text-slate-600">${g.problem.substring(0, 150)}...</p>
+                                        </div>
+                                        <svg class="w-5 h-5 ml-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${exp['gap'+i] ? 'M19 9l-7 7-7-7' : 'M9 5l7 7-7 7'}"></path>
+                                        </svg>
+                                    </div>
+                                </button>
+                                ${exp['gap'+i] ? `
+                                    <div class="border-t p-6 bg-slate-50 space-y-4">
+                                        <div>
+                                            <h4 class="font-semibold text-red-900 mb-2">❌ The Problem</h4>
+                                            <p class="text-slate-700 text-sm">${g.problem}</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900 mb-2">🏆 What Competition is Doing</h4>
+                                            <p class="text-slate-700 text-sm">${g.comp}</p>
+                                        </div>
+                                        <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
+                                            <h4 class="font-semibold text-purple-900 mb-2">🎯 Solution</h4>
+                                            <p class="text-purple-900 text-sm mb-0">${g.solution}</p>
+                                        </div>
+                                        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                                            <h4 class="font-semibold text-yellow-900 mb-2">📈 Expected Impact</h4>
+                                            <p class="text-yellow-900 text-sm mb-0">${g.impact}</p>
+                                        </div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+            else if (tab === 'investments') {
+                c.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h2 class="text-2xl font-bold mb-4">10 Strategic Investment Priorities</h2>
+                        <p class="text-slate-600 mb-6">Ranked by NADA performance impact and competitive urgency. Strategy: 60% fix gaps / 40% amplify success</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded">
+                                <h3 class="font-bold text-red-900 mb-3">🚨 Emergency Tier (Q1 2026 - Start Immediately)</h3>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-sm">
+                                        <span class="text-red-800 font-medium">#1: Deal Central Adoption Crisis</span>
+                                        <span class="text-red-700">16 weeks | Medium-High complexity</span>
+                                    </div>
+                                    <div class="text-xs text-red-700 pl-4">VinSolutions integration + pricing strategy (Lite tier OR bundle discount) + change management</div>
+                                    
+                                    <div class="flex justify-between items-center text-sm pt-2">
+                                        <span class="text-red-800 font-medium">#2: Xtime Mobile Workflows</span>
+                                        <span class="text-red-700">16 weeks | High complexity</span>
+                                    </div>
+                                    <div class="text-xs text-red-700 pl-4">iPad-native app, bay-side workflows, counter CDK strength</div>
+                                    
+                                    <div class="flex justify-between items-center text-sm pt-2">
+                                        <span class="text-red-800 font-medium">#3: Service-to-Sales Automation</span>
+                                        <span class="text-red-700">20 weeks | High complexity</span>
+                                    </div>
+                                    <div class="text-xs text-red-700 pl-4">Automated Xtime → ICO → vAuto → VinSolutions workflow (scale ICO 204%)</div>
+                                </div>
+                            </div>
+
+                            <div class="bg-orange-50 border-l-4 border-orange-600 p-4 rounded">
+                                <h3 class="font-bold text-orange-900 mb-3">⚠️ Critical Tier (Q2 2026 - Fund Immediately)</h3>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-sm">
+                                        <span class="text-orange-800 font-medium">#4: Xtime Fixed Ops Innovation Lab</span>
+                                        <span class="text-orange-700">Ongoing | High resources</span>
+                                    </div>
+                                    <div class="text-xs text-orange-700 pl-4">Dedicated team for sustained innovation vs one-time features</div>
+                                    
+                                    <div class="flex justify-between items-center text-sm pt-2">
+                                        <span class="text-orange-800 font-medium">#5: Real-Time Data Platform</span>
+                                        <span class="text-orange-700">24 weeks | Very High complexity</span>
+                                    </div>
+                                    <div class="text-xs text-orange-700 pl-4">Event-driven architecture across ecosystem, eliminate batch processing</div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 border-l-4 border-green-600 p-4 rounded">
+                                <h3 class="font-bold text-green-900 mb-3">✅ Amplify Success (Q2-Q3 2026 - High ROI)</h3>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-sm">
+                                        <span class="text-green-800 font-medium">#6: vAuto Bundling + Entry Tier</span>
+                                        <span class="text-green-700">12 weeks | Medium complexity</span>
+                                    </div>
+                                    <div class="text-xs text-green-700 pl-4">Address market saturation with pricing strategy</div>
+                                    
+                                    <div class="flex justify-between items-center text-sm pt-2">
+                                        <span class="text-green-800 font-medium">#7: Virtual Assistant Ecosystem Expansion</span>
+                                        <span class="text-green-700">20 weeks | High complexity</span>
+                                    </div>
+                                    <div class="text-xs text-green-700 pl-4">Extend VinSolutions/vAuto VA to Xtime, Deal Central, Dealer.com</div>
+                                    
+                                    <div class="flex justify-between items-center text-sm pt-2">
+                                        <span class="text-green-800 font-medium">#8: ICO Service Drive Automation</span>
+                                        <span class="text-green-700">12 weeks | Medium complexity</span>
+                                    </div>
+                                    <div class="text-xs text-green-700 pl-4">Automate manual workflows, multiply 204% performance</div>
+                                    
+                                    <div class="flex justify-between items-center text-sm pt-2">
+                                        <span class="text-green-800 font-medium">#9: DDC Competitive Toolkit</span>
+                                        <span class="text-green-700">12 weeks | Medium complexity</span>
+                                    </div>
+                                    <div class="text-xs text-green-700 pl-4">Standardize Jeremy's fundamentals-over-features approach</div>
+                                    
+                                    <div class="flex justify-between items-center text-sm pt-2">
+                                        <span class="text-green-800 font-medium">#10: Navigator Marketing + SSO Campaign</span>
+                                        <span class="text-green-700">8 weeks | Low complexity</span>
+                                    </div>
+                                    <div class="text-xs text-green-700 pl-4">Feb 3 launch campaign + competitive positioning</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
+                            <h3 class="font-bold text-blue-900 mb-3">Next 30 Days: Emergency Actions</h3>
+                            <ol class="space-y-3 list-none pl-0">
+                                <li class="flex gap-3">
+                                    <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</span>
+                                    <div>
+                                        <div class="font-semibold text-blue-900 text-sm">Deal Central Emergency Response</div>
+                                        <div class="text-xs text-blue-800">41% crisis - VinSolutions integration + pricing strategy (Lite tier or bundle discount)</div>
+                                    </div>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</span>
+                                    <div>
+                                        <div class="font-semibold text-blue-900 text-sm">Navigator Feb 3 Marketing Plan</div>
+                                        <div class="text-xs text-blue-800">Consultant excitement + competitive moat = major launch opportunity</div>
+                                    </div>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</span>
+                                    <div>
+                                        <div class="font-semibold text-blue-900 text-sm">Xtime Service Lane War Room</div>
+                                        <div class="text-xs text-blue-800">-29% YoY decline + CDK mobile threat = emergency for Mobile + Innovation Lab</div>
+                                    </div>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</span>
+                                    <div>
+                                        <div class="font-semibold text-blue-900 text-sm">Service-to-Sales Automation Kickoff</div>
+                                        <div class="text-xs text-blue-800">Scale ICO's 204% success with automated Xtime workflows</div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => render('overview'));
+    </script>
+</body>
+</html>
