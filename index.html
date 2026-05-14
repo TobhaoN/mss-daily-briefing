@@ -3,186 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automotive AI Daily Briefing — May 13, 2026</title>
+<title>🚗 MSS Automotive AI Daily Briefing — Thursday, May 14, 2026</title>
 <style>
-:root{--bg:#fff;--text:#1a1a2e;--card-bg:#f8f9fa;--card-border:#e0e0e0;--subtle:#6c757d;--top-story-bg:#fff8e1;--top-story-border:#ff9800;--hf:#0b1f3a;--ht:#1a3a6c}
-[data-theme="dark"]{--bg:#121212;--text:#e0e0e0;--card-bg:#1e1e2f;--card-border:#333;--subtle:#999;--top-story-bg:#2a2215;--top-story-border:#ff9800}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s}
-header{background:linear-gradient(135deg,var(--hf),var(--ht));color:#fff;padding:2rem 1.5rem;position:relative}
-header h1{font-size:1.8rem;font-weight:700}header p{opacity:.85;margin-top:.3rem;font-size:1rem}
-.theme-toggle{position:absolute;top:1.2rem;right:1.5rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:.4rem .9rem;border-radius:6px;cursor:pointer;font-size:.85rem;font-family:inherit}
-.theme-toggle:hover{background:rgba(255,255,255,.25)}
-.container{max-width:1200px;margin:0 auto;padding:1.5rem}
-.top-story{background:var(--top-story-bg);border-left:5px solid var(--top-story-border);border-radius:8px;padding:1.5rem;margin-bottom:2rem}
-.top-story-label{display:inline-block;background:#ff9800;color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:3px;letter-spacing:.08em;margin-bottom:.8rem}
-.top-story h2{font-size:1.3rem;margin-bottom:.5rem}.top-story h2 a{color:var(--text);text-decoration:none}.top-story h2 a:hover{text-decoration:underline}
-.top-story .summary{font-size:.95rem;margin-bottom:.5rem}.top-story .why{font-style:italic;font-size:.9rem;color:var(--subtle);margin-bottom:.5rem}.top-story .meta{font-size:.8rem;color:var(--subtle)}
-.section-header{font-size:.9rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 0 .5rem 1rem;margin:2rem 0 1rem;border-left:4px solid}
-.cat-market{border-color:#2196f3}.cat-retail{border-color:#4caf50}.cat-competitor{border-color:#f44336}.cat-cox{border-color:#9c27b0}.cat-marketing{border-color:#ff5722}.cat-ai{border-color:#00bcd4}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem}
-.card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:8px;padding:1.2rem;transition:box-shadow .2s}
-.card:hover{box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.card h3{font-size:1.05rem;margin-bottom:.5rem}.card h3 a{color:var(--text);text-decoration:none}.card h3 a:hover{text-decoration:underline}
-.card .summary{font-size:.9rem;margin-bottom:.5rem}.card .why{font-style:italic;font-size:.85rem;color:var(--subtle);margin-bottom:.5rem}.card .meta{font-size:.78rem;color:var(--subtle)}
-footer{text-align:center;padding:2rem 1rem;font-size:.8rem;color:var(--subtle);border-top:1px solid var(--card-border);margin-top:2rem}
+  :root {
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --text: #1a1a2e;
+    --subtext: #4a5568;
+    --border: #e2e8f0;
+    --shadow: rgba(0,0,0,0.08);
+    --accent-market: #e74c3c;
+    --accent-retail: #2ecc71;
+    --accent-competitor: #9b59b6;
+    --accent-cox: #3498db;
+    --accent-marketing: #e67e22;
+    --accent-ai: #1abc9c;
+    --top-story-border: #f39c12;
+  }
+  [data-theme="dark"] {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --text: #e6edf3;
+    --subtext: #8b949e;
+    --border: #30363d;
+    --shadow: rgba(0,0,0,0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+  }
+  header {
+    background: linear-gradient(135deg, #0b1f3a 0%, #1a3a6c 100%);
+    color: #fff;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .header-title h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.3px; }
+  .header-title p { font-size: 0.9rem; opacity: 0.8; margin-top: 4px; }
+  .toggle-btn {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: inherit;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .toggle-btn:hover { background: rgba(255,255,255,0.25); }
+  main { max-width: 1300px; margin: 0 auto; padding: 32px 20px; }
+  .top-story {
+    background: var(--surface);
+    border-left: 5px solid var(--top-story-border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .top-story-label {
+    display: inline-block;
+    background: var(--top-story-border);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+  }
+  .top-story h2 a { color: var(--text); text-decoration: none; font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
+  .top-story h2 a:hover { text-decoration: underline; }
+  .top-story p { color: var(--subtext); margin-top: 10px; font-size: 0.95rem; }
+  .top-story .meta { font-size: 0.8rem; color: var(--subtext); margin-top: 12px; }
+  section { margin-bottom: 44px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-header h2 { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text); }
+  .cat-bar { display: inline-block; width: 5px; height: 22px; border-radius: 3px; }
+  .cat-market { background: var(--accent-market); }
+  .cat-retail { background: var(--accent-retail); }
+  .cat-competitor { background: var(--accent-competitor); }
+  .cat-cox { background: var(--accent-cox); }
+  .cat-marketing { background: var(--accent-marketing); }
+  .cat-ai { background: var(--accent-ai); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+  .card { background: var(--surface); border-radius: 8px; padding: 22px 24px; box-shadow: 0 2px 8px var(--shadow); border: 1px solid var(--border); transition: box-shadow 0.2s; }
+  .card:hover { box-shadow: 0 4px 16px var(--shadow); }
+  .card h3 a { color: var(--text); text-decoration: none; font-size: 1rem; font-weight: 600; line-height: 1.4; }
+  .card h3 a:hover { text-decoration: underline; }
+  .card p { color: var(--subtext); margin-top: 10px; font-size: 0.9rem; }
+  .card .why { font-style: italic; color: var(--subtext); margin-top: 8px; font-size: 0.85rem; }
+  .card .meta { font-size: 0.78rem; color: var(--subtext); margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
+  footer { text-align: center; padding: 28px 20px; color: var(--subtext); font-size: 0.85rem; border-top: 1px solid var(--border); }
 </style>
 </head>
 <body>
 <header>
-<div><h1>🚗 Automotive AI Daily Briefing</h1><p>Tuesday, May 13, 2026</p></div>
-<button class="theme-toggle" aria-label="Toggle dark mode">Toggle Dark Mode</button>
+  <div class="header-title">
+    <h1>🚗 MSS Automotive AI Daily Briefing</h1>
+    <p>Thursday, May 14, 2026 &nbsp;|&nbsp; Six categories &nbsp;·&nbsp; Verified sources only</p>
+  </div>
+  <button class="toggle-btn" id="themeToggle" aria-label="Toggle light/dark mode">☀️ Light Mode</button>
 </header>
-<div class="container">
-<div class="top-story">
-<span class="top-story-label">TOP STORY</span>
-<h2><a href="https://www.nytimes.com/2026/05/12/technology/anthropic-950-billion-valuation.html" target="_blank" rel="noopener">Anthropic in Talks to Raise Funding at a $950 Billion Valuation</a></h2>
-<p class="summary">Anthropic is reportedly in discussions to raise new capital at a valuation near $950 billion, fueled by demand for its Claude Mythos model and a massive $200 billion Google Cloud computing commitment. The deal would make Anthropic one of the most valuable private companies in history.</p>
-<p class="why">Why it matters: The scale of AI investment is reshaping enterprise software economics. Dealerships relying on AI-powered tools will see capabilities accelerate, but consolidation around a few well-funded frontier labs could narrow the competitive landscape for automotive AI providers.</p>
-<p class="meta">The New York Times &middot; May 12, 2026</p>
-</div>
-<h2 class="section-header cat-market">Automotive Market</h2>
-<div class="grid">
-<div class="card">
-<h3><a href="https://www.reuters.com/business/autos-transportation/global-ev-demand-rises-second-month-data-shows-2026-05-13/" target="_blank" rel="noopener">Global EV Demand Rises for Second Month, Data Shows</a></h3>
-<p class="summary">Global registrations of battery-electric and plug-in hybrid vehicles rose 6% year-over-year to 1.6 million units in April, marking a second consecutive month of growth. Year-to-date EV sales have reached 5.6 million globally.</p>
-<p class="why">Why it matters: Sustained EV demand growth validates OEM electrification investments and increases the urgency for dealerships to build EV-ready sales, service, and F&amp;I processes.</p>
-<p class="meta">Reuters &middot; May 13, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://electrek.co/2026/05/12/europe-drove-global-ev-sales-april-china-exports/" target="_blank" rel="noopener">Europe Drove Global EV Sales in April as China Exports Surged</a></h3>
-<p class="summary">Europe delivered another standout month for EV adoption while China's export volumes surged. North America lagged behind both regions, raising questions about the pace of U.S. electrification relative to global peers.</p>
-<p class="why">Why it matters: A widening EV adoption gap between North America and other markets could affect which AI and digital retail tools gain traction at U.S. dealerships versus overseas competitors.</p>
-<p class="meta">Electrek &middot; May 12, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.autonews.com/regulation-safety/auto-tariffs-leave-industry-in-limbo-as-usmca-review-nears" target="_blank" rel="noopener">Auto Tariffs Leave Industry in Limbo as USMCA Review Nears</a></h3>
-<p class="summary">Section 232 tariffs aimed at reshoring auto production have instead frozen manufacturer planning as the USMCA review approaches. Domestically built vehicles are projected to account for 55.6% of the U.S. market in 2026.</p>
-<p class="why">Why it matters: Tariff uncertainty directly affects vehicle pricing, inventory allocation algorithms, and the data models that power tools like vAuto and Dealertrack.</p>
-<p class="meta">Automotive News &middot; May 11, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.wardsauto.com/news/us-tariffs-erase-all-toyotas-north-america-profits-fy2026" target="_blank" rel="noopener">US Tariffs Erase All of Toyota's North America Profits in FY2026</a></h3>
-<p class="summary">Toyota reported that 25% U.S. tariffs resulted in a 1.4 trillion yen hit, pushing its North America operating margin to -1.4% for FY2026. Total operating income fell 21.5% globally despite selling over 10 million vehicles.</p>
-<p class="why">Why it matters: When the world's largest automaker loses money in North America, expect ripple effects on incentive budgets, dealer allocations, and the profitability assumptions baked into retail AI tools.</p>
-<p class="meta">WardsAuto &middot; May 11, 2026</p>
-</div>
-</div>
-<h2 class="section-header cat-retail">Dealership &amp; Retail Tech</h2>
-<div class="grid">
-<div class="card">
-<h3><a href="https://www.cbtnews.com/auto-loan-availability-hits-4-year-high-in-april-but-terms-reach-new-record/" target="_blank" rel="noopener">Auto Loans Hit 4-Year High in April, Terms Reach New Record</a></h3>
-<p class="summary">Credit availability for auto loans climbed to its highest level since June 2022 in April, but nearly 30% of loans now carry terms longer than 72 months — an all-time high. Negative equity also hit a five-year peak.</p>
-<p class="why">Why it matters: Longer loan terms and rising negative equity create complex F&amp;I scenarios where AI-driven desking and deal-structuring tools become essential for dealer profitability.</p>
-<p class="meta">CBT News &middot; May 12, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.globenewswire.com/news-release/2026/05/12/700Credit-Verifacto-Partner-Dealership-Workflows" target="_blank" rel="noopener">700Credit and Verifacto Partner to Simplify Dealership Workflows</a></h3>
-<p class="summary">700Credit and Verifacto announced a partnership to streamline consumer consent capture and auto-populate FICO scores within DMS and CRM platforms. The AI-driven integration aims to help dealers make faster, more informed credit decisions.</p>
-<p class="why">Why it matters: Automated credit-pull workflows reduce friction in the deal process and demonstrate how AI middleware is increasingly embedding into the DMS/CRM stack.</p>
-<p class="meta">GlobeNewswire (press release) &middot; May 12, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.autoremarketing.com/technology/former-cdk-executive-joins-widewail-enterprise-growth-oem-relationships" target="_blank" rel="noopener">Former CDK Executive Joins Widewail to Drive Enterprise Growth</a></h3>
-<p class="summary">Widewail hired a former CDK Global director of OEM analytics to lead its enterprise expansion and OEM relationships. The move signals growing investment in AI-powered reputation and review management for dealerships.</p>
-<p class="why">Why it matters: Talent migration from legacy DMS providers to AI-native startups reflects a broader shift in where innovation is happening in the dealer tech ecosystem.</p>
-<p class="meta">Auto Remarketing &middot; May 12, 2026</p>
-</div>
-</div>
-<h2 class="section-header cat-competitor">Competitor Watch</h2>
-<div class="grid">
-<div class="card">
-<h3><a href="https://www.caranddriver.com/news/tesla-model-s-model-x-end-production/" target="_blank" rel="noopener">Tesla Ends Production of Model S and Model X</a></h3>
-<p class="summary">Tesla has officially ceased production of its flagship Model S sedan and Model X SUV, ending a chapter for the vehicles that launched the modern EV era. The factory capacity will reportedly shift toward Optimus robot production.</p>
-<p class="why">Why it matters: As Tesla narrows its consumer lineup, dealers selling competing brands gain an opening in the luxury EV segment — but also lose a benchmark vehicle that drove showroom traffic industry-wide.</p>
-<p class="meta">Car and Driver &middot; May 12, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://investors.cargurus.com/news-events/news-releases" target="_blank" rel="noopener">CarGurus Q1 Earnings Soar; Revenue Up 15% YoY</a></h3>
-<p class="summary">CarGurus reported Q1 2026 earnings of $0.58/share, beating estimates, on revenue of $243.6 million (up 15% YoY). Adjusted EBITDA reached $80.2 million, and the company will present at J.P. Morgan's 2026 Global TMC Conference.</p>
-<p class="why">Why it matters: CarGurus' marketplace strength and growing dealer product suite make it an increasingly direct competitor to Cox Automotive's consumer-facing brands.</p>
-<p class="meta">CarGurus Investor Relations &middot; May 7, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://investors.carvana.com/news-releases" target="_blank" rel="noopener">Carvana Hits $6.4B Revenue with 40% Growth for Sixth Straight Quarter</a></h3>
-<p class="summary">Carvana posted Q1 2026 revenue of $6.43 billion (up 52% YoY), selling 187,393 retail units — its sixth consecutive quarter of 40%+ unit growth. The company continues to scale its AI-driven reconditioning and logistics operations.</p>
-<p class="why">Why it matters: Carvana's sustained growth pressures traditional franchise dealers and validates the fully digital, AI-optimized retail model as viable at massive scale.</p>
-<p class="meta">Carvana Investor Relations &middot; Apr 29, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.purecars.com/resources/purecars-announces-acquisition-of-autoalert" target="_blank" rel="noopener">PureCars Acquires AutoAlert, Creating AI-Enabled Data and Marketing Platform</a></h3>
-<p class="summary">PureCars announced the acquisition of AutoAlert, combining PureCars' digital advertising platform with AutoAlert's data-mining and CRM capabilities. The merged entity aims to be the industry's most comprehensive AI-enabled data and marketing platform for dealerships.</p>
-<p class="why">Why it matters: This consolidation creates a formidable competitor in the dealer marketing stack, combining first-party data intelligence with AI-powered ad targeting — directly challenging Cox Automotive and CDK offerings.</p>
-<p class="meta">PureCars &middot; Apr 13, 2026</p>
-</div>
-</div>
-<h2 class="section-header cat-cox">Cox Automotive Ecosystem</h2>
-<div class="grid">
-<div class="card">
-<h3><a href="https://mediaroom.kbb.com/2026-05-12-Kelley-Blue-Book-Report-Annual-New-Vehicle-Price-Gains-Slow-in-April" target="_blank" rel="noopener">KBB: Annual New-Vehicle Price Gains Slow in April as Market Hits Headwinds</a></h3>
-<p class="summary">Kelley Blue Book reports that average new-vehicle MSRP hit a new 2026 high of $51,607 in April, but the pace of year-over-year price increases is decelerating. Softer luxury sales and tighter incentives are contributing to market headwinds.</p>
-<p class="why">Why it matters: Slowing price growth combined with record MSRPs creates a pricing tightrope for dealers — exactly the scenario where AI-powered pricing and inventory tools provide competitive advantage.</p>
-<p class="meta">Kelley Blue Book Media Center &middot; May 12, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.coxautoinc.com/insights/auto-market-weekly-summary/" target="_blank" rel="noopener">Cox Automotive: Credit Index Hits 4-Year High; SAAR Revision Under Review</a></h3>
-<p class="summary">The Dealertrack Credit Availability Index rose to 102.4 in April, its highest since June 2022. However, with the 2026 SAAR averaging near 15.5 million through April, Cox Automotive is considering a downward revision to its full-year sales outlook.</p>
-<p class="why">Why it matters: Easier credit access paired with a potential SAAR downgrade sends mixed signals — dealers need granular, AI-driven market intelligence to navigate conflicting macro trends.</p>
-<p class="meta">Cox Automotive Inc. &middot; May 11, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.autoremarketing.com/wholesale/resilient-wholesale-vehicle-market-slows-april-evs-gain-momentum" target="_blank" rel="noopener">Wholesale Vehicle Market Slows in April, but EVs Gain Momentum</a></h3>
-<p class="summary">After a strong Q1, the wholesale market cooled slightly in April. The Manheim Used Vehicle Value Index climbed 1.8% year-over-year to 211.9 (adjusted), while wholesale EV volumes continued to gain share amid rising lease returns.</p>
-<p class="why">Why it matters: Growing wholesale EV volumes and rising lease returns are creating new inventory opportunities that Manheim and vAuto's AI algorithms will need to price and route effectively.</p>
-<p class="meta">Auto Remarketing &middot; May 11, 2026</p>
-</div>
-</div>
-<h2 class="section-header cat-marketing">Dealership Marketing &amp; Advertising</h2>
-<div class="grid">
-<div class="card">
-<h3><a href="https://www.seroundtable.com/google-vehicle-ads-standard-shopping-campaigns-43133.html" target="_blank" rel="noopener">Google Vehicle Ads Now Available in Standard Shopping Campaigns</a></h3>
-<p class="summary">Google has expanded Vehicle Ads support to Standard Shopping campaigns, giving automotive advertisers more control over bidding and budget allocation beyond Performance Max. Dealers can now run vehicle inventory feeds through the broader Shopping infrastructure.</p>
-<p class="why">Why it matters: This opens significant new optimization levers for dealer digital marketing teams and their agencies, enabling AI-driven bid strategies on vehicle-specific inventory at scale.</p>
-<p class="meta">Search Engine Roundtable &middot; May 11, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.cnbc.com/2026/05/12/google-races-put-gemini-at-center-of-android.html" target="_blank" rel="noopener">Google Races to Put Gemini at the Center of Android, Including Cars</a></h3>
-<p class="summary">Google is positioning its Gemini AI as the central intelligence layer across Android devices — including in-car infotainment systems. The latest Android rollout deepens Gemini integration into phones, Chrome, laptops, and automotive platforms.</p>
-<p class="why">Why it matters: As Gemini becomes the default AI in millions of vehicles, it will reshape how consumers search for and interact with dealerships, making GEO (generative engine optimization) a critical marketing discipline.</p>
-<p class="meta">CNBC &middot; May 12, 2026</p>
-</div>
-</div>
-<h2 class="section-header cat-ai">AI &amp; Technology</h2>
-<div class="grid">
-<div class="card">
-<h3><a href="https://www.nytimes.com/2026/05/12/technology/anthropic-950-billion-valuation.html" target="_blank" rel="noopener">Anthropic in Talks to Raise Funding at $950 Billion Valuation</a></h3>
-<p class="summary">Anthropic is in discussions to raise capital at a valuation near $950 billion, propelled by demand for Claude Mythos and a $200 billion multi-year Google Cloud computing deal. The round would cement Anthropic's position among the world's most valuable companies.</p>
-<p class="why">Why it matters: Massive capital concentration in frontier AI labs accelerates capability development but may also increase dependency risks for automotive AI vendors building on these platforms.</p>
-<p class="meta">The New York Times &middot; May 12, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.nytimes.com/2026/05/12/us/politics/china-anthropic-ai-mythos.html" target="_blank" rel="noopener">China Sought Access to Anthropic's Mythos AI; The Answer Was No</a></h3>
-<p class="summary">Chinese entities attempted to gain access to Anthropic's Claude Mythos model, which the company has withheld from public release due to its advanced cybersecurity capabilities. Anthropic declined, citing national security concerns.</p>
-<p class="why">Why it matters: The geopolitics of AI access are intensifying. Automotive companies relying on AI for connected vehicle security should track which models face export restrictions.</p>
-<p class="meta">The New York Times &middot; May 12, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://www.hpcwire.com/aiwire/2026/05/11/openai-deployment-company-scale-enterprise-ai/" target="_blank" rel="noopener">OpenAI Launches Deployment Company to Scale Enterprise AI</a></h3>
-<p class="summary">OpenAI announced the OpenAI Deployment Company, a new entity focused on helping organizations build and deploy production AI systems. The initiative includes the acquisition of Tomoro, bringing experienced forward-deployed engineers to accelerate enterprise rollouts.</p>
-<p class="why">Why it matters: A dedicated enterprise deployment arm from OpenAI signals the company is targeting large-scale industry verticals — automotive retail included — with hands-on AI integration support.</p>
-<p class="meta">HPCwire &middot; May 11, 2026</p>
-</div>
-<div class="card">
-<h3><a href="https://blogs.nvidia.com/blog/sap-specialized-agents/" target="_blank" rel="noopener">NVIDIA and SAP Bring Trust to Specialized Enterprise AI Agents</a></h3>
-<p class="summary">NVIDIA and SAP announced a collaboration to deploy trusted, specialized AI agents across enterprise functions including finance, procurement, supply chain, and manufacturing. The agents leverage NVIDIA's inference infrastructure with SAP's business process expertise.</p>
-<p class="why">Why it matters: Specialized agentic AI for enterprise workflows is the blueprint for what's coming to dealership operations — expect similar agent architectures in DMS, service scheduling, and parts procurement.</p>
-<p class="meta">NVIDIA Blog &middot; May 12, 2026</p>
-</div>
-</div>
-</div>
-<footer>May 13, 2026 &middot; Curated by AI Research Desk</footer>
+<main>
+  <div class="top-story">
+    <span class="top-story-label">Top Story</span>
+    <h2><a href="https://www.coxautoinc.com/insights/cox-automotive-to-acquire-fullpath-bringing-ai-native-data-and-marketing-infrastructure-to-the-industrys-largest-dealer-network/" target="_blank" rel="noopener noreferrer">Cox Automotive to Acquire Fullpath, Bringing AI-Native Data and Marketing Infrastructure to 40,000+ Dealers</a></h2>
+    <p>Cox Automotive has signed a definitive agreement to acquire Fullpath, an AI-powered Customer Data Platform and marketing automation company, in a deal expected to close within 30 days. Fullpath resolves shopper identity across years of CRM and DMS history into a single actionable profile, and its platform will be integrated across VinSolutions, Dealer.com, Autotrader, and KBB — creating the most complete connected retail stack in the industry. Cox president Steve Rowley called it "the most significant capability investment we've made in years."</p>
+    <p>Why it matters: This deal redraws the competitive map for automotive AI and marketing. By uniting Fullpath's CDP and agentic CRM with Cox's first-party data from 2.3 billion annual online interactions, Cox is positioned to offer a level of personalization and attribution that standalone platforms cannot match — and it puts direct pressure on CDK, Reynolds, and independent MarTech vendors competing for dealer wallet share.</p>
+    <p class="meta">📰 Cox Automotive Newsroom &nbsp;|&nbsp; April 23, 2026</p>
+  </div>
+  <section>
+    <div class="section-header">
+      <span class="cat-bar cat-market"></span>
+      <h2>Automotive Market</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://www.autonews.com/manufacturing/an-usmca-tariffs-us-canada-talks-0512/" target="_blank" rel="noopener noreferrer">Canada Fights to Remove Auto Tariffs as USMCA Six-Year Review Looms</a></h3>
+        <p>Canada's auto industry is entering the USMCA review with a singular priority: eliminating U.S. Section 232 tariffs that have applied a 25% duty on Canadian vehicle imports for over a year. Canadian automakers — who export ~90% of production to the U.S. — warn that any progress on other trade issues is "futile" until the tariffs are addressed. A China trade deal granting reduced tariff access for 49,000 EVs complicates Ottawa's negotiating position.</p>
+        <p class="why">Why it matters: The July 1 USMCA review deadline is a pivotal moment for North American supply chains — sourcing decisions, production schedules, and dealer inventory pipelines all hang in the balance.</p>
+        <p class="meta">📰 Automotive News &nbsp;|&nbsp; May 12, 2026</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.autonews.com/manufacturing/automakers/anc-tariffs-canada-confident-deal-timeline-delay-0512/" target="_blank" rel="noopener noreferrer">Canadian Auto Leaders Cautiously Optimistic on Tariff Deal — But Not by July 1</a></h3>
+        <p>Industry leaders at the Ontario Auto Forum 2026 expressed growing confidence that Canada and the U.S. will ultimately preserve their integrated auto supply chain, but a resolution by July 1 is seen as unlikely. Auto imports between the two countries have already measurably declined — Canadian imports to the U.S. fell by 132,000 vehicles in 2025. Observers expect an accord to materialize in the fall, aligned with U.S. midterm election dynamics.</p>
+        <p class="why">Why it matters: Extended tariff uncertainty depresses new-vehicle production, inventory availability, and wholesale auction flows — directly affecting dealer operations, vAuto sourcing signals, and Manheim market pricing.</p>
+        <p class="meta">📰 Automotive News &nbsp;|&nbsp; May 13, 2026</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.coxautoinc.com/insights/apr-2026-atp-report/" target="_blank" rel="noopener noreferrer">KBB: New-Vehicle Price Gains Slow to 1.8% in April as Market Hits Headwinds</a></h3>
+        <p>The average transaction price for new vehicles reached $49,461 in April — up 1.8% YoY, well below the long-term average of 3.6%. Incentive spending declined month over month to 6.9% of ATP, with EVs still commanding the highest incentive packages at 13.8% of ATP. Tesla Model Y ATP was $50,859, down 8.3% year over year. Strong mix in SUVs and pickups is holding the average up despite softer luxury demand.</p>
+        <p class="why">Why it matters: Slower price growth near supply equilibrium gives dealers and F&amp;I teams cleaner margins on the most popular segments, while EV incentive pressure and Tesla price softening continue to reshape the used-vehicle comp landscape.</p>
+        <p class="meta">📰 Kelley Blue Book / Cox Automotive &nbsp;|&nbsp; May 11, 2026</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.coxautoinc.com/insights/q1-2026-ev-sales-report-commentary/" target="_blank" rel="noopener noreferrer">EV Sales Decline Slows in Q1 2026, Share Stabilizes Near 6% Without Federal Incentives</a></h3>
+        <p>U.S. EV sales fell 27% YoY in Q1 to 216,399 units — a deceleration from Q4 2025's 36% drop — suggesting the post-incentive decline is moderating. EVs held 5.8% of new-vehicle share, flat with Q4 2025. Bright spots include Cadillac, Lexus, Toyota, and Rivian. Tesla's Model Y — now one in three EVs sold — gained share even as overall Tesla sales declined.</p>
+        <p class="why">Why it matters: A stabilizing EV share signals that the floor may be forming — critical for used EV inventory strategy, service lane EV preparation, and lender risk modeling across the dealer ecosystem.</p>
+        <p class="meta">📰 Cox Automotive / KBB &nbsp;|&nbsp; April 10, 2026</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="section-header">
+      <span class="cat-bar cat-retail"></span>
+      <h2>Dealership &amp; Retail Tech</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://www.coxautoinc.com/insights/dealerships-capture-record-fixed-ops-revenue-but-lose-market-share-as-customers-drift-to-general-repair-according-to-cox-automotive-study/" target="_blank" rel="noopener noreferrer">Cox Study: Dealerships Hit Record Fixed Ops Revenue — But Are Losing Service Market Share</a></h3>
+        <p>Cox Automotive's 2026 Fixed Operations Study reveals a paradox: average dealer service and parts revenue hit $9.23M in 2025 (up 33% in eight years), yet dealer share of service visits fell from 33% to 29% as independent competitors and mobile services proliferate. Nearly 300,000 auto mechanic businesses now operate in the U.S. — up 12% since 2018. High-performing dealers fight back with digital scheduling, photo/video transparency, and service-to-sales conversion; service customers are 30 points more likely to repurchase.</p>
+        <p class="why">Why it matters: As new-vehicle sales face headwinds, fixed ops is the revenue engine — but only for dealers who modernize the service experience. Xtime, MyKaarma, and similar platforms are in the eye of this storm.</p>
+        <p class="meta">📰 Cox Automotive &nbsp;|&nbsp; April 9, 2026</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.autonews.com/retail/an-dms-dealership-ai-preview-0302/" target="_blank" rel="noopener noreferrer">DMS Vendors Move AI from Phone Bots to Data-Enhanced Decision Systems in 2026</a></h3>
+        <p>CDK Global, Reynolds &amp; Reynolds, Tekion, and Cox Automotive are advancing from "Level 1" AI — voicebots and scheduling — to "Level 2" AI that combines proprietary data with machine learning for pricing guidance, predictive service recommendations, and proactive dealer insights. CDK has 900M repair orders fueling AI recommendations; Reynolds' Spark AI data layer now offers proactive inventory-mix advice; Tekion launched three new AI agents at NADA 2026 covering appointments, vehicle history, and conversational CRM.</p>
+        <p class="why">Why it matters: The DMS is becoming the AI operating system of the dealership. Vendors who win the data layer win the entire stack — which is exactly why Cox's Fullpath acquisition is so strategically significant.</p>
+        <p class="meta">📰 Automotive News &nbsp;|&nbsp; March 2, 2026</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="section-header">
+      <span class="cat-bar cat-competitor"></span>
+      <h2>Competitor Watch</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://www.cnbc.com/2026/04/29/carvana-cvna-earnings-q1-2026.html" target="_blank" rel="noopener noreferrer">Carvana Posts Record Q1 2026: 187K Units Sold, $6.43B Revenue, 40% YoY Growth</a></h3>
+        <p>Carvana reported all-time quarterly records in Q1 2026: 187,393 retail units (+40% YoY), $6.43B revenue (+52% YoY), $1.69 EPS vs. $1.43 expected, and $672M adjusted EBITDA. Shares jumped 10% after-hours. The company guided for sequential records in both retail units and EBITDA in Q2. Carvana's market cap stands at approximately $87 billion.</p>
+        <p class="why">Why it matters: Carvana's sustained, profitable growth at massive scale sets a benchmark that traditional dealer groups and their tech providers must respond to — accelerating pressure on digital retailing platforms, F&amp;I automation, and unified online-to-offline purchase experiences.</p>
+        <p class="meta">📰 CNBC &nbsp;|&nbsp; April 29, 2026</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.cbtnews.com/truecar-achieves-profitability/" target="_blank" rel="noopener noreferrer">TrueCar Achieves Profitability and Calls for a New Standard in Automotive Pricing Transparency</a></h3>
+        <p>TrueCar reached profitability following its February 2026 restructuring — which included a 30% workforce reduction — and is now advocating for greater pricing transparency as a core differentiator. The company is positioning itself as a dealer-aligned platform focused on sustainable unit economics rather than volume aggregation, with new leadership hires from INFINITI and Kelley Blue Book signaling a strategic reset.</p>
+        <p class="why">Why it matters: A leaner, profitable TrueCar with a refreshed pricing-transparency thesis could become a more formidable partner or competitor to dealer-facing platforms like CarGurus and the Cox marketplace stack, especially as shoppers grow more price-sensitive.</p>
+        <p class="meta">📰 CBT News &nbsp;|&nbsp; April 16, 2026</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="section-header">
+      <span class="cat-bar cat-cox"></span>
+      <h2>Cox Automotive Ecosystem</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://www.coxautoinc.com/insights/cox-automotive-to-acquire-fullpath-bringing-ai-native-data-and-marketing-infrastructure-to-the-industrys-largest-dealer-network/" target="_blank" rel="noopener noreferrer">Cox Automotive Acquires Fullpath: AI-Native CDP and Marketing Automation for 40,000+ Dealer Relationships</a></h3>
+        <p>Cox Automotive announced a definitive agreement to acquire 100% of Fullpath, an AI-powered Customer Data Platform and marketing automation company. Fullpath unifies shopper identity across CRM and DMS history and delivers AI-driven campaigns with individual-level attribution from ad click to purchase. The combination connects Fullpath's CDP with Cox's first-party data from Autotrader, KBB, and Dealer.com — covering tens of millions of active car shoppers annually. Deal expected to close in approximately 30 days.</p>
+        <p class="why">Why it matters: This creates a formidable data + AI + distribution moat and raises the stakes for every independent MarTech vendor serving dealers. It signals Cox's intent to make the CDP layer native to its connected retail platform.</p>
+        <p class="meta">📰 Cox Automotive Newsroom &nbsp;|&nbsp; April 23, 2026</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.autoremarketing.com/ar/technology/cox-automotive-enters-deal-to-buy-fullpath/" target="_blank" rel="noopener noreferrer">Industry Reaction: Cox's Fullpath Deal Unites First-Party Data Scale with AI-Native Marketing</a></h3>
+        <p>Auto Remarketing covers the industry context of Cox Automotive's Fullpath acquisition, highlighting how the deal accelerates the shift from manual, campaign-based marketing to always-on, data-driven retailing. Fullpath (formerly AutoLeadStar, founded in 2014) was among the most sophisticated CDP providers in automotive and is now positioned to scale through Cox's 40,000+ dealer relationships. Existing Fullpath clients will retain the same team, products, and service levels post-close.</p>
+        <p class="why">Why it matters: Third-party trade coverage contextualizes what the deal means for the broader ecosystem — particularly for DriveCentric, Impel AI, and other CRM/AI vendors competing for dealership marketing budget in an increasingly consolidated market.</p>
+        <p class="meta">📰 Auto Remarketing &nbsp;|&nbsp; April 23, 2026</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="section-header">
+      <span class="cat-bar cat-marketing"></span>
+      <h2>Dealership Marketing &amp; Advertising</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://www.cbtnews.com/ai-seo-and-geo-what-dealers-need-to-know-to-stay-competitive/" target="_blank" rel="noopener noreferrer">AI, SEO, and GEO: What Dealers Must Know to Stay Visible as AI Search Reshapes Discovery</a></h3>
+        <p>CBT News examines the growing distinction between traditional SEO and Generative Engine Optimization (GEO) — the practice of optimizing dealer content for AI-generated answers in ChatGPT, Google AI Overviews, Perplexity, and similar tools. Dealers who misunderstand the difference risk misallocating marketing budget and becoming invisible to car shoppers who now begin their search inside AI interfaces rather than on traditional search results pages. GEO strategies include structured data, conversational content formats, and citation-building in authoritative publications.</p>
+        <p class="why">Why it matters: As AI-assisted car shopping grows — with AI-assisted buyers reporting greater trust in dealerships during the process — dealers who fail to optimize for AI discoverability will cede top-of-funnel to those who do. This is a structural shift, not a trend.</p>
+        <p class="meta">📰 CBT News &nbsp;|&nbsp; April 8, 2026</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="section-header">
+      <span class="cat-bar cat-ai"></span>
+      <h2>AI &amp; Technology</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead" target="_blank" rel="noopener noreferrer">Anthropic Surpasses OpenAI in U.S. Business AI Adoption — With Claude Code at the Center</a></h3>
+        <p>For the first time, more American businesses pay for Anthropic's Claude than OpenAI's ChatGPT, per the May 2026 Ramp AI Index: Anthropic at 34.4% (+3.8% in April) vs. OpenAI at 32.3% (−2.9%). Overall business AI adoption crossed 50% the same month. The engine is Claude Code — Anthropic's agentic coding tool, now estimated to author 4% of all GitHub public commits worldwide. Three threats loom: escalating token costs, compute constraints, and OpenAI's Codex at lower price points.</p>
+        <p class="why">Why it matters: Automotive tech builders choosing their AI infrastructure today are making long-bets in the most volatile software market in history. The shift toward Anthropic's developer experience signals where enterprise-grade agentic AI capabilities — directly applicable to dealership automation — are heading.</p>
+        <p class="meta">📰 VentureBeat &nbsp;|&nbsp; May 13, 2026</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.cbtnews.com/todd-smiths-roadmap-to-the-intelligent-dealership/" target="_blank" rel="noopener noreferrer">Roadmap to the Intelligent Dealership: Why Dealers Can't Wait on AI's Exponential Pace</a></h3>
+        <p>CBT News features automotive technology strategist Todd Smith outlining the architecture of an "intelligent dealership" — one where AI is embedded across CRM, inventory, service, and marketing rather than bolted on as point solutions. Smith warns that AI's exponential pace leaves no room for a wait-and-see approach; dealers who delay building the right data foundation today face compounding disadvantages. The framework includes unified data layers, AI-powered customer journey orchestration, and a culture of continuous experimentation.</p>
+        <p class="why">Why it matters: The gap between AI-native dealerships and laggards is widening faster than most operators realize. Vendors who help close that gap — with a coherent, integrated platform story — will capture outsized dealer loyalty and wallet share over the next 18 months.</p>
+        <p class="meta">📰 CBT News &nbsp;|&nbsp; May 6, 2026</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>Thursday, May 14, 2026 &nbsp;|&nbsp; Curated by AI Research Desk &nbsp;|&nbsp; MSS Automotive AI Daily Briefing</p>
+</footer>
 <script>
-(function(){var k='mssBriefingTheme',s=localStorage.getItem(k),t=s||'light';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');document.querySelector('.theme-toggle').addEventListener('click',function(){var c=document.documentElement.getAttribute('data-theme');if(c==='dark'){document.documentElement.removeAttribute('data-theme');localStorage.setItem(k,'light')}else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem(k,'dark')}})})();
+(function() {
+  var btn = document.getElementById('themeToggle');
+  var saved = localStorage.getItem('mssBriefingTheme') || 'light';
+  function applyTheme(t) {
+    if (t === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙 Dark Mode';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      btn.textContent = '☀️ Light Mode';
+    }
+    localStorage.setItem('mssBriefingTheme', t);
+  }
+  applyTheme(saved);
+  btn.addEventListener('click', function() {
+    var current = localStorage.getItem('mssBriefingTheme') || 'light';
+    applyTheme(current === 'light' ? 'dark' : 'light');
+  });
+})();
 </script>
 </body>
 </html>
