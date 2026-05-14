@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Connected Dealership — Cox Automotive Executive Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f8f7f4;
+  --bg2: #f0ede8;
+  --bg3: #e8e4dd;
+  --surface: #ffffff;
+  --border: rgba(0,0,0,0.07);
+  --border2: rgba(0,0,0,0.13);
+  --text: #1a1714;
+  --text2: #5a5248;
+  --text3: #9a9088;
+  --accent: #c9410a;
+  --accent2: #e05522;
+  --blue: #1d60c8;
+  --blue-light: #2563eb;
+  --green: #0f7a55;
+  --green-light: #0d9268;
+  --amber: #b45309;
+  --purple: #5b21b6;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Instrument Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(248,247,244,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border); padding: 0 2rem; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { font-family: var(--serif); font-size: 14px; color: var(--text2); letter-spacing: 0.02em; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; list-style: none; }
+.nav-links a { display: block; padding: 0 12px; font-size: 11px; font-weight: 500; color: var(--text3); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+@media (max-width: 700px) { .nav-links { display: none; } }
+
+/* ── HERO ── */
+.hero {
+  position: relative; min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 8rem 3rem 5rem; overflow: hidden;
+  background: #0c1420;
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(29,96,200,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(29,96,200,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black, transparent);
+}
+.hero-glow-left { position: absolute; top: 15%; left: 5%; width: 500px; height: 400px; background: radial-gradient(ellipse, rgba(201,65,10,0.13) 0%, transparent 70%); pointer-events: none; }
+.hero-glow-right { position: absolute; top: 25%; right: 5%; width: 400px; height: 350px; background: radial-gradient(ellipse, rgba(29,96,200,0.11) 0%, transparent 70%); pointer-events: none; }
+.hero-glow-center { position: absolute; bottom: 20%; left: 35%; width: 350px; height: 300px; background: radial-gradient(ellipse, rgba(15,122,85,0.08) 0%, transparent 70%); pointer-events: none; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #e05522; margin-bottom: 1.5rem; position: relative; z-index: 1;
+  opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
+}
+.hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: #e05522; }
+.hero-title {
+  font-family: var(--serif); font-size: clamp(3rem, 7vw, 6.5rem); font-weight: 300;
+  line-height: 1.02; letter-spacing: -0.02em; color: #f0ede8; max-width: 900px;
+  position: relative; z-index: 1; opacity: 0; animation: fadeUp 0.8s ease 0.35s forwards;
+}
+.hero-title em { font-style: italic; color: #e05522; }
+.hero-sub {
+  margin-top: 1.75rem; font-size: 16px; color: #7a8499; max-width: 600px; line-height: 1.75;
+  position: relative; z-index: 1; opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
+}
+.hero-studies {
+  display: flex; flex-wrap: wrap; gap: 2px; margin-top: 3rem;
+  position: relative; z-index: 1; opacity: 0; animation: fadeUp 0.8s ease 0.65s forwards;
+}
+.hero-study {
+  flex: 1; min-width: 260px; padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04);
+}
+.hero-study-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.hero-study-label.sales { color: #60a5fa; }
+.hero-study-label.service { color: #34d399; }
+.hero-study-title { font-family: var(--serif); font-size: 1rem; font-weight: 300; color: #d4cfc7; margin-bottom: 0.4rem; line-height: 1.3; }
+.hero-study-meta { font-size: 11px; color: #4a5568; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── SHARED ── */
+section { position: relative; z-index: 1; }
+.container { max-width: 1140px; margin: 0 auto; padding: 6rem 3rem; }
+@media (max-width: 768px) { .container { padding: 4rem 1.5rem; } }
+.section-divider { border: none; border-top: 1px solid var(--border); }
+.section-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text3); margin-bottom: 1rem; }
+.section-eyebrow::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--border2); }
+.section-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+.section-title em { font-style: italic; color: var(--accent); }
+.section-lead { font-size: 15px; color: var(--text2); line-height: 1.75; max-width: 660px; margin-bottom: 3rem; }
+
+/* ── STATS AT A GLANCE ── */
+.glance-section { background: var(--bg2); }
+.glance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+@media (max-width: 860px) { .glance-grid { grid-template-columns: 1fr; } }
+
+.study-panel { background: var(--surface); border: 1px solid var(--border); padding: 2rem; }
+.study-panel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.study-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.study-dot.sales { background: var(--blue-light); }
+.study-dot.service { background: var(--green-light); }
+.study-panel-name { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.study-panel-name.sales { color: var(--blue-light); }
+.study-panel-name.service { color: var(--green-light); }
+.study-panel-meta { font-size: 11px; color: var(--text3); margin-left: auto; }
+
+.stat-row { display: flex; flex-direction: column; gap: 2px; }
+.stat-line { display: flex; align-items: baseline; gap: 1rem; padding: 0.9rem 1rem; background: var(--bg2); border: 1px solid var(--border); transition: border-color 0.2s; }
+.stat-line:hover { border-color: var(--border2); }
+.stat-n { font-family: var(--serif); font-size: 1.9rem; font-weight: 300; line-height: 1; white-space: nowrap; flex-shrink: 0; }
+.stat-n.accent { color: var(--accent); }
+.stat-n.blue { color: var(--blue-light); }
+.stat-n.green { color: var(--green-light); }
+.stat-n.amber { color: var(--amber); }
+.stat-d { font-size: 12.5px; color: var(--text2); line-height: 1.45; }
+
+/* ── CHALLENGES ── */
+.challenges-section { background: var(--bg); }
+.challenge-block { margin-bottom: 2px; border: 1px solid var(--border); overflow: hidden; }
+.challenge-header {
+  display: grid; grid-template-columns: auto 1fr auto;
+  align-items: center; gap: 1.5rem; padding: 1.75rem 2rem;
+  cursor: pointer; transition: background 0.2s; background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.challenge-header:hover { background: var(--bg2); }
+.ch-num {
+  font-family: var(--serif); font-size: 2.5rem; font-weight: 300; line-height: 1;
+  color: var(--text3); min-width: 50px;
+}
+.ch-text { flex: 1; }
+.ch-pain { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.ch-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 300; color: var(--text); line-height: 1.3; }
+.ch-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.ch-tag { font-size: 10px; font-weight: 500; padding: 2px 8px; border: 1px solid; }
+.ch-tag.sales { color: var(--blue-light); background: rgba(37,99,235,0.07); border-color: rgba(37,99,235,0.18); }
+.ch-tag.service { color: var(--green-light); background: rgba(13,146,104,0.07); border-color: rgba(13,146,104,0.18); }
+.ch-chevron { font-size: 18px; color: var(--text3); transition: transform 0.3s; }
+.challenge-block.open .ch-chevron { transform: rotate(180deg); }
+
+.challenge-body { display: none; padding: 0; background: var(--bg2); }
+.challenge-block.open .challenge-body { display: block; }
+
+.ch-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
+@media (max-width: 900px) { .ch-inner { grid-template-columns: 1fr; } }
+
+.ch-col { padding: 1.5rem; }
+.ch-col.data-col { background: var(--bg3); }
+.ch-col.solution-col { background: var(--surface); }
+.ch-col.action-col { background: var(--bg2); }
+
+.ch-col-head { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); margin-bottom: 1rem; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+.data-point { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.data-point:last-child { border-bottom: none; }
+.dp-source { font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.dp-source.sales { color: var(--blue-light); }
+.dp-source.service { color: var(--green-light); }
+.dp-text { font-size: 13px; color: var(--text2); line-height: 1.55; }
+.dp-text strong { color: var(--text); }
+
+.solution-item { padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start; }
+.solution-item:last-child { border-bottom: none; }
+.sol-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.04em; padding: 3px 8px; border: 1px solid; white-space: nowrap; flex-shrink: 0; margin-top: 1px; }
+.sol-badge.blue { color: var(--blue-light); background: rgba(37,99,235,0.07); border-color: rgba(37,99,235,0.18); }
+.sol-badge.green { color: var(--green-light); background: rgba(13,146,104,0.07); border-color: rgba(13,146,104,0.18); }
+.sol-badge.amber { color: var(--amber); background: rgba(180,83,9,0.07); border-color: rgba(180,83,9,0.18); }
+.sol-badge.accent { color: var(--accent2); background: rgba(201,65,10,0.07); border-color: rgba(201,65,10,0.18); }
+.sol-badge.purple { color: var(--purple); background: rgba(91,33,182,0.07); border-color: rgba(91,33,182,0.18); }
+.sol-text { font-size: 12.5px; color: var(--text2); line-height: 1.55; }
+.sol-text strong { color: var(--text); }
+
+.action-box { padding: 12px 14px; background: var(--surface); border: 1px solid var(--border); margin-bottom: 2px; }
+.action-box:last-child { margin-bottom: 0; }
+.action-tag { font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text3); margin-bottom: 5px; }
+.action-text { font-size: 12.5px; color: var(--text2); line-height: 1.55; font-style: italic; }
+.action-text strong { color: var(--text); font-style: normal; }
+
+/* ── CONNECTED STACK ── */
+.stack-section { background: var(--bg2); }
+.lifecycle-flow {
+  display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 2.5rem; align-items: stretch;
+}
+.lf-stage {
+  flex: 1; min-width: 120px; background: var(--surface); border: 1px solid var(--border);
+  padding: 1.25rem 1rem; display: flex; flex-direction: column; gap: 6px;
+  position: relative; overflow: hidden;
+}
+.lf-stage::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.lf-stage.awareness::before { background: var(--blue); }
+.lf-stage.discovery::before { background: #4f46e5; }
+.lf-stage.deal::before { background: var(--accent); }
+.lf-stage.close::before { background: var(--amber); }
+.lf-stage.service::before { background: var(--green); }
+.lf-stage.retention::before { background: var(--purple); }
+.lf-stage-label { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); }
+.lf-stage-products { display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
+.lf-product { font-size: 11px; font-weight: 500; color: var(--text2); padding: 3px 8px; background: var(--bg2); border: 1px solid var(--border); }
+
+.stack-table-wrap { border: 1px solid var(--border); overflow: hidden; }
+.stack-table { width: 100%; border-collapse: collapse; }
+.stack-table th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); padding: 11px 16px; background: var(--surface); border-bottom: 1px solid var(--border2); }
+.stack-table td { padding: 13px 16px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 13px; line-height: 1.5; }
+.stack-table tr:last-child td { border-bottom: none; }
+.stack-table tr:hover td { background: rgba(0,0,0,0.015); }
+.stack-table td:first-child { font-weight: 600; color: var(--text); width: 16%; white-space: nowrap; }
+.stack-table td:nth-child(2) { width: 14%; }
+.stack-table td:nth-child(3) { color: var(--text2); width: 30%; }
+.stack-table td:last-child { color: var(--text2); }
+.stage-chip { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; padding: 2px 7px; border: 1px solid; }
+.stage-chip.awareness { color: var(--blue-light); border-color: rgba(37,99,235,0.25); background: rgba(37,99,235,0.06); }
+.stage-chip.discovery { color: #6366f1; border-color: rgba(99,102,241,0.25); background: rgba(99,102,241,0.06); }
+.stage-chip.deal { color: var(--accent2); border-color: rgba(201,65,10,0.25); background: rgba(201,65,10,0.06); }
+.stage-chip.close { color: var(--amber); border-color: rgba(180,83,9,0.25); background: rgba(180,83,9,0.06); }
+.stage-chip.service { color: var(--green-light); border-color: rgba(13,146,104,0.25); background: rgba(13,146,104,0.06); }
+.stage-chip.retention { color: var(--purple); border-color: rgba(91,33,182,0.25); background: rgba(91,33,182,0.06); }
+.stage-chip.foundation { color: var(--text3); border-color: var(--border2); background: var(--bg3); }
+
+/* ── COMPETITOR GAP ── */
+.gap-section { background: var(--bg); }
+.gap-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-bottom: 2rem; }
+@media (max-width: 860px) { .gap-grid { grid-template-columns: 1fr; } }
+.gap-card { background: var(--surface); border: 1px solid var(--border); padding: 1.75rem; }
+.gap-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+.gap-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 14px; border: 1px solid var(--border2); flex-shrink: 0; }
+.gap-card-title { font-family: var(--serif); font-size: 1rem; font-weight: 300; color: var(--text); line-height: 1.3; }
+.gap-card-body { font-size: 13px; color: var(--text2); line-height: 1.65; }
+.gap-card-body strong { color: var(--text); }
+
+.gap-exclusive {
+  background: linear-gradient(135deg, #f0f7ff 0%, #f0fdf4 100%);
+  border: 1px solid rgba(37,99,235,0.15); padding: 1.75rem 2rem; margin-top: 0;
+}
+.gap-exclusive-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; color: var(--text); margin-bottom: 0.75rem; }
+.gap-exclusive-body { font-size: 13.5px; color: var(--text2); line-height: 1.7; }
+.gap-exclusive-body strong { color: var(--text); }
+
+/* ── BOTTOM LINE ── */
+.bl-section { background: linear-gradient(135deg, #1a2a4a 0%, #0f1520 50%, #1a0e00 100%); position: relative; overflow: hidden; }
+.bl-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,65,10,0.09), transparent); }
+.bl-section .container { position: relative; z-index: 1; }
+.bl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2rem; }
+@media (max-width: 768px) { .bl-grid { grid-template-columns: 1fr; } }
+.bl-item {
+  display: flex; gap: 1.25rem; padding: 1.25rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07); align-items: flex-start;
+  opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.bl-item.visible { opacity: 1; transform: translateY(0); }
+.bl-arrow { color: #e05522; font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+.bl-text { font-size: 13.5px; color: #8a95a8; line-height: 1.65; }
+.bl-text strong { color: #f0ede8; }
+
+/* ── FOOTER ── */
+footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; z-index: 1; position: relative; }
+.footer-brand { font-family: var(--serif); font-size: 13px; color: var(--text3); }
+.footer-meta { font-size: 11px; color: var(--text3); text-align: right; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Cox Automotive <span>·</span> Executive Briefing</div>
+  <ul class="nav-links">
+    <li><a href="#glance">The Studies</a></li>
+    <li><a href="#challenges">Challenges</a></li>
+    <li><a href="#stack">Connected Stack</a></li>
+    <li><a href="#gap">Competitor Gap</a></li>
+    <li><a href="#bottom-line">Bottom Line</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow-left"></div>
+  <div class="hero-glow-right"></div>
+  <div class="hero-glow-center"></div>
+
+  <div class="hero-eyebrow">Confidential · Enterprise Sales</div>
+  <h1 class="hero-title">The <em>Connected</em><br>Dealership</h1>
+  <p class="hero-sub">Two Cox Automotive research studies. Five dealer challenges. One integrated solution stack that no competitor can match — across the full customer lifecycle, from first click to next purchase.</p>
+
+  <div class="hero-studies">
+    <div class="hero-study">
+      <div class="hero-study-label sales">2025 Car Buyer Journey Study</div>
+      <div class="hero-study-title">Variable ops: satisfaction at an all-time high, but the digital gap is costing dealers deals, gross, and loyalty</div>
+      <div class="hero-study-meta">2,344 buyers · Released January 2026</div>
+    </div>
+    <div class="hero-study">
+      <div class="hero-study-label service">2025 Service Industry Study</div>
+      <div class="hero-study-title">Fixed ops: revenue at an all-time high, but dealers are losing share to general repair and leaving the service lane acquisition channel untapped</div>
+      <div class="hero-study-meta">1,974 vehicle owners · 2025</div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- STUDIES AT A GLANCE -->
+<section id="glance" class="glance-section">
+  <div class="container">
+    <div class="section-eyebrow">Research Overview</div>
+    <h2 class="section-title">Two studies.<br>One <em>unified</em> story.</h2>
+    <p class="section-lead">The Car Buyer Journey Study and the Service Industry Study tell the same story from two angles: dealers are performing better than ever on satisfaction, and the gaps that remain are process and technology gaps — not market conditions. Those gaps are exactly what Cox Automotive solves.</p>
+
+    <div class="glance-grid">
+      <!-- Sales Study -->
+      <div class="study-panel">
+        <div class="study-panel-header">
+          <div class="study-dot sales"></div>
+          <div class="study-panel-name sales">Car Buyer Journey Study</div>
+          <div class="study-panel-meta">2,344 buyers</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-line">
+            <div class="stat-n blue">76%</div>
+            <div class="stat-d">New buyer satisfaction — all-time high. Up from 60% in 2016. Driven entirely by process improvements.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n accent">9%→53%</div>
+            <div class="stat-d">Only 9% intended to buy in-person — 53% ended up doing it. The digital tools aren't getting people engaged early enough.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n blue">41 min</div>
+            <div class="stat-d">Saved at the dealership when buyers complete most steps online first. Mostly-digital buyers: 78% satisfied vs. 58% light-digital.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n amber">22 pts</div>
+            <div class="stat-d">Gap between buyers who prefer to apply for credit online (40%) vs. those who actually do (18%). Pure process problem.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n blue">84%</div>
+            <div class="stat-d">Satisfaction among AI-assisted mostly-digital buyers, vs. 71% non-AI. AI buyers trust dealers more, not less.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n accent">42%</div>
+            <div class="stat-d">Of new vehicle sales from $150k+ households — up from 29% in 2020. Market bifurcation is accelerating.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Study -->
+      <div class="study-panel">
+        <div class="study-panel-header">
+          <div class="study-dot service"></div>
+          <div class="study-panel-name service">Service Industry Study</div>
+          <div class="study-panel-meta">1,974 vehicle owners</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-line">
+            <div class="stat-n green">$9.23M</div>
+            <div class="stat-d">Average dealer fixed ops revenue — up 33% from 2018. The pie is growing.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n accent">29%</div>
+            <div class="stat-d">Dealer share of service visits — down from 33% in 2018. Dealers are getting a shrinking slice of a growing pie.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n green">88%</div>
+            <div class="stat-d">Of customers say their service experience determines whether they buy their next vehicle from the same dealer.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n amber">74% vs 44%</div>
+            <div class="stat-d">Repurchase likelihood — customers who returned for service vs. those who didn't. A 30-point gap driven entirely by service retention.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n green">33%</div>
+            <div class="stat-d">Of service customers want a trade-in offer during their visit. Only 14% ever received one. A 19-point process gap.</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-n amber">$3,195</div>
+            <div class="stat-d">The repair estimate threshold where customers start seriously considering trading in — the moment most dealers have no process for.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CHALLENGES -->
+<section id="challenges" class="challenges-section">
+  <div class="container">
+    <div class="section-eyebrow">Dealer Challenges</div>
+    <h2 class="section-title">Five challenges.<br>Every one has a <em>Cox solution</em>.</h2>
+    <p class="section-lead">Each challenge below is backed by data from one or both studies. Click any challenge to see the supporting data, the Cox products that address it, and the talk track that opens the conversation.</p>
+
+    <!-- Challenge 1 -->
+    <div class="challenge-block open">
+      <div class="challenge-header" onclick="toggleChallenge(this)">
+        <div class="ch-num">01</div>
+        <div class="ch-text">
+          <div class="ch-pain" style="color:var(--blue-light);">Variable Ops</div>
+          <div class="ch-title">The deal takes too long — and buyers are completing far fewer steps online than they want to</div>
+          <div class="ch-tags">
+            <span class="ch-tag sales">Car Buyer Journey Study</span>
+          </div>
+        </div>
+        <div class="ch-chevron">⌄</div>
+      </div>
+      <div class="challenge-body">
+        <div class="ch-inner">
+          <div class="ch-col data-col">
+            <div class="ch-col-head">What the data says</div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text">Average deal still takes <strong>2.5 hours</strong>. Customers want it under 90 minutes. <strong>30% of time in the dealership is idle</strong> — the customer is just waiting.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text">Only <strong>9% of shoppers intended to buy 100% in-person</strong>, but 53% ended up doing it. The intent to go digital is there — the process isn't capturing it.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text">Mostly-digital buyers save <strong>41 minutes at the dealership</strong> and score 20 percentage points higher on satisfaction with process length.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text"><strong>97% of dealers</strong> say customers repeat steps in-store that were already completed online. The online-to-in-store handoff is broken.</div>
+            </div>
+          </div>
+          <div class="ch-col solution-col">
+            <div class="ch-col-head">The Cox solutions</div>
+            <div class="solution-item">
+              <span class="sol-badge blue">Accelerate My Deal</span>
+              <div class="sol-text">Converts every inbound inquiry into a deal start — payment calculation, trade value, credit application — before the buyer visits the store. <strong>Send the link with every inquiry.</strong></div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge blue">Deal Central</span>
+              <div class="sol-text">Picks up the online deal in-store without re-entry. Salesperson stays with the customer while the deal goes digitally to the desk manager. <strong>Eliminates the paper shuffle and the idle time.</strong></div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge amber">Dealertrack F&I</span>
+              <div class="sol-text">Streamlines credit submission, contracting, and digital signing. The buyer who applied online arrives with a rate already queued — <strong>F&I moves in minutes, not an hour.</strong></div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge blue">VinSolutions CRM</span>
+              <div class="sol-text">Shows salespeople all DR tool activity before they greet the customer — <strong>no repeat questions, no starting over.</strong> The handoff from online to in-store actually works.</div>
+            </div>
+          </div>
+          <div class="ch-col action-col">
+            <div class="ch-col-head">Talk track</div>
+            <div class="action-box">
+              <div class="action-tag">Opening line</div>
+              <div class="action-text">"Only 9% of your shoppers want to do the whole process in-person — but 53% end up doing it anyway. The intent is there. The tools aren't getting people in early enough. <strong>What happens in your store when a customer reaches out about a vehicle?</strong>"</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">The pro tip</div>
+              <div class="action-text">"Any time a shopper reaches out — is it available, what's the out-the-door price, does it have heated seats — <strong>send them the deal link.</strong> Every step they complete online is 41 minutes back at your dealership and a measurably happier customer."</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">The close</div>
+              <div class="action-text">"Digital retailing leads close at 2–3x the rate of traditional leads — and without sacrificing gross. Higher close rate, higher profit, faster deal, happier customer. <strong>This is a process change, not a technology purchase.</strong>"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Challenge 2 -->
+    <div class="challenge-block">
+      <div class="challenge-header" onclick="toggleChallenge(this)">
+        <div class="ch-num">02</div>
+        <div class="ch-text">
+          <div class="ch-pain" style="color:var(--green-light);">Fixed Ops</div>
+          <div class="ch-title">Dealers are losing service customers to quick lube shops — and every one who leaves is a future car sale walking out the door</div>
+          <div class="ch-tags">
+            <span class="ch-tag service">Service Industry Study</span>
+          </div>
+        </div>
+        <div class="ch-chevron">⌄</div>
+      </div>
+      <div class="challenge-body">
+        <div class="ch-inner">
+          <div class="ch-col data-col">
+            <div class="ch-col-head">What the data says</div>
+            <div class="data-point">
+              <div class="dp-source service">Service Industry Study</div>
+              <div class="dp-text">General repair shops are now the <strong>#1 preferred service provider at 33%</strong> — dealerships have fallen to #2 at 31%. First time in the history of the study.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source service">Service Industry Study</div>
+              <div class="dp-text">Dealers charge an average of <strong>$261 per visit vs. $275 at general repair shops</strong>. Customers believe the dealer is more expensive — but the data says otherwise. It's a perception problem, not a cost problem.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source service">Service Industry Study</div>
+              <div class="dp-text"><strong>88% of customers</strong> say their service experience determines whether they buy their next vehicle from the same dealer. Customers who returned for service: 74% likely to repurchase. Those who didn't: 44%.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source service">Service Industry Study</div>
+              <div class="dp-text">Only <strong>55% of under-2-year vehicles</strong> are now serviced at the dealership — down from 68% in 2018. These are the highest-value, most likely-to-repurchase customers.</div>
+            </div>
+          </div>
+          <div class="ch-col solution-col">
+            <div class="ch-col-head">The Cox solutions</div>
+            <div class="solution-item">
+              <span class="sol-badge green">Xtime Schedule</span>
+              <div class="sol-text">24/7 online booking removes the #1 reason customers leave — inconvenience. Advisors can also arrange <strong>pickup and delivery or rideshare transport</strong> directly through the scheduler. No quick lube can offer that.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge green">Xtime Engage</span>
+              <div class="sol-text">Real-time status updates and digital approval of additional work — <strong>directly addressing the two top customer frustrations: waiting and surprise costs.</strong></div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge green">Xtime Inspect</span>
+              <div class="sol-text">Video MPI sent to the customer's phone builds trust and dismantles the cost perception problem. Approved lines write directly to Dealertrack DMS — <strong>no re-entry, service stays in Xtime.</strong></div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge green">Xtime Invite</span>
+              <div class="sol-text">Automated follow-up marketing to customers coming due for service — <strong>re-engaging the customers who've drifted to competitors</strong> before they go somewhere else again.</div>
+            </div>
+          </div>
+          <div class="ch-col action-col">
+            <div class="ch-col-head">Talk track</div>
+            <div class="action-box">
+              <div class="action-tag">Opening line</div>
+              <div class="action-text">"General repair shops just became the #1 preferred service provider — ahead of dealerships for the first time ever. But here's what's interesting: <strong>dealers actually charge less on average.</strong> This isn't a cost problem. It's a convenience and communication problem."</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">The retention math</div>
+              <div class="action-text">"88% of your customers say their service experience determines whether they buy their next car from you. A customer who comes back for service is 74% likely to repurchase. One who doesn't — 44%. <strong>Every oil change you lose is a future car sale walking out the door.</strong>"</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">The question to ask</div>
+              <div class="action-text">"What do you do when a customer declines a service recommendation? Is there a process to get them back, or does it just disappear?" Most stores don't have an answer. <strong>That's where Xtime Inspect and Invite come in.</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Challenge 3 -->
+    <div class="challenge-block">
+      <div class="challenge-header" onclick="toggleChallenge(this)">
+        <div class="ch-num">03</div>
+        <div class="ch-text">
+          <div class="ch-pain" style="color:#7c3aed;">Both Studies</div>
+          <div class="ch-title">The service lane is an untapped used inventory acquisition channel — and almost no dealerships have a process for it</div>
+          <div class="ch-tags">
+            <span class="ch-tag service">Service Industry Study</span>
+            <span class="ch-tag sales">Car Buyer Journey Study</span>
+          </div>
+        </div>
+        <div class="ch-chevron">⌄</div>
+      </div>
+      <div class="challenge-body">
+        <div class="ch-inner">
+          <div class="ch-col data-col">
+            <div class="ch-col-head">What the data says</div>
+            <div class="data-point">
+              <div class="dp-source service">Service Industry Study</div>
+              <div class="dp-text"><strong>33% of service customers</strong> said they'd be highly interested in getting a trade-in value during their service visit. Only <strong>14% were ever offered one</strong>. A 19-point gap that is entirely a process problem.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source service">Service Industry Study</div>
+              <div class="dp-text">When a repair estimate reaches <strong>$3,195</strong>, customers start seriously considering whether to repair or replace. <strong>47% said they'd replace rather than repair</strong> at that threshold — up from 30% in 2022.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text">Cross-shopping between new and used hit an <strong>all-time high in 2025</strong>. Used buyers visited 4.8 sites vs. 4.0 for new buyers — they're doing more homework and are less loyal.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source service">Service Industry Study</div>
+              <div class="dp-text"><strong>51% of customers</strong> are interested in pickup and delivery service. The dealership's service lane already has the vehicle — the used car team just doesn't know about it.</div>
+            </div>
+          </div>
+          <div class="ch-col solution-col">
+            <div class="ch-col-head">The Cox solutions</div>
+            <div class="solution-item">
+              <span class="sol-badge green">Xtime Inspect + KBB ICO</span>
+              <div class="sol-text">When a repair estimate approaches the trade-in threshold, Inspect triggers the conversation and <strong>KBB ICO delivers a credible, data-backed number</strong> the customer trusts — right there in the service lane.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge blue">vAuto</span>
+              <div class="sol-text">When a desirable vehicle pulls into the service bay, vAuto <strong>alerts the used car team automatically</strong>. Appraising vehicles from your own service customers is cheaper and faster than going to auction.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge purple">Cox Automotive Navigator</span>
+              <div class="sol-text">Pulls Xtime declined services and service history directly into a vAuto appraisal in one click — <strong>no re-entry, no tab switching.</strong> The trade-in conversation that 33% of customers want becomes systematic.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge blue">VinSolutions CRM</span>
+              <div class="sol-text">Connects the service visit to the sales record — <strong>the sales rep sees service history, open ROs, and in-market signals</strong> from AT/KBB alongside the customer's service appointment. One record, two departments.</div>
+            </div>
+          </div>
+          <div class="ch-col action-col">
+            <div class="ch-col-head">Talk track</div>
+            <div class="action-box">
+              <div class="action-tag">Opening line</div>
+              <div class="action-text">"1 in 3 service customers said they'd be highly interested in a trade-in offer during their visit. Only 14% were ever offered one. <strong>That's not a demand problem — that's a process gap.</strong> How does your store handle that conversation today?"</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">The $3,195 moment</div>
+              <div class="action-text">"When an estimate hits around $3,200, nearly half of customers start thinking about trading in instead of repairing. <strong>Does your service team have a process for that moment?</strong> Most don't. Xtime Inspect + KBB ICO makes it systematic."</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">Demo closer</div>
+              <div class="action-text">"Let me show you something. In Xtime, your advisor is looking at a repair order. <strong>One click in Navigator and that vehicle's service history — including declined services — opens a vAuto appraisal pre-populated.</strong> No switching systems. No re-entry. That's the workflow."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Challenge 4 -->
+    <div class="challenge-block">
+      <div class="challenge-header" onclick="toggleChallenge(this)">
+        <div class="ch-num">04</div>
+        <div class="ch-text">
+          <div class="ch-pain" style="color:var(--blue-light);">Variable Ops</div>
+          <div class="ch-title">AI-informed buyers are coming in prepared — and most dealerships aren't ready for them</div>
+          <div class="ch-tags">
+            <span class="ch-tag sales">Car Buyer Journey Study</span>
+          </div>
+        </div>
+        <div class="ch-chevron">⌄</div>
+      </div>
+      <div class="challenge-body">
+        <div class="ch-inner">
+          <div class="ch-col data-col">
+            <div class="ch-col-head">What the data says</div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text"><strong>19% of all buyers</strong> used AI during their shopping process — 25% of new buyers. AI sites are now tracked as their own category for the first time in 16 years of the study.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text">AI-assisted mostly-digital buyers hit <strong>84% satisfaction</strong> vs. 71% for non-AI users. <strong>81% trusted the dealer gave them the best deal</strong> vs. 67% of non-AI buyers. AI buyers are better customers — if the deal is clean.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text"><strong>83% of consumers</strong> say AI will change how they buy vehicles in the next 10 years. Only <strong>63% of dealers</strong> think investing in AI now is critical. That gap is the opportunity.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text"><strong>75% of buyers</strong> start on a third-party site. AI tools query AT/KBB and dealership websites directly. SEO optimization and competitive listings are now also the AI visibility strategy.</div>
+            </div>
+          </div>
+          <div class="ch-col solution-col">
+            <div class="ch-col-head">The Cox solutions</div>
+            <div class="solution-item">
+              <span class="sol-badge accent">Dealer.com (DDC)</span>
+              <div class="sol-text">Experience Optimization personalizes the website in real time based on AT/KBB browsing history — <strong>the AI-informed buyer who already researched a vehicle sees that vehicle on the homepage.</strong> No starting over.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge accent">AutoTrader / KBB</span>
+              <div class="sol-text">75% of buyers start here — and so do AI tools. <strong>Competitive pricing and complete listings on AT/KBB are the AI visibility strategy.</strong> If Google finds you, the AI agents find you.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge blue">VinSolutions Predictive Insights</span>
+              <div class="sol-text">Flags customers showing in-market signals on AT/KBB <strong>before they submit a lead</strong>. The first dealer to reach an in-market shopper is most likely to close them — especially with AI-empowered buyers who move fast.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge blue">AMP</span>
+              <div class="sol-text">Uses Cox first-party shopping data to identify and re-engage in-market buyers across every channel. <strong>The data advantage is exclusive to Cox</strong> — no competitor has visibility into AT/KBB and DDC behavior simultaneously.</div>
+            </div>
+          </div>
+          <div class="ch-col action-col">
+            <div class="ch-col-head">Talk track</div>
+            <div class="action-box">
+              <div class="action-tag">The reframe</div>
+              <div class="action-text">"AI shoppers aren't the enemy — they're actually better customers. They came in informed, and when the deal was clean and transparent, <strong>81% of them trusted that the dealer gave them the best deal.</strong> The dealers losing to AI buyers have a pricing problem, not a technology problem."</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">The SEO angle</div>
+              <div class="action-text">"AI tools search the same way buyers do — they query Google, AutoTrader, and KBB. <strong>If you're showing up on those sites with competitive pricing, the AI recommends you.</strong> Your listing strategy is also your AI strategy."</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">The investment gap</div>
+              <div class="action-text">"83% of consumers say AI will change how they buy vehicles. Only 63% of dealers think it's critical to invest now. <strong>The dealers who close that gap first own the next generation of buyers.</strong>"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Challenge 5 -->
+    <div class="challenge-block">
+      <div class="challenge-header" onclick="toggleChallenge(this)">
+        <div class="ch-num">05</div>
+        <div class="ch-text">
+          <div class="ch-pain" style="color:#7c3aed;">Both Studies</div>
+          <div class="ch-title">Data lives in silos — the sales team doesn't know what service knows, and the service team doesn't know what sales knows</div>
+          <div class="ch-tags">
+            <span class="ch-tag service">Service Industry Study</span>
+            <span class="ch-tag sales">Car Buyer Journey Study</span>
+          </div>
+        </div>
+        <div class="ch-chevron">⌄</div>
+      </div>
+      <div class="challenge-body">
+        <div class="ch-inner">
+          <div class="ch-col data-col">
+            <div class="ch-col-head">What the data says</div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text"><strong>97% of dealers</strong> say customers repeat steps in-store that were already completed online. The tools exist — but they're not talking to each other, or people aren't using them correctly.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source service">Service Industry Study</div>
+              <div class="dp-text"><strong>45% of service customers</strong> experienced a frustration during their dealership visit. Top complaints: took longer than expected, surprised by charges, felt pushed on additional services. All are communication and data flow problems.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source sales">Car Buyer Journey Study</div>
+              <div class="dp-text">Highly satisfied buyers dealt with <strong>fewer employees and spent less idle time</strong>. Reducing the number of handoffs and the amount of information re-entry is the single biggest driver of satisfaction improvement.</div>
+            </div>
+            <div class="data-point">
+              <div class="dp-source service">Service Industry Study</div>
+              <div class="dp-text">The service lane sees the customer and their vehicle more often than any other department — but in most dealerships, <strong>that data never reaches the sales team</strong> before the customer decides to buy elsewhere.</div>
+            </div>
+          </div>
+          <div class="ch-col solution-col">
+            <div class="ch-col-head">The Cox solutions</div>
+            <div class="solution-item">
+              <span class="sol-badge blue">VinSolutions CRM</span>
+              <div class="sol-text">One customer record that shows <strong>service history, open and closed ROs, in-market signals from AT/KBB, DR tool activity, and trade data</strong> — visible to both the sales team and the service advisor.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge amber">Dealertrack DMS</span>
+              <div class="sol-text"><strong>Real-time bidirectional integration</strong> — every change in DMS writes back to connected systems instantly. No end-of-day reconciliation, no data lag, no re-entry. The foundation that makes everything else work without friction.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge green">Xtime → VinSolutions</span>
+              <div class="sol-text">Service history and appointment data flow into VinSolutions — <strong>the salesperson knows the customer's vehicle history before the conversation starts.</strong> The service advisor can schedule a sales appointment from the service lane.</div>
+            </div>
+            <div class="solution-item">
+              <span class="sol-badge purple">Cox Automotive Navigator</span>
+              <div class="sol-text">A browser extension that <strong>connects all Cox workflows in real time</strong> — pulling data between Xtime, vAuto, VinSolutions, Deal Central, and Dealertrack without switching tabs or re-entering information. The physical proof of the connected story.</div>
+            </div>
+          </div>
+          <div class="ch-col action-col">
+            <div class="ch-col-head">Talk track</div>
+            <div class="action-box">
+              <div class="action-tag">Opening line</div>
+              <div class="action-text">"When a customer who serviced with you last month submits a lead on your website, does your salesperson know that? Do they see the service history, the open ROs, what was declined? <strong>In most stores, that connection doesn't exist.</strong> In VinSolutions, it does."</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">The DMS question</div>
+              <div class="action-text">"When your sales manager makes a change to a deal in the DMS, does that update automatically push back to VinSolutions and vAuto in real time — or does someone reconcile it at the end of the day?" Most CDK dealers don't know the answer. <strong>Dealertrack DMS does it in real time.</strong>"</div>
+            </div>
+            <div class="action-box">
+              <div class="action-tag">Navigator demo</div>
+              <div class="action-text">"The fastest way to show this is Navigator. <strong>Open Xtime, pull declined services into a vAuto appraisal with one click.</strong> No re-entry. No switching systems. That's the connected dealership — not a concept, a live workflow."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CONNECTED STACK -->
+<section id="stack" class="stack-section">
+  <div class="container">
+    <div class="section-eyebrow">The Connected Stack</div>
+    <h2 class="section-title">Every product.<br>Every stage of the <em>customer lifecycle</em>.</h2>
+    <p class="section-lead">Cox Automotive is the only provider with products at every stage — from the first ad impression to the next service appointment to the next purchase. No competitor closes the loop across the full customer lifecycle the way Cox does.</p>
+
+    <div class="lifecycle-flow">
+      <div class="lf-stage awareness">
+        <div class="lf-stage-label">Awareness</div>
+        <div class="lf-stage-products">
+          <div class="lf-product">AutoTrader</div>
+          <div class="lf-product">KBB</div>
+          <div class="lf-product">AMP</div>
+        </div>
+      </div>
+      <div class="lf-stage discovery">
+        <div class="lf-stage-label">Discovery</div>
+        <div class="lf-stage-products">
+          <div class="lf-product">Dealer.com</div>
+          <div class="lf-product">KBB ICO</div>
+          <div class="lf-product">vAuto</div>
+        </div>
+      </div>
+      <div class="lf-stage deal">
+        <div class="lf-stage-label">Deal Start</div>
+        <div class="lf-stage-products">
+          <div class="lf-product">Accelerate My Deal</div>
+          <div class="lf-product">VinSolutions CRM</div>
+        </div>
+      </div>
+      <div class="lf-stage close">
+        <div class="lf-stage-label">Close</div>
+        <div class="lf-stage-products">
+          <div class="lf-product">Deal Central</div>
+          <div class="lf-product">Dealertrack F&I</div>
+          <div class="lf-product">Dealertrack DMS</div>
+        </div>
+      </div>
+      <div class="lf-stage service">
+        <div class="lf-stage-label">Service</div>
+        <div class="lf-stage-products">
+          <div class="lf-product">Xtime Schedule</div>
+          <div class="lf-product">Xtime Inspect</div>
+          <div class="lf-product">Xtime Engage</div>
+          <div class="lf-product">Xtime Invite</div>
+        </div>
+      </div>
+      <div class="lf-stage retention">
+        <div class="lf-stage-label">Retention</div>
+        <div class="lf-stage-products">
+          <div class="lf-product">VinSolutions CRM</div>
+          <div class="lf-product">KBB ICO</div>
+          <div class="lf-product">Navigator</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-table-wrap">
+      <table class="stack-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Stage</th>
+            <th>What it does in the lifecycle</th>
+            <th>The data-backed reason it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AutoTrader / KBB</td>
+            <td><span class="stage-chip awareness">Awareness</span></td>
+            <td>75% of buyers start here. AI tools query these sites directly when shoppers use AI assistants to find vehicles.</td>
+            <td>17% of new buyers used an AI site in 2025 — a new category tracked for the first time. If you're not showing up on AT/KBB with competitive pricing, you're invisible to both buyers and the AI tools searching for them.</td>
+          </tr>
+          <tr>
+            <td>Dealer.com</td>
+            <td><span class="stage-chip discovery">Discovery</span></td>
+            <td>Experience Optimization personalizes the dealership website in real time based on the buyer's AT/KBB browsing history — showing the vehicles they've already shown interest in.</td>
+            <td>59% of buyers visit the dealership website during shopping. Buyers who started on AT/KBB and land on a generic homepage start over. DDC closes that gap, converting third-party ad spend into on-site engagement.</td>
+          </tr>
+          <tr>
+            <td>vAuto</td>
+            <td><span class="stage-chip discovery">Discovery</span></td>
+            <td>Market-based pricing intelligence ensures used inventory is priced to move. Alerts the used car team when high-demand vehicles enter the service lane. Syncs pricing back to Dealertrack DMS in under 4 hours.</td>
+            <td>Cross-shopping new and used hit an all-time high in 2025. Used buyers visit 4.8 sites on average — they're doing more homework. Competitive pricing on vAuto-managed inventory is the difference between a quick turn and a stale unit.</td>
+          </tr>
+          <tr>
+            <td>AMP</td>
+            <td><span class="stage-chip awareness">Awareness</span></td>
+            <td>Uses Cox first-party shopping data from AT, KBB, and DDC to identify in-market buyers and re-engage them automatically before competitors reach them.</td>
+            <td>The first dealer to engage an in-market shopper is most likely to close them. AMP's data advantage — knowing who's shopping before they tell anyone — is exclusive to Cox. No competitor has simultaneous visibility into AT/KBB and DDC behavior.</td>
+          </tr>
+          <tr>
+            <td>Accelerate My Deal</td>
+            <td><span class="stage-chip deal">Deal Start</span></td>
+            <td>Converts inbound inquiries into deal starts — payment calculation, trade value, credit application — before the buyer visits the store. The link that gets sent with every inquiry.</td>
+            <td>40% prefer to apply for credit online; only 18% do. Mostly-digital buyers save 41 minutes at the dealership and score 20+ points higher on satisfaction. Digital retailing leads close at 2–3x the rate of traditional leads.</td>
+          </tr>
+          <tr>
+            <td>VinSolutions CRM</td>
+            <td><span class="stage-chip deal">Deal Start</span></td>
+            <td>One customer record connecting DR tool activity, service history, in-market signals, trade data, and communication history — visible to both sales and service. Predictive Insights flags buyers before they raise their hand.</td>
+            <td>Highly satisfied buyers dealt with fewer employees and faced less re-entry. VinSolutions ensures the salesperson already knows the customer before saying hello — no repeat questions, no starting over.</td>
+          </tr>
+          <tr>
+            <td>Deal Central</td>
+            <td><span class="stage-chip close">Close</span></td>
+            <td>Picks up the online deal in-store without re-entry. Salesperson and desk manager work the deal digitally on a tablet — customer stays engaged, no paper shuffle, no walking away.</td>
+            <td>97% of dealers say steps are repeated in-store. 30% of time at the dealership is idle. Deal Central eliminates both — close rates on digitized deals run 2–3x higher than traditional deals without sacrificing gross.</td>
+          </tr>
+          <tr>
+            <td>Dealertrack F&I</td>
+            <td><span class="stage-chip close">Close</span></td>
+            <td>Digital contracting, credit submission, and document signing — all connected to the deal that started online. No re-entry from AMD or Deal Central into F&I.</td>
+            <td>Waiting to sign paperwork and financing approvals are the top two steps buyers say take longer than expected. Buyers who applied online arrive with a rate already queued — F&I moves in minutes, not an hour.</td>
+          </tr>
+          <tr>
+            <td>Dealertrack DMS</td>
+            <td><span class="stage-chip foundation">Foundation</span></td>
+            <td>Real-time bidirectional integration with VinSolutions, vAuto, Xtime, and Dealertrack F&I. Live accounting with no end-of-day reconciliation process. No integration fees for F&I.</td>
+            <td>#2 DMS in the market. CDK is one-way — changes don't push back to third parties. Dealertrack DMS writes changes back in real time. vAuto pricing syncs in under 4 hours vs. once a day for CDK. The foundation that makes everything else work without friction.</td>
+          </tr>
+          <tr>
+            <td>Xtime</td>
+            <td><span class="stage-chip service">Service</span></td>
+            <td>Full-spectrum service platform: Schedule (online booking + transport), Engage (real-time status), Inspect (video MPI → writes to DMS), Invite (re-engagement marketing for customers coming due).</td>
+            <td>88% of customers say service experience determines their next purchase. Dealers charge less than general repair shops on average — but customers don't know it. Xtime Inspect's video MPI dismantles the cost perception problem and captures declined services before they walk out the door.</td>
+          </tr>
+          <tr>
+            <td>KBB Instant Cash Offer</td>
+            <td><span class="stage-chip retention">Retention</span></td>
+            <td>Delivers a credible, data-backed trade-in offer — in the service lane when the repair estimate triggers the conversation, or online when a buyer starts a deal.</td>
+            <td>33% of service customers want a trade-in offer. Only 14% get one. The $3,195 repair threshold is the trigger moment. KBB ICO makes the offer credible enough that the customer doesn't need to shop it — the brand trust does the work.</td>
+          </tr>
+          <tr>
+            <td>Cox Automotive Navigator</td>
+            <td><span class="stage-chip retention">Retention</span></td>
+            <td>Browser extension (beta) connecting all Cox workflows — Xtime service history into vAuto appraisals, VinSolutions customer lookups into trade appraisals, Manheim auction listings into vAuto, vAuto into Autotrader Spotlight Ads.</td>
+            <td>The physical proof of the connected story. Pulls declined services from Xtime directly into a vAuto appraisal in one click. Use it at the end of every enterprise pitch when the VP asks "how does it all actually work together?"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- COMPETITOR GAP -->
+<section id="gap" class="gap-section">
+  <div class="container">
+    <div class="section-eyebrow">Competitive Position</div>
+    <h2 class="section-title">What no one else<br>can <em>offer</em>.</h2>
+    <p class="section-lead">Cox Automotive's advantage isn't any single product — it's that all of the products talk to each other across the full customer lifecycle. That's the story no competitor can tell.</p>
+
+    <div class="gap-grid">
+      <div class="gap-card">
+        <div class="gap-card-head">
+          <div class="gap-icon">①</div>
+          <div class="gap-card-title">First-party data across the entire buying and ownership journey</div>
+        </div>
+        <div class="gap-card-body">Cox sees buyer behavior on AutoTrader and KBB, on DDC dealership websites, through Accelerate My Deal, and through Xtime service visits. <strong>No competitor has visibility across all four simultaneously.</strong> That data powers AMP's re-engagement, VinSolutions' Predictive Insights, and DDC's Experience Optimization — advantages that require all the pieces to exist.</div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-head">
+          <div class="gap-icon">②</div>
+          <div class="gap-card-title">The only connected service-to-sale workflow in the market</div>
+        </div>
+        <div class="gap-card-body">Xtime → vAuto → VinSolutions → Dealertrack. No competitor closes the loop from the service bay to the used car lot to the CRM to the DMS in one integrated experience. <strong>Tekion comes closest with a single-system approach — but locks dealers into one vendor's version of every tool</strong> rather than best-in-class integrations across all of them.</div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-head">
+          <div class="gap-icon">③</div>
+          <div class="gap-card-title">Real-time bidirectional DMS integration — not available from CDK or Reynolds</div>
+        </div>
+        <div class="gap-card-body">CDK pushes data one way — third-party systems push into CDK, but changes in CDK don't push back. Reynolds has similar limitations. <strong>Dealertrack DMS writes changes back to all connected Cox systems in real time</strong>, eliminating the end-of-day reconciliation process that costs dealers time and gross every single day.</div>
+      </div>
+    </div>
+
+    <div class="gap-exclusive">
+      <div class="gap-exclusive-title">The conversation no competitor can have</div>
+      <div class="gap-exclusive-body">
+        When a dealer asks "how does all of this actually work together?" — Cox Automotive is the only company that can open Navigator, pull a customer's Xtime service history into a vAuto appraisal with one click, show that the credit application started on the dealership website is already in VinSolutions, and demonstrate that the deal closed in Deal Central posted to Dealertrack DMS and updated Accelerate My Deal automatically — all in real time, all in one browser session. <strong>That 90-second demo is the competitive moat. No script can replace it.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- BOTTOM LINE -->
+<section id="bottom-line" class="bl-section">
+  <div class="container">
+    <div class="section-eyebrow" style="color:#e05522;">Executive Summary</div>
+    <h2 class="section-title" style="color:#f0ede8;">The bottom line.</h2>
+    <p class="section-lead" style="color:#8a95a8;">Eight things to leave in the room after every enterprise conversation.</p>
+    <div class="bl-grid">
+      <div class="bl-item">
+        <div class="bl-arrow">→</div>
+        <div class="bl-text"><strong>Both studies tell the same story.</strong> Dealers are winning on satisfaction — and losing share where the process breaks down. The sales process isn't getting buyers online early enough. The service lane isn't converting visits into trade-in conversations. Both are process gaps Cox Automotive closes.</div>
+      </div>
+      <div class="bl-item">
+        <div class="bl-arrow">→</div>
+        <div class="bl-text"><strong>Fixed ops revenue is the most defensible part of the P&L.</strong> Up 33% since 2018 — but dealers are getting a shrinking slice. Every service customer lost is a future car sale lost. The 88% stat makes this a board-level conversation, not a service department conversation.</div>
+      </div>
+      <div class="bl-item">
+        <div class="bl-arrow">→</div>
+        <div class="bl-text"><strong>The digital retailing gap is a process problem, not a demand problem.</strong> 40% of buyers prefer to apply for credit online; 18% do. The intent is there. Send the link with every inbound inquiry. That single behavior change — backed by Accelerate My Deal — closes the gap and saves 41 minutes per deal.</div>
+      </div>
+      <div class="bl-item">
+        <div class="bl-arrow">→</div>
+        <div class="bl-text"><strong>The service lane is an untapped acquisition channel.</strong> 33% of service customers want a trade-in offer. 14% get one. The $3,195 threshold is the trigger. Xtime Inspect + KBB ICO + Navigator makes the conversation systematic — not lucky.</div>
+      </div>
+      <div class="bl-item">
+        <div class="bl-arrow">→</div>
+        <div class="bl-text"><strong>The AI buyer is a better customer.</strong> 81% of AI-assisted buyers trusted the dealer gave them the best deal — vs. 67% of non-AI buyers. Transparent pricing and a clean process are the AI strategy. DDC + AT/KBB + Accelerate My Deal is the stack that delivers it.</div>
+      </div>
+      <div class="bl-item">
+        <div class="bl-arrow">→</div>
+        <div class="bl-text"><strong>Cox Automotive is the only provider with products at every stage of the lifecycle.</strong> From first impression on AutoTrader to deal close in Dealertrack F&I to next service visit in Xtime — and all of it connected through VinSolutions CRM and Dealertrack DMS. No competitor closes that loop.</div>
+      </div>
+      <div class="bl-item">
+        <div class="bl-arrow">→</div>
+        <div class="bl-text"><strong>The entry points are Xtime (service) and Accelerate My Deal (sales).</strong> Both open natural paths to the full stack. An Xtime conversation leads to vAuto, KBB ICO, VinSolutions, and Dealertrack DMS. An AMD conversation leads to Deal Central, Dealertrack F&I, and VinSolutions. Build the account from either door.</div>
+      </div>
+      <div class="bl-item">
+        <div class="bl-arrow">→</div>
+        <div class="bl-text"><strong>Navigator is always the demo closer.</strong> When the VP asks "how does it all actually work together?" — open Navigator, pull Xtime declined services into a vAuto appraisal in one click. That 90-second workflow is the connected dealership made real. No competitor has an equivalent answer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Cox Automotive · Executive Briefing</div>
+  <div class="footer-meta">
+    2025 Car Buyer Journey Study · 2,344 buyers · Released Jan 2026<br>
+    2025 Service Industry Study · 1,974 vehicle owners<br>
+    Confidential — Enterprise Sales
+  </div>
+</footer>
+
+<script>
+  function toggleChallenge(header) {
+    const block = header.closest('.challenge-block');
+    block.classList.toggle('open');
+  }
+
+  // Animate bottom line items on scroll
+  const blItems = document.querySelectorAll('.bl-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  blItems.forEach(el => observer.observe(el));
+
+  // Open first challenge by default
+  document.querySelector('.challenge-block').classList.add('open');
+</script>
+</body>
+</html>
