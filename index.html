@@ -1,291 +1,363 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automotive AI Daily Briefing — May 28, 2026</title>
-<style>
-:root {
-  --bg: #ffffff;
-  --text: #1a1a2e;
-  --card-bg: #f8f9fa;
-  --card-border: #e0e0e0;
-  --accent-top: #c0392b;
-  --cat1: #2980b9;
-  --cat2: #27ae60;
-  --cat3: #8e44ad;
-  --cat4: #d35400;
-  --cat5: #16a085;
-  --cat6: #c0392b;
-  --link: #2563eb;
-  --muted: #6b7280;
-  --top-bg: #fffbe6;
-  --top-border: #f59e0b;
-}
-[data-theme="dark"] {
-  --bg: #0f172a;
-  --text: #e2e8f0;
-  --card-bg: #1e293b;
-  --card-border: #334155;
-  --link: #60a5fa;
-  --muted: #94a3b8;
-  --top-bg: #1c1a0e;
-  --top-border: #f59e0b;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  transition: background 0.3s, color 0.3s;
-}
-header {
-  background: linear-gradient(135deg, #0b1f3a, #1a3a6c);
-  color: #fff;
-  padding: 2rem 1.5rem;
-  position: relative;
-}
-header h1 { font-size: 1.75rem; font-weight: 700; }
-header p { opacity: 0.85; margin-top: 0.25rem; font-size: 0.95rem; }
-.theme-toggle {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.5rem;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.85rem;
-}
-.theme-toggle:hover { background: rgba(255,255,255,0.25); }
-.container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
-.top-story {
-  background: var(--top-bg);
-  border-left: 5px solid var(--top-border);
-  padding: 1.25rem 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-}
-.top-story .label {
-  display: inline-block;
-  background: var(--top-border);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 3px;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-}
-.top-story h2 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-.top-story h2 a { color: var(--text); text-decoration: none; }
-.top-story h2 a:hover { text-decoration: underline; }
-.top-story .summary { font-size: 0.95rem; margin-bottom: 0.5rem; }
-.top-story .why { font-style: italic; color: var(--muted); font-size: 0.9rem; }
-.top-story .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }
-section { margin-bottom: 2.5rem; }
-.section-header {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding-left: 12px;
-  margin-bottom: 1rem;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1rem;
-}
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  padding: 1.15rem;
-  transition: box-shadow 0.2s;
-}
-.card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-.card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
-.card h3 a { color: var(--link); text-decoration: none; }
-.card h3 a:hover { text-decoration: underline; }
-.card .summary { font-size: 0.9rem; margin-bottom: 0.4rem; }
-.card .why { font-style: italic; color: var(--muted); font-size: 0.85rem; margin-bottom: 0.4rem; }
-.card .meta { font-size: 0.78rem; color: var(--muted); }
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.82rem;
-  color: var(--muted);
-  border-top: 1px solid var(--card-border);
-}
-</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
 </head>
 <body>
-<header>
-  <button class="theme-toggle" id="themeToggle">Toggle Dark Mode</button>
-  <h1>🚗 Automotive AI Daily Briefing</h1>
-  <p>Wednesday, May 28, 2026</p>
-</header>
-<div class="container">
-
-<div class="top-story">
-  <span class="label">TOP STORY</span>
-  <h2><a href="https://www.autonews.com/manufacturing/an-usmca-tariffs-automaker-impact-0528/" target="_blank" rel="noopener noreferrer">Tariffs Force Automakers to Rethink Plans as Costs Reach Billions</a></h2>
-  <p class="summary">Global automakers have collectively absorbed tens of billions in tariff costs since Trump-era duties took effect, with Honda posting its first loss since 1957, Hyundai reporting $5B in tariff costs, and Toyota facing a roughly $10B tariff bill. Detroit 3 makers fared better but still face billions in exposure, while manufacturers scramble with price hikes, supplier cost cuts, and production relocations.</p>
-  <p class="why">Why it matters: Tariff costs are compressing OEM margins industry-wide, accelerating production reshoring decisions, and threatening vehicle affordability—all of which ripple directly into dealer inventory mix, pricing strategy, and technology investment priorities.</p>
-  <p class="meta">Automotive News • May 28, 2026</p>
-</div>
-
-<section>
-  <h2 class="section-header" style="border-left:4px solid var(--cat1);color:var(--cat1);">Automotive Market</h2>
-  <div class="grid">
-    <div class="card">
-      <h3><a href="https://www.autonews.com/honda/an-honda-tftt-lance-woelfer-0527/" target="_blank" rel="noopener noreferrer">High Gas Prices Helping Honda Sell More Hybrids as It Targets Growth</a></h3>
-      <p class="summary">Honda is capitalizing on rising fuel costs to drive hybrid sales while maintaining its 4% U.S. sales growth target for 2026 (approximately 1.5 million vehicles). The company is increasing local procurement of hybrid drivetrain components to mitigate tariff exposure.</p>
-      <p class="why">Why it matters: Honda’s hybrid-first pivot illustrates how OEMs are adapting product strategy around both consumer demand shifts and tariff avoidance—shaping what lands on dealer lots.</p>
-      <p class="meta">Automotive News • May 27, 2026</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://www.coxautoinc.com/insights/cox-automotive-forecast-may-2026-u-s-auto-sales-forecast/" target="_blank" rel="noopener noreferrer">Cox Automotive Forecast: May Sales Pace Expected Near 16.1M SAAR</a></h3>
-      <p class="summary">May new-vehicle sales are projected at a 16.1 million SAAR, up from April’s 15.9M and last May’s 15.6M. Volume is expected at 1.48M units. The market remains resilient as affluent buyers shake off high fuel prices and weak consumer sentiment.</p>
-      <p class="why">Why it matters: Stable sales volume despite macro headwinds signals that the affluent new-car buyer cohort is sustaining demand, keeping dealer throughput healthy even as broader consumer confidence erodes.</p>
-      <p class="meta">Cox Automotive • May 27, 2026</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://www.wsj.com/business/autos/one-million-new-car-buyers-are-gone-and-theyre-not-coming-back-soon-c8984fae" target="_blank" rel="noopener noreferrer">One Million New-Car Buyers Are Gone and They’re Not Coming Back</a></h3>
-      <p class="summary">Roughly one million prospective buyers have exited the U.S. new-car market since the start of the decade due to persistently high prices and broader economic pressures. OEMs including GM, Ford, and Toyota are planning for stagnant or shrinking sales.</p>
-      <p class="why">Why it matters: A structurally smaller buyer pool forces dealers to extract more value from each transaction through F&amp;I, service retention, and digital engagement—underscoring the importance of retail technology investment.</p>
-      <p class="meta">Wall Street Journal • May 27, 2026</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-header" style="border-left:4px solid var(--cat2);color:var(--cat2);">Dealership &amp; Retail Tech</h2>
-  <div class="grid">
-    <div class="card">
-      <h3><a href="https://www.businesswire.com/news/home/20260527160600/en/Haig-Partners-Releases-Q1-2026-Haig-Report-Dealership-Buy-Sell-Activity-Surged-39-in-Q1-2026-as-Private-Buyers-Chase-Strong-Franchises" target="_blank" rel="noopener noreferrer">Haig Report: Dealership Buy-Sell Activity Surged 39% in Q1 2026</a></h3>
-      <p class="summary">An estimated 139 rooftops changed hands in Q1, up 39% YoY, with private buyers accounting for 96% of transactions. F&amp;I gross profit per vehicle hit a record $2,627 (up 4%), while fixed ops grew 3.6%. Volkswagen was downgraded to a $0–5M dollar-value range.</p>
-      <p class="why">Why it matters: Record F&amp;I per vehicle and surging M&amp;A activity signal that franchise auto retail remains a high-conviction investment—but the VW downgrade shows the gap between strong and weak franchises is widening.</p>
-      <p class="meta">Business Wire / Haig Partners • May 27, 2026</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://www.cbtnews.com/dealer-sentiment-climbs-in-q-2/" target="_blank" rel="noopener noreferrer">Dealer Sentiment Climbs on Robust Q2 Sales, but Future Confidence Falls</a></h3>
-      <p class="summary">The Q2 2026 Cox Automotive Dealer Sentiment Index shows current market conditions improved to 43 (from 41), while the future outlook fell sharply to 47 from 56 in Q1. Franchised dealers significantly outperformed independents.</p>
-      <p class="why">Why it matters: The divergence between current performance and future expectations signals dealers may begin tightening technology and inventory investments—creating both risk and opportunity for solution providers.</p>
-      <p class="meta">CBT News • May 27, 2026</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://digitaldealer.com/news/fi-profit-per-vehicle-just-hit-a-record-high-used-and-independent-dealers-are-positioned-to-capture-more-of-it-than-ever-before/170737/" target="_blank" rel="noopener noreferrer">F&amp;I Profit Per Vehicle Hits Record High; Independent Dealers Positioned to Capture More</a></h3>
-      <p class="summary">F&amp;I gross profit per vehicle sold topped $2,501 at publicly owned dealership groups in 2025, the highest level in five years. Independent and used-car dealers now have infrastructure to match, opening a new competitive front in F&amp;I.</p>
-      <p class="why">Why it matters: As F&amp;I becomes the leading profit center, technology platforms that streamline digital F&amp;I workflows gain strategic importance across both franchise and independent channels.</p>
-      <p class="meta">Digital Dealer • May 27, 2026</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-header" style="border-left:4px solid var(--cat3);color:var(--cat3);">Competitor Watch</h2>
-  <div class="grid">
-    <div class="card">
-      <h3><a href="https://canadianautodealer.ca/2026/05/one-stop-shopping-drives-buyer-satisfaction-cdk/" target="_blank" rel="noopener noreferrer">CDK Global: One-Stop Shopping Drives Higher Buyer Satisfaction</a></h3>
-      <p class="summary">CDK’s latest Ease of Purchase Scorecard found 41% of buyers in 2025 visited only one dealership before purchasing, up from 32% in 2023. The trend continued into early 2026 at 43–44%, driven by inventory availability and improved digital retail tools. Consumer sentiment, however, hit a 74-year low in April.</p>
-      <p class="why">Why it matters: CDK’s data shows its DMS/CRM ecosystem is driving measurable improvements in purchase ease, but the advocacy gap (buyers satisfied yet unwilling to recommend) reveals where competitors can differentiate.</p>
-      <p class="meta">Canadian Auto Dealer • May 27, 2026</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-header" style="border-left:4px solid var(--cat4);color:var(--cat4);">Cox Automotive Ecosystem</h2>
-  <div class="grid">
-    <div class="card">
-      <h3><a href="https://www.coxautoinc.com/insights/cox-automotive-forecast-may-2026-u-s-auto-sales-forecast/" target="_blank" rel="noopener noreferrer">Cox Automotive May 2026 Sales Forecast: Market Holds Steady at 16.1M SAAR</a></h3>
-      <p class="summary">Cox’s May forecast projects 1.48M units sold with a 16.1M SAAR. Senior Economist Charlie Chesbrough noted that today’s new-vehicle buyers are more affluent than ever, insulating them from inflationary pressures that are hitting lower-income consumers harder.</p>
-      <p class="why">Why it matters: Cox’s forecast data—powering tools like vAuto and Autotrader—shapes how thousands of dealers set pricing and inventory strategy each month.</p>
-      <p class="meta">Cox Automotive • May 27, 2026</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://www.cbtnews.com/dealer-sentiment-climbs-in-q-2/" target="_blank" rel="noopener noreferrer">Cox Automotive Q2 2026 Dealer Sentiment Index: Current Conditions Up, Future Outlook Down</a></h3>
-      <p class="summary">The Cox Automotive Dealer Sentiment Index for Q2 2026 shows a market where spring selling season delivered, but dealers are increasingly cautious about H2. The future outlook index dropped 9 points quarter-over-quarter to 47.</p>
-      <p class="why">Why it matters: As a Cox Automotive product, the Dealer Sentiment Index influences ecosystem-wide strategy across VinSolutions, Dealertrack, and vAuto feature roadmaps and dealer advisory services.</p>
-      <p class="meta">CBT News / Cox Automotive • May 27, 2026</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-header" style="border-left:4px solid var(--cat5);color:var(--cat5);">Dealership Marketing &amp; Advertising</h2>
-  <div class="grid">
-    <div class="card">
-      <h3><a href="https://www.autoremarketing.com/ar/analysis/dealerships-upped-ad-spend-for-used-vehicles-in-april/" target="_blank" rel="noopener noreferrer">Dealerships Upped Ad Spend for Used Vehicles in April as AI Drives Efficiency</a></h3>
-      <p class="summary">Fullpath’s April 2026 Auto Intelligence Index shows CPO ad spend soared 69% YoY and used-inventory spend climbed 27.8%. Fixed ops ad investment jumped 57.4%. Overall dealership conversions rose 37.3% YoY while cost per lead dropped 14.8%. Google search ads account for 64% of total digital ad investment.</p>
-      <p class="why">Why it matters: The shift toward AI-optimized, inventory-specific ad campaigns is creating a new efficiency baseline—dealers not leveraging AI budget optimization risk falling behind on cost-per-lead metrics.</p>
-      <p class="meta">Auto Remarketing • May 27, 2026</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://www.autoremarketing.com/ar/analysis/marketing-for-car-dealerships-in-the-age-of-ai/" target="_blank" rel="noopener noreferrer">Marketing for Car Dealerships in the Age of AI</a></h3>
-      <p class="summary">Auto Remarketing examines how AI is reshaping dealer marketing strategies, from automated campaign optimization to chatbot engagement. A key finding: conversion likelihood increases 6x when shoppers send a sixth message to an AI chatbot, raising sale probability to 45.6%.</p>
-      <p class="why">Why it matters: The “six-message threshold” data point validates investment in conversational AI and signals that modern shoppers prefer information depth over quick hand-offs to sales staff.</p>
-      <p class="meta">Auto Remarketing • May 27, 2026</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-header" style="border-left:4px solid var(--cat6);color:var(--cat6);">AI &amp; Technology</h2>
-  <div class="grid">
-    <div class="card">
-      <h3><a href="https://www.politico.com/news/2026/05/28/it-isnt-canceled-inside-the-white-house-divisions-on-ai-00938557" target="_blank" rel="noopener noreferrer">‘It Isn’t Canceled’: Inside the White House Divisions on AI Regulation</a></h3>
-      <p class="summary">Politico reports on internal White House debates over AI regulation, catalyzed by Anthropic’s release of its Mythos model—a security-focused AI that identified thousands of zero-day vulnerabilities across major systems. The administration is considering mandatory pre-release testing for frontier models.</p>
-      <p class="why">Why it matters: Mandatory AI testing requirements could reshape how automotive AI vendors deploy and update models, adding compliance overhead but potentially raising the trust bar for enterprise AI in dealerships.</p>
-      <p class="meta">Politico • May 28, 2026</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://sherwood.news/tech/anthropics-revenue-continues-to-surge-shooting-past-openai/" target="_blank" rel="noopener noreferrer">Anthropic’s Revenue Surges Past OpenAI—Estimated $45B ARR</a></h3>
-      <p class="summary">Anthropic is now generating an estimated 35% more revenue than OpenAI, with ARR approaching $45B versus OpenAI’s $33B. The revenue has grown 5x since the end of 2025, driven by enterprise adoption. Both companies are positioning for IPOs later this year.</p>
-      <p class="why">Why it matters: Anthropic’s dominance in enterprise AI spend suggests its Claude models are becoming the default infrastructure for business applications—including automotive platforms building on its API.</p>
-      <p class="meta">Sherwood News • May 27, 2026</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://stackoverflow.blog/2026/05/27/agents-on-a-leash-agentic-ai-remains-mostly-monitored-at-work/" target="_blank" rel="noopener noreferrer">Agents on a Leash: Agentic AI Usage Doubles but Stays Human-Monitored</a></h3>
-      <p class="summary">Stack Overflow’s latest pulse survey shows agentic AI usage at work nearly doubled from 31% to 59% YoY, but 63% of technologists rarely or never let agents run on full autopilot. GitHub Copilot (65%) and Claude Code (50%) lead single-agent workflows. Cost concerns have dropped from 53% to 38%.</p>
-      <p class="why">Why it matters: The “leash” pattern—high adoption, human oversight—mirrors how automotive AI should be deployed: agents handling routine tasks while humans retain control of high-stakes decisions like pricing and customer commitments.</p>
-      <p class="meta">Stack Overflow Blog • May 27, 2026</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://www.linuxfoundation.org/press/linux-foundation-announces-dns-aid-project-to-advance-decentralized-ai-agent-discovery" target="_blank" rel="noopener noreferrer">Linux Foundation Launches DNS-AID for Decentralized AI Agent Discovery</a></h3>
-      <p class="summary">The Linux Foundation announced the DNS-AID project to create an open standard for AI agents to discover and communicate with each other using existing DNS infrastructure. The project aims to prevent vendor lock-in in the emerging agent ecosystem.</p>
-      <p class="why">Why it matters: Standardized agent discovery could enable automotive AI systems from different vendors to interoperate—imagine a dealer’s inventory agent automatically negotiating with an OEM’s allocation agent via open protocols.</p>
-      <p class="meta">Linux Foundation • May 27, 2026</p>
-    </div>
-  </div>
-</section>
-
-</div>
-<footer>
-  May 28, 2026 • Curated by AI Research Desk
-</footer>
-<script>
-(function(){
-  var key = 'mssBriefingTheme';
-  var toggle = document.getElementById('themeToggle');
-  var saved = localStorage.getItem(key);
-  if (saved === 'dark') document.documentElement.setAttribute('data-theme','dark');
-  toggle.addEventListener('click', function(){
-    var current = document.documentElement.getAttribute('data-theme');
-    if (current === 'dark') {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem(key, 'light');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem(key, 'dark');
-    }
-  });
-})();
-</script>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;MSS Daily Briefing — May 29, 2026&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--bg: #f5f7fa;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--card-bg: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--text: #1a1a2e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--text-secondary: #4a5568;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--border: #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--shadow: 0 2px 8px rgba(0,0,0,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>[data-theme="dark"] {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--bg: #0d1117;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--card-bg: #161b22;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--text: #e6edf3;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--text-secondary: #8b949e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--border: #30363d;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--shadow: 0 2px 8px rgba(0,0,0,0.4);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>* { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--bg);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: background 0.3s, color 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg, #0b1f3a 0%, #1a3a6c 100%);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 2rem 2rem 1.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>header h1 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.5px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>header p.date { font-size: 0.9rem; opacity: 0.75; margin-top: 0.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>#toggleBtn {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>top: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>right: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(255,255,255,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid rgba(255,255,255,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 0.4rem 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.82rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: background 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>#toggleBtn:hover { background: rgba(255,255,255,0.25); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>main { max-width: 1300px; margin: 0 auto; padding: 2rem 1.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.top-story {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-left: 5px solid #f59e0b;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 1.25rem 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 0 8px 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: var(--shadow);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.top-story .label {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.72rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 1.5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #f59e0b;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 0.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.top-story h2 { font-size: 1.2rem; margin-bottom: 0.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.top-story h2 a { color: var(--text); text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.top-story h2 a:hover { text-decoration: underline; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.top-story p { font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 0.4rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.top-story .why { font-style: italic; color: var(--text-secondary); font-size: 0.88rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.top-story .meta { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.category { margin-bottom: 2.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.category-header {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.78rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 0.4rem 0 0.4rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 0 4px 4px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.cat-1 { border-left: 4px solid #3b82f6; color: #3b82f6; background: rgba(59,130,246,0.07); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.cat-2 { border-left: 4px solid #10b981; color: #10b981; background: rgba(16,185,129,0.07); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.cat-3 { border-left: 4px solid #f59e0b; color: #d97706; background: rgba(245,158,11,0.07); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.cat-4 { border-left: 4px solid #8b5cf6; color: #8b5cf6; background: rgba(139,92,246,0.07); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.cat-5 { border-left: 4px solid #ec4899; color: #ec4899; background: rgba(236,72,153,0.07); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.cat-6 { border-left: 4px solid #ef4444; color: #ef4444; background: rgba(239,68,68,0.07); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.grid {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: var(--shadow);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: transform 0.15s, box-shadow 0.15s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card h3 { font-size: 1rem; line-height: 1.4; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card h3 a { color: var(--text); text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card h3 a:hover { text-decoration: underline; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card p { font-size: 0.88rem; color: var(--text-secondary); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card .why { font-style: italic; color: var(--text-secondary); font-size: 0.85rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card .meta { font-size: 0.76rem; color: var(--text-secondary); margin-top: auto; padding-top: 0.5rem; border-top: 1px solid var(--border); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.82rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--text-secondary);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-top: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>@media (max-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header h1 { font-size: 1.25rem; padding-right: 5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#toggleBtn { top: 1rem; right: 1rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;&amp;#x1F697; MSS Automotive AI Daily Briefing&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="date"&gt;Friday, May 29, 2026&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="toggleBtn" aria-label="Toggle light/dark mode"&gt;&amp;#x1F319; Dark&lt;/button&gt;</p>
+<p class="p1">&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- TOP STORY --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="top-story"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="label"&gt;&amp;#x2B50; Top Story&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;&lt;a href="https://www.anthropic.com/news/series-h" target="_blank" rel="noopener noreferrer"&gt;Anthropic Raises $65 Billion Series H at $965 Billion Valuation, Eclipsing OpenAI&lt;/a&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Anthropic closed a $65 billion Series H led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, vaulting to a $965 billion post-money valuation and overtaking OpenAI as the world's most valuable AI startup. The round will fund expanded compute capacity and accelerated model development as Anthropic targets $50 billion in annualized revenue.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; This is the largest private AI funding round in history. The capital race between Anthropic and OpenAI will accelerate LLM capability releases — directly impacting every automotive AI vendor that leverages these foundation models for dealer-facing products.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="meta"&gt;Anthropic Newsroom &amp;bull; May 28, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CATEGORY 1: AUTOMOTIVE MARKET --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="category-header cat-1"&gt;&amp;#x1F697; Automotive Market&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.cbtnews.com/may-auto-sales-expected-to-hold-steady/" target="_blank" rel="noopener noreferrer"&gt;May Auto Sales Expected to Hold Steady Despite Economic Uncertainty&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;U.S. new-vehicle sales for May are projected to remain relatively stable, with the annualized rate forecast near 15.9 million units. Consumer demand is diverging — budget-conscious buyers are gravitating toward used vehicles and hybrids while new-vehicle transaction prices remain elevated above $48,000.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; A steady SAAR amid macro uncertainty suggests resilient dealer throughput, but margin compression from tariff-driven cost increases keeps profitability pressure elevated — informing pricing and incentive strategy for OEM and dealer clients.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;CBT News &amp;bull; May 28, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.coxautoinc.com/insights/cox-automotive-forecast-may-2026-u-s-auto-sales-forecast/" target="_blank" rel="noopener noreferrer"&gt;Cox Automotive Forecast: May Sales Pace Expected to Increase as Buyers Shake Off High Fuel Prices&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Cox Automotive's May forecast calls for a modest sequential improvement in new-vehicle sales pace, as improving consumer sentiment partially offsets headwinds from $4.50+ national average gas prices and ongoing tariff uncertainty. The full-year 2026 outlook remains at approximately 15.8 million units.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; Cox Automotive's forward guidance directly shapes vAuto pricing signals, VinSolutions lead-scoring models, and Manheim wholesale demand curves — making this the authoritative internal planning benchmark for the ecosystem.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;Cox Automotive &amp;bull; May 27, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.coxautoinc.com/insights/ev-market-monitor-april-2026-2/" target="_blank" rel="noopener noreferrer"&gt;Cox EV Market Monitor: April EV Sales Down 23% YoY as Market Recalibrates&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;April EV sales totaled an estimated 76,889 units, declining 23.1% year over year and representing just 5.6% of total new-vehicle sales. EV wholesale prices, however, continue to outperform non-EVs, with the EV Manheim index up 11.4% year over year through mid-May.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; The retail-wholesale divergence in EV pricing creates a unique opportunity for dealers and remarketing platforms: retail demand is soft but wholesale values are rising, pointing to strong CPO and off-lease EV acquisition strategies.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;Cox Automotive &amp;bull; May 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.coxautoinc.com/insights/manheim-used-vehicle-value-index-mid-may-2026-trends/" target="_blank" rel="noopener noreferrer"&gt;Manheim Mid-May MUVVI: Wholesale Prices Up 3.8% YoY as Seasonal Peak Fades&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The Manheim Used Vehicle Value Index reached 213.1 in the first half of May, up 3.8% year over year. Gas prices above $4.50 are driving elevated demand for fuel-efficient segments, with compact cars and EVs showing the strongest year-over-year price gains. Sales conversion averaged 61.3%, well above the long-term run rate.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; High wholesale conversion rates indicate Manheim demand remains robust — a positive signal for NextGear floorplan utilization and vAuto acquisition pricing tools heading into summer.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;Cox Automotive / Manheim &amp;bull; May 20, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CATEGORY 2: DEALERSHIP &amp; RETAIL TECH --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="category-header cat-2"&gt;&amp;#x1F3EA; Dealership &amp;amp; Retail Tech&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.cdkglobal.com/insights/video-how-ai-helps-dealerships-overcome-sales-challenges" target="_blank" rel="noopener noreferrer"&gt;CDK: Dealership AI Adoption Jumps from 28% to 39% in One Year&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;CDK Global's latest AI study reveals a significant one-year acceleration in dealer AI adoption, with virtual assistants emerging as the leading deployment. Dealers using AI tools are reporting measurable improvements in lead response times and customer engagement scores, though integration with legacy DMS workflows remains the primary friction point.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; CDK's own data quantifying AI adoption gains validates the urgency for every CRM, DMS, and F&amp;amp;I vendor — including Cox Automotive's stack — to accelerate AI-native feature development or risk competitive displacement.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;CDK Global &amp;bull; May 15, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.cdkglobal.com/insights/video-how-dealerships-can-improve-fixed-ops-and-service-loyalty-2026" target="_blank" rel="noopener noreferrer"&gt;CDK 2026 Service Shopper Study: Digital Tools and Mobile-First Scheduling Drive Retention&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;CDK's 2026 Service Shopper Study reveals that customer expectations in the service lane are shifting faster than dealer technology investments, with digital appointment scheduling and vehicle health transparency emerging as the top loyalty drivers. Dealers adopting mobile-first service tools are seeing measurable retention improvements over peers relying on phone-based scheduling.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; Fixed ops represents an increasingly critical revenue pillar as new-vehicle margins compress under tariff pressure — making Xtime, myKaarma, and CDK's service tools central to dealer profitability strategy in 2026.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;CDK Global &amp;bull; May 7, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CATEGORY 3: COMPETITOR WATCH --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="category-header cat-3"&gt;&amp;#x1F50D; Competitor Watch&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.cnbc.com/2026/04/29/carvana-cvna-earnings-q1-2026.html" target="_blank" rel="noopener noreferrer"&gt;Carvana Posts Record Q1 2026: 187K Units, 40% Growth, $405M Net Income&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Carvana reported record Q1 2026 results with 187,000 retail units sold — 40% year-over-year growth — and net income of $405 million (6.3% margin), beating consensus by a wide margin. EPS of $1.69 topped the $1.43 estimate. The stock surged over 9% in pre-market trading as the company demonstrated that its reconditioning and logistics infrastructure can scale profitably.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; Carvana's unit economics are maturing at scale, presenting a growing competitive threat to franchise dealer used-vehicle departments and to digital retailing platforms that have struggled to match its end-to-end consumer experience.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;CNBC &amp;bull; April 29, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://investors.cargurus.com/news-releases/news-release-details/cargurus-announces-first-quarter-2026-results" target="_blank" rel="noopener noreferrer"&gt;CarGurus Q1 2026: Revenue Up 15% YoY to $244M, Beats Guidance Midpoint&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;CarGurus reported Q1 2026 revenue of $244 million — 15% year-over-year growth — at the midpoint of its guidance range, with GAAP net income of $32.2 million from continuing operations. Adjusted EBITDA reached $80.2 million. A $19.7M lease impairment charge and softer Q2 guidance tempered the post-earnings reaction despite the beat.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; CarGurus' sustained revenue growth reinforces the power of digital marketplaces in the auto-shopping funnel and signals ongoing pressure on dealer advertising budgets to perform in an AI-mediated search environment.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;CarGurus Investor Relations &amp;bull; May 7, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://digitaldealer.com/news/impel-adds-personalized-ai-avatar-video-generation-capabilities/170853/" target="_blank" rel="noopener noreferrer"&gt;Impel Launches AI Avatar Video Generation for Lead Management — Integrated with AI Agents&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Impel unveiled personalized AI avatar video generation capabilities, embedding automated video outreach directly into its Sales AI agent platform. The system generates customized vehicle walkthrough videos for individual leads at scale, combining VinVision AI visual intelligence with conversational AI agents to create what the company describes as the most sophisticated lead management capability available for dealers and OEMs.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; Multimodal AI combining video generation with agentic lead follow-up represents a meaningful step-change in lead conversion tooling — raising the competitive bar for VinSolutions, DriveCentric, and every CRM in the market.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;Digital Dealer / Impel AI &amp;bull; May 21, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CATEGORY 4: COX AUTOMOTIVE ECOSYSTEM --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="category-header cat-4"&gt;&amp;#x1F4CA; Cox Automotive Ecosystem&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.coxautoinc.com/insights/cox-automotive-forecast-may-2026-u-s-auto-sales-forecast/" target="_blank" rel="noopener noreferrer"&gt;Cox Automotive Forecasts Steady May SAAR Near 15.9M Despite Macro Headwinds&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Cox Automotive's integrated data engine — drawing from Manheim wholesale data, Autotrader/KBB consumer intent signals, and VinSolutions CRM activity — projects May 2026 as a stabilizing month after April's decline. The Cox Interim Chief Economist cited improving tax-refund-season trailing demand and stabilizing fuel prices as key upside catalysts for the back half of May.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; Cox's cross-platform data advantage — spanning retail, wholesale, and consumer intent — makes this forecast more precise than industry-wide estimates, reinforcing the ecosystem's value proposition to dealer and OEM clients.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;Cox Automotive &amp;bull; May 27, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.coxautoinc.com/insights/manheim-used-vehicle-value-index-mid-may-2026-trends/" target="_blank" rel="noopener noreferrer"&gt;Manheim: EV Wholesale Prices 11% Higher YoY for Six Straight Weeks&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Manheim's mid-May report highlights a notable divergence: EV wholesale values have outperformed non-EVs for six consecutive weeks, with three-year-old EV prices up 11% from the start of the year. The trend is attributed to sustained high gas prices and growing off-lease EV volume being absorbed by demand from budget-minded second buyers.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; Rising EV wholesale values present a direct inventory acquisition opportunity for dealers using vAuto — while also informing NextGear capital allocation and Dealer.com merchandising strategies for EV CPO units.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;Cox Automotive / Manheim &amp;bull; May 20, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CATEGORY 5: DEALERSHIP MARKETING &amp; ADVERTISING --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="category-header cat-5"&gt;&amp;#x1F4E2; Dealership Marketing &amp;amp; Advertising&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.dealersunited.com/blog/seo-vs-geo-the-complete-guide-for-car-dealers-in-2026/" target="_blank" rel="noopener noreferrer"&gt;SEO vs. GEO: The Complete 2026 Guide for Car Dealers — Why AI Citations Are the New First Page&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Dealers United's comprehensive 2026 guide outlines how Generative Engine Optimization (GEO) is fundamentally changing automotive search, as consumers increasingly get car-buying answers directly from ChatGPT, Perplexity, and Google AI Overviews rather than clicking blue links. Dealers optimizing for AI citation inclusion through structured data, authoritative reviews, and schema markup are capturing a new top-of-funnel channel that bypasses traditional SEM spend.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; GEO is rapidly becoming the most important frontier in automotive digital marketing. Dealer.com, Autotrader, and KBB content assets that rank in AI citations have outsized influence on dealer discovery — a strategic opportunity for Cox Automotive's publisher properties.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;Dealers United &amp;bull; 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.autoremarketing.com/ar/technology/impel-phyron-launch-ai-systems-to-drive-customer-engagement-through-dealership-video/" target="_blank" rel="noopener noreferrer"&gt;Impel and Phyron Launch AI Video Systems to Drive Dealership Customer Engagement at Scale&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Impel and video AI platform Phyron jointly launched integrated AI video systems designed to automate personalized dealer video production across inventory listings, email campaigns, and social media. The partnership enables dealerships to deploy dynamic vehicle video content at scale without manual production — driving measurably higher engagement rates than static image listings.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; AI-generated video content in the marketing funnel is emerging as a key differentiator in dealer digital advertising performance, directly challenging agencies and platforms that rely on traditional photo-and-text ad creative.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;Auto Remarketing &amp;bull; May 21, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CATEGORY 6: AI &amp; TECHNOLOGY --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="category-header cat-6"&gt;&amp;#x1F916; AI &amp;amp; Technology&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.anthropic.com/news/series-h" target="_blank" rel="noopener noreferrer"&gt;Anthropic Raises $65B Series H at $965B Valuation — Overtakes OpenAI as Most Valuable AI Startup&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Anthropic announced a $65 billion Series H financing round led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, reaching a $965 billion post-money valuation. The company — on track to exceed $50 billion in annualized revenue — surpassed OpenAI in private market value. Proceeds will fund accelerated compute buildout, new Claude model releases, and European expansion.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; Anthropic's capital advantage accelerates its enterprise AI trajectory. Automotive AI vendors building on Anthropic's Claude API — including several dealer-tech players — will benefit from faster model improvements and lower inference costs as Anthropic scales.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;Anthropic &amp;bull; May 28, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://venturebeat.com/technology/anthropics-claude-opus-4-8-is-here-with-3x-cheaper-fast-mode-and-near-mythos-level-alignment" target="_blank" rel="noopener noreferrer"&gt;Anthropic Releases Claude Opus 4.8: 3X Cheaper Fast Mode and Advanced Agentic Alignment&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Anthropic launched Claude Opus 4.8, offering a 3X cost reduction in its "fast mode" alongside near-Mythos-level alignment properties that improve the model's ability to refuse harmful instructions and maintain honesty under adversarial prompting. The release includes enhanced support for parallel agentic subagent workflows enabling hundreds of concurrent AI workers on complex enterprise tasks.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; The 3X cost reduction and agentic workflow improvements make enterprise AI deployments — including automotive CRM automation, inventory analysis, and customer lifecycle management — dramatically more economically viable for large dealer groups and OEMs.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;VentureBeat &amp;bull; May 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://venturebeat.com/technology/mistral-ai-launches-vibe-expands-into-industrial-ai-and-announces-data-center-push-to-challenge-openai" target="_blank" rel="noopener noreferrer"&gt;Mistral AI Launches "Vibe" Agent Platform, Expands into Industrial AI with BMW and Airbus&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Mistral AI unveiled Vibe — its enterprise AI agent productivity platform — alongside a major push into physics-based industrial AI with announced partnerships with Airbus and BMW for manufacturing and design applications. Mistral also detailed a €4 billion European data center buildout to reduce dependence on U.S. hyperscalers and compete directly with OpenAI and Anthropic on enterprise workloads.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; Mistral's OEM partnerships with BMW signal that European automakers are actively diversifying their AI supply chain — a trend that could influence how global automotive AI vendors structure their infrastructure and data sovereignty strategies.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;VentureBeat &amp;bull; May 28, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;&lt;a href="https://www.ciodive.com/news/snowflake-targets-ai-agent-adoption-aws/821393/" target="_blank" rel="noopener noreferrer"&gt;Snowflake Targets Agentic Enterprise with AWS Deal and New Governance Capabilities&lt;/a&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Snowflake expanded its partnership with AWS to accelerate enterprise adoption of AI agents, adding new compute and data governance capabilities aimed at the "agentic enterprise" — where AI systems autonomously execute multi-step business workflows. The deal positions Snowflake's data cloud as a foundational layer for enterprises deploying autonomous AI agents across sales, operations, and customer service.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="why"&gt;&lt;strong&gt;Why it matters:&lt;/strong&gt; As automotive AI vendors build agentic products — automated lead follow-up, inventory pricing agents, service scheduling bots — enterprise data governance and multi-cloud connectivity becomes a critical infrastructure requirement.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;CIO Dive &amp;bull; May 29, 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;May 29, 2026 &amp;bull; Curated by AI Research Desk&lt;/p&gt;</p>
+<p class="p1">&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>(function() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var btn = document.getElementById('toggleBtn');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var body = document.body;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var stored = localStorage.getItem('mssBriefingTheme');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (stored === 'dark') {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>body.setAttribute('data-theme', 'dark');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>btn.textContent = '\u2600\uFE0F Light';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>btn.textContent = '\uD83C\uDF19 Dark';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (body.getAttribute('data-theme') === 'dark') {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body.removeAttribute('data-theme');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.setItem('mssBriefingTheme', 'light');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.textContent = '\uD83C\uDF19 Dark';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body.setAttribute('data-theme', 'dark');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.setItem('mssBriefingTheme', 'dark');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.textContent = '\u2600\uFE0F Light';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>})();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
