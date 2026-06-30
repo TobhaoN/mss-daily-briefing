@@ -3,160 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automotive AI Daily Briefing — June 29, 2026</title>
+<title>Automotive AI Daily Briefing — Tuesday, June 30, 2026</title>
 <style>
   :root{
-    --bg:#f4f6f9; --card:#ffffff; --text:#16202e; --muted:#5a6b80;
-    --headerA:#0b1f3a; --headerB:#1a3a6c; --border:#e2e8f0;
-    --bottomline:#0f766e; --topstory:#b45309; --talktrack:#6d28d9; --post:#be123c;
-    --shadow:rgba(15,23,42,0.08);
+    --bg:#f4f6f9; --card:#ffffff; --text:#16202c; --muted:#5a6b7b;
+    --border:#e2e8f0; --shadow:0 1px 3px rgba(16,32,44,.08);
+    --headerA:#0b1f3a; --headerB:#1a3a6c;
+    --bottom:#0d7a5f; --bottomBg:#e7f6f0;
+    --top:#c2410c; --topBg:#fdeee4;
+    --talk:#7c3aed; --talkBg:#f3ecfd;
+    --post:#0369a1;
   }
   html[data-theme="dark"]{
-    --bg:#0d1320; --card:#161f2e; --text:#e6edf6; --muted:#9fb0c4;
-    --border:#27344a; --shadow:rgba(0,0,0,0.5);
+    --bg:#0c121a; --card:#141d28; --text:#e7eef6; --muted:#9fb0c0;
+    --border:#243240; --shadow:0 1px 3px rgba(0,0,0,.5);
+    --bottomBg:#0e2a23; --topBg:#2a1810; --talkBg:#1f1733;
   }
-  *{box-sizing:border-box;}
+  *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;}
-  header{background:linear-gradient(135deg,var(--headerA),var(--headerB));color:#fff;padding:28px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-  header .titlewrap h1{margin:0;font-size:1.55rem;letter-spacing:.3px;}
-  header .titlewrap .date{opacity:.85;font-size:.95rem;margin-top:4px;}
-  #themeToggle{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 16px;font-size:.85rem;cursor:pointer;}
-  #themeToggle:hover{background:rgba(255,255,255,.28);}
-  main{max-width:1180px;margin:0 auto;padding:24px 18px 60px;}
-  .callout{border-radius:12px;padding:18px 20px;margin:18px 0;background:var(--card);box-shadow:0 2px 10px var(--shadow);}
-  .bottomline{border-left:7px solid var(--bottomline);}
-  .bottomline .label{color:var(--bottomline);}
-  .topstory{border-left:7px solid var(--topstory);}
-  .topstory .label{color:var(--topstory);}
-  .callout .label{font-weight:800;letter-spacing:1px;font-size:.8rem;text-transform:uppercase;display:block;margin-bottom:8px;}
-  .callout h2{margin:2px 0 8px;font-size:1.12rem;}
-  .callout a{color:inherit;text-decoration:none;border-bottom:2px solid var(--topstory);}
-  .callout p{margin:6px 0;}
-  section.cat{margin-top:34px;}
-  .cathead{text-transform:uppercase;letter-spacing:1.2px;font-size:.92rem;font-weight:800;padding:8px 0 8px 14px;border-left:6px solid var(--c);margin-bottom:14px;}
+  header{background:linear-gradient(135deg,var(--headerA),var(--headerB));color:#fff;padding:28px 24px;position:relative;}
+  header h1{margin:0;font-size:1.6rem;font-weight:700;}
+  header .date{margin-top:6px;font-size:.95rem;opacity:.85;}
+  .toggle{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:8px 14px;font-size:.85rem;cursor:pointer;}
+  .toggle:hover{background:rgba(255,255,255,.28);}
+  main{max-width:1180px;margin:0 auto;padding:24px;}
+  .callout{border-radius:10px;padding:18px 20px;margin-bottom:20px;box-shadow:var(--shadow);}
+  .bottom-line{background:var(--bottomBg);border-left:6px solid var(--bottom);}
+  .top-story{background:var(--topBg);border-left:6px solid var(--top);}
+  .callout .label{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+  .bottom-line .label{color:var(--bottom);}
+  .top-story .label{color:var(--top);}
+  .top-story h2{margin:.2rem 0 .4rem;font-size:1.15rem;}
+  .top-story h2 a{color:var(--text);text-decoration:none;}
+  .top-story h2 a:hover{text-decoration:underline;}
+  .section-head{text-transform:uppercase;font-size:.95rem;font-weight:800;letter-spacing:.06em;padding:8px 12px;margin:28px 0 14px;border-left:6px solid var(--accent,#888);color:var(--text);}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;box-shadow:0 1px 6px var(--shadow);display:flex;flex-direction:column;}
-  .card h3{margin:0 0 8px;font-size:1.04rem;line-height:1.35;}
-  .card h3 a{color:var(--text);text-decoration:none;border-bottom:2px solid var(--c);}
-  .card h3 a:hover{opacity:.8;}
-  .summary{margin:0 0 10px;font-size:.93rem;color:var(--text);}
-  .means{font-style:italic;font-size:.9rem;background:rgba(127,127,127,.08);border-radius:8px;padding:8px 10px;margin:0 0 10px;}
-  .means b{font-style:normal;}
-  .talk{font-style:italic;font-size:.9rem;border-left:3px solid var(--talktrack);padding:4px 0 4px 10px;margin:0 0 10px;color:var(--talktrack);}
-  html[data-theme="dark"] .talk{color:#c4b5fd;}
-  .meta{margin-top:auto;font-size:.8rem;color:var(--muted);}
-  .badge{display:inline-block;background:var(--post);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.5px;padding:3px 9px;border-radius:999px;margin-bottom:8px;}
-  .angle{font-size:.86rem;color:var(--post);margin:0 0 10px;}
-  html[data-theme="dark"] .angle{color:#fda4af;}
-  footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 18px;border-top:1px solid var(--border);margin-top:30px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;box-shadow:var(--shadow);}
+  .card h3{margin:0 0 8px;font-size:1.02rem;line-height:1.35;}
+  .card h3 a{color:var(--text);text-decoration:none;}
+  .card h3 a:hover{text-decoration:underline;}
+  .card p{margin:0 0 10px;font-size:.92rem;color:var(--text);}
+  .means{font-style:italic;font-size:.9rem;color:var(--muted);border-top:1px dashed var(--border);padding-top:10px;margin-top:4px;}
+  .talk{font-style:italic;font-size:.9rem;background:var(--talkBg);border-left:3px solid var(--talk);padding:8px 10px;border-radius:6px;margin-top:10px;}
+  .src{font-size:.78rem;color:var(--muted);margin-top:10px;}
+  .badge{display:inline-block;background:var(--post);color:#fff;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:12px;margin-bottom:8px;letter-spacing:.03em;}
+  .post-angle{font-size:.85rem;color:var(--muted);margin-top:8px;border-top:1px dashed var(--border);padding-top:8px;}
+  footer{text-align:center;padding:28px 20px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:30px;}
 </style>
 </head>
 <body>
 <header>
-  <div class="titlewrap">
-    <h1>🚗 Automotive AI Daily Briefing</h1>
-    <div class="date">Monday, June 29, 2026</div>
-  </div>
-  <button id="themeToggle" aria-label="Toggle light and dark mode">🌙 Dark mode</button>
+  <h1>🚗 Automotive AI Daily Briefing</h1>
+  <div class="date">Tuesday, June 30, 2026</div>
+  <button class="toggle" id="themeToggle" type="button">🌙 Dark</button>
 </header>
 <main>
 
-  <div class="callout bottomline">
-    <span class="label">Bottom Line</span>
-    <p>Today's through-line is consolidation around connected, AI-native platforms — and the new gatekeepers deciding who gets access. Washington is now vetting which firms can run frontier AI, CarGurus is forcing fee transparency, and Tekion is embedding fintech into its DMS, all while Cox ships Navigator to stitch its own stack together. For MSS this week: lead with the "one connected Cox ecosystem" story (Navigator across vAuto, VinSolutions, Xtime, Dealertrack) — it's the cleanest counter to point-solution sprawl dealers are feeling everywhere else.</p>
+  <div class="callout bottom-line">
+    <div class="label">Bottom Line</div>
+    <div>The through-line today is consolidation of <strong>data and AI as the new competitive moat</strong> in retail: Cox folded Fullpath into Autotrader/KBB, the public dealer groups are scaling 50+ AI projects each, and CarGurus is forcing all-in pricing — while Carvana shows what a stripped-down, AI-run store looks like. For MSS this week, the sell is not "AI is coming" but "your unified Cox data stack is how you answer the shopper who already used AI before they called you." Lead every conversation with first-party data activation (Fullpath + VinSolutions + vAuto), not point tools.</div>
   </div>
 
-  <div class="callout topstory">
-    <span class="label">★ Top Story</span>
-    <h2><a href="https://www.reuters.com/technology/us-releases-anthropic-model-mythos-some-us-companies-semafor-reports-2026-06-26/" target="_blank" rel="noopener noreferrer">U.S. government clears Anthropic to release its top AI model to a vetted list of "trusted" organizations</a></h2>
-    <p>The U.S. partially reversed a June 12 order, letting Anthropic redeploy its Claude Mythos 5 model to 100+ approved companies and infrastructure operators; OpenAI is separately staggering GPT-5.6 to vetted partners at the government's request. Critics — including OpenAI's Sam Altman — warn the government is effectively "picking the customers" for frontier AI with little transparency.</p>
-    <p class="means"><b>What it means for us:</b> Enterprise access to frontier AI is becoming a gated, approval-based privilege — the same governance and vendor-trust questions dealers will start asking about the AI baked into VinSolutions, Dealer.com and vAuto. Expect "where does your model run and who vetted it?" to become a real procurement question.</p>
-    <p class="meta">Reuters · June 26, 2026</p>
+  <div class="callout top-story">
+    <div class="label">⭐ Top Story</div>
+    <h2><a href="https://www.autonews.com/retail/an-what-comes-after-cox-fullpath-acquisition-0626/" target="_blank" rel="noopener noreferrer">Cox-Fullpath venture creates more unified data for dealerships</a></h2>
+    <p>Following the June 1 Fullpath acquisition, Cox piped Autotrader and Kelley Blue Book shopper data into Fullpath's AI marketing platform, letting dealers track a buyer across the journey and act on intent signals. Analysts framed it as a competitive edge in a crowded DMS race against CDK, Tekion and Reynolds.</p>
+    <p class="means"><em>What it means for us: This is the connective tissue that lets us pitch VinSolutions + Autotrader + KBB as one activated data layer rather than separate logins — the exact answer to a dealer asking "how do I reach the shopper who already researched on AI before contacting me?"</em></p>
+    <p class="talk talk-top"><em>Talk track: "Fullpath isn't a new tool to learn — it's the layer that finally makes your Autotrader and KBB shopper data actionable inside the Cox stack you already run."</em></p>
+    <div class="src">Automotive News · June 26, 2026</div>
   </div>
 
-  <section class="cat" style="--c:#1d4ed8;">
-    <div class="cathead">Cox Automotive Ecosystem</div>
-    <div class="grid">
-      <div class="card" style="--c:#1d4ed8;">
-        <span class="badge">📣 Post-worthy</span>
-        <h3><a href="https://www.autosuccessonline.com/cox-automotive-navigator/" target="_blank" rel="noopener noreferrer">Cox Automotive launches Navigator, a browser extension connecting vAuto, VinSolutions, Xtime &amp; Dealertrack</a></h3>
-        <p class="summary">Navigator is a browser extension that links workflows across the Cox dealer stack — one-click from a vAuto appraisal to Xtime service records or VinSolutions customer insights — plus Manheim, OVE and Central Dispatch. A Withnell Automotive adviser says it cut routine task time roughly in half.</p>
-        <p class="means"><b>What it means for us:</b> This is the strongest "stop paying the switching-cost tax" pitch we've had for an all-Cox rooftop — it directly rewards customers who run vAuto + VinSolutions + Xtime + Dealertrack together rather than stitching point solutions from CDK, Tekion or DriveCentric.</p>
-        <p class="talk"><b>Talk track:</b> "If you're already on vAuto and VinSolutions, Navigator means your team stops re-keying between tabs — most dealers tell us appraisals and status lookups get cut roughly in half."</p>
-        <p class="angle">📣 Suggested LinkedIn angle: "The real ROI of a single-vendor stack isn't the discount — it's the 30 seconds your advisor saves on every customer lookup. Cox just put a number on it."</p>
-        <p class="meta">AutoSuccess · June 25, 2026</p>
-      </div>
+  <h2 class="section-head" style="--accent:#1d4ed8;">Automotive Market</h2>
+  <div class="grid">
+    <div class="card">
+      <h3><a href="https://www.coxautoinc.com/insights/cox-automotive-forecast-june-2026-u-s-auto-sales-forecast/" target="_blank" rel="noopener noreferrer">Cox forecast: sales pace holds near 16.1M SAAR as Toyota closes on GM</a></h3>
+      <p>Cox Automotive's June forecast holds the 2026 full-year at 15.8M units (down 2.9%), with the monthly SAAR stabilizing near 16.1M. GM stays the first-half leader but is down 7.2%, while Toyota's hybrid-fueled Q2 surge narrows the gap to under 100,000 units; Ford (-10.3%) and Tesla (-14.6%) lag.</p>
+      <p class="means"><em>What it means for us: vAuto and Manheim data become the credibility anchor when a dealer second-guesses pricing in a "flat but volatile" market — point them to the Cox SAAR call rather than gut feel.</em></p>
+      <div class="src">Cox Automotive Newsroom · June 24, 2026</div>
     </div>
-  </section>
-
-  <section class="cat" style="--c:#b45309;">
-    <div class="cathead">Automotive Market</div>
-    <div class="grid">
-      <div class="card" style="--c:#b45309;">
-        <h3><a href="https://www.automotiveworld.com/news/us-to-bar-polestar-sales-from-2027-over-china-software-ties/" target="_blank" rel="noopener noreferrer">U.S. to bar Polestar sales from model year 2027 over China software ties</a></h3>
-        <p class="summary">The Commerce Department denied Geely-owned Polestar authorization to sell MY2027 vehicles under the Connected Vehicle Rule, which restricts vehicles containing Chinese or Russian software. Existing Polestar 3 and 4 stock can still be sold; the bigger story is the precedent for any brand with Chinese software content, including the China-built Lincoln Nautilus.</p>
-        <p class="means"><b>What it means for us:</b> The Connected Vehicle Rule reshapes which VINs are legally sellable, which feeds directly into vAuto stocking and appraisal logic — dealers will ask whether affected inventory and residual forecasts are flagged before they buy at a Manheim lane.</p>
-        <p class="talk"><b>Talk track:</b> "If you're appraising or stocking any Geely-family or China-software VIN, vAuto's market data is where you want to catch the residual risk before it hits your lot — not after."</p>
-        <p class="meta">Automotive World · June 26, 2026</p>
-      </div>
+    <div class="card">
+      <h3><a href="https://www.cbtnews.com/toyota-narrows-u-s-sales-gap-with-gm/" target="_blank" rel="noopener noreferrer">Toyota narrows U.S. sales gap with GM as hybrid demand surges</a></h3>
+      <p>Toyota's U.S. volume is set to rise nearly 1% through the first half on strong hybrid and redesigned-product demand, per Cox forecasts, putting a leadership change in play by year-end if trends hold.</p>
+      <p class="means"><em>What it means for us: Hybrid-heavy inventory shifts how Toyota dealers should be merchandising and pricing on vAuto — used hybrid demand and turn rates are a live appraisal conversation this week.</em></p>
+      <div class="src">CBT News · June 25, 2026</div>
     </div>
-  </section>
-
-  <section class="cat" style="--c:#be123c;">
-    <div class="cathead">Competitor Watch</div>
-    <div class="grid">
-      <div class="card" style="--c:#be123c;">
-        <h3><a href="https://www.cbtnews.com/weekly-roundup-uaw-automakers-clash-over-ai-and-robotics-dealership-buy-sells-jump-21-cargurus-to-require-fee-disclosures/" target="_blank" rel="noopener noreferrer">CarGurus to require dealer fee disclosures; dealership buy-sells jump 21%</a></h3>
-        <p class="summary">CBT News reports CarGurus will require dealers to disclose applicable fees on listings, dealership buy-sell activity is up 21%, and UAW and automakers are clashing over AI and robotics. The fee-transparency move tightens how competitor marketplaces present pricing to shoppers.</p>
-        <p class="means"><b>What it means for us:</b> As CarGurus pushes mandatory fee transparency, dealers will look to Dealer.com and Autotrader/KBB listings to make sure their pricing story is consistent across channels — a transparency gap between marketplaces is now a competitive liability we can help close.</p>
-        <p class="meta">CBT News · June 27, 2026</p>
-      </div>
+    <div class="card">
+      <h3><a href="https://www.reuters.com/business/autos-transportation/us-denies-polestar-authorization-sell-vehicles-latest-strike-against-china-made-2026-06-25/" target="_blank" rel="noopener noreferrer">U.S. cranks up pressure on China EVs with Polestar ban</a></h3>
+      <p>The Commerce Department denied Polestar authorization to sell vehicles in the U.S. from model year 2027 under connected-vehicle software rules, the latest move against China-linked automakers. About 6% of Polestar's Q1 sales came from the U.S.</p>
+      <p class="means"><em>What it means for us: Polestar franchise dealers will ask about residual and trade-in exposure — a direct KBB/Manheim valuation question on existing Polestar inventory as the brand's U.S. future clouds.</em></p>
+      <div class="src">Reuters · June 25, 2026</div>
     </div>
-  </section>
+  </div>
 
-  <section class="cat" style="--c:#0f766e;">
-    <div class="cathead">Dealership &amp; Retail Tech</div>
-    <div class="grid">
-      <div class="card" style="--c:#0f766e;">
-        <h3><a href="https://www.autosuccessonline.com/brex-tekion-partner-embedded-spend-management/" target="_blank" rel="noopener noreferrer">Brex and Tekion launch embedded corporate card &amp; spend management inside the DMS</a></h3>
-        <p class="summary">At Tekion One, Brex (a Capital One subsidiary) and Tekion launched "Tekion Spend," an embedded corporate card and spend-management tool built into Tekion's Automotive Retail Cloud, with every transaction auto-matched to the originating DMS record and per-rooftop spend controls.</p>
-        <p class="means"><b>What it means for us:</b> Tekion is extending its DMS into dealership finance/payments — a direct competitive thrust at Dealertrack DMS accounts. Expect Tekion reps to lead with "native spend management," so PCs should be ready to frame Dealertrack's accounting and Cox ecosystem breadth against a single-vendor lock-in.</p>
-        <p class="talk"><b>Talk track:</b> "Tekion's pitch is everything-in-one-box; ours is everything-connected-but-not-locked-in — Dealertrack plus Navigator gives you the same single-pane workflow without betting the store on one vendor's roadmap."</p>
-        <p class="meta">AutoSuccess · June 25, 2026</p>
-      </div>
+  <h2 class="section-head" style="--accent:#b91c1c;">Competitor &amp; Retail Watch</h2>
+  <div class="grid">
+    <div class="card">
+      <h3><a href="https://www.autoremarketing.com/ar/retail/cargurus-joins-list-of-dealer-service-providers-responding-to-ftc-demands-for-price-transparency/" target="_blank" rel="noopener noreferrer">CarGurus joins providers responding to FTC price-transparency demands</a></h3>
+      <p>Starting July 14, CarGurus listings without disclosed fees get a "No Rating" and fall in search; IMV and Deal Ratings will be calculated on all-in price. It follows FTC warning letters to 97 auto groups and a similar move by TrueCar.</p>
+      <p class="means"><em>What it means for us: Dealers will scramble before July 14 — this is the opening to show how vAuto and Autotrader listing setup keep their all-in pricing consistent across marketplaces, not just on CarGurus.</em></p>
+      <p class="talk talk-top"><em>Talk track: "If a dealer's worried about the July 14 CarGurus fee rule, the fix is getting all-in pricing right once in vAuto so it carries clean to every marketplace, including Autotrader."</em></p>
+      <div class="src">Auto Remarketing · June 26, 2026</div>
     </div>
-  </section>
-
-  <section class="cat" style="--c:#6d28d9;">
-    <div class="cathead">Dealership Marketing &amp; Advertising</div>
-    <div class="grid">
-      <div class="card" style="--c:#6d28d9;">
-        <h3><a href="https://www.dealer.com/resources/ai-plus-experts-why-the-best-results-come-from-both/" target="_blank" rel="noopener noreferrer">Dealer.com makes the case for AI + human experts, and optimizing sites for Generative Engine Optimization (GEO)</a></h3>
-        <p class="summary">Dealer.com argues the strongest results come from pairing predictive, generative and agentic AI with human strategists, and says its sites are now optimized for Generative Engine Optimization (GEO) so dealers stay visible in AI-generated answers — using Cox Automotive data for bidding, targeting and video personalization.</p>
-        <p class="means"><b>What it means for us:</b> GEO is the marketing question dealers will raise this week — "will I show up when a shopper asks ChatGPT?" Dealer.com (DDC) is our concrete answer, and the Cox-data advantage is the differentiator versus independent agencies and PureCars.</p>
-        <p class="meta">Dealer.com · June 26, 2026</p>
-      </div>
+    <div class="card">
+      <span class="badge">📣 POST-WORTHY</span>
+      <h3><a href="https://www.autonews.com/opinion/editorials/an-editorial-carvana-stellantis-0629/" target="_blank" rel="noopener noreferrer">Editorial: Pay attention to Carvana's franchised experiment</a></h3>
+      <p>Carvana's seven Stellantis (CDJR) stores run with no salespeople, sales managers or F&I staff — just passive "customer advocates" and self-directed online ordering. Early data is striking: its Dallas store ranked fifth nationally and Casa Grande first in May new-vehicle sales, though Carvana won't disclose profitability.</p>
+      <p class="means"><em>What it means for us: This is the existential "do dealers still need salespeople?" question — our counter is that Deal Central and VinSolutions let a staffed store match Carvana's frictionless pace without giving up the F&I margin Carvana strips out.</em></p>
+      <p class="post-angle"><strong>Suggested post angle:</strong> "Carvana just sold 706 new cars in a month with zero salespeople. The lesson isn't 'fire your team' — it's that friction, not headcount, is what loses the modern buyer. Here's what staffed stores can copy."</p>
+      <div class="src">Automotive News · June 29, 2026</div>
     </div>
-  </section>
+  </div>
 
-  <section class="cat" style="--c:#0891b2;">
-    <div class="cathead">AI &amp; Technology</div>
-    <div class="grid">
-      <div class="card" style="--c:#0891b2;">
-        <h3><a href="https://www.reuters.com/technology/us-releases-anthropic-model-mythos-some-us-companies-semafor-reports-2026-06-26/" target="_blank" rel="noopener noreferrer">U.S. allows Anthropic to release Mythos AI to "trusted" organizations; OpenAI staggers GPT-5.6</a></h3>
-        <p class="summary">The U.S. government granted Anthropic permission to redeploy its Claude Mythos 5 model to 100+ vetted organizations after a two-week suspension, while OpenAI is releasing GPT-5.6 only to government-approved partners. The episode signals a new regime where frontier-model access is gated by federal vetting.</p>
-        <p class="means"><b>What it means for us:</b> The AI powering Cox tools (VinSolutions conversational AI, vAuto pricing, Dealer.com GEO) sits on top of these frontier models — staggered, vetted access could affect feature timelines, and dealers will start asking which model and governance sit behind our AI claims.</p>
-        <p class="talk"><b>Talk track:</b> "When a dealer asks 'whose AI is under the hood?' — Cox's answer is enterprise-grade governance and data that stays in a secure session, which matters more now that the government is vetting frontier-model access."</p>
-        <p class="meta">Reuters · June 26, 2026</p>
-      </div>
+  <h2 class="section-head" style="--accent:#0d7a5f;">AI &amp; Technology</h2>
+  <div class="grid">
+    <div class="card">
+      <h3><a href="https://www.autonews.com/retail/an-public-dealerships-ai-investments-0626/" target="_blank" rel="noopener noreferrer">Dealership AI: how the public groups are raising the bar</a></h3>
+      <p>The six public dealer groups are scaling AI across operations — Group 1 runs 50+ projects, AutoNation says AI saved ~$5M in 2025, and Lithia and Asbury are migrating DMS platforms (to Pinewood and Tekion respectively, away from CDK). McKinsey calls AI "a core defense play," with smaller dealers under pressure.</p>
+      <p class="means"><em>What it means for us: As Lithia leaves CDK for Pinewood and Asbury moves to Tekion, the DMS conversation is wide open — this is the moment to position Dealertrack DMS and VinSolutions AI features to the mid-size groups watching the giants.</em></p>
+      <p class="talk talk-top"><em>Talk track: "The public groups are treating AI as defense, not a science project — here's the slice of that playbook a single-rooftop dealer can run today inside VinSolutions and Xtime."</em></p>
+      <div class="src">Automotive News · June 29, 2026</div>
     </div>
-  </section>
+    <div class="card">
+      <h3><a href="https://www.cbtnews.com/auto-industry-warns-ai-chip-shortage/" target="_blank" rel="noopener noreferrer">Auto industry warns AI chip demand could disrupt manufacturing</a></h3>
+      <p>A coalition including the Alliance for Automotive Innovation is warning federal officials that AI data centers are consuming a growing share of global memory-chip supply, raising the risk of higher vehicle costs and renewed production constraints.</p>
+      <p class="means"><em>What it means for us: If chip-driven tightening returns, used-vehicle values firm up fast — a reason to get dealers proactive on vAuto stocking and Manheim sourcing before supply news moves prices.</em></p>
+      <div class="src">CBT News · June 27, 2026</div>
+    </div>
+  </div>
 
+  <footer>
+    Tuesday, June 30, 2026 · Curated by AI Research Desk
+  </footer>
 </main>
-<footer>
-  June 29, 2026 · Curated by AI Research Desk
-</footer>
 <script>
   (function(){
-    var KEY='mssBriefingTheme';
-    var btn=document.g
+    var KEY="mssBriefingTheme";
+    var root=document.documentElement;
+    var btn=document.getElementById("themeToggle");
+    function apply(t){
+      root.setAttribute("data-theme",t);
+      btn.textContent = t==="dark" ? "☀️ Light" : "🌙 Dark";
+    }
+    var saved=null;
+    try{ saved=localStorage.getItem(KEY); }catch(e){}
+    apply(saved==="dark" ? "dark" : "light");
+    btn.addEventListener("click",function(){
+      var next = root.getAttribute("data-theme")==="dark" ? "light" : "dark";
+      apply(next);
+      try{ localStorage.setItem(KEY,next); }catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
