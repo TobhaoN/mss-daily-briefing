@@ -3,217 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automotive AI Daily Briefing — Friday, September 4, 2026</title>
+<title>Automotive AI Daily Briefing — Tuesday, September 8, 2026</title>
 <style>
   :root{
-    --bg:#f4f6fa; --card:#ffffff; --text:#12233b; --muted:#54657d;
-    --border:#e2e8f0; --accent:#1a3a6c; --shadow:0 2px 10px rgba(11,31,58,.08);
-    --bottomline:#0d7a5f; --topstory:#c2410c;
-    --meansfor:#334155; --talk:#7c3aed; --unconf:#b45309;
+    --bg:#f4f6f9; --card:#ffffff; --text:#12213a; --muted:#4a5a72;
+    --shadow:0 2px 10px rgba(16,32,58,.08); --border:#e2e8f0;
+    --bottomline-bg:#fff7e6; --bottomline-accent:#c77700; --bottomline-text:#5a3600;
+    --top-accent:#0b6b3a; --top-bg:#eef8f1;
+    --means-bg:#eef2f8;
   }
   [data-theme="dark"]{
-    --bg:#0b1524; --card:#13233b; --text:#e8eef6; --muted:#9fb2c9;
-    --border:#24405f; --accent:#5b8fd6; --shadow:0 2px 14px rgba(0,0,0,.45);
-    --bottomline:#34d399; --topstory:#fb923c;
-    --meansfor:#c7d3e2; --talk:#c4b5fd; --unconf:#fbbf24;
+    --bg:#0a1526; --card:#122036; --text:#e8eef7; --muted:#a9b8ce;
+    --shadow:0 2px 12px rgba(0,0,0,.4); --border:#24344f;
+    --bottomline-bg:#3a2c0d; --bottomline-accent:#f5b942; --bottomline-text:#ffe7b0;
+    --top-accent:#4fd08a; --top-bg:#0f2a1c;
+    --means-bg:#182740;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5;}
-  header.masthead{background:linear-gradient(120deg,#0b1f3a 0%,#1a3a6c 100%);
-    color:#fff;padding:26px 22px;display:flex;align-items:center;
-    justify-content:space-between;flex-wrap:wrap;gap:12px;}
-  .masthead h1{font-size:1.5rem;margin:0;font-weight:700;letter-spacing:.2px;}
-  .masthead .date{color:#cdddf2;font-size:.95rem;margin-top:4px;}
-  .theme-toggle{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35);
-    border-radius:22px;padding:9px 16px;font-size:.9rem;cursor:pointer;font-weight:600;}
-  .theme-toggle:hover{background:rgba(255,255,255,.26);}
-  main{max-width:1180px;margin:0 auto;padding:22px 18px 40px;}
-  .callout{border-radius:12px;padding:18px 20px;margin-bottom:20px;
-    background:var(--card);box-shadow:var(--shadow);border:1px solid var(--border);}
-  .bottom-line{border-left:8px solid var(--bottomline);}
-  .top-story{border-left:8px solid var(--topstory);}
-  .callout .label{font-size:.78rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;
-    display:inline-block;margin-bottom:8px;}
-  .bottom-line .label{color:var(--bottomline);}
-  .top-story .label{color:var(--topstory);}
-  .callout h2{margin:.1rem 0 .5rem;font-size:1.15rem;}
-  .callout h2 a{color:var(--text);text-decoration:none;border-bottom:2px solid var(--topstory);}
-  .callout h2 a:hover{opacity:.8;}
-  .callout p{margin:.4rem 0;}
-  section.category{margin-top:26px;}
-  section.category > h3{text-transform:uppercase;font-size:1rem;letter-spacing:1.2px;
-    padding:8px 0 8px 14px;border-left:7px solid var(--catcolor,#1a3a6c);margin:0 0 14px;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;transition:background .3s,color .3s;}
+  header.masthead{background:linear-gradient(135deg,#0b1f3a,#1a3a6c);color:#fff;padding:26px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  header.masthead h1{margin:0;font-size:1.5rem;letter-spacing:.3px;}
+  header.masthead .date{margin-top:4px;font-size:.95rem;color:#ccdcf2;}
+  .theme-toggle{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:9px 16px;font-size:.9rem;cursor:pointer;transition:background .2s;}
+  .theme-toggle:hover{background:rgba(255,255,255,.28);}
+  main{max-width:1200px;margin:0 auto;padding:22px;}
+  .bottom-line{background:var(--bottomline-bg);border:1px solid var(--bottomline-accent);border-left:8px solid var(--bottomline-accent);border-radius:10px;padding:18px 20px;margin-bottom:20px;color:var(--bottomline-text);box-shadow:var(--shadow);}
+  .bottom-line .label{font-weight:800;letter-spacing:1px;font-size:.8rem;color:var(--bottomline-accent);}
+  .bottom-line p{margin:8px 0 0;font-size:1.02rem;}
+  .top-story{background:var(--top-bg);border:1px solid var(--top-accent);border-left:8px solid var(--top-accent);border-radius:10px;padding:18px 20px;margin-bottom:26px;box-shadow:var(--shadow);}
+  .top-story .label{font-weight:800;letter-spacing:1px;font-size:.8rem;color:var(--top-accent);}
+  .top-story h2{margin:6px 0 6px;font-size:1.2rem;}
+  .top-story h2 a{color:var(--text);text-decoration:none;border-bottom:2px solid var(--top-accent);}
+  .top-story .src{font-size:.82rem;color:var(--muted);margin-top:6px;}
+  section.cat{margin-bottom:30px;}
+  .cat-head{text-transform:uppercase;letter-spacing:1.2px;font-size:1rem;font-weight:800;padding:8px 0 8px 14px;margin-bottom:14px;border-left:7px solid var(--cat);}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;}
-  article.card{background:var(--card);border:1px solid var(--border);border-radius:12px;
-    padding:16px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;}
-  article.card h4{margin:0 0 8px;font-size:1.05rem;line-height:1.35;}
-  article.card h4 a{color:var(--text);text-decoration:none;border-bottom:2px solid var(--catcolor,#1a3a6c);padding-bottom:1px;}
-  article.card h4 a:hover{color:var(--accent);}
-  .summary{margin:0 0 10px;font-size:.95rem;}
-  .means{font-style:italic;color:var(--meansfor);font-size:.92rem;
-    border-top:1px dashed var(--border);padding-top:9px;margin:2px 0 0;}
-  .means strong{font-style:normal;color:var(--accent);}
-  .talk{font-style:italic;font-size:.9rem;color:var(--talk);margin:10px 0 0;
-    background:color-mix(in srgb,var(--talk) 12%,transparent);border-radius:8px;padding:8px 10px;}
-  .talk::before{content:"🎯 TALK TRACK: ";font-style:normal;font-weight:700;letter-spacing:.3px;}
-  .src{margin-top:11px;font-size:.8rem;color:var(--muted);font-weight:600;letter-spacing:.2px;}
-  .badges{margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap;}
-  .badge{font-size:.68rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
-    padding:4px 9px;border-radius:20px;}
-  .post{background:#0a66c2;color:#fff;}
-  .unconf{background:color-mix(in srgb,var(--unconf) 22%,transparent);color:var(--unconf);
-    border:1px solid var(--unconf);}
-  .post-angle{font-size:.85rem;color:var(--muted);margin:8px 0 0;background:color-mix(in srgb,#0a66c2 10%,transparent);
-    border-radius:8px;padding:8px 10px;}
-  .post-angle strong{color:#0a66c2;}
-  footer{max-width:1180px;margin:0 auto;padding:22px 18px 44px;color:var(--muted);
-    font-size:.9rem;border-top:1px solid var(--border);text-align:center;}
-  a{color:var(--accent);}
+  article.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;}
+  article.card h3{margin:0 0 8px;font-size:1.05rem;line-height:1.35;}
+  article.card h3 a{color:var(--text);text-decoration:none;border-bottom:2px solid var(--cat);}
+  article.card h3 a:hover{opacity:.8;}
+  article.card p.summary{margin:0 0 10px;font-size:.94rem;color:var(--text);}
+  .means{background:var(--means-bg);border-radius:8px;padding:9px 12px;font-style:italic;font-size:.9rem;margin:0 0 10px;}
+  .means strong{font-style:normal;}
+  .talk{border-left:3px solid var(--cat);padding:6px 0 6px 12px;font-style:italic;font-size:.9rem;color:var(--muted);margin:0 0 10px;}
+  .talk strong{font-style:normal;color:var(--text);}
+  .src{font-size:.82rem;color:var(--muted);margin-top:auto;}
+  .badge{display:inline-block;background:#0a66c2;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.5px;border-radius:12px;padding:3px 10px;margin-bottom:8px;}
+  .unconfirmed{display:inline-block;background:#8a4b00;color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.5px;border-radius:10px;padding:2px 8px;margin-bottom:8px;}
+  .empty-note{background:var(--card);border:1px dashed var(--border);border-radius:8px;padding:12px 14px;font-size:.9rem;color:var(--muted);}
+  footer{max-width:1200px;margin:0 auto;padding:22px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);}
+  @media (max-width:520px){header.masthead h1{font-size:1.2rem;}}
 </style>
 </head>
 <body>
 <header class="masthead">
   <div>
     <h1>🚗 Automotive AI Daily Briefing</h1>
-    <div class="date">Friday, September 4, 2026</div>
+    <div class="date">Tuesday, September 8, 2026</div>
   </div>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark color theme">🌙 Dark mode</button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">🌗 Theme</button>
 </header>
-
 <main>
-  <div class="callout bottom-line">
-    <span class="label">Bottom Line</span>
-    <p>Today's thread is <strong>affordability pressure meeting AI-powered speed</strong>. The market is holding up — Cox pegs August at a 16.8M SAAR, the sixth straight month above 16M — but the mix is shifting hard toward hybrids, whose lower payments are quietly propped up by captive-lender subvention. At the same time, the tools that win deals are getting faster and more autonomous: Cox is embedding Nova Credit cash-flow intelligence into Dealertrack to clear income stips at the point of sale, and OpenAI's GPT-6 Astra pushes agentic AI another step forward. The takeaway for how we sell this week: lead with payment and speed-to-funding, use vAuto/VinSolutions to steer customers toward the hybrid and used inventory that actually pencils, and be ready for dealers asking how Dealertrack shortens the finance office.</p>
+  <div class="bottom-line" role="note">
+    <div class="label">BOTTOM LINE</div>
+    <p>Today's thread is <strong>margin pressure meeting the AI shopping shift</strong>: JLR is cutting 4,000 jobs and Canada's fresh 15–50% counter-tariffs (on top of the standing 25% auto duty) are squeezing OEM cost structures, while TrueCar's CEO declares "search is dead" and pushes an app-first, order-not-lead model. For MSS this week, the play is to reframe affordability and lead-quality conversations — pair vAuto/Manheim pricing discipline with VinSolutions lead scoring so dealers convert fewer, better-qualified shoppers rather than chasing volume in a tightening market.</p>
   </div>
 
-  <div class="callout top-story">
-    <span class="label">★ Top Story</span>
-    <h2><a href="https://www.coxautoinc.com/press-releases/cox-automotive-partners-with-nova-credit-to-embed-cash-flow-intelligence-into-dealertrack/" target="_blank" rel="noopener noreferrer">Cox embeds Nova Credit cash-flow intelligence into Dealertrack</a></h2>
-    <p>Cox Automotive named Nova Credit its preferred partner for embedded cash-flow intelligence, natively integrating Nova Credit's Income Navigator into Dealertrack's credit-application and digital-contracting network. Lenders can now verify income and clear stipulations at the point of sale — replacing manual pay-stub collection — with Westlake Financial among the first adopters. It's the clearest sign yet of Cox's push toward a fully automated origination process.</p>
-    <p class="means"><strong>Why it's #1:</strong> This is a direct Dealertrack capability our PCs sell, it hits the single biggest deal-killer (funding delays), and it's the kind of "speed wins deals" story dealers will bring up first this week.</p>
-    <p class="src">Cox Automotive Newsroom · Sept. 3, 2026</p>
+  <div class="top-story">
+    <div class="label">⭐ TOP STORY</div>
+    <h2><a href="https://news.dealershipguy.com/p/truecar-ceo-talks-strategy-behind-native-smartphone-app-i-believe-that-search-is-dead" target="_blank" rel="noopener noreferrer">TrueCar CEO: 'Search is dead' — betting on an app-first, orders-not-leads model</a></h2>
+    <p>Now profitable and private, TrueCar cut headcount roughly in half, added SECU and Affinity to reach 80+ credit-union partners, and is pivoting from a browser lead-gen site to a native app built around pre-qualified "orders." CEO Scott Painter wants close rates to climb from ~5% toward 40–50% by combining shopping with real-time financing.</p>
+    <div class="src">Car Dealership Guy News · Sep 8, 2026</div>
   </div>
 
-  <!-- AUTOMOTIVE MARKET -->
-  <section class="category" style="--catcolor:#1a3a6c;">
-    <h3>Automotive Market</h3>
+  <section class="cat" style="--cat:#1a6cff;">
+    <div class="cat-head">Automotive Market</div>
     <div class="grid">
       <article class="card">
-        <h4><a href="https://www.coxautoinc.com/insights/cox-automotive-forecast-august-2026-us-auto-sales-forecast/" target="_blank" rel="noopener noreferrer">August new-vehicle pace tops 16M for sixth straight month</a></h4>
-        <p class="summary">Cox Automotive's updated estimate puts August new-vehicle sales at a 16.8M SAAR — the strongest pace of 2026 and the longest streak above 16M since early 2020 — even as volume slipped about 5.8% year over year. Demand is being carried by affluent, high-credit buyers and strong Asian-brand and hybrid results, shrugging off tariffs and higher rates.</p>
-        <p class="means"><strong>What it means for us:</strong> A resilient-but-thinning buyer pool is exactly the vAuto conversation — dealers need to turn inventory to the trims that actually move, and lean on vAuto's live market data rather than gut feel as YoY volume softens.</p>
-        <p class="talk">"The market's still running above 16 million, but it's the affluent buyer carrying it — let's make sure your vAuto stocking mirrors where that demand actually is."</p>
-        <p class="src">Cox Automotive · Updated Sept. 2, 2026</p>
+        <h3><a href="https://www.bbc.com/news/articles/cq5x30003zdo" target="_blank" rel="noopener noreferrer">JLR to cut 4,000 jobs amid tariffs, cyberattack fallout and China competition</a></h3>
+        <p class="summary">Jaguar Land Rover confirmed roughly 4,000 job cuts over two years — about 10% of its workforce — as US tariffs, last year's crippling cyberattack, falling China sales and its costly EV reinvention bite. Analysts warn deep R&D cuts could dent future competitiveness.</p>
+        <div class="means"><strong>What it means for us:</strong> Luxury-adjacent stores facing thinner JLR allocations will lean harder on used-inventory margin — a lead-in to position vAuto Provision for reconditioning velocity and Manheim sourcing to backfill demand.</div>
+        <div class="talk"><strong>Talk track:</strong> "If a JLR or import store worries about allocation gaps, that's exactly where vAuto's stocking guidance and Manheim sourcing keep the used side profitable."</div>
+        <div class="src">BBC · Sep 8, 2026</div>
       </article>
       <article class="card">
-        <h4><a href="https://www.wardsauto.com/news/auto-finance-in-q2-reflects-boom-in-hybrid-sales/829386/" target="_blank" rel="noopener noreferrer">Q2 auto finance data reflects the hybrid boom</a></h4>
-        <p class="summary">Experian's Q2 State of the Automotive Finance Market report shows hybrids climbed to 16.8% of new-vehicle financing (up from 13% a year earlier) while EV share slipped to ~8.2%. Hybrids carry the lowest average monthly payment ($646 vs. $692 for EVs and $721 for gas), and several top hybrids show subvented rates well below the 6.4% industry average.</p>
-        <p class="means"><strong>What it means for us:</strong> Payment-led shoppers are gravitating to hybrids — a cue to configure VinSolutions payment presentations and vAuto stocking around hybrid demand, since that's where the affordable-payment story lives right now.</p>
-        <p class="src">WardsAuto · Sept. 3, 2026</p>
+        <h3><a href="https://www.reuters.com/business/autos-transportation/byd-targets-more-than-25-million-vehicle-exports-2027-brokerages-say-2026-09-08/" target="_blank" rel="noopener noreferrer">BYD targets 2.5M+ vehicle exports in 2027 to dodge EU/Brazil tariffs</a></h3>
+        <p class="summary">Brokerages say BYD guided management to more than 2.5 million overseas shipments in 2027, backed by new car-carrier ships and local plants (Hungary starting late 2026) that sidestep the EU's ~27% and Brazil's 34% EV tariffs. It also plans 90,000 flash-charging stations by 2028.</p>
+        <div class="means"><strong>What it means for us:</strong> As Chinese EV supply scales globally, US used-EV values stay volatile — a reason dealers should lean on Manheim's index and vAuto live market pricing rather than gut feel when appraising trade-in EVs.</div>
+        <div class="src">Reuters · Sep 8, 2026</div>
       </article>
-    </div>
-  </section>
-
-  <!-- DEALERSHIP & RETAIL TECH -->
-  <section class="category" style="--catcolor:#0d7a5f;">
-    <h3>Dealership &amp; Retail Tech</h3>
-    <div class="grid">
       <article class="card">
-        <div class="badges"><span class="badge unconf">Vendor-reported metrics</span></div>
-        <h4><a href="https://digitaldealer.com/news/us-auto-retailers-struggling-to-scale-video-across-live-vehicle-listings/173084/" target="_blank" rel="noopener noreferrer">Dealers still can't scale video across live listings</a></h4>
-        <p class="summary">A Phyron-commissioned survey of 250 U.S. CMOs and digital marketing leads found only 38% of live vehicle listings include video, even as demand for content across listings, paid social and email keeps rising. Phyron pitches AI-generated video to clear the production bottleneck; pilot group Ken Garff reported higher click-through and lower cost-per-lead (vendor figures).</p>
-        <p class="means"><strong>What it means for us:</strong> Merchandising-at-scale is a Dealer.com (DDC) conversation — dealers frustrated that most VDPs still lack video are a fit for DDC's inventory-driven media and merchandising tools rather than a bolt-on point solution.</p>
-        <p class="src">Digital Dealer · Sept. 3, 2026</p>
+        <h3><a href="https://www.cnbc.com/2026/09/08/canada-retaliatory-tariffs.html" target="_blank" rel="noopener noreferrer">Canada's 15–50% counter-tariffs on $27.6B of US goods take effect</a></h3>
+        <p class="summary">After trade talks collapsed, Canada's retaliatory duties hit hundreds of US products; its standing 25% tariff on the auto sector remains in place. Economists warn the most-exposed sectors face a severe blow even as overall trade impact stays modest.</p>
+        <div class="means"><strong>What it means for us:</strong> Cross-border parts delays inflate repair and reconditioning timelines — a fixed-ops story for Xtime to shorten service-lane cycle time and protect CSI when parts availability is uncertain.</div>
+        <div class="talk"><strong>Talk track:</strong> "If a dealer's service lane is backing up on tariff-delayed parts, Xtime's capacity planning is how they keep the schedule — and the customer — from slipping."</div>
+        <div class="src">CNBC · Sep 8, 2026</div>
       </article>
     </div>
   </section>
 
-  <!-- COMPETITOR WATCH -->
-  <section class="category" style="--catcolor:#b91c1c;">
-    <h3>Competitor Watch</h3>
+  <section class="cat" style="--cat:#8a3ffc;">
+    <div class="cat-head">Dealership &amp; Retail Tech</div>
     <div class="grid">
       <article class="card">
-        <h4><a href="https://www.autoremarketing.com/ar/wholesale/carvana-to-add-inspection-and-reconditioning-center-capabilities-to-adesa-brashers/" target="_blank" rel="noopener noreferrer">Carvana adds reconditioning at ADESA Brasher's</a></h4>
-        <p class="summary">Carvana is bringing Inspection &amp; Reconditioning Center (IRC) capabilities to its ADESA Brasher's auction in Rio Linda, Calif., adding reconditioning capacity and a new inventory pool to its national network for faster West Coast delivery. Carvana acquired ADESA's U.S. auctions in 2022 and is hiring ~100 for the site.</p>
-        <p class="means"><strong>What it means for us:</strong> Carvana is building out ADESA into a vertically integrated recon-plus-wholesale engine that competes head-on with Manheim — worth flagging to dealers who lean on Manheim for sourcing and reconditioning throughput in Northern California.</p>
-        <p class="talk">"Carvana just added recon capacity at its ADESA lane in California — here's why Manheim's reconditioning and inventory reach still gives you a faster path to frontline-ready cars."</p>
-        <p class="src">Auto Remarketing · Sept. 2, 2026</p>
+        <h3><a href="https://news.dealershipguy.com/p/burke-as-delinquencies-rise-lenders-dealers-working-together-is-the-answer-11fb" target="_blank" rel="noopener noreferrer">NAF's Burke: rising delinquencies call for tighter dealer–lender collaboration</a></h3>
+        <p class="summary">National Automotive Finance Association president Matt Burke says 30-day delinquencies hit ~2.3% (a post-pandemic peak) as elevated car prices keep loan losses ticking up. His fix: better front-end data and dealer–lender partnership to "fit the right car for the right customer."</p>
+        <div class="means"><strong>What it means for us:</strong> Cleaner front-end data is the whole game — position Dealertrack DMS + F&amp;I so credit and desking flow off accurate deal data, cutting bad originations before they become repossessions.</div>
+        <div class="talk"><strong>Talk track:</strong> "If a dealer's worried about delinquencies, the answer is data hygiene at origination — that's where Dealertrack's integrated credit and desking pays for itself."</div>
+        <div class="src">Car Dealership Guy News · Sep 8, 2026</div>
+      </article>
+      <article class="card">
+        <h3><a href="https://www.cbtnews.com/next-buyer-may-arrive-via-ai-website/" target="_blank" rel="noopener noreferrer">The next buyer may arrive through AI — can your website close the sale?</a></h3>
+        <p class="summary">A CBT interview argues shoppers increasingly arrive from AI assistants pre-researched, so the dealer website must function as a true 24/7 sales channel — structuring payments, trade-ins, credit apps and F&amp;I selection online rather than just capturing a lead.</p>
+        <div class="means"><strong>What it means for us:</strong> This is the Dealer.com (DDC) pitch — a website that completes deals, not just collects leads, and hands a structured shopper into VinSolutions so the store never re-starts the conversation.</div>
+        <div class="src">CBT News · Sep 8, 2026</div>
       </article>
     </div>
   </section>
 
-  <!-- COX AUTOMOTIVE ECOSYSTEM -->
-  <section class="category" style="--catcolor:#0b6bcb;">
-    <h3>Cox Automotive Ecosystem</h3>
+  <section class="cat" style="--cat:#da1e28;">
+    <div class="cat-head">Competitor Watch</div>
     <div class="grid">
       <article class="card">
-        <h4><a href="https://www.coxautoinc.com/press-releases/cox-automotive-partners-with-nova-credit-to-embed-cash-flow-intelligence-into-dealertrack/" target="_blank" rel="noopener noreferrer">Nova Credit's Income Navigator goes live in Dealertrack</a></h4>
-        <p class="summary">Cox's new preferred-partner integration puts Nova Credit's Income Navigator inside Dealertrack, using bank and payroll data to automate income verification and clear stipulations at the point of sale. A planned follow-on with Nova Credit's Cash Atlas would extend cash-flow underwriting to help lenders responsibly approve more near-prime and thin-file buyers.</p>
-        <p class="means"><strong>What it means for us:</strong> This is a concrete new Dealertrack selling point — faster funding and fraud reduction inside the workflow dealers already use — and a direct answer when a store asks how to shorten time-to-funding without adding another vendor.</p>
-        <p class="src">Cox Automotive Newsroom · Sept. 3, 2026</p>
+        <span class="badge">📣 POST-WORTHY</span>
+        <h3><a href="https://news.dealershipguy.com/p/truecar-ceo-talks-strategy-behind-native-smartphone-app-i-believe-that-search-is-dead" target="_blank" rel="noopener noreferrer">TrueCar goes app-first, redefines "leads" as "orders"</a></h3>
+        <p class="summary">TrueCar (private since January) is burning the boats on its dot-com roots to force shoppers into a native app that bundles geolocation, identity verification and real-time financing approval — aiming to move 2–3 million buyers a year and lift close rates dramatically.</p>
+        <div class="means"><strong>What it means for us:</strong> TrueCar redefining a "lead" as a financing-ready "order" is a direct challenge to third-party lead value — reinforce why VinSolutions lead scoring + Autotrader/KBB first-party traffic beat paying for raw, unqualified TrueCar leads.</div>
+        <div class="talk"><strong>Talk track:</strong> "When TrueCar tells dealers 'search is dead,' the counter is owning first-party demand through Autotrader/KBB and scoring it in VinSolutions — not renting someone else's app funnel."</div>
+        <div class="src">Car Dealership Guy News · Sep 8, 2026 · <em>LinkedIn angle: "TrueCar just said search is dead. Are third-party 'leads' finally becoming 'orders' — and what does that do to dealer lead economics?"</em></div>
       </article>
     </div>
   </section>
 
-  <!-- DEALERSHIP MARKETING & ADVERTISING -->
-  <section class="category" style="--catcolor:#7c3aed;">
-    <h3>Dealership Marketing &amp; Advertising</h3>
+  <section class="cat" style="--cat:#0f62fe;">
+    <div class="cat-head">Cox Automotive Ecosystem</div>
     <div class="grid">
-      <article class="card">
-        <div class="badges"><span class="badge unconf">Single-source research</span></div>
-        <h4><a href="https://www.autoremarketing.com/ar/retail/harvard-student-former-gm-ad-art-director-leads-research-on-dealership-ad-spend/" target="_blank" rel="noopener noreferrer">Research claims 62% of dealer ad spend can't be traced to a sale</a></h4>
-        <p class="summary">A self-published research paper surfaced by Auto Remarketing argues most dealership ad spend is untraceable to profit. Using an open-source "Banner-VIN-Profit" attribution model on 100 listings at one midsize franchise store, the author says 62% of ad spend "carried no defensible link to a sale or a dollar of profit" — framing untraced spend as trapped working capital.</p>
-        <p class="means"><strong>What it means for us:</strong> Attribution anxiety is the opening for Dealer.com's first-party data and reporting — when dealers ask "which of my ad dollars actually sold a car," DDC's VIN-level attribution is the answer rather than a spreadsheet audit.</p>
-        <p class="src">Auto Remarketing · Sept. 2, 2026</p>
-      </article>
+      <div class="empty-note">No story from the past 48 hours cleared the freshness + trusted-source bar today. The Cox newsroom's latest items (August new-vehicle sales estimate, Manheim mid-August index, the AI vehicle-discovery study) all published Sept 1–2 or earlier — outside the 48-hour window — so nothing was placed here rather than padding with a stale card.</div>
     </div>
   </section>
 
-  <!-- AI & TECHNOLOGY -->
-  <section class="category" style="--catcolor:#0891b2;">
-    <h3>AI &amp; Technology</h3>
+  <section class="cat" style="--cat:#005d5d;">
+    <div class="cat-head">Dealership Marketing &amp; Advertising</div>
+    <div class="grid">
+      <div class="empty-note">No dealer-marketing story cleared both the 48-hour freshness bar and the trusted-source tiers today. The strongest candidates (CDG's SEO/GEO veteran interview, the Stellantis marketing covenant) published Sept 4–5, and the fresh GEO items surfacing today were agency landing pages or off-tier posts. Skipped rather than padded. <em>(The AI-driven shopping shift is captured in the "next buyer arrives through AI" card under Dealership &amp; Retail Tech.)</em></div>
+    </div>
+  </section>
+
+  <section class="cat" style="--cat:#ff832b;">
+    <div class="cat-head">AI &amp; Technology</div>
     <div class="grid">
       <article class="card">
-        <div class="badges"><span class="badge post">📣 Post-Worthy</span></div>
-        <h4><a href="https://openai.com/index/safety-overview-gpt-6-astra/" target="_blank" rel="noopener noreferrer">OpenAI releases GPT-6 Astra, its most capable model yet</a></h4>
-        <p class="summary">OpenAI launched GPT-6 Astra, calling it the most capable model it has broadly deployed and its first to hit the "Critical" cybersecurity threshold under its Preparedness Framework. Notably for retail, OpenAI says Astra is significantly more robust to prompt injection and behaves more safely in agentic browsing and workplace tasks — the exact conditions AI shopping and desking agents operate in.</p>
-        <p class="means"><strong>What it means for us:</strong> As agentic AI gets more capable, expect dealers to ask whether tools like VinSolutions' AI features can safely act on customer data — Astra's safety posture is a useful reference point when positioning Cox's AI roadmap as enterprise-grade.</p>
-        <p class="talk">"The frontier models dealers keep reading about just leveled up again — here's how Cox's AI in VinSolutions is built to act on your data responsibly, not just chat."</p>
-        <p class="post-angle"><strong>Suggested LinkedIn angle:</strong> "GPT-6 Astra is the first model flagged 'Critical' on cybersecurity — and it's also markedly better at resisting prompt injection in agentic tasks. For auto retail, that safety-vs-capability curve is the real story: the dealers who win with AI will be the ones who pair capability with guardrails."</p>
-        <p class="src">OpenAI · Sept. 3, 2026</p>
+        <h3><a href="https://venturebeat.com/orchestration/companies-are-spending-millions-rewiring-how-ai-gets-used-almost-none-can-prove-its-working" target="_blank" rel="noopener noreferrer">Enterprises pour billions into AI agents — but can't prove ROI ("tokenmaxxing")</a></h3>
+        <p class="summary">Gartner projects ~$207B in AI-agent software spend this year (up 139%), yet firms like Uber, Microsoft and Duolingo are reining in usage after big bills with unclear payoff. The emerging lesson: adoption and token counts aren't proof of value.</p>
+        <div class="means"><strong>What it means for us:</strong> When a dealer asks whether AI tools actually pay off, the answer is outcome-tied products — VinSolutions AI that measurably lifts appointment-to-close, not "AI features" bought for their own sake.</div>
+        <div class="talk"><strong>Talk track:</strong> "The market's lesson on AI spend is 'prove the ROI' — so with VinSolutions we tie the AI to appointments set and deals closed, not vanity usage metrics."</div>
+        <div class="src">VentureBeat · Sep 7, 2026</div>
+      </article>
+      <article class="card">
+        <h3><a href="https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html" target="_blank" rel="noopener noreferrer">Mistral hits ~$24B valuation as Samsung leads €3B raise</a></h3>
+        <p class="summary">French AI lab Mistral roughly doubled its valuation, raising €3B led by Samsung to build its own data centers and "bigger, faster models." It's pitching a "sovereign," custom-per-enterprise approach as an alternative to OpenAI and Anthropic.</p>
+        <div class="means"><strong>What it means for us:</strong> A crowded, well-funded LLM field means the AI inside Cox tools (VinSolutions, vAuto) can ride best-in-class models — the differentiator for dealers isn't the model, it's the auto-retail data and workflow Cox wraps around it.</div>
+        <div class="src">CNBC · Sep 8, 2026</div>
       </article>
     </div>
   </section>
 </main>
-
 <footer>
-  <p>Friday, September 4, 2026 · Curated by AI Research Desk</p>
+  Tuesday, September 8, 2026 · Curated by AI Research Desk
 </footer>
-
 <script>
 (function(){
   var KEY="mssBriefingTheme";
-  var btn=document.getElementById("themeToggle");
   var root=document.documentElement;
-  function apply(t){
-    root.setAttribute("data-theme",t);
-    btn.textContent = t==="dark" ? "☀️ Light mode" : "🌙 Dark mode";
-  }
   var stored=null;
-  try{ stored=localStorage.getItem(KEY); }catch(e){}
+  try{stored=localStorage.getItem(KEY);}catch(e){}
   if(stored==="dark"||stored==="light"){
-    apply(stored);
-  } else if(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches){
-    apply("dark");
-  } else {
-    apply("light");
+    root.setAttribute("data-theme",stored);
+  }else{
+    var prefersDark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme",prefersDark?"dark":"light");
   }
+  var btn=document.getElementById("themeToggle");
   btn.addEventListener("click",function(){
-    var next = root.getAttribute("data-theme")==="dark" ? "light" : "dark";
-    apply(next);
-    try{ localStorage.setItem(KEY,next); }catch(e){}
+    var cur=root.getAttribute("data-theme")==="dark"?"dark":"light";
+    var next=cur==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
   });
 })();
 </script>
