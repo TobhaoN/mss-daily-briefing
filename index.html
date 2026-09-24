@@ -3,224 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automotive AI Daily Briefing — Wednesday, September 23, 2026</title>
+<title>Automotive AI Daily Briefing — Thursday, September 24, 2026</title>
 <style>
   :root{
-    --bg:#f4f6f9; --card:#ffffff; --text:#12212f; --muted:#4a5a6a;
-    --border:#dfe5ec; --shadow:0 1px 3px rgba(0,0,0,.08);
-    --bottomline-bg:#fff6e6; --bottomline-accent:#c47a00; --bottomline-text:#3d2a00;
-    --top-accent:#1a3a6c; --top-bg:#eef3fb;
-    --mkt:#1f7a4d; --retail:#0d6ea8; --comp:#b5322e; --cox:#6b3fa0; --ad:#c25e00; --ai:#2a6f97;
-    --link:#0d5bab;
+    --bg:#f4f6fa; --card:#ffffff; --text:#12233b; --muted:#4a5a70;
+    --header1:#0b1f3a; --header2:#1a3a6c; --headtext:#ffffff;
+    --shadow:0 2px 10px rgba(11,31,58,.10); --border:#e2e8f0;
+    --bottomline:#b45309; --bottomline-bg:#fff7ed; --bottomline-border:#f59e0b;
+    --topstory:#0e7490; --topstory-bg:#ecfeff;
+    --cat-market:#2563eb; --cat-cox:#7c3aed; --cat-tech:#0f766e;
+    --link:#1d4ed8; --means:#334155; --talk:#9a3412; --talk-bg:#fff7ed;
+    --badge:#0a66c2; --unconf:#b91c1c; --unconf-bg:#fef2f2;
   }
   html[data-theme="dark"]{
-    --bg:#0d1620; --card:#16232f; --text:#e8eef4; --muted:#9fb1c1;
-    --border:#263644; --shadow:0 1px 3px rgba(0,0,0,.5);
-    --bottomline-bg:#3a2c08; --bottomline-accent:#f0b53d; --bottomline-text:#ffedc2;
-    --top-accent:#7fb0ee; --top-bg:#132537;
-    --mkt:#4fc98a; --retail:#4bb4e6; --comp:#ef6f6b; --cox:#b98ce6; --ad:#f0955a; --ai:#6bb8dd;
-    --link:#6fb2f0;
+    --bg:#0b1220; --card:#111b2e; --text:#e6edf6; --muted:#9fb0c7;
+    --headtext:#ffffff; --shadow:0 2px 12px rgba(0,0,0,.5); --border:#1e2c44;
+    --bottomline:#fbbf24; --bottomline-bg:#2a1e08; --bottomline-border:#b45309;
+    --topstory:#67e8f9; --topstory-bg:#08252b;
+    --cat-market:#60a5fa; --cat-cox:#c4b5fd; --cat-tech:#5eead4;
+    --link:#93c5fd; --means:#cbd5e1; --talk:#fdba74; --talk-bg:#2a1e08;
+    --badge:#4a9fe0; --unconf:#fca5a5; --unconf-bg:#2a1010;
   }
-  *{box-sizing:border-box}
+  *{box-sizing:border-box;}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);color:var(--text);line-height:1.5;transition:background .2s,color .2s}
-  header.masthead{background:linear-gradient(135deg,#0b1f3a 0%,#1a3a6c 100%);color:#fff;
-    padding:22px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  .masthead h1{margin:0;font-size:1.5rem;font-weight:700}
-  .masthead .date{margin:4px 0 0;font-size:.95rem;color:#cfe0f5}
-  #themeToggle{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35);
-    border-radius:8px;padding:8px 14px;font-size:.9rem;cursor:pointer;white-space:nowrap}
-  #themeToggle:hover{background:rgba(255,255,255,.26)}
-  #themeToggle:focus-visible{outline:3px solid #ffd27f;outline-offset:2px}
-  main{max-width:1180px;margin:0 auto;padding:20px}
-  .callout{border-radius:12px;padding:18px 20px;margin-bottom:18px;box-shadow:var(--shadow)}
-  .bottom-line{background:var(--bottomline-bg);border-left:8px solid var(--bottomline-accent);color:var(--bottomline-text)}
-  .top-story{background:var(--top-bg);border-left:8px solid var(--top-accent)}
-  .callout .label{font-size:.78rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px;display:block}
-  .bottom-line .label{color:var(--bottomline-accent)}
-  .top-story .label{color:var(--top-accent)}
-  .callout h2{margin:.1rem 0 .4rem;font-size:1.16rem}
-  .callout p{margin:.3rem 0;font-size:.98rem}
-  .callout a{color:var(--link);font-weight:600}
-  section.category{margin-top:26px}
+    background:var(--bg);color:var(--text);line-height:1.55;}
+  header.site{background:linear-gradient(135deg,var(--header1),var(--header2));color:var(--headtext);
+    padding:26px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  header.site h1{margin:0;font-size:1.5rem;font-weight:700;}
+  header.site .date{margin-top:4px;font-size:.95rem;opacity:.9;}
+  .theme-toggle{background:rgba(255,255,255,.14);color:var(--headtext);border:1px solid rgba(255,255,255,.35);
+    border-radius:8px;padding:9px 14px;font-size:.9rem;cursor:pointer;font-weight:600;}
+  .theme-toggle:hover{background:rgba(255,255,255,.26);}
+  .theme-toggle:focus-visible{outline:3px solid #fbbf24;outline-offset:2px;}
+  main{max-width:1200px;margin:0 auto;padding:22px;}
+  .callout{border-radius:12px;padding:18px 20px;margin-bottom:20px;box-shadow:var(--shadow);}
+  .bottomline{background:var(--bottomline-bg);border-left:8px solid var(--bottomline-border);}
+  .bottomline .label{color:var(--bottomline);font-weight:800;letter-spacing:.08em;font-size:.82rem;text-transform:uppercase;}
+  .topstory{background:var(--topstory-bg);border-left:8px solid var(--topstory);}
+  .topstory .label{color:var(--topstory);font-weight:800;letter-spacing:.08em;font-size:.82rem;text-transform:uppercase;}
+  .callout h2{margin:6px 0 8px;font-size:1.15rem;}
+  .callout p{margin:6px 0;}
+  .callout a{color:var(--link);font-weight:700;text-decoration:none;}
+  .callout a:hover{text-decoration:underline;}
+  section.cat{margin:26px 0 8px;}
   .cat-head{text-transform:uppercase;letter-spacing:.06em;font-size:1rem;font-weight:800;
-    padding:6px 0 6px 12px;border-left:6px solid var(--catcolor,#888);margin-bottom:12px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;box-shadow:var(--shadow)}
-  .card h3{margin:0 0 8px;font-size:1.06rem;line-height:1.3}
-  .card h3 a{color:var(--link);text-decoration:none}
-  .card h3 a:hover{text-decoration:underline}
-  .card h3 a:focus-visible{outline:3px solid var(--catcolor,#888);outline-offset:2px;border-radius:3px}
-  .card p{margin:.4rem 0;font-size:.93rem}
-  .means{font-style:italic;color:var(--text)}
-  .means strong{font-style:normal}
-  .talk{font-style:italic;background:rgba(127,127,127,.10);border-left:3px solid var(--catcolor,#888);
-    padding:8px 10px;border-radius:6px;font-size:.9rem;margin-top:10px}
-  .talk .tlabel{font-style:normal;font-weight:700;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:3px;color:var(--muted)}
-  .src{font-size:.82rem;color:var(--muted);margin-top:10px}
-  .badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.05em;
-    background:#0a66c2;color:#fff;padding:3px 8px;border-radius:20px;margin-bottom:8px}
-  .flag-unconf{display:inline-block;font-size:.7rem;font-weight:700;background:#8a6d00;color:#fff;
-    padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
-  .post-angle{font-size:.85rem;color:var(--muted);margin-top:6px}
-  footer{max-width:1180px;margin:30px auto 40px;padding:16px 20px;border-top:1px solid var(--border);
-    color:var(--muted);font-size:.88rem;text-align:center}
+    padding:8px 14px;border-left:8px solid var(--cat-market);margin-bottom:14px;background:var(--card);
+    border-radius:0 8px 8px 0;box-shadow:var(--shadow);}
+  .cat-market .cat-head{border-left-color:var(--cat-market);}
+  .cat-cox .cat-head{border-left-color:var(--cat-cox);}
+  .cat-tech .cat-head{border-left-color:var(--cat-tech);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);}
+  .card h3{margin:0 0 8px;font-size:1.06rem;line-height:1.35;}
+  .card h3 a{color:var(--link);text-decoration:none;}
+  .card h3 a:hover{text-decoration:underline;}
+  .card h3 a:focus-visible{outline:3px solid var(--link);outline-offset:2px;border-radius:3px;}
+  .card p{margin:8px 0;}
+  .means{font-style:italic;color:var(--means);border-top:1px dashed var(--border);padding-top:8px;margin-top:10px;}
+  .talk{font-style:italic;background:var(--talk-bg);color:var(--talk);border-radius:8px;padding:8px 10px;margin-top:10px;font-weight:600;}
+  .src{font-size:.82rem;color:var(--muted);margin-top:10px;}
+  .badge{display:inline-block;background:var(--badge);color:#fff;font-size:.72rem;font-weight:800;
+    letter-spacing:.05em;padding:3px 8px;border-radius:999px;margin-bottom:6px;}
+  .unconf{display:inline-block;background:var(--unconf-bg);color:var(--unconf);border:1px solid var(--unconf);
+    font-size:.7rem;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:middle;}
+  .kicker{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+  .post-angle{font-size:.85rem;color:var(--muted);margin-top:6px;}
+  footer.site{max-width:1200px;margin:30px auto 24px;padding:18px 22px;color:var(--muted);
+    border-top:1px solid var(--border);font-size:.9rem;}
 </style>
 </head>
 <body>
-<header class="masthead">
+<header class="site">
   <div>
     <h1>🚗 Automotive AI Daily Briefing</h1>
-    <p class="date">Wednesday, September 23, 2026</p>
+    <div class="date">Thursday, September 24, 2026</div>
   </div>
-  <button id="themeToggle" aria-label="Toggle light and dark mode" type="button">🌙 Dark mode</button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark color theme">🌙 Dark mode</button>
 </header>
 
 <main>
-  <div class="callout bottom-line" role="note">
-    <span class="label">Bottom Line</span>
-    <p>Today's thread is <strong>cost discipline meeting AI reality</strong>. On the same day OpenAI and Anthropic both cut model prices ~40–50% (CNBC), banks warned that AI shopping agents still expose buyers to scams and unclear protections (CNBC) — cheaper, more capable AI is arriving faster than the guardrails around it. Meanwhile the money story on the ground is affordability: CDK finds F&I teams drowning in disconnected systems, NIADA/Manheim shows the cheapest used inventory is the tightest, and the FTC is tightening what dealers may advertise as "the price." The sell-this-week takeaway: lean into <em>integration and transparency</em> — the tools that consolidate the deal (VinSolutions, Dealertrack) and price honestly (vAuto, KBB) are exactly what this news environment rewards.</p>
+  <div class="callout bottomline" role="region" aria-label="Bottom line">
+    <div class="label">Bottom Line</div>
+    <p>Today's thread is <strong>affordability under pressure meeting cheaper intelligence</strong>. Cox's own data shows demand holding but buyers increasingly <em>trading down</em> and inventory tightest on the cheapest cars, while USA&nbsp;Today confirms the post‑tax‑credit EV market is smaller and hybrid‑led. At the same time, OpenAI and Anthropic just cut model prices sharply — meaning the AI that powers our tools got materially cheaper this week. The move for MSS: sell the shopper‑affordability story with <strong>vAuto</strong> and <strong>VinSolutions</strong>, and reframe cheaper AI as "more agentic capability per dollar" inside the Cox stack rather than a race to the bottom.</p>
   </div>
 
-  <div class="callout top-story">
-    <span class="label">★ Top Story</span>
-    <h2><a href="https://www.cnbc.com/2026/09/22/anthropic-openai-cheaper-ai-models.html" target="_blank" rel="noopener noreferrer">Anthropic and OpenAI launch cheaper models on the same day</a></h2>
-    <p>Both frontier labs cut prices as open-weight rivals close in: OpenAI added GPT-6 Sol and Luna at roughly 50% lower API pricing, and Anthropic released Claude Opus 5.5, described as ~40% cheaper to run than Opus 5. The dueling releases land amid an intensifying industry debate over safety and pace.</p>
-    <p class="means"><strong>What it means for us:</strong> The AI layer under every dealer tool just got materially cheaper — expect more AI features baked into VinSolutions, vAuto and Dealer.com at flat or lower cost, and expect dealers to ask why any vendor is charging premium "AI surcharges" when frontier compute just dropped 40–50%.</p>
-    <p class="src">CNBC · Sep 22, 2026</p>
+  <div class="callout topstory" role="region" aria-label="Top story">
+    <div class="label">⭐ Top Story</div>
+    <h2><a href="https://www.techtarget.com/ai/news/366651014/OpenAI-takes-AI-price-war-to-next-level-with-GPT-6-Sol-Luna-pricing" target="_blank" rel="noopener noreferrer">OpenAI takes the AI price war to the next level with 50% cheaper models</a></h2>
+    <p>OpenAI cut prices on two new GPT‑6 models by 50% on Sept.&nbsp;22, hours after Anthropic shipped a cheaper Claude Opus update — a frontier‑model price war driven partly by cheap open‑source competition. For dealers, the cost of the AI under their vendors' tools is dropping fast.</p>
+    <p class="src">TechTarget · Sep 23, 2026</p>
   </div>
 
   <!-- AUTOMOTIVE MARKET -->
-  <section class="category" style="--catcolor:var(--mkt)">
+  <section class="cat cat-market">
     <div class="cat-head">Automotive Market</div>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://www.reuters.com/commentary/reuters-open-interest/rapid-ev-uptake-drives-split-us-fuel-market-2026-09-22/" target="_blank" rel="noopener noreferrer">Rapid EV uptake drives a split in the US fuel market</a></h3>
-        <p>Reuters columnist Gavin Maguire argues EV adoption is creating a two-tier "fuel" market: gasoline costs track global oil, while charging costs track local electricity rates. National EV charging averages about $1.56/gallon-equivalent versus $4.43 for gas, but the state-by-state spread for charging is wide — from ~$1.14 in Wyoming to ~$3.45 in Hawaii.</p>
-        <p class="means"><strong>What it means for us:</strong> Geography now drives total cost of ownership as much as MSRP. A dealer can use vAuto and KBB data to reframe EV desking around local "cents-per-mile" savings for in-market shoppers — a concrete story for markets with cheap power, and a caution for high-rate states.</p>
-        <p class="src">Reuters · Sep 22, 2026</p>
+        <h3><a href="https://www.acea.auto/pc-registrations/new-car-registrations-5-3-in-august-2026-year-to-date-battery-electric-21-7-market-share/" target="_blank" rel="noopener noreferrer">EU new‑car registrations up 5.3% YTD; battery‑electric hits 21.7% share</a></h3>
+        <p>ACEA reports EU registrations rose 5.3% through August, with battery‑electric at 21.7% (up from 15.8% a year ago) and hybrids the top powertrain at 36.6%. Petrol and diesel combined fell to 29% as electrified demand held firm.</p>
+        <p class="means means-line">What it means for us: electrification is now the default consideration set even in a bumpy market — a talking point for positioning <strong>vAuto</strong> Live Market View to help dealers price and stock EV/hybrid inventory they historically under‑indexed on.</p>
+        <p class="src">ACEA (primary) · Sep 24, 2026</p>
       </article>
       <article class="card">
-        <h3><a href="https://electrek.co/2026/09/22/tesla-semi-2500-truck-order-zet-scale-largest-us/" target="_blank" rel="noopener noreferrer">Tesla Semi wins 2,500-truck order, doubling US electric Class 8 fleet</a></h3>
-        <p>The ZET SCALE shipper alliance — backed by names including Microsoft and PepsiCo — placed what Electrek calls the largest US order for electric Class 8 trucks yet, with Tesla as primary OEM. The deal roughly doubles the country's electric heavy-truck fleet.</p>
-        <p class="means"><strong>What it means for us:</strong> Commercial/fleet electrification momentum flows into the trade-in and wholesale pipeline. Manheim and vAuto users should watch residuals and remarketing demand on diesel Class 8 units as large fleets signal an EV shift.</p>
-        <p class="src">Electrek · Sep 22, 2026</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- DEALERSHIP & RETAIL TECH -->
-  <section class="category" style="--catcolor:var(--retail)">
-    <div class="cat-head">Dealership &amp; Retail Tech</div>
-    <div class="grid">
-      <article class="card">
-        <h3><a href="https://www.cbtnews.com/72-of-fi-offices-use-software-systems/" target="_blank" rel="noopener noreferrer">72% of F&amp;I offices use 4+ software systems, CDK study finds</a></h3>
-        <p>CDK's 2026 Friction Points Study reports nearly three-quarters of F&amp;I offices juggle four or more platforms, forcing staff to rekey data across CRM, DMS and lender systems. The result: slower deals, more errors and frustrated customers when a deal changes midstream.</p>
-        <p class="means"><strong>What it means for us:</strong> This is the core pitch for an integrated Cox stack — VinSolutions CRM + Dealertrack DMS + Deal Central cut the rekeying that CDK itself is measuring. When a dealer complains about F&amp;I friction, this study is competitor CDK admitting the fragmentation problem our integration solves.</p>
-        <p class="talk"><span class="tlabel">Talk track</span>"CDK's own 2026 study says 72% of F&amp;I offices run four-plus systems — that's exactly the rekeying and errors a connected VinSolutions-to-Dealertrack workflow eliminates."</p>
-        <p class="src">CBT News · Sep 22, 2026</p>
-      </article>
-      <article class="card">
-        <h3><a href="https://www.cbtnews.com/the-fixed-ops-metric-dealers-should-be-watching/" target="_blank" rel="noopener noreferrer">The fixed ops metric dealers should be watching</a></h3>
-        <p>Christopher Singleton argues raw service-lane volume can mislead; the metrics that matter tie to technician proficiency, profitability per RO and retention. He urges dealers to make key service metrics part of the store's culture rather than chasing car count.</p>
-        <p class="means"><strong>What it means for us:</strong> Fixed ops is the retention and margin story dealers protect in a soft market — a clean setup for Xtime to show how scheduling, capacity and proficiency tracking convert service visits into measurable revenue and repeat sales.</p>
-        <p class="src">CBT News · Sep 22, 2026</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- COMPETITOR WATCH -->
-  <section class="category" style="--catcolor:var(--comp)">
-    <div class="cat-head">Competitor Watch</div>
-    <div class="grid">
-      <article class="card">
-        <span class="badge">📣 POST-WORTHY</span>
-        <h3><a href="https://www.cbtnews.com/carmax-cuts-145-corporate-jobs/" target="_blank" rel="noopener noreferrer">CarMax cuts 145 corporate jobs as used-car market pressure builds</a></h3>
-        <p>CarMax eliminated about 145 corporate roles — roughly 4% of its white-collar workforce — in a restructuring, even as rival Carvana continues to outpace the broader used-vehicle market after a record spring quarter.</p>
-        <p class="means"><strong>What it means for us:</strong> The two biggest used-car disruptors are diverging, and franchised dealers are asking which playbook wins. That's the opening to position vAuto + Manheim as the appraisal-and-acquisition edge that lets local dealers compete with Carvana's scale without CarMax-style overhead.</p>
-        <p class="post-angle">📝 Suggested LinkedIn angle: "CarMax trims corporate headcount while Carvana posts records — the used-car winners aren't the biggest, they're the best at turning inventory. Here's what franchised dealers can borrow."</p>
-        <p class="src">CBT News · Sep 22, 2026</p>
+        <h3><a href="https://www.usatoday.com/story/cars/shopping/evs/2026/09/22/ev-sales-year-after-trump-ended-tax-credits/91887066007/" target="_blank" rel="noopener noreferrer">A year after the US EV tax credit ended, the market is smaller and hybrid‑led</a></h3>
+        <p>Per Cox Automotive data cited by USA&nbsp;Today, US EV sales fell ~24% in H1 2026 versus H1 2025, though Q2 rose 14% over Q1 as gas prices pushed shoppers toward efficient models. Several OEMs shifted plans from full EVs to hybrids/EREVs; California's new instant rebate is partially backfilling lost federal support.</p>
+        <p class="means">What it means for us: the new‑vs‑used and EV‑vs‑hybrid mix is shifting monthly — exactly the volatility <strong>vAuto</strong> ProfitTime and <strong>VinSolutions</strong> targeted marketing are built to exploit; expect dealers to ask how to retarget EV‑curious leads who are now hybrid buyers.</p>
+        <p class="talk">Talk track: "H1 EV sales were down about a quarter without the credit, but Q2 bounced — vAuto lets you stock to that swing instead of guessing."</p>
+        <p class="src">USA Today · Sep 22, 2026 (updated Sep 23)</p>
       </article>
     </div>
   </section>
 
   <!-- COX AUTOMOTIVE ECOSYSTEM -->
-  <section class="category" style="--catcolor:var(--cox)">
+  <section class="cat cat-cox">
     <div class="cat-head">Cox Automotive Ecosystem</div>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://niada.com/dashboard/affordable-used-inventory-tightens-as-august-sales-data-shows-shifting-market/" target="_blank" rel="noopener noreferrer">Affordable used inventory tightens as August data shifts (Manheim index at 208.2)</a></h3>
-        <p>NIADA's read on August data — citing the Manheim Used Vehicle Value Index closing at 208.2, down 0.9% from July but up 0.4% year over year — points to one clear trend for independents: the most affordable used inventory is the hardest to find.</p>
-        <p class="means"><strong>What it means for us:</strong> Manheim (Cox) is the index dealers cite for wholesale strategy. When affordable stock is scarcest, vAuto's Live Market View and Manheim data let a dealer defend margin on entry-level units instead of overpaying at auction.</p>
-        <p class="src">NIADA · Sep 22, 2026</p>
-      </article>
-      <article class="card">
-        <h3><a href="https://www.aiada.org/cox-raises-2026-new-car-sales-forecast-on-positive-indicators/" target="_blank" rel="noopener noreferrer">Cox Automotive raises its 2026 new-car sales forecast to 16.1M</a></h3>
-        <p>Per an AIADA-hosted Cox Automotive AutoTalk webinar, senior economist Charlie Chesbrough nudged the 2026 US new-vehicle forecast up to 16.1 million, citing low unemployment and a wealthier buyer base — buyers earning over $150K now make up 43% of new-car sales, versus 29% in 2020.</p>
-        <p class="means"><strong>What it means for us:</strong> The Cox forecast is the number PCs can anchor conversations on. The "wealthier buyer" shift argues for pushing vAuto pricing and Autotrader/KBB merchandising toward higher-trim, higher-margin inventory while affordability remains the retail pain point.</p>
-        <p class="src">AIADA (Cox Automotive AutoTalk) · Sep 22, 2026</p>
+        <h3><a href="https://www.coxautoinc.com/insights/the-auto-market-brief-consumer-sentiment-makes-headlines-but-its-not-the-whole-story/" target="_blank" rel="noopener noreferrer">Cox's Auto Market Brief: sentiment headlines miss a K‑shaped, trade‑down consumer</a></h3>
+        <p>In a new Cox <em>Auto Market Brief</em> episode, Cox's Erin Keating and Morning Consult's Kayla Bruun argue consumer‑sentiment headlines understate real demand. New price‑response indicators show shoppers increasingly absorbing, walking away from, or <em>trading down</em> on price — with continued vehicle consideration despite rising price sensitivity.</p>
+        <p class="means">What it means for us: "trading down" is the sales motion of the quarter — a reason to lean on <strong>vAuto</strong> for right‑priced used alternatives and <strong>Dealertrack</strong> F&amp;I to keep affordable deals penciled when buyers balk at the new‑car number.</p>
+        <p class="src">Cox Automotive (primary) · Sep 24, 2026</p>
       </article>
     </div>
   </section>
 
-  <!-- DEALERSHIP MARKETING & ADVERTISING -->
-  <section class="category" style="--catcolor:var(--ad)">
-    <div class="cat-head">Dealership Marketing &amp; Advertising</div>
+  <!-- DEALERSHIP & RETAIL TECH -->
+  <section class="cat cat-market">
+    <div class="cat-head">Dealership &amp; Retail Tech</div>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://www.carpro.com/blog/ftc-issues-more-guidance-on-car-dealer-ad-rules" target="_blank" rel="noopener noreferrer">FTC issues more guidance on car-dealer advertising rules</a></h3>
-        <p>New FTC staff FAQs (published Sept. 15, following warning letters to 97 dealer groups) say the advertised price must be the price any consumer can actually pay — every dealer-required fee included, excluding only charges a government requires the buyer to pay directly. The rules apply across websites, third-party listings, social, signs, calls and texts.</p>
-        <p class="means"><strong>What it means for us:</strong> Every price a dealer publishes online is now compliance-sensitive. This is the moment to show how Dealer.com and Autotrader listing controls keep the "most prominent price" accurate and consistent across channels — an FTC-defensible merchandising story competitors will scramble to match.</p>
-        <p class="talk"><span class="tlabel">Talk track</span>"If a dealer's worried about the FTC's new price-transparency FAQs, our Dealer.com and Autotrader tooling makes the all-in price the most prominent number everywhere it's published."</p>
-        <p class="src">CarPro (reporting FTC guidance) · Sep 22, 2026</p>
+        <h3><a href="https://news.dealershipguy.com/p/cyberattacks-on-dealerships-spike-1-000-in-march-over-2024-levels" target="_blank" rel="noopener noreferrer">Cyberattacks on dealerships spiked ~1,000%; AI is making phishing far harder to spot</a></h3>
+        <p>Security firm Proton Dealership IT reports a roughly 1,000% jump in attempted dealership attacks versus pre‑June‑2024 levels, often via compromised third‑party software. AI has stripped the old "bad grammar" tells from phishing, and MFA was in use in 97% of credential compromises — average ransomware recovery now runs ~$1.7M.</p>
+        <p class="means">What it means for us: FTC Safeguards exposure is a live dealer fear — a clean opening to contrast fragile bolt‑on stacks with <strong>Dealertrack DMS</strong> security/uptime and to differentiate against a still‑cautious post‑outage <strong>CDK Global</strong>.</p>
+        <p class="talk">Talk track: "If a dealer's still nervous after the CDK outage, this 1,000% attack spike is why platform security and uptime — not just features — should decide the DMS."</p>
+        <p class="src">Car Dealership Guy News · Sep 24, 2026 <span class="unconf" title="Single-vendor study; core stat references a March spike">single‑source stat</span></p>
+      </article>
+      <article class="card">
+        <span class="badge">📣 POST‑WORTHY</span>
+        <h3><a href="https://www.autosuccessonline.com/what-an-ai-operating-system-has-to-do-in-a-dealership/" target="_blank" rel="noopener noreferrer">Opinion: every vendor now claims an "AI operating system" — here's a two‑minute test</a></h3>
+        <p><span class="kicker">Contributed opinion (Numa CEO)</span></p>
+        <p>The column argues the "AI operating system" label has outrun its meaning: a real one must <em>run</em> the work (turn a missed call into an owned task, flag the unhappy customer at the counter, give department‑wide visibility), not just <em>record</em> it. It cites a Minnesota Ford store lifting service‑call booking from 12% to 45%.</p>
+        <p class="means">What it means for us: dealers are about to demo a dozen "AI OS" pitches from competitors like <strong>Impel AI</strong> and <strong>DriveCentric</strong> — we can hand PCs this "record vs. run" test to show where <strong>VinSolutions</strong> and <strong>Xtime</strong> already own the follow‑up work.</p>
+        <p class="post-angle">Suggested LinkedIn angle: "Every tool calls itself an 'AI operating system' now. Here's the 2‑minute test I run on every demo — does it <em>run</em> the work or just <em>record</em> it?"</p>
+        <p class="src">AutoSuccess (opinion) · Sep 23, 2026 <span class="unconf" title="Vendor-authored opinion column, not independent reporting">opinion / vendor‑authored</span></p>
       </article>
     </div>
   </section>
 
   <!-- AI & TECHNOLOGY -->
-  <section class="category" style="--catcolor:var(--ai)">
+  <section class="cat cat-tech">
     <div class="cat-head">AI &amp; Technology</div>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://www.cnbc.com/2026/09/22/anthropic-openai-cheaper-ai-models.html" target="_blank" rel="noopener noreferrer">Anthropic and OpenAI both launch cheaper models</a></h3>
-        <p>OpenAI extended its GPT-6 family with Sol and Luna at ~50% lower API prices; Anthropic shipped Claude Opus 5.5 at ~40% lower run-cost than Opus 5. Both moves respond to pressure from cheaper open-weight rivals and to customers reining in AI spend.</p>
-        <p class="means"><strong>What it means for us:</strong> Cheaper frontier models compress the cost of AI features inside VinSolutions and Dealer.com — a reason to accelerate AI-assisted follow-up and merchandising now, and to counter any competitor pitching pricey "proprietary AI" as a premium.</p>
-        <p class="src">CNBC · Sep 22, 2026</p>
+        <h3><a href="https://www.techtarget.com/ai/news/366651014/OpenAI-takes-AI-price-war-to-next-level-with-GPT-6-Sol-Luna-pricing" target="_blank" rel="noopener noreferrer">OpenAI cuts flagship API prices 50% as the frontier price war intensifies</a></h3>
+        <p>OpenAI halved prices on two new GPT‑6 models to drive enterprise adoption, reacting to Anthropic and Google and to cheaper open‑source rivals. Analysts frame optimization — not raw price — as the next differentiator, and tie aggressive pricing to OpenAI's IPO push.</p>
+        <p class="means">What it means for us: cheaper inference lowers the cost of the agentic features inside <strong>VinSolutions</strong> and <strong>Autotrader</strong>; dealers will ask "is my AI add‑on getting cheaper too?" — a chance to frame Cox AI as more capability per dollar, not a discount war.</p>
+        <p class="talk">Talk track: "The model makers just cut prices 50% — so when a dealer asks why AI features still cost what they do, the honest answer is it's the workflow and data, not the tokens."</p>
+        <p class="src">TechTarget · Sep 23, 2026 <span class="unconf" title="Model names/pricing postdate reliable verification; reported as stated by source">vendor‑reported specs</span></p>
       </article>
       <article class="card">
-        <h3><a href="https://www.cnbc.com/2026/09/22/banks-warn-ai-shopping-bots-raise-scam-fraud-data-privacy-risks.html" target="_blank" rel="noopener noreferrer">Banks warn AI shopping bots raise scam, fraud and data-privacy risks</a></h3>
-        <p>A group of banks (NatWest, Bank of America, ING, Capital One and others) cautioned that AI agents shopping on consumers' behalf outpace current consumer protections, and proposed disclosure when an agent is involved, more decision transparency and stronger data safeguards. John Lewis reported agent-originated searches jumped to 2.5% from 0.3% a year earlier.</p>
-        <p class="means"><strong>What it means for us:</strong> "Agentic commerce" is coming to car shopping — buyers will soon send AI agents to price and configure vehicles. Dealer.com and Autotrader need clean, machine-readable pricing (see the FTC story) so a dealer's inventory is what agents surface accurately, not misquote.</p>
-        <p class="src">CNBC · Sep 22, 2026</p>
+        <h3><a href="https://fortune.com/2026/09/23/mckinsey-cheaper-ai-models-bigger-ai-bills-cfo/" target="_blank" rel="noopener noreferrer">McKinsey: models are cheaper, yet enterprise AI bills keep climbing</a></h3>
+        <p>McKinsey partners warn that as per‑unit intelligence gets cheaper, agentic usage explodes — the same task can cost up to 30x more run‑to‑run. Their advice: judge agents at the task level (cost, success rate, human verification time) and redesign the workflow around freed‑up capacity.</p>
+        <p class="means">What it means for us: this is the ROI conversation for dealers buying "agentic" tools — position <strong>VinSolutions</strong>/<strong>Xtime</strong> automation by verified outcomes (appointments set, RO fill) rather than seat count, and pre‑empt sticker shock competitors like <strong>DriveCentric</strong> will trigger.</p>
+        <p class="src">Fortune · Sep 23, 2026</p>
       </article>
     </div>
   </section>
 </main>
 
-<footer>
-  Wednesday, September 23, 2026 · Curated by AI Research Desk
+<footer class="site">
+  September 24, 2026 · Curated by AI Research Desk
 </footer>
 
 <script>
 (function(){
-  var root=document.documentElement, btn=document.getElementById('themeToggle'), KEY='mssBriefingTheme';
+  var root=document.documentElement;
+  var btn=document.getElementById('themeToggle');
+  var KEY='mssBriefingTheme';
   function apply(t){
     root.setAttribute('data-theme',t);
     btn.textContent = t==='dark' ? '☀️ Light mode' : '🌙 Dark mode';
   }
   var stored=null;
-  try{ stored=localStorage.getItem(KEY); }catch(e){}
-  if(stored==='dark'||stored==='light'){
-    apply(stored);
-  } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-    apply('dark');
-  } else {
-    apply('light');
-  }
+  try{stored=localStorage.getItem(KEY);}catch(e){}
+  if(stored==='dark'||stored==='light'){apply(stored);}
+  else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+  else{apply('light');}
   btn.addEventListener('click',function(){
     var next = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
     apply(next);
-    try{ localStorage.setItem(KEY,next); }catch(e){}
+    try{localStorage.setItem(KEY,next);}catch(e){}
   });
 })();
 </script>
