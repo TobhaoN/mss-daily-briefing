@@ -1,273 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Automotive AI Daily Briefing 2026-10-27</title>
+<title>MSS Automotive AI Daily Briefing | 2026-10-28</title>
 <style>
-  :root {
-    --bg: #f4f6f9;
-    --surface: #ffffff;
-    --text: #17202e;
-    --muted: #46536a;
-    --border: #d5dbe5;
-    --link: #0a4fb3;
-    --bl-bg: #fff4e8;
-    --bl-border: #c45c00;
-    --top-bg: #eaf2fd;
-    --top-border: #024AA5;
-    --tt-bg: #eef1f6;
-    --badge-post-bg: #024AA5;
-    --badge-post-text: #ffffff;
-    --badge-unc-bg: #fde8e7;
-    --badge-unc-text: #8a1c14;
-    --c-market: #0C80DF;
-    --c-dealer: #0d8a78;
-    --c-comp: #c62828;
-    --c-cox: #d96a00;
-    --c-mkt: #7b3fa0;
-    --c-ai: #2e7d32;
-    color-scheme: light;
-  }
-  html[data-theme="dark"] {
-    --bg: #0e1726;
-    --surface: #162238;
-    --text: #e9eef6;
-    --muted: #b0bccf;
-    --border: #2c3b57;
-    --link: #93c7ff;
-    --bl-bg: #2b2014;
-    --bl-border: #ff9a3d;
-    --top-bg: #13284a;
-    --top-border: #6aa8ff;
-    --tt-bg: #1d2c47;
-    --badge-post-bg: #6aa8ff;
-    --badge-post-text: #0b1f3a;
-    --badge-unc-bg: #4a1d1a;
-    --badge-unc-text: #ffc9c4;
-    --c-market: #4fa8f0;
-    --c-dealer: #3cc4ae;
-    --c-comp: #ff6b63;
-    --c-cox: #ff9a3d;
-    --c-mkt: #c08ae6;
-    --c-ai: #6fcf74;
-    color-scheme: dark;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.55;
-  }
-  a { color: var(--link); }
-  a:focus-visible, button:focus-visible { outline: 3px solid #ffb35c; outline-offset: 2px; }
-  header {
-    background: linear-gradient(135deg, #0b1f3a 0%, #1a3a6c 100%);
-    color: #ffffff;
-    padding: 28px 24px 30px;
-  }
-  .header-inner { max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-  header h1 { margin: 0; font-size: clamp(1.5rem, 3.4vw, 2.2rem); line-height: 1.2; font-weight: 750; }
-  header p { margin: 6px 0 0; color: #d6e2f5; font-size: 1rem; }
-  #themeToggle {
-    background: rgba(255,255,255,0.12);
-    color: #ffffff;
-    border: 1px solid rgba(255,255,255,0.45);
-    border-radius: 999px;
-    padding: 8px 14px;
-    font: inherit;
-    font-size: 0.9rem;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  #themeToggle:hover { background: rgba(255,255,255,0.22); }
-  main { max-width: 1180px; margin: 0 auto; padding: 24px 20px 40px; }
-  .bottom-line {
-    background: var(--bl-bg);
-    border-left: 6px solid var(--bl-border);
-    border-radius: 6px;
-    padding: 18px 22px;
-    margin-bottom: 20px;
-  }
-  .bottom-line h2, .top-story .label { margin: 0 0 6px; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.04em; }
-  .bottom-line p { margin: 0; font-size: 1.06rem; max-width: 78ch; }
-  .top-story {
-    background: var(--top-bg);
-    border-left: 6px solid var(--top-border);
-    border-radius: 6px;
-    padding: 20px 22px;
-    margin-bottom: 32px;
-  }
-  .top-story h3 { margin: 4px 0 10px; font-size: 1.35rem; line-height: 1.3; }
-  .top-story p { max-width: 80ch; }
-  section.category { margin-top: 30px; }
-  section.category > h2 {
-    font-size: 0.98rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin: 0 0 14px;
-    padding: 4px 0 4px 12px;
-    border-left: 6px solid var(--cat);
-  }
-  .cat-market { --cat: var(--c-market); }
-  .cat-dealer { --cat: var(--c-dealer); }
-  .cat-comp { --cat: var(--c-comp); }
-  .cat-cox { --cat: var(--c-cox); }
-  .cat-mkt { --cat: var(--c-mkt); }
-  .cat-ai { --cat: var(--c-ai); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
-  article.card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-top: 4px solid var(--cat);
-    border-radius: 6px;
-    padding: 18px 20px;
-  }
-  article.card h3 { margin: 0 0 8px; font-size: 1.12rem; line-height: 1.35; }
-  article.card p { margin: 0 0 10px; }
-  .meaning { font-style: italic; }
-  .meaning strong { font-style: normal; }
-  .source { color: var(--muted); font-size: 0.9rem; margin: 6px 0 0; }
-  .talk {
-    background: var(--tt-bg);
-    border-left: 4px solid var(--cat, var(--top-border));
-    border-radius: 4px;
-    padding: 10px 12px;
-    font-style: italic;
-    margin: 10px 0;
-  }
-  .top-story .talk { border-left-color: var(--top-border); }
-  .talk strong { font-style: normal; }
-  .badges { margin: 0 0 8px; display: flex; flex-wrap: wrap; gap: 6px; }
-  .badge { display: inline-block; font-size: 0.78rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; }
-  .badge-post { background: var(--badge-post-bg); color: var(--badge-post-text); }
-  .badge-unc { background: var(--badge-unc-bg); color: var(--badge-unc-text); }
-  .post-angle { font-size: 0.95rem; }
-  .note {
-    background: var(--surface);
-    border: 1px dashed var(--border);
-    border-radius: 6px;
-    padding: 14px 18px;
-    color: var(--muted);
-    margin: 0;
-    max-width: 90ch;
-  }
-  footer {
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    text-align: center;
-    padding: 22px 16px 30px;
-    font-size: 0.92rem;
-  }
-  @media (max-width: 560px) {
-    .header-inner { flex-direction: column-reverse; }
-    #themeToggle { align-self: flex-end; }
-  }
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+:root{
+  --bg:#f4f6f9; --surface:#ffffff; --text:#1a2230; --muted:#4a5568; --border:#d5dbe4;
+  --link:#024aa5; --meaning-bg:#f1f5fb; --talk-bg:#fff4e8; --talk-border:#b85a00;
+  --bl-bg:#e8f2fd; --bl-border:#0c80df; --top-border:#c4361f; --top-bg:#fff;
+  --badge-bg:#1a3a6c; --badge-text:#ffffff; --unconf-bg:#fde8e4; --unconf-text:#8a1f0e;
+  --c-market:#0c6fc4; --c-retail:#0f7f71; --c-comp:#b3262e; --c-cox:#c86400; --c-mkt:#6f35b8; --c-ai:#2b7d33;
+  color-scheme: light;
+}
+:root[data-theme="dark"]{
+  --bg:#0e1622; --surface:#172233; --text:#e6ebf2; --muted:#a9b4c4; --border:#2c3b52;
+  --link:#8cc4ff; --meaning-bg:#1d2b40; --talk-bg:#2e2414; --talk-border:#ff9a3c;
+  --bl-bg:#132a45; --bl-border:#4fa8f5; --top-border:#ff7a5c; --top-bg:#172233;
+  --badge-bg:#ffb366; --badge-text:#1a1206; --unconf-bg:#4a1d16; --unconf-text:#ffc4b8;
+  --c-market:#5aa9f0; --c-retail:#3cc2ae; --c-comp:#f0707a; --c-cox:#ff9a3c; --c-mkt:#b78cf0; --c-ai:#6fcf78;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.55;font-size:16px}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--bl-border);outline-offset:2px}
+header{background:linear-gradient(135deg,#0b1f3a 0%,#1a3a6c 100%);color:#fff;padding:28px 20px 30px}
+.head-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+header h1{margin:0;font-size:1.7rem;line-height:1.2}
+header p{margin:6px 0 0;color:#d6e2f5;font-size:.98rem}
+#themeToggle{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45);border-radius:6px;padding:8px 12px;font-size:.9rem;cursor:pointer;white-space:nowrap}
+#themeToggle:hover{background:rgba(255,255,255,.22)}
+main{max-width:1200px;margin:0 auto;padding:24px 20px 40px}
+.bottom-line{background:var(--bl-bg);border:2px solid var(--bl-border);border-radius:8px;padding:18px 20px;margin-bottom:22px}
+.bottom-line h2{margin:0 0 8px;font-size:1rem;letter-spacing:.04em}
+.bottom-line p{margin:0;font-size:1.05rem;max-width:80ch}
+.top-story{background:var(--top-bg);border:1px solid var(--border);border-left:8px solid var(--top-border);border-radius:8px;padding:20px 22px;margin-bottom:30px}
+.top-label{font-weight:700;font-size:.85rem;letter-spacing:.05em;color:var(--top-border);margin:0 0 6px}
+.top-story h2{margin:0 0 10px;font-size:1.35rem;line-height:1.3}
+.top-story h2 a{text-decoration:none}
+.top-story h2 a:hover{text-decoration:underline}
+section.cat{margin-bottom:30px}
+.cat-head{font-size:.95rem;font-weight:800;letter-spacing:.07em;margin:0 0 12px;padding:4px 0 4px 12px;border-left:6px solid var(--catc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--catc);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.card h3{margin:0;font-size:1.08rem;line-height:1.35}
+.card h3 a{text-decoration:none}
+.card h3 a:hover{text-decoration:underline}
+.summary{margin:0}
+.meaning{margin:0;font-style:italic;background:var(--meaning-bg);padding:8px 10px;border-radius:6px}
+.meaning strong{font-style:normal}
+.talk{margin:0;font-style:italic;background:var(--talk-bg);border-left:4px solid var(--talk-border);padding:8px 10px;border-radius:0 6px 6px 0}
+.talk strong{font-style:normal}
+.post{margin:0;font-size:.95rem}
+.badge{display:inline-block;background:var(--badge-bg);color:var(--badge-text);font-weight:700;font-size:.78rem;padding:3px 8px;border-radius:4px;margin-right:6px}
+.unconfirmed{display:inline-block;background:var(--unconf-bg);color:var(--unconf-text);font-weight:700;font-size:.78rem;padding:3px 8px;border-radius:4px}
+.source{margin:0;color:var(--muted);font-size:.88rem;margin-top:auto}
+.note{background:var(--surface);border:1px dashed var(--border);border-radius:8px;padding:12px 16px;margin:0;color:var(--muted)}
+.c-market{--catc:var(--c-market)} .c-retail{--catc:var(--c-retail)} .c-comp{--catc:var(--c-comp)}
+.c-cox{--catc:var(--c-cox)} .c-mkt{--catc:var(--c-mkt)} .c-ai{--catc:var(--c-ai)}
+footer{border-top:1px solid var(--border);color:var(--muted);text-align:center;padding:18px 20px 28px;font-size:.9rem}
+@media (max-width:600px){header h1{font-size:1.35rem}.head-inner{flex-direction:column}}
 </style>
 </head>
 <body>
 <header>
-  <div class="header-inner">
+  <div class="head-inner">
     <div>
-      <h1>🚗 Automotive AI Daily Briefing</h1>
-      <p>Tuesday, October 27, 2026</p>
+      <h1><span aria-hidden="true">🚗</span> MSS Automotive AI Daily Briefing</h1>
+      <p>Wednesday, October 28, 2026</p>
     </div>
-    <button id="themeToggle" type="button" aria-label="Switch to dark theme">🌙 Dark mode</button>
+    <button id="themeToggle" type="button" aria-label="Switch to dark theme">Dark mode</button>
   </div>
 </header>
 
 <main>
-  <section class="bottom-line" aria-labelledby="bl-heading">
-    <h2 id="bl-heading">BOTTOM LINE</h2>
-    <p>Trust comes first this week. Cox says suspicious activity on VinSolutions was contained and affected dealers will be contacted directly, so stick to the official statement and route dealer questions to their Cox rep. On the selling side, used SUVs just crossed $25,000 and AI search is rewarding stores with clean, connected data, which keeps vAuto pricing discipline and Dealer.com data hygiene front and center.</p>
+  <section class="bottom-line" aria-labelledby="bl-h">
+    <h2 id="bl-h">BOTTOM LINE</h2>
+    <p>The money costs more than the car now. Interest on a typical used deal is up 96% since 2019 and down payments are basically gone (Top Story), yet the buyers who do walk in are ready to buy (CDG Temp Check). So stop selling price and start selling payment clarity and trade equity, because that's what closes deals this week.</p>
   </section>
 
-  <section class="top-story" aria-labelledby="top-heading">
-    <p class="label">TOP STORY · Cox Automotive Ecosystem</p>
-    <h3 id="top-heading"><a href="https://news.dealershipguy.com/p/cox-automotive-confirms-vinsolutions-cyber-incident-says-activity-contained" target="_blank" rel="noopener noreferrer">Cox Automotive confirms VinSolutions cyber incident, says activity contained</a></h3>
-    <p>Cox said on Oct. 26 that it detected suspicious activity tied to VinSolutions, contained it quickly, and is working with outside cyber experts to determine what data was involved. Cox says no encrypting malware was involved, dealers could keep using VinSolutions, and no other Cox platform was affected. It believes a limited subset of dealers was affected and will notify them directly. A hacking group posted claims on Oct. 23, but the user and password counts circulating online are unconfirmed. CBT News reports that law firms are exploring a possible class action.</p>
-    <p class="meaning"><strong>What it means for us:</strong> Expect VinSolutions dealers to raise this on calls this week. Stick to Cox's public statement and any internal guidance, don't speculate on scope or data, and send "is my store affected?" questions to the dealer's Cox representative. This is not a talking point in either direction.</p>
-    <p class="talk"><strong>Holding line:</strong> "Cox has said the activity was contained, VinSolutions kept running normally, and any affected dealers will be contacted directly. Let me connect you with the right person on our side for anything specific to your store."</p>
-    <p class="source">CDG News, Oct 26, 2026 (class-action detail: CBT News, Oct 27)</p>
-  </section>
+  <article class="top-story" aria-labelledby="top-h">
+    <p class="top-label">TOP STORY · Cox Automotive Ecosystem</p>
+    <h2 id="top-h"><a href="https://www.coxautoinc.com/insights/auto-market-weekly-summary-10-26-26/" target="_blank" rel="noopener noreferrer">Auto Market Weekly Summary: the cost of money is now a bigger part of the deal</a></h2>
+    <p class="summary">Cox Chief Economist Jeremy Robb says interest on a typical new-vehicle loan is up 79% since 2019 to about $10.1K, and up 96% to about $10.9K on a used vehicle, while average used down payments have fallen to nearly zero. That pushes all-in cost up 37% for new and 43% for used versus 2019, faster than the roughly 30% rise in vehicle prices. Mid-October Manheim values also fell 2% before seasonal adjustment, a steeper drop than usual.</p>
+    <p class="meaning"><strong>What it means for us:</strong> Customers are shopping a payment, not a price, and many are walking in with no cash down. That changes how we sell Dealertrack F&amp;I and Deal Central: lead with payment transparency up front, and lean on KBB ICO because trade equity is now doing the job the down payment used to do.</p>
+    <p class="talk"><strong>Talk track:</strong> "Interest on a typical used deal is up 96% since 2019 and down payments are basically gone, so your customer is shopping a payment, and Deal Central with KBB ICO lets them see real numbers and real trade equity before they ever sit down."</p>
+    <p class="source">Cox Automotive newsroom, October 26, 2026</p>
+  </article>
 
-  <section class="category cat-market" aria-labelledby="h-market">
-    <h2 id="h-market">Automotive Market</h2>
+  <section class="cat c-market" aria-labelledby="h-market">
+    <h2 class="cat-head" id="h-market">AUTOMOTIVE MARKET</h2>
     <div class="grid">
       <article class="card">
+        <h3><a href="https://www.coxautoinc.com/insights/cox-automotive-forecast-october-2026-us-auto-sales-forecast/" target="_blank" rel="noopener noreferrer">Cox Automotive Forecast: October new-vehicle sales hold steady despite lower consumer sentiment, higher borrowing costs</a></h3>
+        <p class="summary">Cox expects October to land near a 16.1 million SAAR, up from 16 million in September and 15.7 million a year ago, with volume around 1.38 million units on 28 selling days. Jonathan Gregory credits healthy fleet sales, more affluent new-vehicle buyers and better credit access for keeping the market steady despite high gas prices and weak consumer confidence.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Use this to kill the "nobody's buying" objection. The buyers are there, they're just wealthier and pickier, which makes sourcing the right units through KBB ICO and pricing them with vAuto the conversation to have.</p>
+        <p class="talk"><strong>Talk track:</strong> "The market's still running at a 16 million pace, the buyers are just pickier and better funded, so the stores winning right now are sourcing the right cars through KBB ICO instead of waiting on the auction."</p>
+        <p class="source">Cox Automotive newsroom, October 27, 2026</p>
+      </article>
+      <article class="card">
         <h3><a href="https://news.dealershipguy.com/p/used-suv-prices-hit-25-000-for-first-time" target="_blank" rel="noopener noreferrer">Used SUV prices hit $25,000 for first time</a></h3>
-        <p>In the CARFAX Used Car Index, the average used SUV rose 0.7% in October to $25,125, its first time above $25,000 and up 4.4% from a year ago. Vans and minivans also topped $24,000. Used hybrid and EV prices have fallen $650 since August to $33,470 but are still up 6% year over year. Used RAV4 Hybrids average $49,000, above new starting prices, because the redesigned model is hard to find. Overall used prices barely moved.</p>
-        <p class="meaning"><strong>What it means for us:</strong> SUV pricing is now a precision game. vAuto price-to-market shows which SUVs on the lot are under- or over-priced, and Xtime plus KBB Instant Cash Offer can pull hot units like RAV4 Hybrids out of the service drive before they reach auction.</p>
-        <p class="talk"><strong>Talk track:</strong> "Used SUVs just crossed $25,000 and RAV4 Hybrids are selling above new sticker, so let's use vAuto to see which units you're leaving money on and who in your service drive is driving one."</p>
-        <p class="source">CDG News (citing CARFAX), Oct 26, 2026</p>
+        <p class="summary">The average used SUV in the CARFAX Used Car Index rose 0.7% in October to $25,125, the first time above $25K, and up 4.4% year over year. Vans and minivans also set a new high, while used hybrid and EV prices have slipped $650 since August even as hard-to-find RAV4 Hybrids sell well above new sticker.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Used SUV values are climbing while hybrid and EV values soften month to month. That's a live-market pricing problem vAuto Provision and Profit Time are built for, and a reason to watch aging on electrified units closely.</p>
+        <p class="source">Car Dealership Guy News, October 26, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="category cat-dealer" aria-labelledby="h-dealer">
-    <h2 id="h-dealer">Dealership &amp; Retail Tech</h2>
-    <p class="note">Today's retail-tech story, the VinSolutions incident, is in the Top Story box above.</p>
+  <section class="cat c-retail" aria-labelledby="h-retail">
+    <h2 class="cat-head" id="h-retail">DEALERSHIP &amp; RETAIL TECH</h2>
+    <div class="grid">
+      <article class="card">
+        <h3><a href="https://news.dealershipguy.com/p/temp-check-what-61-dealers-are-telling-us-about-october-traffic-sales" target="_blank" rel="noopener noreferrer">Temp Check: What 61 dealers are telling us about October traffic, sales</a></h3>
+        <p class="summary">In a CDG poll of 61 dealers, 47.5% said October traffic is down from last year and 34.4% said it's up, yet many report sales holding because the shoppers who do come in are ready to buy. One group exports appointments from its DriveCentric CRM into ChatGPT to track daily goals, and Tom Wood Automotive found "trade-in leaks" by tracking capture rate per salesperson, lifting capture from 42% to a projected 54%+.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Fewer ups means appointment discipline and trade capture decide the month. VinSolutions reporting and KBB ICO are the direct answer, and a DriveCentric store exporting data to ChatGPT to see appointment goals is a reporting gap worth probing.</p>
+        <p class="talk"><strong>Talk track:</strong> "Your traffic might be down but the people walking in are buyers, so let's look at how many appointments you're confirming and your trade capture by salesperson, because VinSolutions and KBB ICO can show you both today."</p>
+        <p class="post"><span class="badge"><span aria-hidden="true">📣</span> POST-WORTHY</span>Thrivers vs drivers: traffic is down at half the stores but sales are holding. The difference isn't luck, it's confirmed appointments and trade capture by rep.</p>
+        <p class="source">Car Dealership Guy News, October 27, 2026</p>
+      </article>
+    </div>
   </section>
 
-  <section class="category cat-comp" aria-labelledby="h-comp">
-    <h2 id="h-comp">Competitor Watch</h2>
-    <p class="note">No competitor news in the 48-hour window cleared the bar. Carvana reports Q3 tomorrow, Oct. 28.</p>
+  <section class="cat c-comp" aria-labelledby="h-comp">
+    <h2 class="cat-head" id="h-comp">COMPETITOR WATCH</h2>
+    <p class="note">No fresh, verified competitor news cleared the 48-hour bar today. DriveCentric shows up in the Temp Check card above. Carvana and Alphabet report third-quarter results after the close tonight, so expect competitor and ad-spend items tomorrow.</p>
   </section>
 
-  <section class="category cat-cox" aria-labelledby="h-cox">
-    <h2 id="h-cox">Cox Automotive Ecosystem</h2>
-    <p class="note">Today's Cox story is in the Top Story box above.</p>
+  <section class="cat c-cox" aria-labelledby="h-cox">
+    <h2 class="cat-head" id="h-cox">COX AUTOMOTIVE ECOSYSTEM</h2>
+    <p class="note">Today's Cox ecosystem story is Cox's cost-of-money analysis. See the Top Story above.</p>
   </section>
 
-  <section class="category cat-mkt" aria-labelledby="h-mkt">
-    <h2 id="h-mkt">Dealership Marketing &amp; Advertising</h2>
+  <section class="cat c-mkt" aria-labelledby="h-mkt">
+    <h2 class="cat-head" id="h-mkt">DEALERSHIP MARKETING &amp; ADVERTISING</h2>
     <div class="grid">
       <article class="card">
         <h3><a href="https://www.cbtnews.com/david-spisak-dealers-must-audit-for-ai/" target="_blank" rel="noopener noreferrer">David Spisak says dealers must audit for AI, launches new show on CBT News</a></h3>
-        <p>David Spisak, CEO of Disruptive Growth Solutions, says shoppers now ask AI tools for advice before they visit a dealer site, and some research and buy through platforms like ChatGPT and Instagram without visiting one at all. His team's audits find dealer sites missing the schemas and data connections AI search needs, along with multiple phone numbers, no inventory connection and weak vehicle descriptions. Those gaps can lead AI agents to skip a store. He says websites should work as the engine that feeds AI search.</p>
-        <p class="meaning"><strong>What it means for us:</strong> His audit list doubles as a Dealer.com discovery checklist: one phone number, a live inventory feed, and strong vehicle descriptions from vAuto merchandising. It builds on Friday's Cox piece on AI discoverability.</p>
-        <p class="talk"><strong>Talk track:</strong> "Let's check your site against what AI tools look for: one phone number, live inventory, and real vehicle descriptions. If any of those are missing, the AI skips you."</p>
-        <p class="source">CBT News, Oct 26, 2026</p>
+        <p class="summary">Spisak argues shoppers now ask AI tools for advice before ever reaching a dealer website, and some can research and buy without visiting one. His audits keep finding sites missing the schemas and data connections AI search needs, plus multiple phone numbers, no inventory feed and thin vehicle descriptions, which can lead AI agents to skip a store entirely.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Dealers will ask "can AI even find my store?" That's a Dealer.com conversation about site structure, clean inventory data and generative engine optimization, and it gives DDC Advertising a fresh reason to get back in front of the GM.</p>
+        <p class="source">CBT News, October 26, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="category cat-ai" aria-labelledby="h-ai">
-    <h2 id="h-ai">AI &amp; Technology</h2>
-    <p class="note">No AI story with a clear dealer angle cleared the bar today.</p>
+  <section class="cat c-ai" aria-labelledby="h-ai">
+    <h2 class="cat-head" id="h-ai">AI &amp; TECHNOLOGY</h2>
+    <div class="grid">
+      <article class="card">
+        <h3><a href="https://openai.com/index/introducing-gpt-6-1-terra" target="_blank" rel="noopener noreferrer">Introducing GPT-6.1 Terra</a></h3>
+        <p class="summary">OpenAI released GPT-6.1 Terra, a mid-tier model built for everyday work that can read screens and operate desktop software. OpenAI says it finishes tasks more than three times faster than its top models, with API pricing 50% below GPT-5.6 Terra and GPT-6.1 Sol, and it's rolling out to Plus, Pro, Enterprise and Edu users.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Cheaper, faster computer-use AI lowers the bar for startups like Impel to build AI BDC agents on top of dealer systems. When a dealer asks "why not just use ChatGPT," the answer is that an agent is only as good as the customer data it's connected to, which is the VinSolutions and Fullpath story.</p>
+        <p class="source">OpenAI, October 26, 2026</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://news.dealershipguy.com/p/gm-moves-stock-listing-to-nasdaq-as-automaker-accelerates-ai-vehicle-technology-investments" target="_blank" rel="noopener noreferrer">GM moves stock listing to Nasdaq as automaker accelerates AI, vehicle technology investments</a></h3>
+        <p class="summary">GM will move its stock listing from the NYSE to Nasdaq, with trading expected to start there November 17. The move comes as GM leans harder into AI, saying it will cut vehicle development time in half and launch a proprietary OnStar AI agent first in the 2027 Cadillac LYRIQ.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Smarter, software-heavy vehicles push more service conversations through connected-car prompts. GM dealers will need Xtime scheduling that keeps pace with what the car itself is telling the owner.</p>
+        <p class="source">Car Dealership Guy News, October 27, 2026</p>
+      </article>
+    </div>
   </section>
 </main>
 
 <footer>
-  <p>Tuesday, October 27, 2026. Curated by AI Research Desk</p>
+  <p>October 28, 2026 · Curated by AI Research Desk</p>
 </footer>
 
 <script>
-(function () {
-  var KEY = 'mssBriefingTheme';
-  var root = document.documentElement;
-  var btn = document.getElementById('themeToggle');
-  function apply(theme) {
-    root.setAttribute('data-theme', theme);
-    var dark = theme === 'dark';
-    btn.textContent = dark ? '☀️ Light mode' : '🌙 Dark mode';
-    btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+(function(){
+  var KEY='mssBriefingTheme';
+  var root=document.documentElement;
+  var btn=document.getElementById('themeToggle');
+  function apply(theme){
+    root.setAttribute('data-theme',theme);
+    var dark=theme==='dark';
+    btn.textContent=dark?'Light mode':'Dark mode';
+    btn.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');
   }
-  var stored = null;
-  try { stored = localStorage.getItem(KEY); } catch (e) {}
-  if (stored !== 'light' && stored !== 'dark') {
-    stored = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  var stored=null;
+  try{stored=localStorage.getItem(KEY);}catch(e){}
+  if(stored!=='light'&&stored!=='dark'){
+    stored=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
   }
   apply(stored);
-  btn.addEventListener('click', function () {
-    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
     apply(next);
-    try { localStorage.setItem(KEY, next); } catch (e) {}
+    try{localStorage.setItem(KEY,next);}catch(e){}
   });
 })();
 </script>
