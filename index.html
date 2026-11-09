@@ -1,55 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Automotive AI Daily Briefing | 2026-11-05</title>
+<title>Automotive AI Daily Briefing | 2026-11-09</title>
 <style>
 :root{
-  --bg:#f5f7fb; --surface:#ffffff; --text:#14213d; --muted:#4a5568; --line:#d9e0ea;
-  --bl-bg:#fff4e5; --bl-border:#c2410c; --top-bg:#eaf2ff; --top-border:#1d4ed8;
-  --tt-bg:#f0fdf4; --tt-border:#15803d; --link:#1d4ed8; --badge:#14213d; --badge-text:#ffffff;
-  --c-market:#2563eb; --c-retail:#0f766e; --c-comp:#b91c1c; --c-cox:#6d28d9; --c-mkt:#c2410c; --c-ai:#0e7490;
+  --bg:#eef2f7; --surface:#ffffff; --ink:#18202e; --muted:#4a5568; --rule:#d5dce6;
+  --bl-bg:#e6f4f1; --bl-edge:#0f766e; --bl-ink:#0b4f49;
+  --top-bg:#fff5e8; --top-edge:#c2410c; --top-ink:#7c2d12;
+  --badge-post-bg:#1d4ed8; --badge-post-ink:#ffffff;
+  --badge-unc-bg:#fef3c7; --badge-unc-ink:#78350f; --badge-unc-edge:#b45309;
+  --talk-bg:#f1f5ff; --talk-edge:#3b5bdb;
+  --link:#1a3a9c;
+  --c-market:#1d4ed8; --c-retail:#0f766e; --c-comp:#b91c1c; --c-cox:#b45309; --c-mkt:#7e22ce; --c-ai:#047857;
 }
-[data-theme="dark"]{
-  --bg:#0f172a; --surface:#1e293b; --text:#e8eef7; --muted:#b6c2d3; --line:#334155;
-  --bl-bg:#3a2410; --bl-border:#fb923c; --top-bg:#16264a; --top-border:#93b4ff;
-  --tt-bg:#123222; --tt-border:#4ade80; --link:#9dc1ff; --badge:#e8eef7; --badge-text:#0f172a;
-  --c-market:#7fa8ff; --c-retail:#5eead4; --c-comp:#fca5a5; --c-cox:#c4b5fd; --c-mkt:#fdba74; --c-ai:#67e8f9;
+:root[data-theme="dark"]{
+  --bg:#0d1522; --surface:#152133; --ink:#e7edf5; --muted:#b4c0d0; --rule:#2a3a52;
+  --bl-bg:#0f2e2b; --bl-edge:#2dd4bf; --bl-ink:#c9f5ee;
+  --top-bg:#2e1b0e; --top-edge:#fb923c; --top-ink:#fde3cc;
+  --badge-post-bg:#93b4ff; --badge-post-ink:#0b1730;
+  --badge-unc-bg:#3a2a0a; --badge-unc-ink:#fde68a; --badge-unc-edge:#f59e0b;
+  --talk-bg:#1b2944; --talk-edge:#8aa7ff;
+  --link:#a9c2ff;
+  --c-market:#7aa2ff; --c-retail:#2dd4bf; --c-comp:#f87171; --c-cox:#fbbf24; --c-mkt:#c084fc; --c-ai:#34d399;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
-header{background:linear-gradient(135deg,#0b1f3a,#1a3a6c);color:#fff;padding:28px 20px}
-.head-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
-header h1{margin:0;font-size:1.7rem;line-height:1.2}
-header p{margin:6px 0 0;color:#dbe6f7}
-#themeToggle{background:transparent;color:#fff;border:1px solid #fff;border-radius:6px;padding:8px 12px;font:inherit;cursor:pointer;white-space:nowrap}
-#themeToggle:focus-visible,a:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
-main{max-width:1180px;margin:0 auto;padding:24px 20px 40px}
-.bottom-line{background:var(--bl-bg);border-left:6px solid var(--bl-border);padding:18px 20px;border-radius:6px;margin-bottom:20px}
-.bottom-line h2,.top-story h2{margin:0 0 8px;font-size:1.05rem}
-.bottom-line p{margin:0;max-width:78ch}
-.top-story{background:var(--top-bg);border-left:6px solid var(--top-border);padding:20px;border-radius:6px;margin-bottom:28px}
-.top-label{font-weight:700;font-size:.85rem;color:var(--muted);margin:0 0 6px}
-.top-story h3{margin:0 0 8px;font-size:1.3rem;line-height:1.3}
-section{margin-bottom:30px}
-.cat-head{text-transform:uppercase;letter-spacing:.04em;font-size:1rem;margin:0 0 12px;padding:4px 0 4px 12px;border-left:6px solid}
-.market .cat-head{border-color:var(--c-market)} .retail .cat-head{border-color:var(--c-retail)}
-.comp .cat-head{border-color:var(--c-comp)} .cox .cat-head{border-color:var(--c-cox)}
-.mkt .cat-head{border-color:var(--c-mkt)} .ai .cat-head{border-color:var(--c-ai)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
-.card h3{margin:0 0 8px;font-size:1.05rem;line-height:1.35}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.55}
 a{color:var(--link)}
-.card p,.top-story p{margin:0 0 10px;max-width:78ch}
+a:focus-visible,button:focus-visible{outline:3px solid var(--bl-edge);outline-offset:2px}
+header{background:linear-gradient(135deg,#0b1f3a 0%,#1a3a6c 100%);color:#ffffff;padding:28px 20px 30px}
+.head-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+header h1{margin:0;font-size:1.75rem;line-height:1.2;font-weight:700}
+header .date{margin:6px 0 0;font-size:1rem;color:#dbe6f7}
+#themeToggle{background:transparent;color:#ffffff;border:1.5px solid #c7d6ef;border-radius:999px;padding:7px 14px;font-size:.9rem;cursor:pointer;white-space:nowrap}
+#themeToggle:hover{background:rgba(255,255,255,.12)}
+main{max-width:1180px;margin:0 auto;padding:24px 20px 40px}
+.bottom-line{background:var(--bl-bg);border:2px solid var(--bl-edge);border-radius:6px;padding:18px 20px;margin-bottom:22px;color:var(--bl-ink)}
+.bottom-line h2{margin:0 0 8px;font-size:1.05rem;letter-spacing:.04em}
+.bottom-line p{margin:0;max-width:75ch}
+.top-story{background:var(--top-bg);border-left:8px solid var(--top-edge);border-radius:4px;padding:18px 22px;margin-bottom:30px}
+.top-label{margin:0 0 6px;font-weight:700;font-size:.85rem;letter-spacing:.06em;color:var(--top-ink)}
+.top-story h2{margin:0 0 10px;font-size:1.35rem;line-height:1.3}
+.top-story p{max-width:78ch}
+section.cat{margin-top:30px}
+section.cat > h2{margin:0 0 14px;padding:4px 0 4px 12px;border-left:6px solid var(--cat);font-size:.95rem;letter-spacing:.08em;color:var(--ink)}
+.cat-market{--cat:var(--c-market)} .cat-retail{--cat:var(--c-retail)} .cat-comp{--cat:var(--c-comp)}
+.cat-cox{--cat:var(--c-cox)} .cat-mkt{--cat:var(--c-mkt)} .cat-ai{--cat:var(--c-ai)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px}
+.card h3{margin:0 0 8px;font-size:1.08rem;line-height:1.35}
+.card h3 a{text-decoration:none}
+.card h3 a:hover{text-decoration:underline}
+.card p{margin:0 0 10px}
 .meaning{font-style:italic}
-.meta{font-size:.85rem;color:var(--muted);margin:0}
-.talk{background:var(--tt-bg);border-left:4px solid var(--tt-border);padding:8px 12px;font-style:italic;border-radius:4px;margin:0 0 10px}
-.badge{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--badge);color:var(--badge-text);margin:0 6px 8px 0}
-.badge.unconf{background:transparent;color:var(--text);border:1px dashed var(--text)}
-.note{color:var(--muted);font-style:italic;margin:0}
-footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:18px 20px;font-size:.9rem}
-@media (max-width:600px){header h1{font-size:1.35rem}.head-inner{flex-direction:column}}
+.meaning strong{font-style:normal}
+.talk{font-style:italic;background:var(--talk-bg);border-left:4px solid var(--talk-edge);padding:8px 12px;border-radius:3px}
+.talk strong{font-style:normal}
+.src{font-size:.88rem;color:var(--muted);margin:0}
+.badges{margin:0 0 8px;display:flex;flex-wrap:wrap;gap:6px}
+.badge{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:3px}
+.badge-post{background:var(--badge-post-bg);color:var(--badge-post-ink)}
+.badge-unc{background:var(--badge-unc-bg);color:var(--badge-unc-ink);border:1px solid var(--badge-unc-edge)}
+.post-angle{font-size:.92rem}
+.note{color:var(--muted);margin:0;font-size:.95rem}
+footer{border-top:1px solid var(--rule);color:var(--muted);text-align:center;padding:18px 20px 28px;font-size:.9rem}
+@media (max-width:560px){header h1{font-size:1.4rem}.head-inner{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -57,111 +74,127 @@ footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;pad
   <div class="head-inner">
     <div>
       <h1><span aria-hidden="true">🚗</span> Automotive AI Daily Briefing</h1>
-      <p>Thursday, November 5, 2026</p>
+      <p class="date">Monday, November 9, 2026</p>
     </div>
-    <button id="themeToggle" type="button" aria-label="Toggle light and dark theme">Dark mode</button>
+    <button id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">Dark mode</button>
   </div>
 </header>
 
 <main>
-  <div class="bottom-line" role="region" aria-label="Bottom line">
-    <h2>Bottom line</h2>
-    <p>Everybody is fighting over a new scoreboard. Cars.com told Wall Street it's the most-cited car marketplace in AI answers, JD Power wants to put one more dashboard in front of dealers, and the real money is hiding in details like 26-day hybrid turns and effective labor rate. This week, sell Autotrader and KBB as the content AI quotes, and sell Cox data inside the tools dealers already live in, not another login.</p>
-  </div>
+  <section class="bottom-line" aria-labelledby="bl-h">
+    <h2 id="bl-h">BOTTOM LINE</h2>
+    <p>The front door to the dealership moved again this weekend. Google is now selling ads three and four questions deep inside AI Mode and is quietly bolting “Schedule” buttons onto Business Profiles, while OpenAI looks close to handing businesses a scoreboard for how often ChatGPT mentions them. So this week we sell visibility as a system, not a line item: DDC and Autotrader to get found inside AI answers, Xtime behind every booking button, and vAuto keeping used prices honest while EchoPark spends big telling shoppers it’s $3,000 cheaper.</p>
+  </section>
 
   <article class="top-story" aria-labelledby="top-h">
     <p class="top-label">TOP STORY · Dealership Marketing &amp; Advertising</p>
-    <span class="badge">📣 POST-WORTHY</span>
-    <h3 id="top-h"><a href="https://www.sec.gov/Archives/edgar/data/1683606/000119312526448613/cars-ex99_1.htm" target="_blank" rel="noopener noreferrer">Cars.com Q3: claims No. 1 spot for marketplace citations in ChatGPT and Google AI</a></h3>
-    <p>Cars.com's Q3 release says it was the most-cited auto marketplace across ChatGPT, Google AI Overviews and AI Mode in September, per Semrush, measured against Autotrader, KBB, CarGurus and others. Its Carson shopping assistant passed 1 million monthly users, and a new free Marketplace Starter package signed up nearly 400 independents. Revenue was flat at $181.9 million, paying dealers fell 1% to 19,251, and revenue per dealer rose 3%.</p>
-    <p class="meaning">What it means for us: Cars.com is pitching AI visibility as its edge over Autotrader and KBB, and dealers will repeat that claim to us. Answer with Autotrader and KBB audience and data, and push Dealer.com GEO so the store's own pages get cited too.</p>
-    <p class="talk">Talk track: "Cars.com is bragging about AI citations, so let's look at where your leads and sales actually come from, then make sure your Dealer.com pages are the ones the AI quotes."</p>
-    <p class="meaning">LinkedIn angle: The new SEO scoreboard isn't page one. It's who the robots quote, and the marketplaces just started keeping score in their earnings releases.</p>
-    <p class="meta">Cars.com Inc. (SEC 8-K) · Nov 5, 2026</p>
+    <h2 id="top-h"><a href="https://www.seroundtable.com/google-ai-mode-multiturn-ads-42478.html" target="_blank" rel="noopener noreferrer">Google AI Mode Multiturn ads are live, with ads on follow-up questions</a></h2>
+    <p>The Multiturn ad format Google announced a couple of weeks ago now appears live in AI Mode. Sponsored placements show up not just on the first answer but on follow-up questions, and testing found ads three and four turns into the same conversation. Google says the ads are labeled Sponsored and it will keep testing new formats.</p>
+    <p class="meaning"><strong>What it means for us:</strong> The research a shopper does with Google before they ever hit a VDP now has paid inventory at every step. Dealers will ask whether their Dealer.com paid search budget should chase AI Mode, and whether their inventory data is clean enough to show up three questions in.</p>
+    <p class="talk"><strong>Talk track:</strong> “Shoppers ask Google three or four follow-up questions now and there’s an ad slot on every one, so let’s make sure your DDC campaigns and inventory feed are built to show up past the first answer.”</p>
+    <p class="src">Search Engine Roundtable · Nov 9, 2026</p>
   </article>
 
-  <section class="market" aria-labelledby="h-market">
-    <h2 class="cat-head" id="h-market">Automotive Market</h2>
+  <section class="cat cat-market" aria-labelledby="h-market">
+    <h2 id="h-market">AUTOMOTIVE MARKET</h2>
+    <p class="note">No fresh on-tier stories cleared the bar since Friday. Skipped rather than padded.</p>
+  </section>
+
+  <section class="cat cat-retail" aria-labelledby="h-retail">
+    <h2 id="h-retail">DEALERSHIP &amp; RETAIL TECH</h2>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://www.cbtnews.com/october-new-vehicle-sales-2026/" target="_blank" rel="noopener noreferrer">NADA: hybrids now 15.7% of sales and turn twice as fast as gas cars</a></h3>
-        <p>NADA's Market Beat put October SAAR at 15.54 million, down 0.9%, with the year on pace to top 16 million. Hybrids hit 15.7% of sales year to date while EVs slipped to 6.2%. Hybrids turned in about 26 days versus 53 for gas models, and the average new payment rose to $823 at a 6.81% rate.</p>
-        <p class="meaning">What it means for us: hybrids are the fastest-turning unit on the lot. vAuto Provision and Stockwave help dealers price and source used hybrids before the market catches up, and KBB ICO pulls them in through the service lane.</p>
-        <p class="talk">Talk track: "Hybrids are turning in about half the days of your gas units, so let's use vAuto to find every used hybrid you can buy before the street does."</p>
-        <p class="meta">CBT News · Nov 5, 2026</p>
-      </article>
-      <article class="card">
-        <h3><a href="https://abcnews.com/International/wireStory/toyota-raises-profit-projection-year-sales-hold-137868815" target="_blank" rel="noopener noreferrer">Toyota raises full-year profit forecast as U.S. hybrid demand holds</a></h3>
-        <p>Toyota's July to September net profit fell 19% to 759.4 billion yen, but it raised its full-year profit forecast to 3.57 trillion yen. Quarterly sales rose to 13.4 trillion yen despite U.S. tariffs and higher material costs. Camry and RAV4 hybrids led U.S. demand while China sales weakened.</p>
-        <p class="meaning">What it means for us: Toyota stores are flush and short on hybrids. That's a vAuto conversation about sourcing late-model used hybrids and an Xtime conversation about owning the service visits on all those hybrids already on the road.</p>
-        <p class="meta">AP (via ABC News) · Nov 5, 2026</p>
+        <div class="badges"><span class="badge badge-unc">Unconfirmed</span></div>
+        <h3><a href="https://www.seroundtable.com/google-business-profiles-adding-booking-links-42477.html" target="_blank" rel="noopener noreferrer">Google appears to be auto-adding booking buttons to Business Profiles</a></h3>
+        <p>Local SEO pros spotted “Book online” and “Schedule” buttons showing up on Google Business Profiles that never set up a booking partner. Some point to the business’s contact page, and some threw a server error when clicked. Google hasn’t confirmed a change.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Service customers may get a Schedule button on a store’s Google listing whether or not it leads anywhere useful. That button should land on the Xtime scheduler, not a contact form, and service managers will ask why customers are hitting a dead end.</p>
+        <p class="talk"><strong>Talk track:</strong> “Google’s starting to put a Schedule button on your listing on its own, so let’s point it at your Xtime scheduler before it sends service customers to a contact form or an error page.”</p>
+        <p class="src">Search Engine Roundtable · Nov 9, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="retail" aria-labelledby="h-retail">
-    <h2 class="cat-head" id="h-retail">Dealership &amp; Retail Tech</h2>
+  <section class="cat cat-comp" aria-labelledby="h-comp">
+    <h2 id="h-comp">COMPETITOR WATCH</h2>
+    <p class="note">Nothing on-tier from the watch list inside the window. CarGurus Q3 landed Nov 5 and fell outside it.</p>
+  </section>
+
+  <section class="cat cat-cox" aria-labelledby="h-cox">
+    <h2 id="h-cox">COX AUTOMOTIVE ECOSYSTEM</h2>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://www.cbtnews.com/elr/" target="_blank" rel="noopener noreferrer">Most service teams can't explain effective labor rate, and it shows in profit</a></h3>
-        <p>eDealer Solutions founder Jen Suzuki says a posted $210 labor rate can sit far above what the shop actually collects after discounts, warranty, internal work and overrides. She names four habits that drag it down: instant discounts, manager overrides, weak tech notes and inconsistent quotes. Her fix is teaching advisors to explain the repair before the price.</p>
-        <p class="meaning">What it means for us: ELR is a process problem we can help with. Xtime Inspect puts photos and tech notes in front of the customer, and consistent menu pricing in Xtime takes the guesswork out of quotes.</p>
-        <p class="talk">Talk track: "Your posted rate isn't your real rate, so let's look at how Xtime inspections and consistent quotes close the gap between what you post and what you collect."</p>
-        <p class="meta">CBT News · Nov 5, 2026</p>
+        <h3><a href="https://www.coxautoinc.com/insights/manheim-used-vehicle-value-index-october-2026-trends/" target="_blank" rel="noopener noreferrer">Manheim index holds 2% above last year in October as depreciation normalizes</a></h3>
+        <p>The Manheim Used Vehicle Value Index finished October at 206.8, up 2% year over year and 0.5% from September on an adjusted basis. Unadjusted prices fell about in line with a typical October, used retail days’ supply sits just under 50, and EV values are up 6.6% year over year while light-duty trucks dropped 4.3% unadjusted as gas prices stay high.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Steady values and normal supply mean the edge heading into the holidays is acquisition and turn, not waiting for prices to move. Dealers heavy on trucks should be repricing now, which is a vAuto Provision and Manheim data conversation.</p>
+        <p class="src">Cox Automotive · Nov 6, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="comp" aria-labelledby="h-comp">
-    <h2 class="cat-head" id="h-comp">Competitor Watch</h2>
-    <div class="grid">
+  <section class="cat cat-mkt" aria-labelledby="h-mkt">
+    <h2 id="h-mkt">DEALERSHIP MARKETING &amp; ADVERTISING</h2>
+    <p class="note">↑ Today’s top story lives in this category: Google AI Mode Multiturn ads (see above).</p>
+    <div class="grid" style="margin-top:14px">
       <article class="card">
-        <h3><a href="https://www.cbtnews.com/jd-power-intelligence-hub/" target="_blank" rel="noopener noreferrer">JD Power launches a single-login data platform for OEMs, with dealers next</a></h3>
-        <p>JD Power launched the JD Power Platform for its OEM customers, built around Pulse, which rolls its sales, satisfaction, quality and residual data into one brand health rank. Pulse scores six drivers including F&amp;I, used sales and fixed ops. JD Power says dealers are next, with more features planned for 2027.</p>
-        <p class="meaning">What it means for us: expect OEM reps to show dealers JD Power benchmarks soon. Our counter is that Cox data already lives inside vAuto, VinSolutions and Dealertrack, where dealers act on it, not in another dashboard they have to log into.</p>
-        <p class="meta">JD Power (via CBT News) · Nov 3, 2026</p>
+        <h3><a href="https://www.prnewswire.com/news-releases/echopark-automotive-teams-up-with-owen-wilson-for-its-largest-campaign-302931604.html" target="_blank" rel="noopener noreferrer">EchoPark launches its biggest brand campaign ever with Owen Wilson</a></h3>
+        <p>Sonic’s used-only EchoPark brand kicked off its largest single-brand marketing push Sunday during NFL broadcasts, running across TV, streaming, social, display and billboards. Sonic says only about 15% of shoppers know the brand, and it’s pitching prices up to $3,000 below competitors plus a new app with photo-based vehicle search. Orlando opens in December as its 15th market.</p>
+        <p class="meaning"><strong>What it means for us:</strong> A well-funded used competitor is about to show up in living rooms across 14 markets shouting about price. Dealers in those markets will feel it on used gross, and the counter is vAuto pricing discipline plus Autotrader and DDC merchandising that makes their value obvious.</p>
+        <p class="src">Sonic Automotive via PR Newswire · Nov 6, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="cox" aria-labelledby="h-cox">
-    <h2 class="cat-head" id="h-cox">Cox Automotive Ecosystem</h2>
-    <p class="note">No Cox Automotive news landed inside the 48-hour window today.</p>
-  </section>
-
-  <section class="mkt" aria-labelledby="h-mkt">
-    <h2 class="cat-head" id="h-mkt">Dealership Marketing &amp; Advertising</h2>
-    <p class="note">Today's marketing headline is the Cars.com AI citation claim, featured as the Top Story above.</p>
-  </section>
-
-  <section class="ai" aria-labelledby="h-ai">
-    <h2 class="cat-head" id="h-ai">AI &amp; Technology</h2>
-    <p class="note">No AI story from an approved source cleared the MSS bar today.</p>
+  <section class="cat cat-ai" aria-labelledby="h-ai">
+    <h2 id="h-ai">AI &amp; TECHNOLOGY</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="badges"><span class="badge badge-post">📣 POST-WORTHY</span><span class="badge badge-unc">Unconfirmed</span></div>
+        <h3><a href="https://www.seroundtable.com/chatgpt-tools-for-business-42476.html" target="_blank" rel="noopener noreferrer">OpenAI is building a “Claim your business in ChatGPT” hub with mention and click data</a></h3>
+        <p>Screenshots show OpenAI preparing a Business Hub where verified businesses could see daily counts of how often ChatGPT mentions them and how many clicks follow, update their products and details, and set up a business agent to answer customer questions. It was spotted by e-commerce analyst Juozas Kaziukėnas, and OpenAI hasn’t announced it. It reportedly won’t show prompts or competitor benchmarks.</p>
+        <p class="meaning"><strong>What it means for us:</strong> GEO is about to get a first-party scoreboard, and dealers will start asking “can you get me into ChatGPT?” The answer runs through clean inventory data and well-structured Dealer.com site content, so this is a DDC SEO conversation we want to lead, not react to.</p>
+        <p class="talk"><strong>Talk track:</strong> “OpenAI looks ready to show businesses exactly how often ChatGPT mentions them, so let’s get your Dealer.com site and inventory data in shape now, before that number lands in your GM’s inbox.”</p>
+        <p class="post-angle"><strong>LinkedIn angle:</strong> SEO had Search Console. GEO is about to get a scoreboard too, and most dealers aren’t ready to see their number.</p>
+        <p class="src">Search Engine Roundtable · Nov 6, 2026</p>
+      </article>
+      <article class="card">
+        <div class="badges"><span class="badge badge-unc">Unconfirmed</span></div>
+        <h3><a href="https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/" target="_blank" rel="noopener noreferrer">OpenAI reportedly raises $11 billion at a $1.25 trillion valuation, short of its target</a></h3>
+        <p>OpenAI has reportedly closed $11 billion of a round valuing it at $1.25 trillion, per Bloomberg’s sources, with the full round possibly reaching about $20 billion. That’s well below the $30 billion it was said to be seeking in September, and it lands during an AI stock selloff after the midterms and reports that Anthropic IPO buyers are eyeing a lower valuation.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Dealers will hear “AI bubble” headlines all week, and some will get cold feet on signing another standalone AI vendor. That’s the moment to position AI that lives inside platforms they already run, like VinSolutions and the Fullpath CDP, over a new point solution.</p>
+        <p class="src">TechCrunch · Nov 6, 2026</p>
+      </article>
+    </div>
   </section>
 </main>
 
 <footer>
-  <p>Thursday, November 5, 2026 · Curated by AI Research Desk</p>
+  <p>Monday, November 9, 2026 · Curated by AI Research Desk</p>
 </footer>
 
 <script>
 (function(){
-  var KEY='mssBriefingTheme', root=document.documentElement, btn=document.getElementById('themeToggle');
+  var KEY='mssBriefingTheme';
+  var root=document.documentElement;
+  var btn=document.getElementById('themeToggle');
   function apply(t){
     root.setAttribute('data-theme',t);
-    btn.textContent = t==='dark' ? 'Light mode' : 'Dark mode';
-    btn.setAttribute('aria-pressed', t==='dark' ? 'true' : 'false');
+    var dark=(t==='dark');
+    btn.textContent=dark?'Light mode':'Dark mode';
+    btn.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+    btn.setAttribute('aria-pressed',dark?'true':'false');
   }
   var stored=null;
-  try{ stored=localStorage.getItem(KEY); }catch(e){}
-  if(stored!=='light' && stored!=='dark'){
-    stored = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  try{stored=localStorage.getItem(KEY);}catch(e){}
+  if(stored!=='dark'&&stored!=='light'){
+    var prefersDark=false;
+    try{prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;}catch(e){}
+    stored=prefersDark?'dark':'light';
   }
   apply(stored);
-  btn.addEventListener('click', function(){
-    var next = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
     apply(next);
-    try{ localStorage.setItem(KEY,next); }catch(e){}
+    try{localStorage.setItem(KEY,next);}catch(e){}
   });
 })();
 </script>
