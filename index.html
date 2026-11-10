@@ -1,176 +1,148 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Automotive AI Daily Briefing | 2026-11-09</title>
+<title>Automotive AI Daily Briefing — 2026-11-10</title>
 <style>
 :root{
-  --bg:#eef2f7; --surface:#ffffff; --ink:#18202e; --muted:#4a5568; --rule:#d5dce6;
-  --bl-bg:#e6f4f1; --bl-edge:#0f766e; --bl-ink:#0b4f49;
-  --top-bg:#fff5e8; --top-edge:#c2410c; --top-ink:#7c2d12;
-  --badge-post-bg:#1d4ed8; --badge-post-ink:#ffffff;
-  --badge-unc-bg:#fef3c7; --badge-unc-ink:#78350f; --badge-unc-edge:#b45309;
-  --talk-bg:#f1f5ff; --talk-edge:#3b5bdb;
-  --link:#1a3a9c;
-  --c-market:#1d4ed8; --c-retail:#0f766e; --c-comp:#b91c1c; --c-cox:#b45309; --c-mkt:#7e22ce; --c-ai:#047857;
+  --bg:#f4f6fa;--surface:#ffffff;--text:#1b2330;--muted:#4a5568;--border:#d8dee8;
+  --link:#0b4ea2;--bl-bg:#fff6e5;--bl-border:#b45309;--top-bg:#eaf2ff;--top-border:#1d4ed8;
+  --tt-bg:#eef8f1;--tt-border:#15803d;--badge-bg:#7c3aed;--badge-text:#ffffff;
+  --warn-bg:#fdecec;--warn-text:#9b1c1c;
+  --c-market:#1d4ed8;--c-tech:#0f766e;--c-comp:#b91c1c;--c-cox:#a16207;--c-mkt:#7c3aed;--c-ai:#be185d;
 }
 :root[data-theme="dark"]{
-  --bg:#0d1522; --surface:#152133; --ink:#e7edf5; --muted:#b4c0d0; --rule:#2a3a52;
-  --bl-bg:#0f2e2b; --bl-edge:#2dd4bf; --bl-ink:#c9f5ee;
-  --top-bg:#2e1b0e; --top-edge:#fb923c; --top-ink:#fde3cc;
-  --badge-post-bg:#93b4ff; --badge-post-ink:#0b1730;
-  --badge-unc-bg:#3a2a0a; --badge-unc-ink:#fde68a; --badge-unc-edge:#f59e0b;
-  --talk-bg:#1b2944; --talk-edge:#8aa7ff;
-  --link:#a9c2ff;
-  --c-market:#7aa2ff; --c-retail:#2dd4bf; --c-comp:#f87171; --c-cox:#fbbf24; --c-mkt:#c084fc; --c-ai:#34d399;
+  --bg:#0e1420;--surface:#172031;--text:#e6ebf2;--muted:#b4bfcf;--border:#2c3a52;
+  --link:#8ab4ff;--bl-bg:#2b2112;--bl-border:#f59e0b;--top-bg:#14233f;--top-border:#60a5fa;
+  --tt-bg:#11291b;--tt-border:#4ade80;--badge-bg:#a78bfa;--badge-text:#140a2b;
+  --warn-bg:#3a1616;--warn-text:#fca5a5;
+  --c-market:#60a5fa;--c-tech:#2dd4bf;--c-comp:#f87171;--c-cox:#facc15;--c-mkt:#c4b5fd;--c-ai:#f472b6;
 }
 *{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.55}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#0b1f3a,#1a3a6c);color:#ffffff;padding:28px 20px}
+.hwrap{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+header h1{margin:0;font-size:1.7rem}
+header p{margin:4px 0 0;color:#dbe6f7}
+#themeToggle{background:#ffffff;color:#0b1f3a;border:none;border-radius:999px;padding:8px 16px;font-weight:600;cursor:pointer}
+#themeToggle:focus-visible{outline:3px solid #facc15;outline-offset:2px}
+main{max-width:1180px;margin:0 auto;padding:22px 20px 40px}
 a{color:var(--link)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--bl-edge);outline-offset:2px}
-header{background:linear-gradient(135deg,#0b1f3a 0%,#1a3a6c 100%);color:#ffffff;padding:28px 20px 30px}
-.head-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
-header h1{margin:0;font-size:1.75rem;line-height:1.2;font-weight:700}
-header .date{margin:6px 0 0;font-size:1rem;color:#dbe6f7}
-#themeToggle{background:transparent;color:#ffffff;border:1.5px solid #c7d6ef;border-radius:999px;padding:7px 14px;font-size:.9rem;cursor:pointer;white-space:nowrap}
-#themeToggle:hover{background:rgba(255,255,255,.12)}
-main{max-width:1180px;margin:0 auto;padding:24px 20px 40px}
-.bottom-line{background:var(--bl-bg);border:2px solid var(--bl-edge);border-radius:6px;padding:18px 20px;margin-bottom:22px;color:var(--bl-ink)}
-.bottom-line h2{margin:0 0 8px;font-size:1.05rem;letter-spacing:.04em}
-.bottom-line p{margin:0;max-width:75ch}
-.top-story{background:var(--top-bg);border-left:8px solid var(--top-edge);border-radius:4px;padding:18px 22px;margin-bottom:30px}
-.top-label{margin:0 0 6px;font-weight:700;font-size:.85rem;letter-spacing:.06em;color:var(--top-ink)}
-.top-story h2{margin:0 0 10px;font-size:1.35rem;line-height:1.3}
-.top-story p{max-width:78ch}
-section.cat{margin-top:30px}
-section.cat > h2{margin:0 0 14px;padding:4px 0 4px 12px;border-left:6px solid var(--cat);font-size:.95rem;letter-spacing:.08em;color:var(--ink)}
-.cat-market{--cat:var(--c-market)} .cat-retail{--cat:var(--c-retail)} .cat-comp{--cat:var(--c-comp)}
-.cat-cox{--cat:var(--c-cox)} .cat-mkt{--cat:var(--c-mkt)} .cat-ai{--cat:var(--c-ai)}
+.bottomline{background:var(--bl-bg);border:2px solid var(--bl-border);border-radius:10px;padding:16px 18px;margin-bottom:18px}
+.bottomline h2,.topstory h2{margin:0 0 6px;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.topstory{background:var(--top-bg);border-left:6px solid var(--top-border);border-radius:8px;padding:16px 18px;margin-bottom:26px}
+.topstory h3{margin:0 0 8px;font-size:1.25rem}
+section.cat{margin-top:28px}
+section.cat > h2{text-transform:uppercase;letter-spacing:.07em;font-size:1rem;margin:0 0 12px;padding:4px 0 4px 12px;border-left:6px solid var(--catc)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px}
-.card h3{margin:0 0 8px;font-size:1.08rem;line-height:1.35}
-.card h3 a{text-decoration:none}
-.card h3 a:hover{text-decoration:underline}
-.card p{margin:0 0 10px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}
+.card h3{margin:0 0 8px;font-size:1.05rem;line-height:1.35}
 .meaning{font-style:italic}
-.meaning strong{font-style:normal}
-.talk{font-style:italic;background:var(--talk-bg);border-left:4px solid var(--talk-edge);padding:8px 12px;border-radius:3px}
-.talk strong{font-style:normal}
-.src{font-size:.88rem;color:var(--muted);margin:0}
-.badges{margin:0 0 8px;display:flex;flex-wrap:wrap;gap:6px}
-.badge{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:3px}
-.badge-post{background:var(--badge-post-bg);color:var(--badge-post-ink)}
-.badge-unc{background:var(--badge-unc-bg);color:var(--badge-unc-ink);border:1px solid var(--badge-unc-edge)}
-.post-angle{font-size:.92rem}
-.note{color:var(--muted);margin:0;font-size:.95rem}
-footer{border-top:1px solid var(--rule);color:var(--muted);text-align:center;padding:18px 20px 28px;font-size:.9rem}
-@media (max-width:560px){header h1{font-size:1.4rem}.head-inner{flex-direction:column}}
+.meta{color:var(--muted);font-size:.85rem;margin-top:10px}
+.talk{font-style:italic;background:var(--tt-bg);border-left:4px solid var(--tt-border);padding:8px 10px;border-radius:4px;margin-top:10px}
+.badge{display:inline-block;background:var(--badge-bg);color:var(--badge-text);font-weight:700;font-size:.75rem;padding:3px 8px;border-radius:999px;margin-bottom:8px}
+.flag{display:inline-block;background:var(--warn-bg);color:var(--warn-text);font-weight:700;font-size:.72rem;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.note{color:var(--muted);font-style:italic;margin:0 0 10px}
+footer{border-top:1px solid var(--border);color:var(--muted);text-align:center;padding:18px;font-size:.9rem}
 </style>
 </head>
 <body>
 <header>
-  <div class="head-inner">
+  <div class="hwrap">
     <div>
       <h1><span aria-hidden="true">🚗</span> Automotive AI Daily Briefing</h1>
-      <p class="date">Monday, November 9, 2026</p>
+      <p>Tuesday, November 10, 2026</p>
     </div>
-    <button id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">Dark mode</button>
+    <button id="themeToggle" type="button" aria-label="Toggle light and dark theme">Dark mode</button>
   </div>
 </header>
-
 <main>
-  <section class="bottom-line" aria-labelledby="bl-h">
-    <h2 id="bl-h">BOTTOM LINE</h2>
-    <p>The front door to the dealership moved again this weekend. Google is now selling ads three and four questions deep inside AI Mode and is quietly bolting “Schedule” buttons onto Business Profiles, while OpenAI looks close to handing businesses a scoreboard for how often ChatGPT mentions them. So this week we sell visibility as a system, not a line item: DDC and Autotrader to get found inside AI answers, Xtime behind every booking button, and vAuto keeping used prices honest while EchoPark spends big telling shoppers it’s $3,000 cheaper.</p>
+  <section class="bottomline" aria-label="Bottom line">
+    <h2>Bottom Line</h2>
+    <p>Today's theme is one connected system beats a pile of tools. PureCars rolled its CDP and AutoAlert mining into one platform and Mobility Global is pitching a shared data layer inside the CRM and DMS, while Cox's economist says retail demand softened and KBB flags used prices climbing in six to eight weeks. This week, sell VinSolutions with Fullpath CDP, vAuto and Xtime as the system that already holds the customer, so dealers can mine equity and service owners before affordability bites harder.</p>
   </section>
 
-  <article class="top-story" aria-labelledby="top-h">
-    <p class="top-label">TOP STORY · Dealership Marketing &amp; Advertising</p>
-    <h2 id="top-h"><a href="https://www.seroundtable.com/google-ai-mode-multiturn-ads-42478.html" target="_blank" rel="noopener noreferrer">Google AI Mode Multiturn ads are live, with ads on follow-up questions</a></h2>
-    <p>The Multiturn ad format Google announced a couple of weeks ago now appears live in AI Mode. Sponsored placements show up not just on the first answer but on follow-up questions, and testing found ads three and four turns into the same conversation. Google says the ads are labeled Sponsored and it will keep testing new formats.</p>
-    <p class="meaning"><strong>What it means for us:</strong> The research a shopper does with Google before they ever hit a VDP now has paid inventory at every step. Dealers will ask whether their Dealer.com paid search budget should chase AI Mode, and whether their inventory data is clean enough to show up three questions in.</p>
-    <p class="talk"><strong>Talk track:</strong> “Shoppers ask Google three or four follow-up questions now and there’s an ad slot on every one, so let’s make sure your DDC campaigns and inventory feed are built to show up past the first answer.”</p>
-    <p class="src">Search Engine Roundtable · Nov 9, 2026</p>
-  </article>
-
-  <section class="cat cat-market" aria-labelledby="h-market">
-    <h2 id="h-market">AUTOMOTIVE MARKET</h2>
-    <p class="note">No fresh on-tier stories cleared the bar since Friday. Skipped rather than padded.</p>
+  <section class="topstory" aria-label="Top story">
+    <h2>TOP STORY · Competitor Watch</h2>
+    <h3><a href="https://www.globenewswire.com/news-release/2026/11/10/3399555/25434/en/purecars-launches-automotive-s-first-unified-customer-data-and-marketing-platform.html" target="_blank" rel="noopener noreferrer">PureCars launches unified customer data and marketing platform</a></h3>
+    <p>Seven months after buying AutoAlert, PureCars has merged its customer data platform with AutoAlert's data mining and AI-driven predictive audiences. Dealers plan and measure email, direct mail, digital, text and conquest campaigns from one system, and the company says more enhancements are coming before NADA 2027. The "industry first" label is PureCars' own claim.</p>
+    <p class="meaning">What it means for us: This goes straight at Fullpath CDP in VinSolutions and at VinSolutions equity mining. Expect AutoAlert stores to be pitched a one-platform story, so lead with the fact that our CDP and mining live inside the CRM the sales team already works in, not a separate marketing login.</p>
+    <p class="talk">Talk track: "PureCars just bolted a CDP onto AutoAlert. Ours already lives inside VinSolutions, where your people actually work the customer. Want to see what that looks like on your own data?"</p>
+    <p class="meta">PureCars press release via GlobeNewswire · Nov 10, 2026</p>
   </section>
 
-  <section class="cat cat-retail" aria-labelledby="h-retail">
-    <h2 id="h-retail">DEALERSHIP &amp; RETAIL TECH</h2>
+  <section class="cat" style="--catc:var(--c-market)" aria-labelledby="h-market">
+    <h2 id="h-market">Automotive Market</h2>
     <div class="grid">
       <article class="card">
-        <div class="badges"><span class="badge badge-unc">Unconfirmed</span></div>
-        <h3><a href="https://www.seroundtable.com/google-business-profiles-adding-booking-links-42477.html" target="_blank" rel="noopener noreferrer">Google appears to be auto-adding booking buttons to Business Profiles</a></h3>
-        <p>Local SEO pros spotted “Book online” and “Schedule” buttons showing up on Google Business Profiles that never set up a booking partner. Some point to the business’s contact page, and some threw a server error when clicked. Google hasn’t confirmed a change.</p>
-        <p class="meaning"><strong>What it means for us:</strong> Service customers may get a Schedule button on a store’s Google listing whether or not it leads anywhere useful. That button should land on the Xtime scheduler, not a contact form, and service managers will ask why customers are hitting a dead end.</p>
-        <p class="talk"><strong>Talk track:</strong> “Google’s starting to put a Schedule button on your listing on its own, so let’s point it at your Xtime scheduler before it sends service customers to a contact form or an error page.”</p>
-        <p class="src">Search Engine Roundtable · Nov 9, 2026</p>
+        <h3><a href="https://www.coxautoinc.com/insights/auto-market-weekly-summary-11-09-26/" target="_blank" rel="noopener noreferrer">Auto Market Weekly Summary: retail softens as prices set records</a></h3>
+        <p>October's new-vehicle sales pace came in at 15.5 million, short of Cox's 16.1 million forecast, with retail up just 0.6% while fleet carried the month. Average transaction prices topped $51,000 for the first time. Cox's chief economist also expects the midterm results to shift policy and possibly ease tariff effects through closer Canada and Mexico ties.</p>
+        <p class="meaning">What it means for us: Dealers will ask where retail buyers went. That opens a vAuto pricing and VinSolutions follow-up conversation about squeezing more from fewer, pricier retail deals.</p>
+        <p class="talk">Talk track: "Retail only grew half a percent last month while prices hit a record. The stores that win are the ones working every lead and every trade, so let's look at your VinSolutions follow-up."</p>
+        <p class="meta">Cox Automotive · Nov 9, 2026</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://www.cbtnews.com/honda-commits-3b-to-new-ohio" target="_blank" rel="noopener noreferrer">Honda commits $3B to new Ohio plant as hybrid production expands</a></h3>
+        <p>Honda will build a fourth Ohio auto plant with capacity for 240,000 vehicles a year, starting production in 2029 and adding more than 2,000 jobs. It is also converting an Ohio transmission line to raise hybrid system output by 250%, pushing U.S. capacity to about 1.3 million units.</p>
+        <p class="meaning">What it means for us: Honda and Acura stores will ask how to sell and service a growing hybrid mix. That's a natural Xtime service-lane and Dealer.com hybrid-inventory merchandising conversation.</p>
+        <p class="meta">CBT News · Nov 9, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="cat cat-comp" aria-labelledby="h-comp">
-    <h2 id="h-comp">COMPETITOR WATCH</h2>
-    <p class="note">Nothing on-tier from the watch list inside the window. CarGurus Q3 landed Nov 5 and fell outside it.</p>
-  </section>
-
-  <section class="cat cat-cox" aria-labelledby="h-cox">
-    <h2 id="h-cox">COX AUTOMOTIVE ECOSYSTEM</h2>
+  <section class="cat" style="--catc:var(--c-tech)" aria-labelledby="h-tech">
+    <h2 id="h-tech">Dealership &amp; Retail Tech</h2>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://www.coxautoinc.com/insights/manheim-used-vehicle-value-index-october-2026-trends/" target="_blank" rel="noopener noreferrer">Manheim index holds 2% above last year in October as depreciation normalizes</a></h3>
-        <p>The Manheim Used Vehicle Value Index finished October at 206.8, up 2% year over year and 0.5% from September on an adjusted basis. Unadjusted prices fell about in line with a typical October, used retail days’ supply sits just under 50, and EV values are up 6.6% year over year while light-duty trucks dropped 4.3% unadjusted as gas prices stay high.</p>
-        <p class="meaning"><strong>What it means for us:</strong> Steady values and normal supply mean the edge heading into the holidays is acquisition and turn, not waiting for prices to move. Dealers heavy on trucks should be repricing now, which is a vAuto Provision and Manheim data conversation.</p>
-        <p class="src">Cox Automotive · Nov 6, 2026</p>
+        <h3><a href="https://www.cbtnews.com/mobility-global-connects-dealer-and-oem-data" target="_blank" rel="noopener noreferrer">How Mobility Global is using AI to connect dealer, OEM data</a></h3>
+        <p>Mobility Global, the parent of automotiveMastermind, Market Scan and Polk, says it builds a shared data layer into the CRM and DMS dealers already use. Its free FeeSync tool centralizes doc and other fees so vendors pull one compliant number, and an agent-to-agent protocol is on the roadmap.</p>
+        <p class="meaning">What it means for us: automotiveMastermind competes with VinSolutions equity mining, and FeeSync touches fee consistency in Deal Central and Dealertrack DMS. Expect dealers to ask whether our tools can share fee data with it.</p>
+        <p class="meta">CBT News · Nov 10, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="cat cat-mkt" aria-labelledby="h-mkt">
-    <h2 id="h-mkt">DEALERSHIP MARKETING &amp; ADVERTISING</h2>
-    <p class="note">↑ Today’s top story lives in this category: Google AI Mode Multiturn ads (see above).</p>
-    <div class="grid" style="margin-top:14px">
+  <section class="cat" style="--catc:var(--c-comp)" aria-labelledby="h-comp">
+    <h2 id="h-comp">Competitor Watch</h2>
+    <p class="note">PureCars' unified platform launch is today's Top Story. See the callout above.</p>
+  </section>
+
+  <section class="cat" style="--catc:var(--c-cox)" aria-labelledby="h-cox">
+    <h2 id="h-cox">Cox Automotive Ecosystem</h2>
+    <div class="grid">
       <article class="card">
-        <h3><a href="https://www.prnewswire.com/news-releases/echopark-automotive-teams-up-with-owen-wilson-for-its-largest-campaign-302931604.html" target="_blank" rel="noopener noreferrer">EchoPark launches its biggest brand campaign ever with Owen Wilson</a></h3>
-        <p>Sonic’s used-only EchoPark brand kicked off its largest single-brand marketing push Sunday during NFL broadcasts, running across TV, streaming, social, display and billboards. Sonic says only about 15% of shoppers know the brand, and it’s pitching prices up to $3,000 below competitors plus a new app with photo-based vehicle search. Orlando opens in December as its 15th market.</p>
-        <p class="meaning"><strong>What it means for us:</strong> A well-funded used competitor is about to show up in living rooms across 14 markets shouting about price. Dealers in those markets will feel it on used gross, and the counter is vAuto pricing discipline plus Autotrader and DDC merchandising that makes their value obvious.</p>
-        <p class="src">Sonic Automotive via PR Newswire · Nov 6, 2026</p>
+        <h3><a href="https://www.kbb.com/car-news/used-car-prices-likely-to-increase/" target="_blank" rel="noopener noreferrer">Used car prices likely to increase</a></h3>
+        <p>The Manheim index hit 206.8 in October, up 2% from a year ago, as wholesale depreciation slowed back to normal seasonal patterns. Retail used prices usually follow wholesale by six to eight weeks, so shoppers could see higher stickers by late December. EV values ran 6.6% above last year.</p>
+        <p class="meaning">What it means for us: Rising wholesale costs make vAuto acquisition and pricing discipline the conversation this week. Pair it with KBB Instant Cash Offer for sourcing trades before auction prices climb further.</p>
+        <p class="talk">Talk track: "Wholesale is up 2% and retail usually follows in six to eight weeks. vAuto can show you which units to buy now and which to price ahead of the move."</p>
+        <p class="meta">Kelley Blue Book · Nov 9, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="cat cat-ai" aria-labelledby="h-ai">
-    <h2 id="h-ai">AI &amp; TECHNOLOGY</h2>
+  <section class="cat" style="--catc:var(--c-mkt)" aria-labelledby="h-mkt">
+    <h2 id="h-mkt">Dealership Marketing &amp; Advertising</h2>
+    <p class="note">No stories from the past 48 hours cleared the bar today.</p>
+  </section>
+
+  <section class="cat" style="--catc:var(--c-ai)" aria-labelledby="h-ai">
+    <h2 id="h-ai">AI &amp; Technology</h2>
     <div class="grid">
       <article class="card">
-        <div class="badges"><span class="badge badge-post">📣 POST-WORTHY</span><span class="badge badge-unc">Unconfirmed</span></div>
-        <h3><a href="https://www.seroundtable.com/chatgpt-tools-for-business-42476.html" target="_blank" rel="noopener noreferrer">OpenAI is building a “Claim your business in ChatGPT” hub with mention and click data</a></h3>
-        <p>Screenshots show OpenAI preparing a Business Hub where verified businesses could see daily counts of how often ChatGPT mentions them and how many clicks follow, update their products and details, and set up a business agent to answer customer questions. It was spotted by e-commerce analyst Juozas Kaziukėnas, and OpenAI hasn’t announced it. It reportedly won’t show prompts or competitor benchmarks.</p>
-        <p class="meaning"><strong>What it means for us:</strong> GEO is about to get a first-party scoreboard, and dealers will start asking “can you get me into ChatGPT?” The answer runs through clean inventory data and well-structured Dealer.com site content, so this is a DDC SEO conversation we want to lead, not react to.</p>
-        <p class="talk"><strong>Talk track:</strong> “OpenAI looks ready to show businesses exactly how often ChatGPT mentions them, so let’s get your Dealer.com site and inventory data in shape now, before that number lands in your GM’s inbox.”</p>
-        <p class="post-angle"><strong>LinkedIn angle:</strong> SEO had Search Console. GEO is about to get a scoreboard too, and most dealers aren’t ready to see their number.</p>
-        <p class="src">Search Engine Roundtable · Nov 6, 2026</p>
-      </article>
-      <article class="card">
-        <div class="badges"><span class="badge badge-unc">Unconfirmed</span></div>
-        <h3><a href="https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/" target="_blank" rel="noopener noreferrer">OpenAI reportedly raises $11 billion at a $1.25 trillion valuation, short of its target</a></h3>
-        <p>OpenAI has reportedly closed $11 billion of a round valuing it at $1.25 trillion, per Bloomberg’s sources, with the full round possibly reaching about $20 billion. That’s well below the $30 billion it was said to be seeking in September, and it lands during an AI stock selloff after the midterms and reports that Anthropic IPO buyers are eyeing a lower valuation.</p>
-        <p class="meaning"><strong>What it means for us:</strong> Dealers will hear “AI bubble” headlines all week, and some will get cold feet on signing another standalone AI vendor. That’s the moment to position AI that lives inside platforms they already run, like VinSolutions and the Fullpath CDP, over a new point solution.</p>
-        <p class="src">TechCrunch · Nov 6, 2026</p>
+        <span class="badge">📣 POST-WORTHY</span>
+        <h3><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener noreferrer">Anthropic releases Claude Fable 5.2 and Mythos 5.2</a></h3>
+        <p>Anthropic's new frontier models run up to 30% faster than the prior versions at a lower price, with gains in coding, reasoning and vision. One tester reports the model flagged salary deposits that didn't match a bank statement in a loan file, and Anthropic says 1,000 coordinated agents built a working operating system in eight days. Benchmark results are Anthropic's own.</p>
+        <p class="meaning">What it means for us: Cheaper, stronger models mean every vendor, from Impel to DriveCentric, will ship more AI agents fast. Dealers will ask who's real, so position VinSolutions Virtual Contact Assistant as AI already embedded in the CRM workflow.</p>
+        <p class="meta">Anthropic · Nov 9, 2026</p>
+        <p class="meta"><strong>LinkedIn angle:</strong> 1,000 AI agents can now build an operating system in eight days, and most dealerships still can't get their CRM and DMS to agree on a customer's name. The tech isn't the bottleneck, the duct tape is.</p>
       </article>
     </div>
   </section>
 </main>
-
 <footer>
-  <p>Monday, November 9, 2026 · Curated by AI Research Desk</p>
+  <p>Tuesday, November 10, 2026 · Curated by AI Research Desk</p>
 </footer>
-
 <script>
 (function(){
   var KEY='mssBriefingTheme';
@@ -178,17 +150,13 @@ footer{border-top:1px solid var(--rule);color:var(--muted);text-align:center;pad
   var btn=document.getElementById('themeToggle');
   function apply(t){
     root.setAttribute('data-theme',t);
-    var dark=(t==='dark');
-    btn.textContent=dark?'Light mode':'Dark mode';
-    btn.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
-    btn.setAttribute('aria-pressed',dark?'true':'false');
+    btn.textContent = t==='dark' ? 'Light mode' : 'Dark mode';
+    btn.setAttribute('aria-pressed', t==='dark' ? 'true' : 'false');
   }
   var stored=null;
   try{stored=localStorage.getItem(KEY);}catch(e){}
-  if(stored!=='dark'&&stored!=='light'){
-    var prefersDark=false;
-    try{prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;}catch(e){}
-    stored=prefersDark?'dark':'light';
+  if(stored!=='light' && stored!=='dark'){
+    stored=(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
   }
   apply(stored);
   btn.addEventListener('click',function(){
