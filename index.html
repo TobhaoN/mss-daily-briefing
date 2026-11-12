@@ -3,152 +3,172 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Automotive AI Daily Briefing — 2026-11-10</title>
+<title>Automotive AI Daily Briefing | 2026-11-12</title>
 <style>
 :root{
-  --bg:#f4f6fa;--surface:#ffffff;--text:#1b2330;--muted:#4a5568;--border:#d8dee8;
-  --link:#0b4ea2;--bl-bg:#fff6e5;--bl-border:#b45309;--top-bg:#eaf2ff;--top-border:#1d4ed8;
-  --tt-bg:#eef8f1;--tt-border:#15803d;--badge-bg:#7c3aed;--badge-text:#ffffff;
-  --warn-bg:#fdecec;--warn-text:#9b1c1c;
-  --c-market:#1d4ed8;--c-tech:#0f766e;--c-comp:#b91c1c;--c-cox:#a16207;--c-mkt:#7c3aed;--c-ai:#be185d;
+  --bg:#f5f7fa; --surface:#ffffff; --text:#14213a; --muted:#4a5568; --rule:#d9e0ea;
+  --link:#024AA5; --bl-bg:#e8f6f1; --bl-border:#0f7a55; --top-bg:#fff4ea; --top-border:#c25a00;
+  --tt-bg:#eef4fc; --tt-border:#0C80DF; --badge-bg:#14213a; --badge-text:#ffffff;
+  --warn-bg:#fff1c2; --warn-text:#5c4300;
+  --c-market:#0C80DF; --c-retail:#6b3fa0; --c-comp:#b3261e; --c-cox:#d96a00; --c-mkt:#0f7a55; --c-ai:#3d4a5c;
 }
-:root[data-theme="dark"]{
-  --bg:#0e1420;--surface:#172031;--text:#e6ebf2;--muted:#b4bfcf;--border:#2c3a52;
-  --link:#8ab4ff;--bl-bg:#2b2112;--bl-border:#f59e0b;--top-bg:#14233f;--top-border:#60a5fa;
-  --tt-bg:#11291b;--tt-border:#4ade80;--badge-bg:#a78bfa;--badge-text:#140a2b;
-  --warn-bg:#3a1616;--warn-text:#fca5a5;
-  --c-market:#60a5fa;--c-tech:#2dd4bf;--c-comp:#f87171;--c-cox:#facc15;--c-mkt:#c4b5fd;--c-ai:#f472b6;
+[data-theme="dark"]{
+  --bg:#0e1626; --surface:#17223a; --text:#e8edf5; --muted:#b4bfd0; --rule:#2c3a55;
+  --link:#8ec5ff; --bl-bg:#11312a; --bl-border:#4fd1a5; --top-bg:#3a2612; --top-border:#ffa552;
+  --tt-bg:#15294a; --tt-border:#5fb0ff; --badge-bg:#e8edf5; --badge-text:#0e1626;
+  --warn-bg:#4a3a0a; --warn-text:#ffe08a;
+  --c-market:#5fb0ff; --c-retail:#b892e8; --c-comp:#ff7b72; --c-cox:#ffa552; --c-mkt:#4fd1a5; --c-ai:#a9b6c9;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
-header{background:linear-gradient(135deg,#0b1f3a,#1a3a6c);color:#ffffff;padding:28px 20px}
-.hwrap{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
-header h1{margin:0;font-size:1.7rem}
-header p{margin:4px 0 0;color:#dbe6f7}
-#themeToggle{background:#ffffff;color:#0b1f3a;border:none;border-radius:999px;padding:8px 16px;font-weight:600;cursor:pointer}
-#themeToggle:focus-visible{outline:3px solid #facc15;outline-offset:2px}
-main{max-width:1180px;margin:0 auto;padding:22px 20px 40px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
 a{color:var(--link)}
-.bottomline{background:var(--bl-bg);border:2px solid var(--bl-border);border-radius:10px;padding:16px 18px;margin-bottom:18px}
-.bottomline h2,.topstory h2{margin:0 0 6px;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
-.topstory{background:var(--top-bg);border-left:6px solid var(--top-border);border-radius:8px;padding:16px 18px;margin-bottom:26px}
-.topstory h3{margin:0 0 8px;font-size:1.25rem}
-section.cat{margin-top:28px}
-section.cat > h2{text-transform:uppercase;letter-spacing:.07em;font-size:1rem;margin:0 0 12px;padding:4px 0 4px 12px;border-left:6px solid var(--catc)}
+a:focus-visible,button:focus-visible{outline:3px solid #FF8210;outline-offset:2px}
+header.site{background:linear-gradient(135deg,#0b1f3a,#1a3a6c);color:#fff;padding:28px 20px 24px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.head-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+header.site h1{margin:0;font-size:1.9rem;line-height:1.2;letter-spacing:-.01em}
+header.site .date{margin:6px 0 0;color:#cfe0f7;font-size:1rem}
+#themeToggle{background:transparent;color:#fff;border:1px solid #9fb7d9;border-radius:6px;padding:8px 12px;font-size:.9rem;cursor:pointer;white-space:nowrap}
+#themeToggle:hover{background:rgba(255,255,255,.12)}
+main{padding:24px 0 40px}
+.bottom-line{background:var(--bl-bg);border:2px solid var(--bl-border);border-radius:10px;padding:18px 22px;margin-bottom:22px}
+.bottom-line h2{margin:0 0 8px;font-size:1.05rem}
+.bottom-line p{margin:0;max-width:78ch}
+.top-story{background:var(--top-bg);border-left:8px solid var(--top-border);border-radius:6px;padding:20px 22px;margin-bottom:30px}
+.top-label{font-weight:700;font-size:.85rem;letter-spacing:.06em;margin:0 0 6px;color:var(--text)}
+.top-story h2{margin:0 0 10px;font-size:1.45rem;line-height:1.25}
+.top-story p{max-width:80ch}
+section.cat{margin-top:34px}
+section.cat > h2{text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;margin:0 0 14px;padding:4px 0 4px 12px;border-left:6px solid var(--catc)}
+.cat-market{--catc:var(--c-market)} .cat-retail{--catc:var(--c-retail)} .cat-comp{--catc:var(--c-comp)}
+.cat-cox{--catc:var(--c-cox)} .cat-mkt{--catc:var(--c-mkt)} .cat-ai{--catc:var(--c-ai)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}
-.card h3{margin:0 0 8px;font-size:1.05rem;line-height:1.35}
-.meaning{font-style:italic}
-.meta{color:var(--muted);font-size:.85rem;margin-top:10px}
-.talk{font-style:italic;background:var(--tt-bg);border-left:4px solid var(--tt-border);padding:8px 10px;border-radius:4px;margin-top:10px}
-.badge{display:inline-block;background:var(--badge-bg);color:var(--badge-text);font-weight:700;font-size:.75rem;padding:3px 8px;border-radius:999px;margin-bottom:8px}
-.flag{display:inline-block;background:var(--warn-bg);color:var(--warn-text);font-weight:700;font-size:.72rem;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
-.note{color:var(--muted);font-style:italic;margin:0 0 10px}
-footer{border-top:1px solid var(--border);color:var(--muted);text-align:center;padding:18px;font-size:.9rem}
+article.card{background:var(--surface);border:1px solid var(--rule);border-top:4px solid var(--catc);border-radius:8px;padding:16px 18px}
+article.card h3{margin:0 0 8px;font-size:1.08rem;line-height:1.3}
+article.card h3 a{text-decoration:none}
+article.card h3 a:hover{text-decoration:underline}
+.meaning{font-style:italic;margin:10px 0}
+.meaning strong{font-style:normal}
+.talk{font-style:italic;background:var(--tt-bg);border-left:4px solid var(--tt-border);padding:10px 12px;margin:10px 0;border-radius:4px}
+.talk strong{font-style:normal}
+.source{color:var(--muted);font-size:.88rem;margin:8px 0 0}
+.badge{display:inline-block;background:var(--badge-bg);color:var(--badge-text);font-size:.78rem;font-weight:700;padding:3px 8px;border-radius:4px;margin-bottom:8px}
+.angle{font-size:.93rem;margin:6px 0 0}
+.unconfirmed{display:inline-block;background:var(--warn-bg);color:var(--warn-text);font-size:.78rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:4px}
+.pointer{color:var(--muted);font-style:italic;margin:0}
+footer.site{border-top:1px solid var(--rule);color:var(--muted);padding:18px 0 30px;font-size:.9rem}
+@media (max-width:600px){header.site h1{font-size:1.4rem}.head-row{flex-direction:column}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<header>
-  <div class="hwrap">
+<header class="site">
+  <div class="wrap head-row">
     <div>
       <h1><span aria-hidden="true">🚗</span> Automotive AI Daily Briefing</h1>
-      <p>Tuesday, November 10, 2026</p>
+      <p class="date">Thursday, November 12, 2026 · 48-hour edition covering Nov 10 to 12</p>
     </div>
-    <button id="themeToggle" type="button" aria-label="Toggle light and dark theme">Dark mode</button>
+    <button id="themeToggle" type="button" aria-label="Switch to dark theme">Dark mode</button>
   </div>
 </header>
-<main>
-  <section class="bottomline" aria-label="Bottom line">
-    <h2>Bottom Line</h2>
-    <p>Today's theme is one connected system beats a pile of tools. PureCars rolled its CDP and AutoAlert mining into one platform and Mobility Global is pitching a shared data layer inside the CRM and DMS, while Cox's economist says retail demand softened and KBB flags used prices climbing in six to eight weeks. This week, sell VinSolutions with Fullpath CDP, vAuto and Xtime as the system that already holds the customer, so dealers can mine equity and service owners before affordability bites harder.</p>
+
+<main class="wrap">
+
+  <section class="bottom-line" aria-labelledby="bl-h">
+    <h2 id="bl-h">Bottom line</h2>
+    <p>The showroom door moved into the chat window. BMW now books test drives inside ChatGPT, and Cox data says 63% of shoppers plan to use AI on their next purchase. Here's the kicker. The FTC just made an example of a dealer whose online price didn't match the real one. So what does that mean? AI will quote your price to shoppers whether you like it or not. Sell Dealer.com and VinSolutions as one clean, consistent data story this week, and lean on Deal Central to make the online number the in-store number.</p>
   </section>
 
-  <section class="topstory" aria-label="Top story">
-    <h2>TOP STORY · Competitor Watch</h2>
-    <h3><a href="https://www.globenewswire.com/news-release/2026/11/10/3399555/25434/en/purecars-launches-automotive-s-first-unified-customer-data-and-marketing-platform.html" target="_blank" rel="noopener noreferrer">PureCars launches unified customer data and marketing platform</a></h3>
-    <p>Seven months after buying AutoAlert, PureCars has merged its customer data platform with AutoAlert's data mining and AI-driven predictive audiences. Dealers plan and measure email, direct mail, digital, text and conquest campaigns from one system, and the company says more enhancements are coming before NADA 2027. The "industry first" label is PureCars' own claim.</p>
-    <p class="meaning">What it means for us: This goes straight at Fullpath CDP in VinSolutions and at VinSolutions equity mining. Expect AutoAlert stores to be pitched a one-platform story, so lead with the fact that our CDP and mining live inside the CRM the sales team already works in, not a separate marketing login.</p>
-    <p class="talk">Talk track: "PureCars just bolted a CDP onto AutoAlert. Ours already lives inside VinSolutions, where your people actually work the customer. Want to see what that looks like on your own data?"</p>
-    <p class="meta">PureCars press release via GlobeNewswire · Nov 10, 2026</p>
+  <section class="top-story" aria-labelledby="top-h">
+    <p class="top-label">TOP STORY · AI &amp; Technology</p>
+    <h2 id="top-h"><a href="https://www.autoblog.com/news/bmw-lets-you-shop-for-a-new-car-and-book-a-test-drive-in-chatgpt" target="_blank" rel="noopener noreferrer">BMW lets shoppers build a car and book a test drive inside ChatGPT</a></h2>
+    <p>BMW of North America launched a U.S. shopping plugin in ChatGPT. Shoppers describe what they need in plain language, get model and trim picks from BMW's configurator data, compare against in-stock cars, pull lease pricing and book a test drive at a participating BMW center without leaving the chat. BMW calls it the first time an automaker has taken a shopper from open conversation to a booked dealer appointment inside an AI assistant. <span class="unconfirmed">unconfirmed</span></p>
+    <p class="meaning"><strong>What it means for us:</strong> Dealers will ask about this. The shopper now shows up with a build, a lease number and an appointment, and the store didn't touch any of it. That appointment has to land in VinSolutions with full context, and the in-stock match depends on clean vAuto and Dealer.com inventory data. If the store's data is messy, the AI hands the shopper to someone else.</p>
+    <p class="talk"><strong>Talk track:</strong> "BMW just started booking test drives inside ChatGPT, so let's make sure your inventory and pricing are clean enough that the AI sends shoppers to you and VinSolutions catches every one."</p>
+    <p class="source">Autoblog, Nov 10, 2026 (BMW Group newsroom announcement)</p>
   </section>
 
-  <section class="cat" style="--catc:var(--c-market)" aria-labelledby="h-market">
+  <section class="cat cat-market" aria-labelledby="h-market">
     <h2 id="h-market">Automotive Market</h2>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://www.coxautoinc.com/insights/auto-market-weekly-summary-11-09-26/" target="_blank" rel="noopener noreferrer">Auto Market Weekly Summary: retail softens as prices set records</a></h3>
-        <p>October's new-vehicle sales pace came in at 15.5 million, short of Cox's 16.1 million forecast, with retail up just 0.6% while fleet carried the month. Average transaction prices topped $51,000 for the first time. Cox's chief economist also expects the midterm results to shift policy and possibly ease tariff effects through closer Canada and Mexico ties.</p>
-        <p class="meaning">What it means for us: Dealers will ask where retail buyers went. That opens a vAuto pricing and VinSolutions follow-up conversation about squeezing more from fewer, pricier retail deals.</p>
-        <p class="talk">Talk track: "Retail only grew half a percent last month while prices hit a record. The stores that win are the ones working every lead and every trade, so let's look at your VinSolutions follow-up."</p>
-        <p class="meta">Cox Automotive · Nov 9, 2026</p>
-      </article>
-      <article class="card">
-        <h3><a href="https://www.cbtnews.com/honda-commits-3b-to-new-ohio" target="_blank" rel="noopener noreferrer">Honda commits $3B to new Ohio plant as hybrid production expands</a></h3>
-        <p>Honda will build a fourth Ohio auto plant with capacity for 240,000 vehicles a year, starting production in 2029 and adding more than 2,000 jobs. It is also converting an Ohio transmission line to raise hybrid system output by 250%, pushing U.S. capacity to about 1.3 million units.</p>
-        <p class="meaning">What it means for us: Honda and Acura stores will ask how to sell and service a growing hybrid mix. That's a natural Xtime service-lane and Dealer.com hybrid-inventory merchandising conversation.</p>
-        <p class="meta">CBT News · Nov 9, 2026</p>
+        <h3><a href="https://www.coxautoinc.com/insights/oct-2026-atp-report/" target="_blank" rel="noopener noreferrer">New-vehicle prices top $51,000 for the first time in October</a></h3>
+        <p>Kelley Blue Book put the October average transaction price at $51,109, a record and up 2.1% from a year ago. Incentives ticked up to 6.8% of ATP but stay below long-term norms. Midsize SUVs are now the top-volume segment, and cheaper segments in the $28K to $38K range grew volume almost 10%.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Record prices with light incentives mean payment is the whole conversation. Dealers need vAuto Provision to price used units as the smart alternative, and KBB ICO to fund the down payment with the trade.</p>
+        <p class="source">Cox Automotive (Kelley Blue Book), Nov 10, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="cat" style="--catc:var(--c-tech)" aria-labelledby="h-tech">
-    <h2 id="h-tech">Dealership &amp; Retail Tech</h2>
+  <section class="cat cat-retail" aria-labelledby="h-retail">
+    <h2 id="h-retail">Dealership &amp; Retail Tech</h2>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://www.cbtnews.com/mobility-global-connects-dealer-and-oem-data" target="_blank" rel="noopener noreferrer">How Mobility Global is using AI to connect dealer, OEM data</a></h3>
-        <p>Mobility Global, the parent of automotiveMastermind, Market Scan and Polk, says it builds a shared data layer into the CRM and DMS dealers already use. Its free FeeSync tool centralizes doc and other fees so vendors pull one compliant number, and an agent-to-agent protocol is on the roadmap.</p>
-        <p class="meaning">What it means for us: automotiveMastermind competes with VinSolutions equity mining, and FeeSync touches fee consistency in Deal Central and Dealertrack DMS. Expect dealers to ask whether our tools can share fee data with it.</p>
-        <p class="meta">CBT News · Nov 10, 2026</p>
+        <h3><a href="https://www.cbtnews.com/ftc-agreement-with-stream-auto-outlet/" target="_blank" rel="noopener noreferrer">FTC reaches settlement with Long Island dealer group over pricing that didn't hold up</a></h3>
+        <p>The FTC announced a proposed order against Stream Auto Outlet, saying the group advertised low online prices it didn't honor and buried required down payments, fees and add-ons behind a pop-up. The order would force ads to show the full price consumers pay, minus government charges. It still needs a judge's sign-off. The FTC sent warning letters to 97 dealer groups back in March.</p>
+        <p class="meaning"><strong>What it means for us:</strong> This changes how we sell Deal Central and Dealer.com. Let's be real. Price transparency is now enforcement, not a nice idea. Showing the real number online and carrying it into the F&amp;I office through Dealertrack is the compliance story every GM wants to hear this week.</p>
+        <p class="talk"><strong>Talk track:</strong> "The FTC just made an example of a dealer whose online price didn't match the deal, so let's set up Deal Central so the number your customer sees online is the number they sign."</p>
+        <p class="source">CBT News, Nov 11, 2026</p>
       </article>
       <article class="card">
-        <h3><a href="https://news.dealershipguy.com/p/scoop-hertz-to-close-all-hertz-car-sales-locations-amid-online-retail-push" target="_blank" rel="noopener noreferrer">Hertz to close all Hertz Car Sales locations amid online retail push</a></h3>
-        <p>Hertz confirmed it will close all of its physical Hertz Car Sales stores and sell used cars through HertzCarSales.com, Amazon Autos, eBay and its TestDrive+ program at more than 300 rental locations. The closures are reported to finish Nov. 20<span class="flag">unconfirmed</span>, though Hertz did not confirm that date.</p>
-        <p class="meaning">What it means for us: One of the country's biggest used-car sellers just bet fully on digital channels. Dealers will ask whether online-only sellers are coming for their used buyers, which is the opening to show Accelerate My Deal and Autotrader as the way to win shoppers online while keeping the store.</p>
-        <p class="meta">Car Dealership Guy · Nov 9, 2026</p>
+        <h3><a href="https://www.cbtnews.com/strong-fi-sales-helped-q3/" target="_blank" rel="noopener noreferrer">JM&amp;A says F&amp;I carried dealers in Q3 as front-end gross slipped</a></h3>
+        <p>JM&amp;A Group's Q3 trends report shows F&amp;I PVR and product penetration ahead of last year while front PVR fell. Product income made up 61.7% of F&amp;I PVR. Average rates sat around 11.32% used and 8.07% new after the September Fed hike. The data covers 2,000+ JM&amp;A dealers, not the whole market.</p>
+        <p class="meaning"><strong>What it means for us:</strong> The back end is paying the bills. That's the opening for Dealertrack F&amp;I and digital menus. Consistent product presentation, online and in store, protects the PVR that's keeping stores profitable.</p>
+        <p class="source">CBT News, Nov 11, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="cat" style="--catc:var(--c-comp)" aria-labelledby="h-comp">
+  <section class="cat cat-comp" aria-labelledby="h-comp">
     <h2 id="h-comp">Competitor Watch</h2>
-    <p class="note">PureCars' unified platform launch is today's Top Story. See the callout above.</p>
+    <div class="grid">
+      <article class="card">
+        <h3><a href="https://www.law360.com/articles/2548736/cdk-nixes-tekion-s-auto-dealer-software-monopoly-claims" target="_blank" rel="noopener noreferrer">Judge tosses Tekion's antitrust claims against CDK</a></h3>
+        <p>A federal judge in Northern California granted CDK Global summary judgment and dismissed Tekion's monopoly claims. The court found no evidence CDK held monopoly power during the period in question. The full ruling sits behind Law360's paywall, so the details are thin for now.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Two of our biggest DMS rivals are still burning time and money fighting each other over data access. That's a gift for Dealertrack DMS. Zero integration fees and an open partner program look even better when the other guys are in court about who gets to plug in.</p>
+        <p class="source">Law360, Nov 10, 2026</p>
+      </article>
+    </div>
   </section>
 
-  <section class="cat" style="--catc:var(--c-cox)" aria-labelledby="h-cox">
+  <section class="cat cat-cox" aria-labelledby="h-cox">
     <h2 id="h-cox">Cox Automotive Ecosystem</h2>
     <div class="grid">
       <article class="card">
-        <h3><a href="https://www.kbb.com/car-news/used-car-prices-likely-to-increase/" target="_blank" rel="noopener noreferrer">Used car prices likely to increase</a></h3>
-        <p>The Manheim index hit 206.8 in October, up 2% from a year ago, as wholesale depreciation slowed back to normal seasonal patterns. Retail used prices usually follow wholesale by six to eight weeks, so shoppers could see higher stickers by late December. EV values ran 6.6% above last year.</p>
-        <p class="meaning">What it means for us: Rising wholesale costs make vAuto acquisition and pricing discipline the conversation this week. Pair it with KBB Instant Cash Offer for sourcing trades before auction prices climb further.</p>
-        <p class="talk">Talk track: "Wholesale is up 2% and retail usually follows in six to eight weeks. vAuto can show you which units to buy now and which to price ahead of the move."</p>
-        <p class="meta">Kelley Blue Book · Nov 9, 2026</p>
+        <h3><a href="https://www.coxautoinc.com/insights/oct-2026-cai/" target="_blank" rel="noopener noreferrer">Dealertrack credit index hits its highest level since 2015</a></h3>
+        <p>The Dealertrack Credit Availability Index rose for a sixth straight month to 107.1 in October. Approval rates reached 73.9% and subprime share climbed to 17.9%. Negative equity hit 58.7% and nearly a third of loans now run past 72 months. Cox flagged that the approval bump partly came from a near-prime lender leaving the market.</p>
+        <p class="meaning"><strong>What it means for us:</strong> Credit is open but the deals are getting heavier. Underwater trades are now the norm. That's the case for Dealertrack's lender network to find the approval, and for KBB ICO and vAuto to value the trade honestly so the negative equity doesn't surprise anyone in F&amp;I.</p>
+        <p class="source">Cox Automotive, Nov 10, 2026</p>
       </article>
     </div>
   </section>
 
-  <section class="cat" style="--catc:var(--c-mkt)" aria-labelledby="h-mkt">
+  <section class="cat cat-mkt" aria-labelledby="h-mkt">
     <h2 id="h-mkt">Dealership Marketing &amp; Advertising</h2>
-    <p class="note">No stories from the past 48 hours cleared the bar today.</p>
-  </section>
-
-  <section class="cat" style="--catc:var(--c-ai)" aria-labelledby="h-ai">
-    <h2 id="h-ai">AI &amp; Technology</h2>
     <div class="grid">
       <article class="card">
         <span class="badge">📣 POST-WORTHY</span>
-        <h3><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener noreferrer">Anthropic releases Claude Fable 5.2 and Mythos 5.2</a></h3>
-        <p>Anthropic's new frontier models run up to 30% faster than the prior versions at a lower price, with gains in coding, reasoning and vision. One tester reports the model flagged salary deposits that didn't match a bank statement in a loan file, and Anthropic says 1,000 coordinated agents built a working operating system in eight days. Benchmark results are Anthropic's own.</p>
-        <p class="meaning">What it means for us: Cheaper, stronger models mean every vendor, from Impel to DriveCentric, will ship more AI agents fast. Dealers will ask who's real, so position VinSolutions Virtual Contact Assistant as AI already embedded in the CRM workflow.</p>
-        <p class="meta">Anthropic · Nov 9, 2026</p>
-        <p class="meta"><strong>LinkedIn angle:</strong> 1,000 AI agents can now build an operating system in eight days, and most dealerships still can't get their CRM and DMS to agree on a customer's name. The tech isn't the bottleneck, the duct tape is.</p>
+        <h3><a href="https://www.cbtnews.com/vehicle-discovery/" target="_blank" rel="noopener noreferrer">Cox's Jeri Reichel on why AI is rewriting how shoppers find cars</a></h3>
+        <p>Cox Automotive's Jeri Reichel told CBT News that shoppers now ask AI long, conversational questions and often get answers without clicking any site. Cox tracker data shows 63% of in-market shoppers plan to use AI next time. Cox says conversational search on Autotrader and KBB lifted visit-to-lead conversion 34%. Her advice is to keep pricing, inventory and incentives consistent everywhere and measure the full journey, not lead counts. <span class="unconfirmed">unconfirmed</span></p>
+        <p class="meaning"><strong>What it means for us:</strong> This is the GEO pitch in plain English. Dealer.com and DDC have to feed AI the same clean data the shopper sees on Autotrader, and VinSolutions has to pick up the handoff without making the customer repeat themselves.</p>
+        <p class="talk"><strong>Talk track:</strong> "Two out of three shoppers are going to ask AI about your store before they ever call, so let's make sure Dealer.com and Autotrader are telling it the same story."</p>
+        <p class="angle"><strong>LinkedIn angle:</strong> Shoppers stopped clicking. They just ask. If your price says one thing on your site and another on a listing, the AI picks for you. Customer first is a system not a slogan.</p>
+        <p class="source">CBT News, Nov 12, 2026</p>
       </article>
     </div>
   </section>
+
+  <section class="cat cat-ai" aria-labelledby="h-ai">
+    <h2 id="h-ai">AI &amp; Technology</h2>
+    <p class="pointer">Today's AI story is the Top Story above: BMW booking test drives inside ChatGPT.</p>
+  </section>
+
 </main>
-<footer>
-  <p>Tuesday, November 10, 2026 · Curated by AI Research Desk</p>
+
+<footer class="site">
+  <div class="wrap">Thursday, November 12, 2026 · Curated by AI Research Desk</div>
 </footer>
+
 <script>
 (function(){
   var KEY='mssBriefingTheme';
@@ -156,13 +176,14 @@ footer{border-top:1px solid var(--border);color:var(--muted);text-align:center;p
   var btn=document.getElementById('themeToggle');
   function apply(t){
     root.setAttribute('data-theme',t);
-    btn.textContent = t==='dark' ? 'Light mode' : 'Dark mode';
-    btn.setAttribute('aria-pressed', t==='dark' ? 'true' : 'false');
+    var dark=(t==='dark');
+    btn.textContent=dark?'Light mode':'Dark mode';
+    btn.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');
   }
   var stored=null;
   try{stored=localStorage.getItem(KEY);}catch(e){}
-  if(stored!=='light' && stored!=='dark'){
-    stored=(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  if(stored!=='light'&&stored!=='dark'){
+    stored=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
   }
   apply(stored);
   btn.addEventListener('click',function(){
