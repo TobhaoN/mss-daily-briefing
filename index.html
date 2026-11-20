@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Automotive AI Daily Briefing — 2026-11-19</title>
+<title>Automotive AI Daily Briefing — 2026-11-20</title>
 <style>
   :root{
     --bg:#f4f6f9;
@@ -15,9 +15,7 @@
     --tt-bg:#eef4ff;
     --tt-border:#1a3a6c;
     --bl:#0f766e;
-    --bl-bg:#eafaf6;
     --ts:#c2410c;
-    --ts-bg:#fff3ea;
     --badge-bg:#fde68a;
     --badge-text:#5c3c02;
     --unconf-bg:#fee2e2;
@@ -28,21 +26,20 @@
     --c-cox:#1a3a6c;
     --c-mktg:#6d28d9;
     --c-ai:#047857;
+    --link:#1a3a6c;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --bg:#0d1420;
       --card:#17202f;
       --text:#e9eef7;
-      --muted:#b3bdd0;
+      --muted:#b7c1d4;
       --line:#2b3648;
-      --meta:#9aa7bd;
+      --meta:#9fabc0;
       --tt-bg:#1d2a41;
       --tt-border:#7aa7e8;
       --bl:#5eead4;
-      --bl-bg:#132a2a;
       --ts:#fdba74;
-      --ts-bg:#2e1d11;
       --badge-bg:#92700a;
       --badge-text:#fff6da;
       --unconf-bg:#4a1b1b;
@@ -53,21 +50,20 @@
       --c-cox:#93c5fd;
       --c-mktg:#c4b5fd;
       --c-ai:#6ee7b7;
+      --link:#93c5fd;
     }
   }
   :root[data-theme="dark"]{
     --bg:#0d1420;
     --card:#17202f;
     --text:#e9eef7;
-    --muted:#b3bdd0;
+    --muted:#b7c1d4;
     --line:#2b3648;
-    --meta:#9aa7bd;
+    --meta:#9fabc0;
     --tt-bg:#1d2a41;
     --tt-border:#7aa7e8;
     --bl:#5eead4;
-    --bl-bg:#132a2a;
     --ts:#fdba74;
-    --ts-bg:#2e1d11;
     --badge-bg:#92700a;
     --badge-text:#fff6da;
     --unconf-bg:#4a1b1b;
@@ -78,44 +74,35 @@
     --c-cox:#93c5fd;
     --c-mktg:#c4b5fd;
     --c-ai:#6ee7b7;
+    --link:#93c5fd;
   }
   *{box-sizing:border-box}
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
+    margin:0;background:var(--bg);color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.55;
   }
   header.masthead{
     background:linear-gradient(135deg,#0b1f3a 0%,#1a3a6c 100%);
-    color:#fff;
-    padding:28px 16px 24px;
+    color:#fff;padding:28px 16px 24px;
   }
   .mast-inner{max-width:1180px;margin:0 auto;position:relative}
   .toggle{
     position:absolute;top:0;right:0;
-    background:rgba(255,255,255,.12);
-    color:#fff;
-    border:1px solid rgba(255,255,255,.35);
-    border-radius:999px;
-    padding:7px 14px;
-    font-size:.82rem;
-    cursor:pointer;
-    font-family:inherit;
+    background:rgba(255,255,255,.12);color:#fff;
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:999px;padding:7px 14px;font-size:.82rem;
+    cursor:pointer;font-family:inherit;
   }
-  .toggle:hover{background:rgba(255,255,255,.22)}
+  .toggle:hover{background:rgba(255,255,255,.24)}
   .toggle:focus-visible{outline:3px solid #ffd27a;outline-offset:2px}
   h1.mast-title{margin:0 110px 4px 0;font-size:1.6rem;letter-spacing:-.3px}
-  .mast-date{margin:0;font-size:.95rem;color:#cfe0f5}
+  .mast-date{margin:0;font-size:.95rem;color:#d3e2f6}
   main{max-width:1180px;margin:0 auto;padding:22px 16px 10px}
   .callout{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-left:6px solid var(--bl);
-    border-radius:10px;
-    padding:16px 18px;
-    margin-bottom:16px;
+    background:var(--card);border:1px solid var(--line);
+    border-left:6px solid var(--bl);border-radius:10px;
+    padding:16px 18px;margin-bottom:16px;
   }
   .callout.top{border-left-color:var(--ts)}
   .callout-label{
@@ -141,24 +128,17 @@
   .cat-ai h2.cat-head{border-left-color:var(--c-ai);color:var(--c-ai)}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
   article.story{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:15px 17px;
-    display:flex;flex-direction:column;
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:15px 17px;display:flex;flex-direction:column;
   }
   article.story h3{margin:0 0 8px;font-size:1.03rem;line-height:1.35}
   article.story h3 a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line)}
-  article.story h3 a:hover,article.story h3 a:focus{color:var(--c-cox);border-bottom-color:currentColor}
+  article.story h3 a:hover,article.story h3 a:focus{color:var(--link);border-bottom-color:currentColor}
   article.story p{margin:0 0 9px}
   .means{color:var(--muted);font-style:italic}
   .talk{
-    background:var(--tt-bg);
-    border-left:4px solid var(--tt-border);
-    border-radius:6px;
-    padding:9px 11px;
-    font-style:italic;
-    margin:0 0 9px;
+    background:var(--tt-bg);border-left:4px solid var(--tt-border);
+    border-radius:6px;padding:9px 11px;font-style:italic;margin:0 0 9px;
   }
   .talk strong{font-style:normal;text-transform:uppercase;font-size:.7rem;letter-spacing:.09em}
   .meta{margin:auto 0 0;font-size:.8rem;color:var(--meta);padding-top:6px;border-top:1px dashed var(--line)}
@@ -177,8 +157,8 @@
     padding:13px 16px;color:var(--muted);font-size:.92rem;
   }
   footer{
-    max-width:1180px;margin:0 auto;padding:26px 16px 40px;
-    color:var(--meta);font-size:.84rem;border-top:1px solid var(--line);margin-top:30px;
+    max-width:1180px;margin:30px auto 0;padding:26px 16px 40px;
+    color:var(--meta);font-size:.84rem;border-top:1px solid var(--line);
   }
   @media (max-width:420px){
     h1.mast-title{margin-right:0;font-size:1.32rem}
@@ -192,7 +172,7 @@
   <div class="mast-inner">
     <button class="toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme">Dark mode</button>
     <h1 class="mast-title">🚗 Automotive AI Daily Briefing</h1>
-    <p class="mast-date">Thursday, November 19, 2026 · Multi-Solution Sales</p>
+    <p class="mast-date">Friday, November 20, 2026 · Multi-Solution Sales</p>
   </div>
 </header>
 
@@ -200,17 +180,17 @@
 
   <div class="callout">
     <p class="callout-label">Bottom Line</p>
-    <p>Two things are happening at once and they point the same direction. Affordability hit another wall in October, with the average new-vehicle transaction price at a record $51,109 and the typical payment at $783, while used sales jumped nearly 12% as shoppers trade down. At the same time the front door is moving: Cox's own research says 63% of shoppers plan to use AI on their next purchase while only a minority of dealers have adjusted for it, and Pinewood just made ChatGPT a buyable ad channel.</p>
-    <p>So what does that mean? This week the conversation is not "do you believe in AI." It is "your buyer is cheaper and arrives from somewhere you are not measuring." Lead with the used and service side of the store, then take discoverability and conversion tools into the same meeting.</p>
+    <p>The buyer is getting squeezed and the vendors are getting bolder. JD Power has November payments hitting a record $840 with 12.8% of new loans running 84 months or longer, while dealer inventory sits near 2.4 million units and brand days' supply spreads from the 30s to 159. Meanwhile DriveCentric just landed FordDirect distribution for its whole sales-plus-service AI platform, and advertisers put $70.7 million into ChatGPT ads in October alone.</p>
+    <p>So what does that mean? Nobody is winning a deal on payment this month. The win is in turn and in retention, and the competitive set is now selling a single engagement platform while we sell a connected one. Walk into Monday knowing which brands on your dealer's lot are drowning in supply, and be ready for the question about who else is talking to their Ford store.</p>
   </div>
 
   <div class="callout top">
-    <p class="callout-label">Top Story · Cox Automotive Ecosystem</p>
-    <h2><a href="https://www.prnewswire.com/news-releases/vinsolutions-brings-personalized-video-directly-into-dealership-crm-workflows-302943036.html" target="_blank" rel="noopener noreferrer">VinSolutions Brings Personalized Video Directly into Dealership CRM Workflows</a></h2>
-    <p>Cox Automotive launched VinSolutions Video on Nov. 18, putting record-and-send branded video inside the CRM and mobile app rather than in a separate tool. Sales and BDC teams can personalize outreach using customer detail already sitting in the CRM, and managers get usage and engagement reporting for coaching. Cox reports leads that received a video saw a 31% relative lift in appointment rate and a 22% relative lift in sold rate, among dealers sending up to roughly 20 videos a week.</p>
-    <p class="means">What it means for us: this is a VinSolutions conversation we can have tomorrow with every store already paying for a third-party video tool. The pitch is not "video" — dealers have video. It is video inside the workflow with reporting attached, which kills a vendor line item and gives the manager something to coach against.</p>
-    <p class="talk"><strong>Talk track:</strong> &ldquo;You're already paying someone else for video your team forgets to use. This lives in the app they open anyway, and it tells you who actually sent one.&rdquo;</p>
-    <p class="meta">Cox Automotive via PR Newswire · Nov. 18, 2026</p>
+    <p class="callout-label">Top Story · Competitor Watch</p>
+    <h2><a href="https://www.prnewswire.com/news-releases/drivecentric-brings-sales-service-and-ai-agents-together-on-one-platform-enabling-a-unified-voice-for-dealers-to-engage-with-customers-302944771.html" target="_blank" rel="noopener noreferrer">DriveCentric Brings Sales, Service, and AI Agents Together on One Platform</a></h2>
+    <p>DriveCentric announced Nov. 19 that its full platform — Sales Engagement Hub, Service Engagement Hub and its suite of AI agents — is now available to Ford and Lincoln dealers through FordDirect. The pitch is one platform carrying every customer conversation across sales and service, with agents speaking in a single voice rather than separate tools per department.</p>
+    <p class="means">What it means for us: this is VinSolutions and Xtime in the same deal, through an OEM program channel, at Ford stores we cover. The counter is that DriveCentric is engagement only — it does not carry appraisal, wholesale or F&I — so the conversation goes to what VinSolutions plus vAuto plus Dealertrack does that an engagement layer cannot.</p>
+    <p class="talk"><strong>Talk track:</strong> &ldquo;One voice across sales and service is table stakes now. The question is whether that same system can also tell you what to pay for the trade and get the contract funded.&rdquo;</p>
+    <p class="meta">DriveCentric via PR Newswire · Nov. 19, 2026</p>
   </div>
 
   <section class="cat cat-market">
@@ -218,18 +198,11 @@
     <div class="grid">
 
       <article class="story">
-        <h3><a href="https://www.cbtnews.com/new-vehicle-affordability-51109/" target="_blank" rel="noopener noreferrer">New-vehicle affordability declines as ATP hits record $51,109</a></h3>
-        <p>The Cox Automotive/Moody's Analytics Vehicle Affordability Index showed October affordability slipping as Kelley Blue Book put the average transaction price at a record $51,109, up 1.3% from September. The typical monthly payment rose to $783, the highest since December 2023, and buyers needed 35.3 weeks of median income to cover an average new vehicle. Affordability is still better than a year ago, helped by lower rates, higher incomes and bigger incentives.</p>
-        <p class="means">What it means for us: this is the number that makes the vAuto and Manheim conversation easy. When the new-car payment prices people out, the store's gross has to come from used acquisition and reconditioning speed, not from the new-car desk. Expect dealers to ask what their sub-$35K used supply looks like.</p>
-        <p class="talk"><strong>Talk track:</strong> &ldquo;At a $783 average payment, your next ten deals are coming off the used line. Where are you sourcing them, and what are you paying for them?&rdquo;</p>
-        <p class="meta">CBT News · Nov. 18, 2026</p>
-      </article>
-
-      <article class="story">
-        <h3><a href="https://news.dealershipguy.com/p/used-vehicle-sales-jump-12-in-november" target="_blank" rel="noopener noreferrer">Used vehicle sales jump 12% in November</a></h3>
-        <p>AutoVision's monthly inventory analysis showed used sales up nearly 12% from mid-October to mid-November, with every age group's top ten models gaining. Late-model sales rose 12.2% and vehicles twelve years and older rose 19.3%. Supply went the other way: arrivals of the top ten models fell 21.2% and one-to-three-year-old inventory tightened 23.6%, while days to turn slowed as stores sold through older units.</p>
-        <p class="means">What it means for us: demand is up and fresh supply is down, which is the exact squeeze Stockwave and KBB Instant Cash Offer are built for. The service-lane and private-party acquisition pitch stops being a nice-to-have this month and becomes the only place to find a late-model car at a number that works.</p>
-        <p class="meta">Car Dealership Guy · Nov. 17, 2026</p>
+        <h3><a href="https://www.cbtnews.com/nov-new-vehicle-sales-to-rise/" target="_blank" rel="noopener noreferrer">JD Power forecasts new-vehicle sales to rise 1.2% in Nov.</a></h3>
+        <p>JD Power and GlobalData have November new-vehicle sales tracking up 1.2% on a selling-day-adjusted basis, with retail at 996,000 units. Average transaction price is forecast at a November record $47,154 and the average monthly payment at a record $840, up 4.2%. Total SAAR comes in at 15.7 million and retail SAAR at 12.5 million, both down slightly. Dealer inventories are up nearly 7% year over year at 2.4 million units, incentive spend rose about 6% to $3,589, and 12.8% of new loans now run 84 months or longer with roughly 30% of buyers upside down on a trade.</p>
+        <p class="means">What it means for us: 30% negative equity is the number that sells KBB Instant Cash Offer and vAuto appraisal discipline, because a store that misses the trade by $1,500 cannot buy that deal back on the front end. Expect dealers to ask how to structure around payment, and the honest answer sits in the trade, not the incentive.</p>
+        <p class="talk"><strong>Talk track:</strong> &ldquo;A record $840 payment and a third of your customers underwater. You're not winning these deals on the new car, you're winning them on what you put on the trade.&rdquo;</p>
+        <p class="meta">CBT News · Nov. 19, 2026</p>
       </article>
 
     </div>
@@ -240,10 +213,10 @@
     <div class="grid">
 
       <article class="story">
-        <h3><a href="https://www.cbtnews.com/used-car-week-2026-justin-zane-openlane/" target="_blank" rel="noopener noreferrer">OpenLane sees renewed momentum in off-lease inventory</a></h3>
-        <p>Speaking at Used Car Week in San Diego, OpenLane's Justin Zane said year-over-year off-lease volume grew 45%, with mid-to-high-teens growth even after stripping out one large customer win. He also said dealers are pressing hardest on two things: faster titles and more data to cut days on the lot, and that EV and hybrid searches are widening.</p>
-        <p class="means">What it means for us: OpenLane is competing with Manheim on exactly the two complaints dealers bring us — title speed and days to turn. That makes Dealertrack's title workflow and Manheim's data a paired conversation, not two separate line items, and it is worth asking a dealer which marketplace is actually getting their off-lease buys right now.</p>
-        <p class="meta">CBT News · Nov. 18, 2026</p>
+        <h3><a href="https://www.cbtnews.com/used-car-week-2026-dave-spencer-vitu/" target="_blank" rel="noopener noreferrer">Vitu warns of growing title fraud threat facing used-car dealers</a></h3>
+        <p>At Used Car Week, Vitu's Dave Spencer laid out how title delays and title fraud are hitting used-car operations, and argued dealers should weigh title availability and expected turnaround as part of the acquisition decision itself. He pointed to Vitu's National Title Exchange delivering titles in three business days or less, sometimes same or next day, and cited a retailer moving vehicles from acquisition to retail-ready in about 30 hours.</p>
+        <p class="means">What it means for us: title speed is now being sold as an acquisition filter, not back-office plumbing, and that is Dealertrack's home turf. Worth asking a dealer what their average days-to-title actually is, because most cannot answer it and floorplan is being burned while they guess.</p>
+        <p class="meta">CBT News · Nov. 20, 2026</p>
       </article>
 
     </div>
@@ -252,21 +225,7 @@
   <section class="cat cat-comp">
     <h2 class="cat-head">Competitor Watch</h2>
     <div class="grid">
-
-      <article class="story">
-        <h3><a href="https://news.dealershipguy.com/p/burn-the-ships-vincue-lands-93-million-to-scale-its-fully-agentic-platform" target="_blank" rel="noopener noreferrer">'Burn the ships': VINCUE lands $93 million to scale its fully agentic platform</a></h3>
-        <p>VINCUE closed a $93 million Series C led by Wavecrest Growth Partners with participation from existing investor FM Capital, announced Nov. 17. The money funds Protos, an eighteen-month ground-up rebuild of the platform around AI agents rather than bolted-on features, plus expansion of go-to-market and dealer services. A second wave is opening the rebuilt platform to another 300 stores, some new to VINCUE.</p>
-        <p class="means">What it means for us: VINCUE is now funded to come at vAuto, Stockwave and Buy Center with a dealer-services team, not just software. The counter is not feature-for-feature — it is that vAuto's recommendations sit on Manheim transaction data and the Cox retail stack, and that a rebuild means a dealer is betting on a platform mid-rewrite.</p>
-        <p class="meta">Car Dealership Guy · Nov. 17, 2026</p>
-      </article>
-
-      <article class="story">
-        <h3><a href="https://www.cbtnews.com/truecar-reintroduces-the-curve/" target="_blank" rel="noopener noreferrer">TrueCar reintroduces price distribution tool "The Curve" and Savings Certificate</a></h3>
-        <p>TrueCar is bringing back its price-distribution curve, which shows shoppers where a given price sits against what other buyers actually paid, along with a Savings Certificate. At Used Car Week, CEO Scott Painter also said 75% of TrueCar visitors have a vehicle to sell, and described smartphone-based AI appraisal that would produce a firm offer from a roughly 90-second walkaround.</p>
-        <p class="means">What it means for us: a shopper walking in with a TrueCar curve is a desking conversation, and a shopper walking in with a TrueCar appraisal number is a KBB Instant Cash Offer conversation. Dealers will ask which number to honor — the answer is whichever one their own tool can defend with local market data.</p>
-        <p class="meta">CBT News · Nov. 18, 2026</p>
-      </article>
-
+      <div class="pointer">↑ <strong>DriveCentric's FordDirect launch</strong> is today's top story — see the callout above.</div>
     </div>
   </section>
 
@@ -275,13 +234,11 @@
     <div class="grid">
 
       <article class="story">
-        <h3><a href="https://www.coxautoinc.com/insights/manheim-used-vehicle-value-index-mid-november-2026-trends/" target="_blank" rel="noopener noreferrer">Manheim Used Vehicle Value Index: Mid-November 2026 Trends</a></h3>
-        <p>Wholesale used-vehicle values held flat through the first half of November, with the Manheim index at 206.8, unchanged from October and up 0.7% year over year. Non-adjusted prices eased 0.7%, a normal seasonal move. Wholesale supply tightened to 27.9 days, and compact cars and EVs outperformed while luxury, SUVs and pickups stayed under last year.</p>
-        <p class="means">What it means for us: flat wholesale with tight supply is the cleanest setup all quarter for a vAuto pricing-to-market conversation, because a dealer holding aged units cannot blame a falling market for the gap. Bring the segment split — compacts and EVs up, trucks and luxury down — into the appraisal discussion.</p>
-        <p class="meta">Cox Automotive · Nov. 18, 2026</p>
+        <h3><a href="https://gmauthority.com/blog/2026/11/buick-dealer-inventory-climbs-again-in-october-2026/" target="_blank" rel="noopener noreferrer">Buick dealer inventory climbs again in October 2026</a></h3>
+        <p>Cox Automotive data drawn from vAuto Live Market View put the national new-vehicle days' supply at 87 in October, up from 83 in September. The spread by brand is wide: Jeep at 159 days, Ram 148, Dodge 147, Buick 136 and Lincoln 130. About half of available new inventory is advertised at $50,000 or less, while vehicles priced between $30,000 and $40,000 sat at 74 days and those above $80,000 at roughly 110.</p>
+        <p class="means">What it means for us: vAuto Live Market View is the number dealers will be quoted back at them all quarter, and PCs covering Stellantis, Buick or Lincoln stores should walk in already knowing the brand's supply. It reframes the pricing-to-market conversation from theory to a specific gap between that store and an 87-day national average.</p>
+        <p class="meta">GM Authority, citing Cox Automotive / vAuto Live Market View · Nov. 20, 2026</p>
       </article>
-
-      <div class="pointer">↑ <strong>VinSolutions Video</strong> launched Nov. 18 and is today's top story — see the callout above.</div>
 
     </div>
   </section>
@@ -292,18 +249,11 @@
 
       <article class="story">
         <span class="badge">📣 Post-worthy</span>
-        <h3><a href="https://www.coxautoinc.com/insights/closing-the-dealer-discoverability-gap/" target="_blank" rel="noopener noreferrer">Closing The Dealer Discoverability Gap</a></h3>
-        <p>Tessa Nadik argues search has shifted from a competition for position to a competition for inclusion, because AI now interprets, compares and recommends vehicles on the shopper's behalf. Cox Automotive's AI in Auto Retail Tracker has 63% of in-market shoppers saying they will probably or definitely use AI next purchase, and 82% of dealers using AI — but mostly for task automation and follow-up, not for being found. Nearly a quarter of shoppers say AI makes them feel more prepared walking in.</p>
-        <p class="means">What it means for us: this reframes the Dealer.com conversation from rankings to whether a store's inventory data is rich enough for an AI to include it. Structured data, real feature-level VDP content and clean service info stop being SEO hygiene and become the thing that decides if the dealer is in the answer at all.</p>
-        <p class="talk"><strong>Talk track:</strong> &ldquo;Forget where you rank. If a shopper asks an AI for a loaded AWD under $35K near here, does your inventory have enough detail to even be in the answer?&rdquo;</p>
-        <p class="meta">Cox Automotive · Nov. 17, 2026 · <strong>LinkedIn angle:</strong> the dealers who won the internet era won it on inventory data nobody wanted to clean up. Same job, new front door — and 82% of us are using AI to write follow-up emails instead.</p>
-      </article>
-
-      <article class="story">
-        <h3><a href="https://www.globenewswire.com/news-release/2026/11/18/3405502/0/en/pinewood-ai-expands-boost-advertising-tool-with-new-chatgpt-ads-channel.html" target="_blank" rel="noopener noreferrer">Pinewood.AI Expands Boost Advertising Tool with New ChatGPT Ads Channel</a></h3>
-        <p>Pinewood.AI added ChatGPT as an advertising channel inside Boost, its performance marketing tool, alongside Meta, Google, TikTok and Snapchat. Dealers can run sponsored placements against ChatGPT answers when shoppers research or compare vehicles, and Boost shifts budget based on leads, test drives and sales rather than clicks or impressions. Pinewood cites Invoca research putting UK generative-AI use among car buyers at 60% in 2026, up from 47%.</p>
-        <p class="means">What it means for us: AI search just became a paid channel a DMS vendor can sell, which means Dealer.com and our advertising business will get the "do you have ChatGPT ads" question before we have a tidy answer. Worth knowing this is UK-first and Pinewood-specific so we can answer precisely rather than defensively.</p>
-        <p class="meta">Pinewood.AI via GlobeNewswire · Nov. 18, 2026</p>
+        <h3><a href="https://thenextweb.com/news/chatgpt-ads-us-spend-70-million-october-adclarity" target="_blank" rel="noopener noreferrer">US advertisers spent $70.7M on ChatGPT ads in October, AdClarity estimates</a></h3>
+        <p>AdClarity, the ad intelligence platform run by BIScience, estimates US advertisers put $70.7 million into ChatGPT ads in October, up 127% from $31.1 million in April. Global spend across 24 tracked countries came to $110.6 million, with the US at roughly 64% of it and the UK nearly tripling since June. Programming and developer software was the largest ad category. These are third-party estimates, not OpenAI figures.</p>
+        <p class="means">What it means for us: a channel went from zero to a $70 million month while most dealers were still arguing about whether AI search matters, and Pinewood already sells ChatGPT ads inside a DMS marketing tool. Dealer.com and our advertising team will get asked about this, and the credible first move is still inventory data quality rather than buying into an unproven format.</p>
+        <p class="talk"><strong>Talk track:</strong> &ldquo;There's real money going into ChatGPT ads already. Before you chase the buy, make sure your inventory data is good enough that the AI would pick you for free.&rdquo;</p>
+        <p class="meta">The Next Web · Nov. 19, 2026 · <strong>LinkedIn angle:</strong> every channel starts the same way. Somebody spends $70 million in a month, everybody else calls it early, and two years later it's a line item nobody questions. We've seen this movie. The dealers who win it are the boring ones who fixed their data first.</p>
       </article>
 
     </div>
@@ -314,10 +264,17 @@
     <div class="grid">
 
       <article class="story">
-        <h3><a href="https://techcrunch.com/2026/11/18/anthropic-reportedly-prices-ipo-at-83-a-share-above-projected-range/" target="_blank" rel="noopener noreferrer">Anthropic prices IPO at $83 a share, above projected range</a></h3>
-        <p>Anthropic priced its offering at $83, above the $70-to-$78 range, and upsized to 980 million shares from 825 million for $81.3 billion in proceeds — passing SpaceX's $75 billion to become the largest IPO on record by proceeds. Trading opens on Nasdaq under ANT. The pricing landed despite weeks of volatility in AI-linked stocks.</p>
-        <p class="means">What it means for us: the model vendors underneath dealership AI are now public companies with earnings pressure, and dealers read the same headlines. When a GM asks whether this is a bubble, the honest answer is that the tools in their store are judged on appointments and sold units, not on a ticker — which is exactly the VinSolutions and Dealer.com measurement conversation.</p>
-        <p class="meta">TechCrunch · Nov. 18, 2026</p>
+        <h3><a href="https://www.cnbc.com/2026/11/20/anthropic-defies-odds-holding-ipo-despite-massively-disruptive-market.html" target="_blank" rel="noopener noreferrer">Anthropic defies the odds, holding record IPO despite 'massively disruptive' market</a></h3>
+        <p>Anthropic opened at $111.50 on Thursday, a 34% premium to its $83 IPO price, then gave most of it back to close at $97.17, up 17% on the day for a market cap near $1.8 trillion and seventh-most-valuable US company. It did so into an AI stock selloff. Shares fell roughly 9% in early Friday trading as investors took profits, though still above the IPO price.</p>
+        <p class="means">What it means for us: the model layer under every dealership AI tool is now priced daily in public, and dealers watching that volatility will ask whether the AI they just bought is a bubble. The answer we can defend is that VinSolutions and Dealer.com get measured on appointments, sold rate and days to turn, not on a ticker.</p>
+        <p class="meta">CNBC · Nov. 20, 2026</p>
+      </article>
+
+      <article class="story">
+        <h3><a href="https://www.cbtnews.com/used-car-week-2026-todd-smith-qoreai/" target="_blank" rel="noopener noreferrer">Why dealers should own their data before adding AI</a></h3>
+        <p>QoreAI's Todd Smith told CBT at Used Car Week that 25 years of single-use tools left dealer data scattered across the DMS, CRM and marketing platforms, and urged dealers to consolidate it somewhere they own rather than with a vendor. He warned against uploading customer lists into public AI tools, framed vendor agreements as AI contracts, and said dealers should budget AI like payroll — he expects roughly $5,000 a month per store against a $94 billion industry payroll line.</p>
+        <p class="means">What it means for us: "who owns the data" is about to be a standard objection in every Cox renewal, and we should be able to answer it plainly rather than deflect. It also argues for the connected-platform case, because the dealer consolidating data themselves is doing by hand what VinSolutions, vAuto and Xtime already share.</p>
+        <p class="meta">CBT News · Nov. 20, 2026</p>
       </article>
 
     </div>
@@ -326,7 +283,7 @@
 </main>
 
 <footer>
-  <p>November 19, 2026 · Curated by AI Research Desk</p>
+  <p>November 20, 2026 · Curated by AI Research Desk</p>
 </footer>
 
 <script>
