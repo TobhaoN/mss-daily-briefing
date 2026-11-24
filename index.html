@@ -3,313 +3,175 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Automotive AI Daily Briefing — 2026-11-23</title>
+<title>Automotive AI Daily Briefing | 2026-11-24</title>
 <style>
-  :root{
-    --bg:#f4f6f9;
-    --card:#ffffff;
-    --text:#13203a;
-    --muted:#55637d;
-    --line:#dde3ec;
-    --meta:#6b7890;
-    --tt-bg:#eef4ff;
-    --tt-border:#1a3a6c;
-    --bl:#0f766e;
-    --ts:#c2410c;
-    --badge-bg:#fde68a;
-    --badge-text:#5c3c02;
-    --unconf-bg:#fee2e2;
-    --unconf-text:#8c1c1c;
-    --c-market:#b45309;
-    --c-tech:#0e7490;
-    --c-comp:#b91c1c;
-    --c-cox:#1a3a6c;
-    --c-mktg:#6d28d9;
-    --c-ai:#047857;
-    --link:#1a3a6c;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#0d1420;
-      --card:#17202f;
-      --text:#e9eef7;
-      --muted:#b7c1d4;
-      --line:#2b3648;
-      --meta:#9fabc0;
-      --tt-bg:#1d2a41;
-      --tt-border:#7aa7e8;
-      --bl:#5eead4;
-      --ts:#fdba74;
-      --badge-bg:#92700a;
-      --badge-text:#fff6da;
-      --unconf-bg:#4a1b1b;
-      --unconf-text:#ffd7d7;
-      --c-market:#fbbf24;
-      --c-tech:#67e8f9;
-      --c-comp:#fca5a5;
-      --c-cox:#93c5fd;
-      --c-mktg:#c4b5fd;
-      --c-ai:#6ee7b7;
-      --link:#93c5fd;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0d1420;
-    --card:#17202f;
-    --text:#e9eef7;
-    --muted:#b7c1d4;
-    --line:#2b3648;
-    --meta:#9fabc0;
-    --tt-bg:#1d2a41;
-    --tt-border:#7aa7e8;
-    --bl:#5eead4;
-    --ts:#fdba74;
-    --badge-bg:#92700a;
-    --badge-text:#fff6da;
-    --unconf-bg:#4a1b1b;
-    --unconf-text:#ffd7d7;
-    --c-market:#fbbf24;
-    --c-tech:#67e8f9;
-    --c-comp:#fca5a5;
-    --c-cox:#93c5fd;
-    --c-mktg:#c4b5fd;
-    --c-ai:#6ee7b7;
-    --link:#93c5fd;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;background:var(--bg);color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.55;
-  }
-  header.masthead{
-    background:linear-gradient(135deg,#0b1f3a 0%,#1a3a6c 100%);
-    color:#fff;padding:28px 16px 24px;
-  }
-  .mast-inner{max-width:1180px;margin:0 auto;position:relative}
-  .toggle{
-    position:absolute;top:0;right:0;
-    background:rgba(255,255,255,.12);color:#fff;
-    border:1px solid rgba(255,255,255,.4);
-    border-radius:999px;padding:7px 14px;font-size:.82rem;
-    cursor:pointer;font-family:inherit;
-  }
-  .toggle:hover{background:rgba(255,255,255,.24)}
-  .toggle:focus-visible{outline:3px solid #ffd27a;outline-offset:2px}
-  h1.mast-title{margin:0 110px 4px 0;font-size:1.6rem;letter-spacing:-.3px}
-  .mast-date{margin:0;font-size:.95rem;color:#d3e2f6}
-  main{max-width:1180px;margin:0 auto;padding:22px 16px 10px}
-  .callout{
-    background:var(--card);border:1px solid var(--line);
-    border-left:6px solid var(--bl);border-radius:10px;
-    padding:16px 18px;margin-bottom:16px;
-  }
-  .callout.top{border-left-color:var(--ts)}
-  .callout-label{
-    font-size:.74rem;letter-spacing:.11em;text-transform:uppercase;
-    font-weight:700;color:var(--bl);margin:0 0 6px;
-  }
-  .callout.top .callout-label{color:var(--ts)}
-  .callout p{margin:0 0 8px}
-  .callout p:last-child{margin-bottom:0}
-  .callout.top h2{margin:0 0 8px;font-size:1.18rem;line-height:1.35}
-  .callout.top h2 a{color:var(--text);text-decoration:none;border-bottom:2px solid var(--ts)}
-  .callout.top h2 a:hover{color:var(--ts)}
-  section.cat{margin:26px 0 0}
-  h2.cat-head{
-    font-size:.86rem;text-transform:uppercase;letter-spacing:.13em;font-weight:800;
-    border-left:6px solid var(--line);padding:2px 0 2px 12px;margin:0 0 14px;
-  }
-  .cat-market h2.cat-head{border-left-color:var(--c-market);color:var(--c-market)}
-  .cat-tech h2.cat-head{border-left-color:var(--c-tech);color:var(--c-tech)}
-  .cat-comp h2.cat-head{border-left-color:var(--c-comp);color:var(--c-comp)}
-  .cat-cox h2.cat-head{border-left-color:var(--c-cox);color:var(--c-cox)}
-  .cat-mktg h2.cat-head{border-left-color:var(--c-mktg);color:var(--c-mktg)}
-  .cat-ai h2.cat-head{border-left-color:var(--c-ai);color:var(--c-ai)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
-  article.story{
-    background:var(--card);border:1px solid var(--line);border-radius:10px;
-    padding:15px 17px;display:flex;flex-direction:column;
-  }
-  article.story h3{margin:0 0 8px;font-size:1.03rem;line-height:1.35}
-  article.story h3 a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line)}
-  article.story h3 a:hover,article.story h3 a:focus{color:var(--link);border-bottom-color:currentColor}
-  article.story p{margin:0 0 9px}
-  .means{color:var(--muted);font-style:italic}
-  .talk{
-    background:var(--tt-bg);border-left:4px solid var(--tt-border);
-    border-radius:6px;padding:9px 11px;font-style:italic;margin:0 0 9px;
-  }
-  .talk strong{font-style:normal;text-transform:uppercase;font-size:.7rem;letter-spacing:.09em}
-  .meta{margin:auto 0 0;font-size:.8rem;color:var(--meta);padding-top:6px;border-top:1px dashed var(--line)}
-  .badge{
-    display:inline-block;background:var(--badge-bg);color:var(--badge-text);
-    font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
-    border-radius:999px;padding:3px 9px;margin-bottom:8px;
-  }
-  .unconf{
-    display:inline-block;background:var(--unconf-bg);color:var(--unconf-text);
-    font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-    border-radius:4px;padding:2px 7px;margin-bottom:8px;
-  }
-  .pointer{
-    background:var(--card);border:1px dashed var(--line);border-radius:10px;
-    padding:13px 16px;color:var(--muted);font-size:.92rem;
-  }
-  footer{
-    max-width:1180px;margin:30px auto 0;padding:26px 16px 40px;
-    color:var(--meta);font-size:.84rem;border-top:1px solid var(--line);
-  }
-  @media (max-width:420px){
-    h1.mast-title{margin-right:0;font-size:1.32rem}
-    .toggle{position:static;margin-bottom:12px}
-  }
+:root{
+  --bg:#f5f7fb; --surface:#ffffff; --text:#14213d; --muted:#4a5568; --line:#d9e0ea;
+  --bl-bg:#fff4e5; --bl-border:#c2410c; --top-bg:#eaf2ff; --top-border:#1d4ed8;
+  --tt-bg:#f0fdf4; --tt-border:#15803d; --link:#1d4ed8; --badge:#14213d; --badge-text:#ffffff;
+  --c-market:#2563eb; --c-retail:#0f766e; --c-comp:#b91c1c; --c-cox:#6d28d9; --c-mkt:#c2410c; --c-ai:#0e7490;
+}
+[data-theme="dark"]{
+  --bg:#0f172a; --surface:#1e293b; --text:#e8eef7; --muted:#b6c2d3; --line:#334155;
+  --bl-bg:#3a2410; --bl-border:#fb923c; --top-bg:#16264a; --top-border:#93b4ff;
+  --tt-bg:#123222; --tt-border:#4ade80; --link:#9dc1ff; --badge:#e8eef7; --badge-text:#0f172a;
+  --c-market:#7fa8ff; --c-retail:#5eead4; --c-comp:#fca5a5; --c-cox:#c4b5fd; --c-mkt:#fdba74; --c-ai:#67e8f9;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#0b1f3a,#1a3a6c);color:#fff;padding:28px 20px}
+.head-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+header h1{margin:0;font-size:1.7rem;line-height:1.2}
+header p{margin:6px 0 0;color:#dbe6f7}
+#themeToggle{background:transparent;color:#fff;border:1px solid #fff;border-radius:6px;padding:8px 12px;font:inherit;cursor:pointer;white-space:nowrap}
+#themeToggle:focus-visible,a:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+main{max-width:1180px;margin:0 auto;padding:24px 20px 40px}
+.bottom-line{background:var(--bl-bg);border-left:6px solid var(--bl-border);padding:18px 20px;border-radius:6px;margin-bottom:20px}
+.bottom-line h2,.top-story h2{margin:0 0 8px;font-size:1.05rem}
+.bottom-line p{margin:0;max-width:78ch}
+.top-story{background:var(--top-bg);border-left:6px solid var(--top-border);padding:20px;border-radius:6px;margin-bottom:28px}
+.top-label{font-weight:700;font-size:.85rem;color:var(--muted);margin:0 0 6px}
+.top-story h3{margin:0 0 8px;font-size:1.3rem;line-height:1.3}
+section{margin-bottom:30px}
+.cat-head{text-transform:uppercase;letter-spacing:.04em;font-size:1rem;margin:0 0 12px;padding:4px 0 4px 12px;border-left:6px solid}
+.market .cat-head{border-color:var(--c-market)} .retail .cat-head{border-color:var(--c-retail)}
+.comp .cat-head{border-color:var(--c-comp)} .cox .cat-head{border-color:var(--c-cox)}
+.mkt .cat-head{border-color:var(--c-mkt)} .ai .cat-head{border-color:var(--c-ai)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.card h3{margin:0 0 8px;font-size:1.05rem;line-height:1.35}
+a{color:var(--link)}
+.card p,.top-story p{margin:0 0 10px;max-width:78ch}
+.meaning{font-style:italic}
+.meta{font-size:.85rem;color:var(--muted);margin:0}
+.talk{background:var(--tt-bg);border-left:4px solid var(--tt-border);padding:8px 12px;font-style:italic;border-radius:4px;margin:0 0 10px}
+.badge{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--badge);color:var(--badge-text);margin:0 6px 8px 0}
+.badge.unconf{background:transparent;color:var(--text);border:1px dashed var(--text)}
+.note{color:var(--muted);font-style:italic;margin:0}
+footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:18px 20px;font-size:.9rem}
+@media (max-width:600px){header h1{font-size:1.35rem}.head-inner{flex-direction:column}}
 </style>
 </head>
 <body>
-
-<header class="masthead">
-  <div class="mast-inner">
-    <button class="toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme">Dark mode</button>
-    <h1 class="mast-title">🚗 Automotive AI Daily Briefing</h1>
-    <p class="mast-date">Monday, November 23, 2026 · Multi-Solution Sales</p>
+<header>
+  <div class="head-inner">
+    <div>
+      <h1><span aria-hidden="true">🚗</span> Automotive AI Daily Briefing</h1>
+      <p>Tuesday, November 24, 2026</p>
+    </div>
+    <button id="themeToggle" type="button" aria-label="Toggle light and dark theme">Dark mode</button>
   </div>
 </header>
 
 <main>
-
-  <div class="callout">
-    <p class="callout-label">Bottom Line</p>
-    <p>Two fights over who controls the dealer's business. Amazon Autos went from one brand to 35 and cut dealer onboarding time by more than 85%, so the marketplace question is now about volume, not pilots. Meanwhile Ford, Honda, Stellantis and Volkswagen sued New Jersey on Friday over a warranty pay law they say moves $375 million a year from factories to dealer service bays.</p>
-    <p>So what does that mean? Fixed ops just became the most contested line in the store, from the service drive to the recall bay, and the front end is getting a new channel whether dealers signed up for it or not. Walk into this week ready to talk about where service revenue actually comes from, and don't be surprised when a GM asks what Amazon means for their lead mix.</p>
+  <div class="bottom-line" role="region" aria-label="Bottom line">
+    <h2>Bottom line</h2>
+    <p>Two shifts this week. Shoppers are drifting from Google to AI answers and YouTube, and the money in the store keeps sliding toward the service drive. The new search study, UVeye's service lane appraisals and Scout building service before it sells a single truck all point the same way. Sell the whole loop this week: Dealer.com content AI can read, Xtime to own the service drive, and vAuto to turn service visits into inventory.</p>
   </div>
 
-  <div class="callout top">
-    <p class="callout-label">Top Story · Dealership &amp; Retail Tech</p>
-    <h2><a href="https://www.autonews.com/retail/an-amazon-autos-update-1123/" target="_blank" rel="noopener noreferrer">Amazon Autos grows from one brand to 35 as dealer sign-up gets faster</a></h2>
-    <p>Amazon Autos has streamlined dealership registration, expanded from a single brand to 35, and stood up a dealer advisory council. Fan Jin, Amazon Autos director and global general manager, says onboarding time has been cut by more than 85%. Early-adopter dealers say the marketplace is producing sales leads.</p>
-    <p class="means">What it means for us: a third-party marketplace with Amazon's traffic and 35 brands is a direct competitor for the same shopper Autotrader and KBB are trying to reach, and it lands at the top of the funnel before the CRM ever sees the lead. Worth asking dealers whether they're on it, what the lead quality looks like, and whether those leads are even routing into VinSolutions.</p>
-    <p class="talk"><strong>Talk track:</strong> &ldquo;If you're taking Amazon leads, where do they land? If the answer is somebody's inbox instead of the CRM, you're paying for traffic you can't measure.&rdquo;</p>
-    <p class="meta">Automotive News · Nov. 23, 2026</p>
-  </div>
+  <article class="top-story" aria-labelledby="top-h">
+    <p class="top-label">TOP STORY · Dealership Marketing &amp; Advertising</p>
+    <span class="badge">📣 POST-WORTHY</span>
+    <h3 id="top-h"><a href="https://news.dealershipguy.com/p/new-study-finds-google-car-searches-losing-ground-as-social-media-ai-vehicle-recommendations-surge" target="_blank" rel="noopener noreferrer">Study: Google car searches are fading as AI and social take over car shopping</a></h3>
+    <p>A Cision and Brandwatch report looked at 251 million online auto mentions and found Google interest in terms like "best SUV" has been sliding since late 2024. Car conversation online rose 91% in a year. When the study ran 350+ "best car" prompts through AI tools, YouTube was cited in about 4,000 answers and Toyota's own site in just 135.</p>
+    <p class="meaning">What it means for us: AI answers are built from video, reviews and listings more than the OEM site. That makes Dealer.com content, Autotrader and KBB listings, and DDC video and social the stuff that gets a store into the answer.</p>
+    <p class="talk">Talk track: "Your shoppers are asking ChatGPT and YouTube now, not just Google, so let's make sure your Dealer.com content and Autotrader listings are what those answers pull from."</p>
+    <p class="meaning">LinkedIn angle: YouTube got cited about 4,000 times in AI car answers. Toyota's own website got cited 135 times. So what does that mean? Your website is not the front door anymore. It's one room in the house.</p>
+    <p class="meta">Car Dealership Guy News · Nov 23, 2026</p>
+  </article>
 
-  <section class="cat cat-market">
-    <h2 class="cat-head">Automotive Market</h2>
+  <section class="market" aria-labelledby="h-market">
+    <h2 class="cat-head" id="h-market">Automotive Market</h2>
     <div class="grid">
-
-      <article class="story">
-        <h3><a href="https://www.cbtnews.com/automakers-sue-new-jersey/" target="_blank" rel="noopener noreferrer">Automakers sue New Jersey over dealer warranty and recall repair payments</a></h3>
-        <p>Ford, Honda, Stellantis' FCA unit and Volkswagen filed in federal court in Trenton on Nov. 20 to block the New Jersey Motor Vehicle Open Recall Notice and Fair Compensation Act, which took effect April 1. The automakers say it lets dealers set reimbursement prices for warranty, recall and other repairs and estimate it shifts more than $375 million a year from manufacturers to dealers. They argue it violates the Commerce and Takings clauses, conflicts with federal recall rules, and breaches the state constitution. The New Jersey dealer coalition is a named defendant and disputes the claims.</p>
-        <p class="means">What it means for us: warranty and recall reimbursement is the quiet engine under a lot of fixed-ops profit, and several states have already tilted these rates toward dealers. If New Jersey holds, service-bay economics improve and the Xtime conversation gets easier. Either way, expect NJ dealers to be watching this closely while they plan 2027 service capacity.</p>
-        <p class="meta">CBT News · Nov. 23, 2026 (suit filed Nov. 20)</p>
+      <article class="card">
+        <h3><a href="https://www.cbtnews.com/automakers-sue-new-jersey/" target="_blank" rel="noopener noreferrer">Ford, Honda, Stellantis and VW sue New Jersey over dealer warranty pay</a></h3>
+        <p>Four automakers filed a federal suit on Nov 20 against New Jersey's law on warranty and recall repair pay, which took effect April 1. They say it moves more than $375 million a year from OEMs to dealers through labor multipliers and marked-up parts pricing. The state dealer association says it expects to win.</p>
+        <p class="meaning">What it means for us: warranty pay is now a fight worth hundreds of millions, so clean warranty ROs matter. Xtime and Dealertrack DMS keep the labor time and parts on each warranty line documented. Expect dealers in states with similar laws to ask about it.</p>
+        <p class="meta">CBT News · Nov 23, 2026</p>
       </article>
-
-      <article class="story">
-        <h3><a href="https://www.cbtnews.com/lithia-motors-acquires-three-sc-dealerships" target="_blank" rel="noopener noreferrer">Lithia Motors acquires three South Carolina dealerships from Krause Auto Group</a></h3>
-        <p>Lithia picked up three Hyundai and Genesis dealerships plus the related real estate from Krause Auto Group, putting it into the Charleston, South Carolina market. This follows Lithia's Charleston move reported last week on the North Carolina side.</p>
-        <p class="means">What it means for us: a public group entering a new metro usually means a tech-stack decision inside 12 months, and Lithia consolidates onto its own standards fast. If you cover those rooftops, the clock on any Cox product in those stores just started.</p>
-        <p class="meta">CBT News · Nov. 23, 2026</p>
-      </article>
-
     </div>
   </section>
 
-  <section class="cat cat-tech">
-    <h2 class="cat-head">Dealership &amp; Retail Tech</h2>
+  <section class="retail" aria-labelledby="h-retail">
+    <h2 class="cat-head" id="h-retail">Dealership &amp; Retail Tech</h2>
     <div class="grid">
-
-      <article class="story">
-        <span class="badge">📣 Post-worthy</span>
-        <h3><a href="https://www.cbtnews.com/risk-of-ai-in-the-dealership" target="_blank" rel="noopener noreferrer">The risk of letting AI do too much in the dealership</a></h3>
-        <p>Bob Burgin of Amplifire argues on Inside Automotive that as AI moves from answering questions to executing workflows, the real risk is sales teams losing the judgment to manage it. He describes building an intelligence layer on top of a CRM using 14 specialized research sub-agents, and makes the case for designing AI to sharpen employee performance rather than becoming an easy button.</p>
-        <p class="means">What it means for us: this is the counterweight to every agentic-AI pitch our competitors are making, and it is a better frame for our conversations than feature lists. The product that raises a rep's judgment beats the one that replaces it, and that is a defensible position for a connected platform with coaching and reporting built in.</p>
-        <p class="talk"><strong>Talk track:</strong> &ldquo;The question isn't whether AI can do the follow-up. It's whether your people still know how to when it's wrong.&rdquo;</p>
-        <p class="meta">CBT News · Nov. 23, 2026 · <strong>LinkedIn angle:</strong> every vendor is selling the easy button right now. Here's the thing nobody says out loud. If your team can't tell when the AI got it wrong, you didn't buy leverage, you bought a blind spot with a subscription.</p>
+      <article class="card">
+        <h3><a href="https://www.cbtnews.com/uveye-appraisal-tool/" target="_blank" rel="noopener noreferrer">UVeye pitches the service lane as a one-minute appraisal tool</a></h3>
+        <p>UVeye says its drive-through scanners are in 1,200+ locations and read about 4 million vehicles a month. Each report is ready about 30 seconds after the car rolls through. The scan pairs condition data with Carfax history and vAuto, so a used car manager can work up a trade value in about a minute, and dealers can set alerts by VIN, model or color.</p>
+        <p class="meaning">What it means for us: this is the service drive as inventory source, sold by a partner that already plugs into vAuto. Pair it with Xtime appointments and KBB ICO offers and the "own auction block" story gets a lot easier to show.</p>
+        <p class="talk">Talk track: "Every car in your service lane is a possible trade, so let's get Xtime and vAuto working together and you see which ones to buy before the customer leaves."</p>
+        <p class="meta">CBT News · Nov 23, 2026</p>
       </article>
-
+      <article class="card">
+        <h3><a href="https://www.cbtnews.com/risk-of-ai-in-the-dealership/" target="_blank" rel="noopener noreferrer">Training CEO: letting AI do the thinking will dull your sales team</a></h3>
+        <p>Amplifire CEO Bob Burgin warns against an AI "easy button" in the showroom. Ready-made answers stop reps from building skills and hide mistakes, and newer staff are the least likely to catch confident errors. His pitch is AI that coaches with questions instead of handing over scripts.</p>
+        <p class="meaning">What it means for us: dealers are going to ask whether AI replaces their people. The VinSolutions answer is AI that handles busy work, like Virtual Contact Assistant follow-up, with Performance Managers coaching the humans on the deals that need judgment.</p>
+        <p class="meta">CBT News · Nov 23, 2026</p>
+      </article>
     </div>
   </section>
 
-  <section class="cat cat-comp">
-    <h2 class="cat-head">Competitor Watch</h2>
+  <section class="comp" aria-labelledby="h-comp">
+    <h2 class="cat-head" id="h-comp">Competitor Watch</h2>
+    <p class="note">No competitor story from an approved source cleared the 48-hour bar today.</p>
+  </section>
+
+  <section class="cox" aria-labelledby="h-cox">
+    <h2 class="cat-head" id="h-cox">Cox Automotive Ecosystem</h2>
     <div class="grid">
-
-      <article class="story">
-        <h3><a href="https://www.autonews.com/retail/used-cars/an-bidbus-dealer-consumer-auction-platform-1120/" target="_blank" rel="noopener noreferrer">Bidbus aims to upend vehicle auctions by letting dealers bid on consumers' cars</a></h3>
-        <p>Bidbus runs a short live auction on consumer-owned vehicles, requiring dealers to bid against each other rather than the seller taking a single instant offer. It launched in 2022, operates in California and Texas with about 500 franchised dealerships, and charges a 1% success fee instead of listing or auction fees.</p>
-        <p class="means">What it means for us: this attacks the instant-offer model head on, which is the lane KBB Instant Cash Offer sits in, and it pulls private-party supply toward a bidding war instead of toward the dealer's own appraisal. Still small and two-state, but worth knowing the model when a dealer says a customer walked in with a higher number from somewhere else.</p>
-        <p class="meta">Automotive News · Nov. 20, 2026</p>
+      <article class="card">
+        <h3><a href="https://coxautoinc.com/insights/scout-motors-is-getting-real-now-comes-the-hard-part" target="_blank" rel="noopener noreferrer">Cox analyst tours Scout's plant: it's real, but the hard part is ahead</a></h3>
+        <p>Cox Automotive's Erin Keating toured Scout's $2 billion South Carolina plant, which is built for up to 200,000 vehicles a year and has 210,000+ reservations. Deliveries are now expected in 2028. Her main caveat is Scout's direct-to-consumer plan, which dealers are fighting in court, and she argues dealers add value well past the sale.</p>
+        <p class="meaning">What it means for us: Scout is building service before sales because ownership is where loyalty lives. That is the same case we make for Xtime and Dealertrack DMS fixed ops. Use it when a dealer asks if direct sales brands are coming for their lunch.</p>
+        <p class="talk">Talk track: "Even the brands trying to skip dealers are building service centers first, so let's make your Xtime service experience the reason customers stay with you."</p>
+        <p class="meta">Cox Automotive · Nov 23, 2026</p>
       </article>
-
     </div>
   </section>
 
-  <section class="cat cat-mktg">
-    <h2 class="cat-head">Dealership Marketing &amp; Advertising</h2>
-    <div class="grid">
-
-      <article class="story">
-        <span class="unconf">Trade roundup, not a primary source</span>
-        <h3><a href="https://businessdaduk.com/2026/11/21/seo-ppc-digital-marketing-news-13-november-to-20-november-2026" target="_blank" rel="noopener noreferrer">Google Ads Editor 2.14 turns AI Max on by default for new Search campaigns</a></h3>
-        <p>A weekly search-marketing roundup flags that Google Ads Editor 2.14, released Nov. 12, now enables AI Max, text asset automation and Final URL expansion by default on new Search campaigns. A new ValueTrack parameter lets advertisers see how much traffic AI Max broad expansion actually drives. The same roundup notes November's core update is still rolling ten days in, Microsoft rebuilt its bid model claiming 10% more value per click, and US ChatGPT ad spend hit $70.7 million in October.</p>
-        <p class="means">What it means for us: if a dealer or agency builds a new Search campaign and doesn't check the defaults, AI Max goes live without anyone deciding to turn it on, which means broader matching and less control over where budget lands. Good reason to ask when a dealer last audited their campaign settings, and a clean opening for a Dealer.com advertising review.</p>
-        <p class="meta">Business Dad UK search-marketing roundup · Nov. 21, 2026 (Ads Editor 2.14 shipped Nov. 12)</p>
-      </article>
-
-    </div>
+  <section class="mkt" aria-labelledby="h-mkt">
+    <h2 class="cat-head" id="h-mkt">Dealership Marketing &amp; Advertising</h2>
+    <p class="note">Today's marketing headline is the AI and social search study, featured as the Top Story above.</p>
   </section>
 
-  <section class="cat cat-ai">
-    <h2 class="cat-head">AI &amp; Technology</h2>
+  <section class="ai" aria-labelledby="h-ai">
+    <h2 class="cat-head" id="h-ai">AI &amp; Technology</h2>
     <div class="grid">
-
-      <article class="story">
-        <h3><a href="https://www.engadget.com/2322656/openai-is-testing-dots-personal-agents-on-its-20-per-month-plus-tier/" target="_blank" rel="noopener noreferrer">OpenAI is testing Dots personal agents on its $20 per month Plus tier</a></h3>
-        <p>OpenAI began testing Dots, its always-on background agents, with a small number of ChatGPT Plus subscribers on Nov. 19, and opened Dots to all ChatGPT Business Standard users the same day. Dots launched at DevDay in September for Pro and Business Premium. Each runs on its own cloud computer and keeps working while the user is away. They originally ran on GPT-6 Astra and can now run on GPT-6.1 Terra.</p>
-        <p class="means">What it means for us: always-on agents just dropped to the $20 tier and to every US Business Standard seat, which means dealership staff will start using unsanctioned background agents on store data without anyone approving it. That is the same data-ownership problem QoreAI was warning dealers about last week, and it is worth raising before IT finds out the hard way.</p>
-        <p class="meta">Engadget · Nov. 20, 2026</p>
+      <article class="card">
+        <span class="badge unconf">⚠️ Anonymous sources, Reuters exclusive</span>
+        <h3><a href="https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/11/23/some-us-banks-tighten-ai-agent-controls-on-concern-about-models-escaping-safeguards-reuters-exclusive/" target="_blank" rel="noopener noreferrer">Reuters: U.S. banks are putting their own AI agents on a shorter leash</a></h3>
+        <p>Several big and mid-sized U.S. banks are tightening controls on their internal AI agents, according to unnamed sources. Steps include cutting off access to critical systems, limiting credentials, adding kill switches and keeping backup plans for loan processing and fraud checks. Banks had already blocked outside agents from customer accounts.</p>
+        <p class="meaning">What it means for us: lenders are getting strict about AI agents, and that rolls downhill to dealers. Expect questions about how AI touches credit apps in Dealertrack F&amp;I and Deal Central, and how much a dealer's AI tools can do without a human.</p>
+        <p class="meta">Reuters via BNN Bloomberg · Nov 23, 2026</p>
       </article>
-
     </div>
   </section>
-
 </main>
 
 <footer>
-  <p>November 23, 2026 · Curated by AI Research Desk</p>
+  <p>Tuesday, November 24, 2026 · Curated by AI Research Desk</p>
 </footer>
 
 <script>
 (function(){
-  var KEY = "mssBriefingTheme";
-  var root = document.documentElement;
-  var btn = document.getElementById("themeToggle");
-  var stored = null;
-  try { stored = localStorage.getItem(KEY); } catch(e){}
-
-  function label(){
-    var dark = root.getAttribute("data-theme") === "dark";
-    btn.textContent = dark ? "Light mode" : "Dark mode";
-    btn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+  var KEY='mssBriefingTheme', root=document.documentElement, btn=document.getElementById('themeToggle');
+  function apply(t){
+    root.setAttribute('data-theme',t);
+    btn.textContent = t==='dark' ? 'Light mode' : 'Dark mode';
+    btn.setAttribute('aria-pressed', t==='dark' ? 'true' : 'false');
   }
-
-  if (stored === "dark" || stored === "light") {
-    root.setAttribute("data-theme", stored);
-  } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    root.setAttribute("data-theme", "dark");
-  } else {
-    root.setAttribute("data-theme", "light");
+  var stored=null;
+  try{ stored=localStorage.getItem(KEY); }catch(e){}
+  if(stored!=='light' && stored!=='dark'){
+    stored = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
   }
-  label();
-
-  btn.addEventListener("click", function(){
-    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem(KEY, next); } catch(e){}
-    label();
+  apply(stored);
+  btn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+    apply(next);
+    try{ localStorage.setItem(KEY,next); }catch(e){}
   });
 })();
 </script>
-
 </body>
 </html>
